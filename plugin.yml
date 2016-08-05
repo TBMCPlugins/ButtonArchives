@@ -1,0 +1,7 @@
+main: alisolarflare.MainPlugin
+name: AliPresents
+version: 1.0.0
+
+commands:
+  alishulker:
+    description: Spawns a shulker at player location. /Alishulker <health> <withereffect> <invisibility=true> <experiencedrops>
