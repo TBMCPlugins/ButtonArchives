@@ -5,3 +5,7 @@ version: 1.0.0
 commands:
   alishulker:
     description: Spawns a shulker at player location. /Alishulker <health> <withereffect> <invisibility=true> <experiencedrops>
+  pressalilink:
+    description: Presses an Ali Link. /pressalilink |frequency|
+  setalilink:
+    description: Creates an Ali Link. /setalilink |frequency|

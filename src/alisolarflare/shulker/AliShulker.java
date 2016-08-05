@@ -1,4 +1,4 @@
-package alisolarflare;
+package alisolarflare.shulker;
 
 import org.bukkit.Location;
 import org.bukkit.command.Command;
