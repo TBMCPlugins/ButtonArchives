@@ -15,6 +15,7 @@ public class UnpressTask extends BukkitRunnable {
 	public void run() {
 		location.getBlock().setType(Material.STAINED_CLAY);
 		location.getBlock().setData((byte) 14);
+		this.cancel();
 	}
 
 }

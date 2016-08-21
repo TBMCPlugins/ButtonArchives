@@ -5,8 +5,8 @@ import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 
 public class PressAliLink implements CommandExecutor{
-	private AliLinkSubPlugin subplugin;
-	public PressAliLink(AliLinkSubPlugin subplugin){
+	private AliLinkSubPlug subplugin;
+	public PressAliLink(AliLinkSubPlug subplugin){
 		this.subplugin = subplugin;
 	}
 	@Override

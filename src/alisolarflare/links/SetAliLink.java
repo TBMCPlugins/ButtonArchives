@@ -8,8 +8,8 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
 public class SetAliLink implements CommandExecutor{
-	AliLinkSubPlugin subplugin;
-	public SetAliLink(AliLinkSubPlugin plugin){
+	AliLinkSubPlug subplugin;
+	public SetAliLink(AliLinkSubPlug plugin){
 		this.subplugin = plugin;
 	}
 	@Override
@@ -22,11 +22,15 @@ public class SetAliLink implements CommandExecutor{
 			sender.sendMessage("You must be a player to use this command!");
 		}
 		Player player = (Player) sender;
-		if (args[1] == null || args[2] == null || args[3] == null){
+		if (args.length < 4){
 			subplugin.linkList.add(new Link(subplugin, args[0], player.getLocation()));
+			return false;
 		}
 		if (StringUtils.isNumericSpace(args[1]) && StringUtils.isNumericSpace(args[2]) && StringUtils.isNumericSpace(args[3])){
 			subplugin.linkList.add(new Link(subplugin, args[0],new Location(player.getWorld(), Double.parseDouble(args[1]), Double.parseDouble(args[2]), Double.parseDouble(args[3]))));
+		}else{
+			subplugin.linkList.add(new Link(subplugin, args[0], player.getLocation()));
+			return false;
 		}
 		return false;
 	}
