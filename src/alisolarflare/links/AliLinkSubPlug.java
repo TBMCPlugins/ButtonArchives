@@ -17,8 +17,13 @@ public class AliLinkSubPlug{
 		this.deserializer = new Deserializer();
 		try{
 			this.linkList = deserializer.loadLinkList();
+			if(this.linkList == null){
+				this.linkList = new ArrayList<Link>();
+				serializer.saveLinkList(this.linkList);
+			}
 		}catch(Exception e){
 			linkList = new ArrayList<Link>();
+			serializer.saveLinkList(this.linkList);
 		}
 		
 	}
