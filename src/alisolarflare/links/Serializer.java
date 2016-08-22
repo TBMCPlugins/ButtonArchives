@@ -15,7 +15,7 @@ public class Serializer {
 
 	public void saveLinkList(List<Link> aliLinkList){
 		//saves link
-
+		
 		try{
 
 			FileOutputStream fout = new FileOutputStream("AliLinkList.ser");

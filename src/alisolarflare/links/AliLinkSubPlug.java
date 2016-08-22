@@ -32,5 +32,12 @@ public class AliLinkSubPlug{
 		plugin.getCommand("setalilink").setExecutor(new SetAliLink(this));
 		
 	}
+	public void saveLinkList(){
+		plugin.getConfig().set("aliLinkList", linkList);
+	}
+	@SuppressWarnings("unchecked")
+	public List<Link> loadLinkList(){
+		return (List<Link>) plugin.getConfig().getList("aliLinkList");
+	}
 	
 }

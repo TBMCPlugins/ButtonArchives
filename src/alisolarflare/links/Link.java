@@ -12,7 +12,12 @@ public class Link implements Serializable{
 	private static final long serialVersionUID = 1L;
 	AliLinkSubPlug subplugin;
 	String frequency;
+	String world;
 	Location location;
+	int x;
+	int y;
+	int z;
+	
 	
 	public Link(AliLinkSubPlug plugin, String frequency, Location location){
 		this.frequency = frequency;
