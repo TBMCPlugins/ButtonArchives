@@ -4,11 +4,11 @@ import java.util.AbstractMap;
 import java.util.HashMap;
 
 import org.bukkit.Location;
-import org.bukkit.block.BlockState;
-import org.bukkit.entity.Player;
+import org.bukkit.Material;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
-import org.bukkit.event.entity.EntityCreatePortalEvent;
+import org.bukkit.event.player.PlayerInteractEvent;
+import org.bukkit.event.world.PortalCreateEvent;
 
 import alisolarflare.AliPresents;
 
@@ -22,7 +22,28 @@ public class PortalListener implements Listener{
 	public PortalListener(AliPresents plugin) {
 		this.plugin = plugin;
 	}
-
+	@EventHandler
+	public void onAliRightClick(PlayerInteractEvent event){
+		if (event.getPlayer().getName() != "alisolarflare"){
+			return;
+		}
+		if (event.getClickedBlock().getType() != Material.OBSIDIAN){
+			return;
+		}
+		if(event.getItem().getType() != Material.FLINT_AND_STEEL && event.getItem().getType() != Material.FIREBALL){
+			return;
+		}
+		plugin.getServer().broadcastMessage("RIIIIGHTCLICK");
+	}
+	
+	@EventHandler
+	public void onPortalLight(PortalCreateEvent event){
+		plugin.getServer().broadcastMessage("PORTAL LIIIIIT");
+	}
+	/*
+	 *  NOTE: WRONG ENTITY EVENT ALLTOGETHER.
+	 *  ENTITY CREATE PORTAL EVENT ONLY TRIGGERS WHEN AN ENDERDRAGON DIES
+	 * 
 	@EventHandler
 	public void onPortalLight(EntityCreatePortalEvent event){
 		plugin.getServer().broadcastMessage("PORTAL LIT WHOOP WHOOP");
