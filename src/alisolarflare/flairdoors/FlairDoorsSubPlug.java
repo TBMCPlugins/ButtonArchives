@@ -1,7 +1,5 @@
 package alisolarflare.flairdoors;
 
-import org.bukkit.plugin.java.JavaPlugin;
-
 import alisolarflare.AliPresents;
 
 public class FlairDoorsSubPlug{
@@ -19,7 +17,7 @@ public class FlairDoorsSubPlug{
 	}
 	private void registerEvents() {
 		// TODO Auto-generated method stub
-		plugin.getServer().getPluginManager().registerEvents(new PortalLightListener(), plugin);
+		plugin.getServer().getPluginManager().registerEvents(new PortalListener(plugin), plugin);
 
 	}
 }

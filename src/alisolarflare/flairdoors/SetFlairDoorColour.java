@@ -1,11 +1,15 @@
 package alisolarflare.flairdoors;
 
+import java.util.Arrays;
+import java.util.List;
+
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 
 public class SetFlairDoorColour implements CommandExecutor {
 	public static String FlairDoorColorMode = "null";
+	public static final List<String> COLOURMODES = Arrays.asList("red", "orange", "yellow", "green", "blue", "purple", "gray");
 	@Override
 	public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
 		if (args.length > 1){
@@ -15,7 +19,7 @@ public class SetFlairDoorColour implements CommandExecutor {
 		String firstCommand = args[0];
 		firstCommand = firstCommand.toLowerCase();
 		if(firstCommand.startsWith("e")|| firstCommand.startsWith("gra")|| firstCommand.startsWith("grey")){
-			sender.sendMessage("Flair Door Colour Mode set to grey");
+			sender.sendMessage("Flair Door Colour Mode set to gray");
 			FlairDoorColorMode = "gray";
 		}else if(firstCommand.startsWith("r")){
 			sender.sendMessage("Flair Door Colour Mode set to Red");

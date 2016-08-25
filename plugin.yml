@@ -10,4 +10,4 @@ commands:
   setalilink:
     description: Creates an Ali Link setalilink frequency
   setFlairDoorColour:
-  	description: Sets the flair door colour mode, when lighting portals
+    description: Sets the flair door colour mode, when lighting portals
