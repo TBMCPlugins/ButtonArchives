@@ -7,6 +7,7 @@ import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
+import org.bukkit.event.block.Action;
 import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.event.world.PortalCreateEvent;
 
@@ -22,6 +23,7 @@ public class PortalListener implements Listener{
 	public PortalListener(AliPresents plugin) {
 		this.plugin = plugin;
 	}
+	
 	@EventHandler
 	public void onAliRightClick(PlayerInteractEvent event){
 		if (event.getPlayer().getName() != "alisolarflare"){
@@ -31,6 +33,9 @@ public class PortalListener implements Listener{
 			return;
 		}
 		if(event.getItem().getType() != Material.FLINT_AND_STEEL && event.getItem().getType() != Material.FIREBALL){
+			return;
+		}
+		if(event.getAction() != Action.RIGHT_CLICK_BLOCK){
 			return;
 		}
 		plugin.getServer().broadcastMessage("RIIIIGHTCLICK");

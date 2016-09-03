@@ -1,29 +1,22 @@
 package alisolarflare.links;
-
 import java.util.ArrayList;
 import java.util.List;
 
 import alisolarflare.AliPresents;
+import alisolarflare.links.commands.PressAliLink;
+import alisolarflare.links.commands.SetAliLink;
+import alisolarflare.links.entities.Link;
 
 public class AliLinkSubPlug{
-	public List<Link> linkList;
+	public List<Link> linkList = new ArrayList<Link>();
 	public AliPresents plugin;
-	public Serializer serializer;
-	public Deserializer deserializer;
 	
+	@SuppressWarnings("unchecked")
 	public AliLinkSubPlug(AliPresents plugin){
 		this.plugin = plugin;
-		this.serializer = new Serializer();
-		this.deserializer = new Deserializer();
-		try{
-			this.linkList = deserializer.loadLinkList();
-			if(this.linkList == null){
-				this.linkList = new ArrayList<Link>();
-				serializer.saveLinkList(this.linkList);
-			}
-		}catch(Exception e){
+		linkList = (List<Link>) plugin.getConfig().getList("aliLinkList");
+		if(linkList == null || linkList.isEmpty()){
 			linkList = new ArrayList<Link>();
-			serializer.saveLinkList(this.linkList);
 		}
 		
 	}

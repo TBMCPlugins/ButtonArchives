@@ -6,6 +6,8 @@ import org.bukkit.plugin.PluginDescriptionFile;
 
 import alisolarflare.flairdoors.PortalListener;
 import alisolarflare.flairdoors.SetFlairDoorColour;
+import alisolarflare.links.AliLinkSubPlug;
+
 //import alisolarflare.links.AliLinkSubPlug;
 import org.bukkit.plugin.java.JavaPlugin;
 import alisolarflare.shulker.AliShulker;
@@ -18,7 +20,7 @@ public class AliPresents extends JavaPlugin{
 		
 		logger.info(pdfFile.getName() + " has been started (V." + pdfFile.getVersion()+ ").");
 		
-		//registerSubPlugins();
+		registerSubPlugins();
 		registerCommands();
 		registerEvents();
 		
@@ -31,8 +33,8 @@ public class AliPresents extends JavaPlugin{
 		
 	}
 	public void registerSubPlugins(){
-		//AliLinkSubPlug alilinksubplugin = new AliLinkSubPlug(this);
-		//alilinksubplugin.register();
+		AliLinkSubPlug alilinksubplugin = new AliLinkSubPlug(this);
+		alilinksubplugin.register();
 	}
 	public void registerCommands(){
 		getCommand("alishulker").setExecutor(new AliShulker());
