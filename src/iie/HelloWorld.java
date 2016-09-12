@@ -1,6 +1,10 @@
 package iie;
 
+import java.util.Objects;
+
+import org.bukkit.Bukkit;
 import org.bukkit.Location;
+import org.bukkit.Sound;
 import org.bukkit.World;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
@@ -26,6 +30,11 @@ public class HelloWorld implements CommandExecutor {
 			Player player = (Player) sender;
 			String playername = sender.getName();
 			
+			if (!Objects.equals(player.getScoreboard(), Bukkit.getScoreboardManager().getMainScoreboard())){
+				player.sendMessage("not in your current circumstances");
+				return false;
+			}
+			
 			World hardcoreWorld = player.getServer().getWorld("hardcore");
 			Location location = new Location(hardcoreWorld, 1280, 71, -179);
 
@@ -39,16 +48,16 @@ public class HelloWorld implements CommandExecutor {
 			
 							
 			if (currentTime - deathTime >= 86400 && deathTime != 0){				
-				sender.sendMessage("You died " + (86400 - (currentTime - deathTime)) /3600 + " hours ago. Ready to give it another shot?");				
+				sender.sendMessage("You died " + ((currentTime - deathTime) /3600) + " hours ago. Good luck, " + playername + ".");				
 				player.teleport(location);
-				// player.getWorld().playSound(player.getLocation(), Sound.AMBIENT_CAVE,0,0); I don't think this works, fix later
+				player.getWorld().playSound(player.getLocation(), Sound.AMBIENT_CAVE,1F,1F);
 			}else if(deathTime == 0){		
-				sender.sendMessage("You have never died in hardcore. Good luck!");				
+				sender.sendMessage("You have never died, good luck");				
 				player.teleport(location);
-				// player.getWorld().playSound(player.getLocation(), Sound.AMBIENT_CAVE,0,0); I don't think this works, fix later
+				player.getWorld().playSound(player.getLocation(), Sound.AMBIENT_CAVE,1F,1F);
 			}else{
-				sender.sendMessage("you are dead for the next " + (86400 - (currentTime - deathTime) ) /3600 + " hours");
-				// player.getWorld().playSound(player.getLocation(), Sound.AMBIENT_CAVE,0,0); I don't think this works, fix later
+				sender.sendMessage("you are dead for the next " + ((86400 - (currentTime - deathTime)) /3600) + " hours");
+				player.getWorld().playSound(player.getLocation(), Sound.AMBIENT_CAVE,1F,1F);
 				// replace sound with some other sound
 			}
 			

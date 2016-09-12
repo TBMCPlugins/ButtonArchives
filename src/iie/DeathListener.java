@@ -25,12 +25,19 @@ public class DeathListener implements Listener {
 		Location location = player.getLocation();
 		String worldString = (String) location.getWorld().getName();
 		
+		//player.sendMessage("you died");
+		//player.sendMessage("currentTime = " + String.valueOf(currentTime));
+		//player.sendMessage("worldString = " + String.valueOf(worldString));
+		
 		if (Objects.equals(worldString, "hardcore")){
-				
-				if (HelloWorldPlugin.hardcoreTimeDead.getScore(playername) == null)       //null check 
-					HelloWorldPlugin.hardcoreTimeDead.getScore(playername).setScore(0);   //convert null to 0
 						
-				HelloWorldPlugin.hardcoreTimeDead.getScore(playername).setScore(currentTime); 
+				HelloWorldPlugin.hardcoreTimeDead.getScore(playername).setScore(currentTime);
+				HelloWorldPlugin.hardcoreInvite.getScore(playername).setScore(0);
+				
+				//player.sendMessage("death detected");
+				//player.sendMessage("hardcoreTimeDead score = " + String.valueOf(HelloWorldPlugin.hardcoreTimeDead.getScore(playername).getScore()));
+				//player.sendMessage("currentTime            = " + String.valueOf(currentTime));
+				
 		}
 	}
 }
