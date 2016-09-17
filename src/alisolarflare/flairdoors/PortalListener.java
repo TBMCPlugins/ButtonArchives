@@ -1,20 +1,23 @@
 package alisolarflare.flairdoors;
 
 import java.util.AbstractMap;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 
 import org.bukkit.Location;
 import org.bukkit.Material;
+import org.bukkit.block.Block;
+import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
-import org.bukkit.event.block.Action;
-import org.bukkit.event.player.PlayerInteractEvent;
-import org.bukkit.event.world.PortalCreateEvent;
+import org.bukkit.event.entity.EntityPortalEvent;
 
 import alisolarflare.AliPresents;
 
 public class PortalListener implements Listener{
 	AbstractMap<String,Location> portalMap = new HashMap<String,Location>();
+	public List<String> playersToBeFlaired = new ArrayList<String>();
 	private AliPresents plugin;
 	
 	//TODO: CREATE - LIST OF PORTALS (only x-z values)
@@ -23,7 +26,38 @@ public class PortalListener implements Listener{
 	public PortalListener(AliPresents plugin) {
 		this.plugin = plugin;
 	}
-	
+	@EventHandler
+	public void onPortalEnter(EntityPortalEvent event){
+		if(!(event.getEntity() instanceof Player)){
+			return;
+		}
+		Player player = (Player) event.getEntity();
+		if(!(playersToBeFlaired.contains(player.getName()))){
+			return;
+		}
+		
+		int x = player.getLocation().getBlockX();
+		int y = player.getLocation().getBlockY();
+		int z = player.getLocation().getBlockZ();
+		
+		Material blockTopper = player.getWorld().getBlockAt(x,y-1,z).getType();
+		Material blockMiddle = player.getWorld().getBlockAt(x,y-2,z).getType();
+		Material blockBottom = player.getWorld().getBlockAt(x,y-3,z).getType();
+		
+		if(blockTopper == Material.STONE){
+			
+		}else if(blockTopper == Material.WOOL){
+			
+		}
+		//TODO: IF PLAYER LOCATION IS INSIDE A COLOUR PORTAL
+		//TODO: IF PLAYER NOT FLAIRED
+		//TODO: IF PLAYERSTATE IS TRUE
+		//TODO: CHANGE CUSTOM DISPLAY NAME
+		//TODO: TELEPORT TO SPAWN
+		//TODO: MARK PLAYER AS COLOURED
+		
+	}
+	/*
 	@EventHandler
 	public void onAliRightClick(PlayerInteractEvent event){
 		if (event.getPlayer().getName() != "alisolarflare"){
@@ -48,7 +82,8 @@ public class PortalListener implements Listener{
 	/*
 	 *  NOTE: WRONG ENTITY EVENT ALLTOGETHER.
 	 *  ENTITY CREATE PORTAL EVENT ONLY TRIGGERS WHEN AN ENDERDRAGON DIES
-	 * 
+	 */
+	/*
 	@EventHandler
 	public void onPortalLight(EntityCreatePortalEvent event){
 		plugin.getServer().broadcastMessage("PORTAL LIT WHOOP WHOOP");
@@ -79,16 +114,7 @@ public class PortalListener implements Listener{
 			portalMap.put(colourMode, portalLocation);
 		}
 	}
-	/*
-	@EventHandler
-	public void onPortalEnter(EntityPortalEvent event){
-		//TODO: IF PLAYER LOCATION IS INSIDE A COLOUR PORTAL
-		//TODO: IF PLAYER NOT FLAIRED
-		//TODO: IF PLAYERSTATE IS TRUE
-		//TODO: CHANGE CUSTOM DISPLAY NAME
-		//TODO: TELEPORT TO SPAWN
-		//TODO: MARK PLAYER AS COLOURED
-		
-	}
 	*/
+	
+	
 }

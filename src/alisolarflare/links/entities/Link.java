@@ -14,10 +14,10 @@ public class Link implements Serializable{
 	 */
 	private static final long serialVersionUID = 1L;
 	public String frequency;
-	String world;
-	String x;
-	String y;
-	String z;
+	public String world;
+	public String x;
+	public String y;
+	public String z;
 	
 	
 	public Link(String frequency, Location location){

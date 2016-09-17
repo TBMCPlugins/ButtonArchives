@@ -1,6 +1,5 @@
 package alisolarflare.links.commands;
 
-import java.io.IOException;
 
 import org.apache.commons.lang3.StringUtils;
 import org.bukkit.Location;
@@ -55,9 +54,9 @@ public class SetAliLink implements CommandExecutor{
 		subplugin.plugin.getConfig().set("aliLinkList", subplugin.linkList);
 		try {
 			player.sendMessage("SAVIN");
-			subplugin.plugin.getConfig().save("aliLinkList");
+			subplugin.plugin.saveConfig();
 			player.sendMessage("GOOD SAVE");
-		} catch (IOException e) {
+		} catch (Exception e) {
 			player.sendMessage("YOU FUCKED STUFF UP");
 			// TODO Auto-generated catch block
 			e.printStackTrace();
