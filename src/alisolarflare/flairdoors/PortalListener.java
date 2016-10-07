@@ -5,19 +5,22 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
+import org.bukkit.DyeColor;
 import org.bukkit.Location;
 import org.bukkit.Material;
+import org.bukkit.block.Block;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.entity.EntityPortalEvent;
+import org.bukkit.material.Wool;
 
 import alisolarflare.AliPresents;
 
 public class PortalListener implements Listener{
 	AbstractMap<String,Location> portalMap = new HashMap<String,Location>();
 	public List<String> playersToBeFlaired = new ArrayList<String>();
-	private AliPresents plugin;
+	public AliPresents plugin;
 	
 	//TODO: CREATE - LIST OF PORTALS (only x-z values)
 	
@@ -27,93 +30,71 @@ public class PortalListener implements Listener{
 	}
 	@EventHandler
 	public void onPortalEnter(EntityPortalEvent event){
+		//SANITATION - Player
 		if(!(event.getEntity() instanceof Player)){
 			return;
 		}
+		
+		//INIT - Player
 		Player player = (Player) event.getEntity();
+		
+		//SANITATION - PlayersToBeFlaired
 		if(!(playersToBeFlaired.contains(player.getName()))){
 			return;
 		}
 		
+		//INIT - x,y,z
 		int x = player.getLocation().getBlockX();
 		int y = player.getLocation().getBlockY();
 		int z = player.getLocation().getBlockZ();
 		
-		Material blockTopper = player.getWorld().getBlockAt(x,y-1,z).getType();
-		Material blockMiddle = player.getWorld().getBlockAt(x,y-2,z).getType();
-		Material blockBottom = player.getWorld().getBlockAt(x,y-3,z).getType();
+		//INIT - Blocks Under Portal
+		Block blockTopper = player.getWorld().getBlockAt(x,y-1,z);
+		Block blockMiddle = player.getWorld().getBlockAt(x,y-2,z);
+		Block blockBottom = player.getWorld().getBlockAt(x,y-3,z);
 		
-		if(blockTopper == Material.STONE){
+		//RECOLOUR PLAYER
+		if(blockTopper.getType() == Material.STONE){
+			recolourPlayer(player, DyeColor.GRAY);
 			
-		}else if(blockTopper == Material.WOOL){
-			
+		//TOP BLOCK IS WOOL?
+		}else if(blockTopper.getType() == Material.WOOL){
+			Wool wool = (Wool) blockTopper;
+			recolourPlayer(player, wool.getColor());
+		
+		//MIDDLE BLOCK IS WOOL?
+		}else if(blockMiddle.getType() == Material.WOOL){
+			Wool wool = (Wool) blockMiddle;
+			recolourPlayer(player, wool.getColor());
+		
+		//BOTTOM BLOCK IS WOOL?
+		}else if (blockBottom.getType() == Material.WOOL){
+			Wool wool = (Wool) blockBottom;
+			recolourPlayer(player, wool.getColor());
 		}
-		//TODO: IF PLAYER LOCATION IS INSIDE A COLOUR PORTAL
-		//TODO: IF PLAYER NOT FLAIRED
-		//TODO: IF PLAYERSTATE IS TRUE
-		//TODO: CHANGE CUSTOM DISPLAY NAME
-		//TODO: TELEPORT TO SPAWN
-		//TODO: MARK PLAYER AS COLOURED
 		
 	}
-	/*
-	@EventHandler
-	public void onAliRightClick(PlayerInteractEvent event){
-		if (event.getPlayer().getName() != "alisolarflare"){
-			return;
-		}
-		if (event.getClickedBlock().getType() != Material.OBSIDIAN){
-			return;
-		}
-		if(event.getItem().getType() != Material.FLINT_AND_STEEL && event.getItem().getType() != Material.FIREBALL){
-			return;
-		}
-		if(event.getAction() != Action.RIGHT_CLICK_BLOCK){
-			return;
-		}
-		plugin.getServer().broadcastMessage("RIIIIGHTCLICK");
-	}
-	
-	@EventHandler
-	public void onPortalLight(PortalCreateEvent event){
-		plugin.getServer().broadcastMessage("PORTAL LIIIIIT");
-	}
-	/*
-	 *  NOTE: WRONG ENTITY EVENT ALLTOGETHER.
-	 *  ENTITY CREATE PORTAL EVENT ONLY TRIGGERS WHEN AN ENDERDRAGON DIES
-	 */
-	/*
-	@EventHandler
-	public void onPortalLight(EntityCreatePortalEvent event){
-		plugin.getServer().broadcastMessage("PORTAL LIT WHOOP WHOOP");
-		plugin.getServer().broadcastMessage(event.getEntity().getName());
-		//SANITATION - entity > player
-		if(!(event.getEntity() instanceof Player)){return;}
-		Player player = (Player) event.getEntity();
-		event.getEntity().getServer().broadcastMessage(player.getName());
-		
-		//SANITIATION - player > alisolarflare
-		if(!(player.getName() == "alisolarflare")){return;}
-		event.getEntity().getServer().broadcastMessage(SetFlairDoorColour.FlairDoorColorMode);
-		//SANITATION - FlairDoorColourMode
-		if (SetFlairDoorColour.FlairDoorColorMode == "null"){
-			player.sendMessage("Your Colour mode is set to Null, use /SetFlairDoorColour [Color] to specify a colour for this portal");
-			return;
-		}
+	public void recolourPlayer(Player player, DyeColor dyecolour){
 
-		//INIT - colourMode, portalLocation
-		String colourMode = SetFlairDoorColour.FlairDoorColorMode;
-		Location portalLocation = event.getBlocks().get(0).getBlock().getLocation();
-		event.getEntity().getServer().broadcastMessage(portalLocation.toString()); 
-		//SAVE - Portal
-		if(SetFlairDoorColour.COLOURMODES.contains(colourMode)){
-			for (BlockState blockstate : event.getBlocks()){
-				player.sendMessage(blockstate.getBlock().getLocation().toString());
+		String name = player.getDisplayName();
+		for(int i = 0; i < name.length(); i++){
+			if (name.charAt(i) == '&'){
+				//TODO: Remove all &* symbols
+				name = name.substring(0, i) + name.substring(i + 1, name.length());
+				
 			}
-			portalMap.put(colourMode, portalLocation);
 		}
+		
+		if(dyecolour == DyeColor.GRAY){
+		}else if(dyecolour == DyeColor.RED){
+		}else if(dyecolour == DyeColor.ORANGE){
+		}else if(dyecolour == DyeColor.YELLOW){
+		}else if(dyecolour == DyeColor.GREEN){
+		}else if(dyecolour == DyeColor.BLUE){
+		}else if(dyecolour == DyeColor.PURPLE){
+		}else{
+			return;
+		}
+		playersToBeFlaired.remove(player.getName());
 	}
-	*/
-	
-	
 }
