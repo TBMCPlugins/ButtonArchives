@@ -13,7 +13,7 @@ public class SetFlairDoorColour implements CommandExecutor {
 	@Override
 	public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
 		if (args.length > 1){
-			sender.sendMessage("You must specify and argument, Red-Purple or Null.");
+			sender.sendMessage("You must specify and argument, Red-Purple or Null.HHAHHAHAHAHHAHAHAHHA");
 		}
 		
 		String firstCommand = args[0];
