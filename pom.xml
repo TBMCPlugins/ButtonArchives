@@ -16,9 +16,9 @@
             </resource>
             <resource>
                 <directory>.</directory>
-                <excludes>
-                    <exclude>*.yml</exclude>
-                </excludes>
+                <includes>
+                    <include>*.yml</include>
+                </includes>
             </resource>
         </resources>
     <plugins>
