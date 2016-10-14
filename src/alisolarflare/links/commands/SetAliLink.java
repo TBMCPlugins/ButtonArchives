@@ -51,6 +51,10 @@ public class SetAliLink implements CommandExecutor{
 	}
 	private void save(Player player){
 		player.sendMessage("SAAAVING");
+		player.sendMessage("SAVE FAILED: TELL ALI TO FIX THE SAVE AND UN-COMMENT THE PARAGRAPH SHE COMMENTED");
+		player.sendMessage("Link will only last until next server restart");
+		return;
+		/*
 		subplugin.plugin.getConfig().set("aliLinkList", subplugin.linkList);
 		try {
 			player.sendMessage("SAVIN");
@@ -61,6 +65,7 @@ public class SetAliLink implements CommandExecutor{
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		*/
 	}
 	
 }
