@@ -4,6 +4,7 @@ import java.util.logging.Logger;
 
 import org.bukkit.plugin.PluginDescriptionFile;
 
+import alisolarflare.flairdoors.FlairMe;
 import alisolarflare.flairdoors.PortalListener;
 import alisolarflare.flairdoors.SetFlairDoorColour;
 import alisolarflare.links.AliLinkSubPlug;
@@ -37,6 +38,7 @@ public class AliPresents extends JavaPlugin{
 		alilinksubplugin.register();
 	}
 	public void registerCommands(){
+		getCommand("FlairMe").setExecutor(new FlairMe());
 		getCommand("alishulker").setExecutor(new AliShulker());
 		getCommand("SetFlairDoorColour").setExecutor(new SetFlairDoorColour());
 		
