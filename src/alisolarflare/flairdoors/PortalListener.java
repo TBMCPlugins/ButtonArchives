@@ -95,7 +95,7 @@ public class PortalListener implements Listener{
 	}
 	public void recolourPlayer(Player player, DyeColor dyecolour){
 		player.sendMessage("Recolouring Player as..." + dyecolour.toString());
-		String name = player.getDisplayName();
+		String name = player.getCustomName();
 		player.sendMessage("name:" + name);
 		for(int i = 0; i < name.length(); i++){
 			if (name.charAt(i) == '&'){
@@ -108,37 +108,37 @@ public class PortalListener implements Listener{
 		
 		if(dyecolour == DyeColor.GRAY){
 			player.sendMessage("Adding GRAY");
-			player.setDisplayName("&7" + name);
+			player.setCustomName("&7" + name);
 			
 		}else if(dyecolour == DyeColor.RED){
 			player.sendMessage("Adding RED");
-			player.setDisplayName("&4" + name);
+			player.setCustomName("&4" + name);
 			
 		}else if(dyecolour == DyeColor.ORANGE){
 			player.sendMessage("Adding ORANGE");
-			player.setDisplayName("&6" + name);
+			player.setCustomName("&6" + name);
 			
 		}else if(dyecolour == DyeColor.YELLOW){
 			player.sendMessage("Adding YELLOW");
-			player.setDisplayName("&e" + name);
+			player.setCustomName("&e" + name);
 			
 		}else if(dyecolour == DyeColor.GREEN){
 			player.sendMessage("Adding GREEN");
-			player.setDisplayName("&a" + name);
+			player.setCustomName("&a" + name);
 			
 		}else if(dyecolour == DyeColor.BLUE){
 			player.sendMessage("Adding BLUE");
-			player.setDisplayName("&9" + name);
+			player.setCustomName("&9" + name);
 			
 		}else if(dyecolour == DyeColor.PURPLE){
 			player.sendMessage("Adding PURPLE");
-			player.setDisplayName("&5" + name);
+			player.setCustomName("&5" + name);
 			
 		}else{
 			player.sendMessage("ERROR, PORTAL HAS INVALID UNDER-BLOCK");
 			return;
 		}
-		player.sendMessage("Your name is now: " + player.getDisplayName() +"! Removing you from playersToBeFlaired...");
+		player.sendMessage("Your name is now: " + player.getCustomName() +"! Removing you from playersToBeFlaired...");
 		playersToBeFlaired.remove(player.getName());
 	}
 }
