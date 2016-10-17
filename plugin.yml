@@ -9,7 +9,7 @@ commands:
     description: Presses an Ali Link pressalilink frequency
   setalilink:
     description: Creates an Ali Link setalilink frequency
-  setFlairDoorColour:
+  setflairdoorcolour:
     description: Sets the flair door colour mode, when lighting portals
   flairme:
     description: Activates the Flair Me Command. Ask Ali, she was fucking tired when writing this description

@@ -34,13 +34,13 @@ public class AliPresents extends JavaPlugin{
 		
 	}
 	public void registerSubPlugins(){
-		AliLinkSubPlug alilinksubplugin = new AliLinkSubPlug(this);
-		alilinksubplugin.register();
+		//AliLinkSubPlug alilinksubplugin = new AliLinkSubPlug(this);
+		//alilinksubplugin.register();
 	}
 	public void registerCommands(){
-		getCommand("FlairMe").setExecutor(new FlairMe());
+		getCommand("flairme").setExecutor(new FlairMe());
 		getCommand("alishulker").setExecutor(new AliShulker());
-		getCommand("SetFlairDoorColour").setExecutor(new SetFlairDoorColour());
+		getCommand("setflairdoorcolour").setExecutor(new SetFlairDoorColour());
 		
 	}
 }

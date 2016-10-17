@@ -12,7 +12,8 @@ import org.bukkit.block.Block;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
-import org.bukkit.event.entity.EntityPortalEvent;
+import org.bukkit.event.player.PlayerPortalEvent;
+import org.bukkit.material.MaterialData;
 import org.bukkit.material.Wool;
 
 import alisolarflare.AliPresents;
@@ -29,22 +30,23 @@ public class PortalListener implements Listener{
 		this.plugin = plugin;
 	}
 	@EventHandler
-	public void onPortalEnter(EntityPortalEvent event){
+	public void onPortalEnter(PlayerPortalEvent event){
 		//SANITATION - Player
-		if(!(event.getEntity() instanceof Player)){
+		if(!(event.getPlayer() instanceof Player)){
 			return;
 		}
 		
 		//INIT - Player
-		Player player = (Player) event.getEntity();
+		Player player = event.getPlayer();
+		player.sendMessage("MAY THE FLAIRING COMMENCE");
 		
 		//SANITATION - PlayersToBeFlaired
 		if(!(playersToBeFlaired.contains(player.getName()))){
 			return;
 		}
-		player.sendMessage("MAY THE FLAIRING COMMENCE");
+		player.sendMessage("-MAY THE FLAIRING COMMENCE-");
 		player.sendMessage("Deactivating regular portal behaviour...");
-		event.setCancelled(true);
+		event.setTo(player.getLocation());
 		
 		//INIT - x,y,z
 		int x = player.getLocation().getBlockX();
@@ -69,20 +71,24 @@ public class PortalListener implements Listener{
 		//TOP BLOCK IS WOOL?
 		}else if(blockTopper.getType() == Material.WOOL){
 			player.sendMessage("WOOL DETECTED T");
-			Wool wool = (Wool) blockTopper;
+			Wool wool = (Wool) blockTopper.getState().getData();
 			recolourPlayer(player, wool.getColor());
 		
 		//MIDDLE BLOCK IS WOOL?
 		}else if(blockMiddle.getType() == Material.WOOL){
 
 			player.sendMessage("WOOL DETECTED M");
-			Wool wool = (Wool) blockMiddle;
+			MaterialData mData = blockMiddle.getState().getData();
+			player.sendMessage("MATERIAL DATA COLLECTED: "+ mData.toString());
+			Wool wool = (Wool) mData;
+			player.sendMessage("WOOL DATA CONVERTED: "+ wool.toString());
+
 			recolourPlayer(player, wool.getColor());
 		
 		//BOTTOM BLOCK IS WOOL?
 		}else if (blockBottom.getType() == Material.WOOL){
 			player.sendMessage("WOOL DETECTED B");
-			Wool wool = (Wool) blockBottom;
+			Wool wool = (Wool) blockBottom.getState().getData();
 			recolourPlayer(player, wool.getColor());
 		}
 		
