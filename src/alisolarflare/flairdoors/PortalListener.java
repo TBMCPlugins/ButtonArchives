@@ -95,7 +95,7 @@ public class PortalListener implements Listener{
 	}
 	public void recolourPlayer(Player player, DyeColor dyecolour){
 		player.sendMessage("Recolouring Player as..." + dyecolour.toString());
-		String name = player.getCustomName();
+		String name = player.getName();
 		player.sendMessage("name:" + name);
 		for(int i = 0; i < name.length(); i++){
 			if (name.charAt(i) == '&'){
