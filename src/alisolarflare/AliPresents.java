@@ -8,6 +8,8 @@ import alisolarflare.flairdoors.FlairMe;
 import alisolarflare.flairdoors.PortalListener;
 import alisolarflare.flairdoors.SetFlairDoorColour;
 import alisolarflare.gpowers.gPowerCommand;
+import alisolarflare.gpowers.commands.PowerDown;
+import alisolarflare.gpowers.commands.PowerUp;
 import alisolarflare.gpowers.listeners.gPowerListener;
 
 //import alisolarflare.links.AliLinkSubPlug;
@@ -39,6 +41,8 @@ public class AliPresents extends JavaPlugin{
 		//alilinksubplugin.register();
 	}
 	public void registerCommands(){
+		getCommand("powerup").setExecutor(new PowerUp());
+		getCommand("powerdown").setExecutor(new PowerDown());
 		getCommand("gpowercommand").setExecutor(new gPowerCommand());
 		getCommand("flairme").setExecutor(new FlairMe());
 		getCommand("alishulker").setExecutor(new AliShulker());

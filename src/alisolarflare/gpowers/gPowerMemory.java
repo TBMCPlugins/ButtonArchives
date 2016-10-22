@@ -25,12 +25,21 @@ public class gPowerMemory{
 		player.sendMessage("POWERRED UP!");
 		PlayerMap.put(player.getUniqueId(), new poweredPlayer(player.getUniqueId(), colour, true));
 	}
+	public static void PowerUpPlayer(Player player){
+		//debug("POWERRRED UP");
+		player.sendMessage("POWERRED UP!");
+		if(PlayerMap.containsKey(player.getUniqueId())){
+			PlayerMap.get(player.getUniqueId()).isPowersActive = true;
+		}else{
+			player.sendMessage("You must instantiate your power settings using /gpowercommand");
+		}
+	}
 	
 	//POWER DEACTIVATION
 	public static void PowerDownPlayer(Player player){
 		//debug("POWERRRED DOWN");
 		if (PlayerMap.containsKey(player.getUniqueId())){
-			PlayerMap.get(player.getUniqueId()).playerPowersActivated = false;
+			PlayerMap.get(player.getUniqueId()).isPowersActive = false;
 		}else{
 			return;
 		}
@@ -39,7 +48,7 @@ public class gPowerMemory{
 	public static void PowerDownPlayer(UUID UniqueID){
 		//debug("POWEERRED DOWN");
 		if (PlayerMap.containsKey(UniqueID)){
-			PlayerMap.get(UniqueID).playerPowersActivated = false;
+			PlayerMap.get(UniqueID).isPowersActive = false;
 		}else{
 			return;
 		}
@@ -47,7 +56,7 @@ public class gPowerMemory{
 	public static boolean isPlayerPowered(UUID UniqueID){
 		//debug("IS PLAYER POWERED?");
 		if (PlayerMap.containsKey(UniqueID)){
-			return PlayerMap.get(UniqueID).playerPowersActivated;
+			return PlayerMap.get(UniqueID).isPowersActive;
 		}else{
 			return false;
 		}
@@ -55,33 +64,37 @@ public class gPowerMemory{
 	public static boolean isPlayerPowered(Player player){
 		//debug("IS PLAYER POWERED?");
 		if (PlayerMap.containsKey(player.getUniqueId())){
-			return PlayerMap.get(player.getUniqueId()).playerPowersActivated;
+			return PlayerMap.get(player.getUniqueId()).isPowersActive;
 		}else{
 			return false;
 		}
 	}
 	//MEMORY UNIT
 	public static class poweredPlayer{
-		public UUID uuid;
+		public static UUID uuid;
 		public String colour;
-		public Boolean playerPowersActivated;
+		public Boolean isPowersActive;
 
 		public poweredPlayer(UUID uuid, String colour, Boolean activated){
 			this.uuid = (uuid);
 			this.colour = (colour);
-			this.playerPowersActivated = (activated);
+			this.isPowersActive = (activated);
 		}
 		public String toString(){
-			return "[UUID: "+ uuid.toString() + ", Colour: "+ colour+", IsActivated: "+playerPowersActivated + "]";
+			return "[UUID: "+ uuid.toString() + ", Colour: "+ colour+", IsActivated: "+isPowersActive + "]";
 		}
 	}
 	
-	/*DEBUG
-	@SuppressWarnings({ "deprecation" })
-	public static void debug(String debugString){
-		if (plugin.getServer().getPlayer("alisolarflare").isOnline() && debugMode == true){
-			plugin.getServer().getPlayer("alisolarflare").sendMessage("[gPowerTest]:"+debugString);
+	public void saveMemoryState(){
+		Map<UUID, poweredPlayer> PlayerMap = new HashMap<UUID, poweredPlayer>();
+		for (UUID uuidKey:PlayerMap.keySet()){
+			
+			UUID uuidToSave = poweredPlayer.uuid;
+			
 		}
-	}*/
+	}
+	public void loadMemoryState(){
+		
+	}
 }
 

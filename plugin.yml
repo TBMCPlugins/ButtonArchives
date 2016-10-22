@@ -15,3 +15,7 @@ commands:
     description: Activates the Flair Me Command. Ask Ali, she was fucking tired when writing this description
   gpowercommand:
     description: Testing command for ghostie powers
+  powerup:
+    description: Official g-power command that activates the ghostie powerups
+  powerdown:
+    description: Offical g-power command that deactivates the ghostie powerups
