@@ -15,7 +15,7 @@ public class gPowerCommand implements CommandExecutor{
 			return false;
 		}
 		Player player = (Player) sender;
-		if (!(args.length < 2)){
+		if (args.length < 2){
 			player.sendMessage("Proper Usage to test G-Powers:");
 			player.sendMessage("/gpowertest [colour=red,orange,yellow,green,blue,purple] [active=true/false]");
 			return false;
