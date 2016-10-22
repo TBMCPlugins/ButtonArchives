@@ -15,7 +15,7 @@ public class gPowerMemory {
 		this.plugin = plugin;
 	}
 	//SHORT TERM MEMORY STORAGE
-	Map<UUID, poweredPlayer> PlayerMap = new HashMap<UUID, poweredPlayer>();
+	public static Map<UUID, poweredPlayer> PlayerMap = new HashMap<UUID, poweredPlayer>();
 	
 	//POWER ACTIVATION
 	public void PowerUpPlayer(Player player, String colour){
@@ -57,7 +57,7 @@ public class gPowerMemory {
 		}
 	}
 	//MEMORY UNIT
-	class poweredPlayer{
+	public class poweredPlayer{
 		public UUID uuid;
 		public String colour;
 		public Boolean playerPowersActivated;
@@ -71,6 +71,8 @@ public class gPowerMemory {
 			return "[UUID: "+ uuid.toString() + ", Colour: "+ colour+", IsActivated: "+playerPowersActivated + "]";
 		}
 	}
+	
+	//DEBUG
 	@SuppressWarnings({ "deprecation" })
 	public void debug(String debugString){
 		if (plugin.getServer().getPlayer("alisolarflare").isOnline() && debugMode == true){

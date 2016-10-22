@@ -6,12 +6,13 @@ import org.bukkit.scheduler.BukkitTask;
 import alisolarflare.AliPresents;
 
 public class gPowerListener implements Listener{
-	@SuppressWarnings("unused")
 	private AliPresents plugin;
-	public gPowerRepeatingTask powerRepeatingTask;
+	public gPowerApplyingTask powerRepeatingTask;
 	public BukkitTask bukkitTask;
 	public gPowerListener(AliPresents plugin){
 		this.plugin = plugin;
+		this.powerRepeatingTask = new gPowerApplyingTask(this.plugin);
+		bukkitTask = powerRepeatingTask.runTaskTimer(plugin, 5, 5);
 	}
 		
 }
