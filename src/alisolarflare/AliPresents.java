@@ -7,7 +7,8 @@ import org.bukkit.plugin.PluginDescriptionFile;
 import alisolarflare.flairdoors.FlairMe;
 import alisolarflare.flairdoors.PortalListener;
 import alisolarflare.flairdoors.SetFlairDoorColour;
-import alisolarflare.links.AliLinkSubPlug;
+import alisolarflare.gpowers.gPowerCommand;
+import alisolarflare.gpowers.listeners.gPowerListener;
 
 //import alisolarflare.links.AliLinkSubPlug;
 import org.bukkit.plugin.java.JavaPlugin;
@@ -31,13 +32,14 @@ public class AliPresents extends JavaPlugin{
 	}
 	private void registerEvents() {
 		getServer().getPluginManager().registerEvents(new PortalListener(this), this);
-		
+		getServer().getPluginManager().registerEvents(new gPowerListener(this), this);
 	}
 	public void registerSubPlugins(){
 		//AliLinkSubPlug alilinksubplugin = new AliLinkSubPlug(this);
 		//alilinksubplugin.register();
 	}
 	public void registerCommands(){
+		getCommand("gPowerCommand").setExecutor(new gPowerCommand());
 		getCommand("flairme").setExecutor(new FlairMe());
 		getCommand("alishulker").setExecutor(new AliShulker());
 		getCommand("setflairdoorcolour").setExecutor(new SetFlairDoorColour());

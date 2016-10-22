@@ -9,16 +9,17 @@ import org.bukkit.entity.Player;
 import alisolarflare.AliPresents;
 
 public class gPowerMemory {
-	private AliPresents plugin;
-	private boolean debugMode = true;
+	private static AliPresents plugin;
+	private static boolean debugMode = true;
 	public gPowerMemory(AliPresents plugin){
-		this.plugin = plugin;
+		gPowerMemory.plugin = plugin;
 	}
 	//SHORT TERM MEMORY STORAGE
 	public static Map<UUID, poweredPlayer> PlayerMap = new HashMap<UUID, poweredPlayer>();
 	
 	//POWER ACTIVATION
 	public static void PowerUpPlayer(Player player, String colour){
+		debug("POWERRRED UP");
 		if (PlayerMap.containsKey(player.getUniqueId())){
 			PlayerMap.get(player.getUniqueId()).playerPowersActivated = true;
 		}else{
@@ -28,6 +29,7 @@ public class gPowerMemory {
 	
 	//POWER DEACTIVATION
 	public static void PowerDownPlayer(Player player){
+		debug("POWERRRED DOWN");
 		if (PlayerMap.containsKey(player.getUniqueId())){
 			PlayerMap.get(player.getUniqueId()).playerPowersActivated = false;
 		}else{
@@ -36,6 +38,7 @@ public class gPowerMemory {
 		
 	}
 	public static void PowerDownPlayer(UUID UniqueID){
+		debug("POWEERRED DOWN");
 		if (PlayerMap.containsKey(UniqueID)){
 			PlayerMap.get(UniqueID).playerPowersActivated = false;
 		}else{
@@ -43,6 +46,7 @@ public class gPowerMemory {
 		}
 	}
 	public static boolean isPlayerPowered(UUID UniqueID){
+		debug("IS PLAYER POWERED?");
 		if (PlayerMap.containsKey(UniqueID)){
 			return PlayerMap.get(UniqueID).playerPowersActivated;
 		}else{
@@ -50,6 +54,7 @@ public class gPowerMemory {
 		}
 	}
 	public static boolean isPlayerPowered(Player player){
+		debug("IS PLAYER POWERED?");
 		if (PlayerMap.containsKey(player.getUniqueId())){
 			return PlayerMap.get(player.getUniqueId()).playerPowersActivated;
 		}else{
@@ -74,7 +79,7 @@ public class gPowerMemory {
 	
 	//DEBUG
 	@SuppressWarnings({ "deprecation" })
-	public void debug(String debugString){
+	public static void debug(String debugString){
 		if (plugin.getServer().getPlayer("alisolarflare").isOnline() && debugMode == true){
 			plugin.getServer().getPlayer("alisolarflare").sendMessage("[gPowerTest]:"+debugString);
 		}

@@ -9,6 +9,7 @@ public class gPowerCommand implements CommandExecutor{
 
 	@Override
 	public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
+		sender.sendMessage("G power activate!");
 		if (!(sender instanceof Player)){
 			sender.sendMessage("You must be a player to use this command!");
 			return false;
@@ -20,6 +21,7 @@ public class gPowerCommand implements CommandExecutor{
 			return false;
 		}
 		String colour;
+		player.sendMessage("Checking terms...");
 		if(args[0].startsWith("r") ||
 				args[0].startsWith("o")||
 				args[0].startsWith("y")||
@@ -28,7 +30,7 @@ public class gPowerCommand implements CommandExecutor{
 				args[0].startsWith("p")){
 			colour = args[0];
 		}else{
-			player.sendMessage("Proper Usage to test G-Powers:");
+			player.sendMessage("Term Fail: COLOUR. Proper Usage to test G-Powers:");
 			player.sendMessage("/gpowertest [colour=red,orange,yellow,green,blue,purple] [active=true/false]");
 			return false;
 		}
@@ -38,10 +40,11 @@ public class gPowerCommand implements CommandExecutor{
 		}else if (args[1].startsWith("f")){
 			isActive = false;
 		}else{
-			player.sendMessage("Proper Usage to test G-Powers:");
+			player.sendMessage("Term Fail: ACTIVE. Proper Usage to test G-Powers:");
 			player.sendMessage("/gpowertest [colour=red,orange,yellow,green,blue,purple] [active=true/false]");
 			return false;
 		}
+		player.sendMessage("Terms Vaild!");
 		if(isActive){
 			gPowerMemory.PowerUpPlayer(player, colour);
 		}else{

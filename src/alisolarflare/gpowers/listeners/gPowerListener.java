@@ -7,12 +7,12 @@ import alisolarflare.AliPresents;
 
 public class gPowerListener implements Listener{
 	private AliPresents plugin;
-	public gPowerApplyingTask powerRepeatingTask;
+	public gPowerApplyingTask powerApplyingTask;
 	public BukkitTask bukkitTask;
 	public gPowerListener(AliPresents plugin){
 		this.plugin = plugin;
-		this.powerRepeatingTask = new gPowerApplyingTask(this.plugin);
-		bukkitTask = powerRepeatingTask.runTaskTimer(plugin, 5, 5);
+		this.powerApplyingTask = new gPowerApplyingTask(this.plugin);
+		bukkitTask = powerApplyingTask.runTaskTimer(plugin, 5, 5);
 	}
 		
 }

@@ -13,3 +13,5 @@ commands:
     description: Sets the flair door colour mode, when lighting portals
   flairme:
     description: Activates the Flair Me Command. Ask Ali, she was fucking tired when writing this description
+  gpowercommand:
+    description: Testing command for ghostie powers
