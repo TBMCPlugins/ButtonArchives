@@ -12,7 +12,7 @@ public class gPowerListener implements Listener{
 	public gPowerListener(AliPresents plugin){
 		this.plugin = plugin;
 		this.powerApplyingTask = new gPowerApplyingTask(this.plugin);
-		bukkitTask = powerApplyingTask.runTaskTimer(plugin, 100, 100);
+		bukkitTask = powerApplyingTask.runTaskTimer(plugin, 190, 190);
 	}
 		
 }
