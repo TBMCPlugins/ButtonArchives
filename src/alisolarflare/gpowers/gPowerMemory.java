@@ -18,7 +18,7 @@ public class gPowerMemory {
 	public static Map<UUID, poweredPlayer> PlayerMap = new HashMap<UUID, poweredPlayer>();
 	
 	//POWER ACTIVATION
-	public void PowerUpPlayer(Player player, String colour){
+	public static void PowerUpPlayer(Player player, String colour){
 		if (PlayerMap.containsKey(player.getUniqueId())){
 			PlayerMap.get(player.getUniqueId()).playerPowersActivated = true;
 		}else{
@@ -27,7 +27,7 @@ public class gPowerMemory {
 	}
 	
 	//POWER DEACTIVATION
-	public void PowerDownPlayer(Player player){
+	public static void PowerDownPlayer(Player player){
 		if (PlayerMap.containsKey(player.getUniqueId())){
 			PlayerMap.get(player.getUniqueId()).playerPowersActivated = false;
 		}else{
@@ -35,21 +35,21 @@ public class gPowerMemory {
 		}
 		
 	}
-	public void PowerDownPlayer(UUID UniqueID){
+	public static void PowerDownPlayer(UUID UniqueID){
 		if (PlayerMap.containsKey(UniqueID)){
 			PlayerMap.get(UniqueID).playerPowersActivated = false;
 		}else{
 			return;
 		}
 	}
-	public boolean isPlayerPowered(UUID UniqueID){
+	public static boolean isPlayerPowered(UUID UniqueID){
 		if (PlayerMap.containsKey(UniqueID)){
 			return PlayerMap.get(UniqueID).playerPowersActivated;
 		}else{
 			return false;
 		}
 	}
-	public boolean isPlayerPowered(Player player){
+	public static boolean isPlayerPowered(Player player){
 		if (PlayerMap.containsKey(player.getUniqueId())){
 			return PlayerMap.get(player.getUniqueId()).playerPowersActivated;
 		}else{
@@ -57,7 +57,7 @@ public class gPowerMemory {
 		}
 	}
 	//MEMORY UNIT
-	public class poweredPlayer{
+	public static class poweredPlayer{
 		public UUID uuid;
 		public String colour;
 		public Boolean playerPowersActivated;

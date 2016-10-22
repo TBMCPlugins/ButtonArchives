@@ -11,7 +11,7 @@ import alisolarflare.gpowers.gPowerMemory;
 
 public class gPowerApplyingTask extends BukkitRunnable{
 	
-	private AliPresents plugin;;
+	private AliPresents plugin;
 
 	public gPowerApplyingTask(AliPresents plugin) {
 		this.plugin = plugin;

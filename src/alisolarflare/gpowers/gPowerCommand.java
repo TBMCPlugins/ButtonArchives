@@ -19,7 +19,34 @@ public class gPowerCommand implements CommandExecutor{
 			player.sendMessage("/gpowertest [colour=red,orange,yellow,green,blue,purple] [active=true/false]");
 			return false;
 		}
-		
+		String colour;
+		if(args[0].startsWith("r") ||
+				args[0].startsWith("o")||
+				args[0].startsWith("y")||
+				args[0].startsWith("g")||
+				args[0].startsWith("b")||
+				args[0].startsWith("p")){
+			colour = args[0];
+		}else{
+			player.sendMessage("Proper Usage to test G-Powers:");
+			player.sendMessage("/gpowertest [colour=red,orange,yellow,green,blue,purple] [active=true/false]");
+			return false;
+		}
+		boolean isActive;
+		if(args[1].startsWith("t")){
+			isActive = true;
+		}else if (args[1].startsWith("f")){
+			isActive = false;
+		}else{
+			player.sendMessage("Proper Usage to test G-Powers:");
+			player.sendMessage("/gpowertest [colour=red,orange,yellow,green,blue,purple] [active=true/false]");
+			return false;
+		}
+		if(isActive){
+			gPowerMemory.PowerUpPlayer(player, colour);
+		}else{
+			gPowerMemory.PowerDownPlayer(player);
+		}
 		return false;
 	}
 
