@@ -21,6 +21,8 @@ public class gPowerApplyingTask extends BukkitRunnable{
 	@Override
 	public void run() {
 		for (Player player : plugin.getServer().getOnlinePlayers()){
+			player.sendMessage(player.getUniqueId().toString());
+			player.sendMessage(gPowerMemory.PlayerMap.toString());
 			if(gPowerMemory.PlayerMap.containsKey(player.getUniqueId())){
 				activatePower(player, gPowerMemory.PlayerMap.get(player.getUniqueId()).colour);
 			}
@@ -46,7 +48,8 @@ public class gPowerApplyingTask extends BukkitRunnable{
 			player.addPotionEffect(new PotionEffect(PotionEffectType.WATER_BREATHING, 100, 1, true, false, Color.GRAY));
 		}else if (colour.startsWith("p")){
 			player.addPotionEffect(new PotionEffect(PotionEffectType.HEALTH_BOOST, 100, 1, true, false, Color.GRAY));
-		}		
+		}else{
+		}
 	}
 	
 }

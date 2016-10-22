@@ -39,7 +39,7 @@ public class AliPresents extends JavaPlugin{
 		//alilinksubplugin.register();
 	}
 	public void registerCommands(){
-		getCommand("gPowerCommand").setExecutor(new gPowerCommand());
+		getCommand("gpowercommand").setExecutor(new gPowerCommand());
 		getCommand("flairme").setExecutor(new FlairMe());
 		getCommand("alishulker").setExecutor(new AliShulker());
 		getCommand("setflairdoorcolour").setExecutor(new SetFlairDoorColour());

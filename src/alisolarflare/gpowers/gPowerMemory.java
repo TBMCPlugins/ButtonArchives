@@ -8,8 +8,10 @@ import org.bukkit.entity.Player;
 
 import alisolarflare.AliPresents;
 
-public class gPowerMemory {
+public class gPowerMemory{
+	@SuppressWarnings("unused")
 	private static AliPresents plugin;
+	@SuppressWarnings("unused")
 	private static boolean debugMode = true;
 	public gPowerMemory(AliPresents plugin){
 		gPowerMemory.plugin = plugin;
@@ -19,7 +21,8 @@ public class gPowerMemory {
 	
 	//POWER ACTIVATION
 	public static void PowerUpPlayer(Player player, String colour){
-		debug("POWERRRED UP");
+		//debug("POWERRRED UP");
+		player.sendMessage("POWERRED UP!");
 		if (PlayerMap.containsKey(player.getUniqueId())){
 			PlayerMap.get(player.getUniqueId()).playerPowersActivated = true;
 		}else{
@@ -29,7 +32,7 @@ public class gPowerMemory {
 	
 	//POWER DEACTIVATION
 	public static void PowerDownPlayer(Player player){
-		debug("POWERRRED DOWN");
+		//debug("POWERRRED DOWN");
 		if (PlayerMap.containsKey(player.getUniqueId())){
 			PlayerMap.get(player.getUniqueId()).playerPowersActivated = false;
 		}else{
@@ -38,7 +41,7 @@ public class gPowerMemory {
 		
 	}
 	public static void PowerDownPlayer(UUID UniqueID){
-		debug("POWEERRED DOWN");
+		//debug("POWEERRED DOWN");
 		if (PlayerMap.containsKey(UniqueID)){
 			PlayerMap.get(UniqueID).playerPowersActivated = false;
 		}else{
@@ -46,7 +49,7 @@ public class gPowerMemory {
 		}
 	}
 	public static boolean isPlayerPowered(UUID UniqueID){
-		debug("IS PLAYER POWERED?");
+		//debug("IS PLAYER POWERED?");
 		if (PlayerMap.containsKey(UniqueID)){
 			return PlayerMap.get(UniqueID).playerPowersActivated;
 		}else{
@@ -54,7 +57,7 @@ public class gPowerMemory {
 		}
 	}
 	public static boolean isPlayerPowered(Player player){
-		debug("IS PLAYER POWERED?");
+		//debug("IS PLAYER POWERED?");
 		if (PlayerMap.containsKey(player.getUniqueId())){
 			return PlayerMap.get(player.getUniqueId()).playerPowersActivated;
 		}else{
@@ -77,12 +80,12 @@ public class gPowerMemory {
 		}
 	}
 	
-	//DEBUG
+	/*DEBUG
 	@SuppressWarnings({ "deprecation" })
 	public static void debug(String debugString){
 		if (plugin.getServer().getPlayer("alisolarflare").isOnline() && debugMode == true){
 			plugin.getServer().getPlayer("alisolarflare").sendMessage("[gPowerTest]:"+debugString);
 		}
-	}
+	}*/
 }
 
