@@ -23,11 +23,7 @@ public class gPowerMemory{
 	public static void PowerUpPlayer(Player player, String colour){
 		//debug("POWERRRED UP");
 		player.sendMessage("POWERRED UP!");
-		if (PlayerMap.containsKey(player.getUniqueId())){
-			PlayerMap.get(player.getUniqueId()).playerPowersActivated = true;
-		}else{
-			PlayerMap.put(player.getUniqueId(), new poweredPlayer(player.getUniqueId(), colour, true));
-		}
+		PlayerMap.put(player.getUniqueId(), new poweredPlayer(player.getUniqueId(), colour, true));
 	}
 	
 	//POWER DEACTIVATION

@@ -21,7 +21,6 @@ public class gPowerApplyingTask extends BukkitRunnable{
 	@Override
 	public void run() {
 		for (Player player : plugin.getServer().getOnlinePlayers()){
-			player.sendMessage(player.getUniqueId().toString());
 			player.sendMessage(gPowerMemory.PlayerMap.toString());
 			if(gPowerMemory.PlayerMap.containsKey(player.getUniqueId())){
 				activatePower(player, gPowerMemory.PlayerMap.get(player.getUniqueId()).colour);
