@@ -15,6 +15,7 @@ import alisolarflare.gpowers.listeners.gPowerListener;
 //import alisolarflare.links.AliLinkSubPlug;
 import org.bukkit.plugin.java.JavaPlugin;
 import alisolarflare.shulker.AliShulker;
+import alisolarflare.aliarrow.AliArrowSubPlugin;
 
 public class AliPresents extends JavaPlugin{
 	public void onEnable(){
@@ -37,6 +38,8 @@ public class AliPresents extends JavaPlugin{
 		getServer().getPluginManager().registerEvents(new gPowerListener(this), this);
 	}
 	public void registerSubPlugins(){
+		AliArrowSubPlugin aliArrowSubPlugin = new AliArrowSubPlugin(this);
+		aliArrowSubPlugin.register();
 		//AliLinkSubPlug alilinksubplugin = new AliLinkSubPlug(this);
 		//alilinksubplugin.register();
 	}

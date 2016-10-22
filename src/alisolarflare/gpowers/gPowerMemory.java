@@ -75,6 +75,7 @@ public class gPowerMemory{
 		public String colour;
 		public Boolean isPowersActive;
 
+		@SuppressWarnings("static-access")
 		public poweredPlayer(UUID uuid, String colour, Boolean activated){
 			this.uuid = (uuid);
 			this.colour = (colour);
@@ -87,11 +88,11 @@ public class gPowerMemory{
 	
 	public void saveMemoryState(){
 		Map<UUID, poweredPlayer> PlayerMap = new HashMap<UUID, poweredPlayer>();
-		for (UUID uuidKey:PlayerMap.keySet()){
+		//for (UUID uuidKey:PlayerMap.keySet()){
 			
-			UUID uuidToSave = poweredPlayer.uuid;
+			//UUID uuidToSave = poweredPlayer.uuid;
 			
-		}
+		//}
 	}
 	public void loadMemoryState(){
 		
