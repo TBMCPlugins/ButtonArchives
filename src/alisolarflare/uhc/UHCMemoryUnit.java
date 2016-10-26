@@ -6,20 +6,23 @@ import java.util.List;
 import org.bukkit.entity.Player;
 
 public class UHCMemoryUnit {
-	private List<Player> matchPlayers = new ArrayList<Player>();
+	private List<String> matchPlayerUsernames = new ArrayList<String>();
 	
+	public void addPlayerToMatch(String playername){
+		matchPlayerUsernames.add(playername);
+	}
 	public void addPlayerToMatch(Player player){
-		matchPlayers.add(player);
+		matchPlayerUsernames.add(player.toString());
 	}
 	public void removePlayerFromMatch(Player player){
-		if (matchPlayers.contains(player)){
-			matchPlayers.remove(player);
+		if (matchPlayerUsernames.contains(player)){
+			matchPlayerUsernames.remove(player.toString());
 		}
 	}
 	public void removeAllPlayersFromMatch(){
-		matchPlayers.clear();
+		matchPlayerUsernames.clear();
 	}
 	public void endMatch(){
-		matchPlayers.clear();
+		matchPlayerUsernames.clear();
 	}
 }

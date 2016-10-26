@@ -25,9 +25,8 @@ public class AddToUHC implements CommandExecutor{
 		if (args.length <= 1){
 			sender.sendMessage("You must supply at least one playername");
 		}
-		
 		for (int i = 0; i > args.length; i++){
-			//TO BE CONTINUED
+			generalMemory.addPlayerToMatch(player);
 		}
 		return false;
 	}
