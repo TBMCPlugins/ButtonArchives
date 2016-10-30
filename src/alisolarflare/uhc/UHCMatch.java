@@ -5,7 +5,12 @@ import java.util.List;
 
 import org.bukkit.entity.Player;
 
-public class UHCMemoryUnit {
+/**
+ * Class that contains the data for a single UltraHardcore Match,
+ * which represents a single game. 
+ * @author Alisolarflare
+ */
+public class UHCMatch {
 	private List<String> matchPlayerUsernames = new ArrayList<String>();
 	
 	public void addPlayerToMatch(String playername){

@@ -4,7 +4,7 @@ import alisolarflare.AliPresents;
 
 public class UHCSubPlugin {
 	public AliPresents plugin;
-	public UHCMemoryUnit generalMemory;
+	public UHCMatch generalMemory;
 
 	public UHCSubPlugin(AliPresents plugin){
 		this.plugin = plugin;		
@@ -18,10 +18,10 @@ public class UHCSubPlugin {
 	}
 	private void registerCommands() {
 		// TODO Auto-generated method stub
-		plugin.getCommand("addToUHC").setExecutor(new AddToUHC(this));
+		plugin.getCommand("addToUHC").setExecutor(new AddToUHC(this.generalMemory));
 	}
 	private void registerMemoryUnits(){
-		generalMemory = new UHCMemoryUnit();
+		generalMemory = new UHCMatch();
 	}
 	
 }
