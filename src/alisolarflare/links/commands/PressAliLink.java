@@ -9,19 +9,21 @@ import alisolarflare.links.entities.Link;
 
 public class PressAliLink implements CommandExecutor{
 	private AliLinkSubPlug subplugin;
-	public PressAliLink(AliLinkSubPlug subplugin){
+	private SetAliLink setAliLink;
+	public PressAliLink(AliLinkSubPlug subplugin, SetAliLink setAliLink){
 		this.subplugin = subplugin;
+		this.setAliLink	= setAliLink;
 	}
 	@Override
 	public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
 
-		subplugin.plugin.getServer().broadcastMessage(subplugin.linkList.toString() + "over.");
+		subplugin.plugin.getServer().broadcastMessage(setAliLink.linkList.toString() + "over.");
 		
 		if (args.length < 1){
 			sender.sendMessage("You must specify a link frequency");
 			sender.sendMessage("/pressalilink [frequency]");
 		}
-		for (Link link: subplugin.linkList){
+		for (Link link: setAliLink.linkList){
 			for (String inputlink: args){
 				if(inputlink.equals(link.frequency)){
 					link.press(subplugin);

@@ -10,7 +10,15 @@ import org.bukkit.entity.Player;
 import org.bukkit.entity.Shulker;
 import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
-
+/**
+ * @author Alisolarflare
+ * This class is responsible for the command /aliShulker, which in-game spawns
+ * a shulker that:
+ * Has a health of 10
+ * Has a wither and invisibility effect present
+ * Has noAI
+ * And is Glowing
+ */
 public class AliShulker implements CommandExecutor {
 
 	@Override
@@ -20,7 +28,7 @@ public class AliShulker implements CommandExecutor {
 			return false;
 		}
 		Player player = (Player) sender;
-		if(!(player.getName().equals("iie"))){
+		if(!(player.getName().equals("iie") || player.getName().equals("alisolarflare"))){
 			return false;
 		}
 		Location location = player.getLocation();

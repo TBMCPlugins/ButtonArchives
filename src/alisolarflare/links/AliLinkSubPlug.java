@@ -1,5 +1,4 @@
 package alisolarflare.links;
-import java.util.ArrayList;
 import java.util.List;
 
 import alisolarflare.AliPresents;
@@ -8,25 +7,22 @@ import alisolarflare.links.commands.SetAliLink;
 import alisolarflare.links.entities.Link;
 
 public class AliLinkSubPlug{
-	public List<Link> linkList = new ArrayList<Link>();
 	public AliPresents plugin;
+	private SetAliLink setAliLink;
 	
-	@SuppressWarnings("unchecked")
 	public AliLinkSubPlug(AliPresents plugin){
 		this.plugin = plugin;
-		linkList = (List<Link>) plugin.getConfig().getList("aliLinkList");
-		if(linkList == null || linkList.isEmpty()){
-			linkList = new ArrayList<Link>();
-		}
+		
 		
 	}
 	public void register(){
-		plugin.getCommand("pressalilink").setExecutor(new PressAliLink(this));
-		plugin.getCommand("setalilink").setExecutor(new SetAliLink(this));
+		setAliLink = new SetAliLink(this.plugin);
+		plugin.getCommand("setalilink").setExecutor(setAliLink);
+		plugin.getCommand("pressalilink").setExecutor(new PressAliLink(this, setAliLink));
 		
 	}
 	public void saveLinkList(){
-		plugin.getConfig().set("aliLinkList", linkList);
+		plugin.getConfig().set("aliLinkList", setAliLink.linkList);
 	}
 	@SuppressWarnings("unchecked")
 	public List<Link> loadLinkList(){
