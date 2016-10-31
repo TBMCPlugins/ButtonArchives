@@ -1,9 +1,11 @@
-package alisolarflare.tools.gpowers;
+package alisolarflare.modules.components.gpowers.commands;
 
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
+
+import alisolarflare.modules.components.gpowers.gPowerMemory;
 
 public class gPowerCommand implements CommandExecutor{
 

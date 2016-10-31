@@ -1,4 +1,4 @@
-package alisolarflare;
+package alisolarflare.modules;
 
 import org.bukkit.plugin.java.JavaPlugin;
 

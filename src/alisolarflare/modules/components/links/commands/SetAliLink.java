@@ -1,4 +1,4 @@
-package alisolarflare.tools.links.commands;
+package alisolarflare.modules.components.links.commands;
 
 
 import java.util.ArrayList;
@@ -10,10 +10,10 @@ import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
+import org.bukkit.plugin.java.JavaPlugin;
 
-import alisolarflare.AliPresents;
-import alisolarflare.tools.links.AliLinkSubPlug;
-import alisolarflare.tools.links.entities.Link;
+import alisolarflare.modules.components.links.AliLinkModule;
+import alisolarflare.modules.components.links.entities.Link;
 
 /**
  * This class manages the command /SetAliLink <frequency> [x] [y] [z].  This command creates an Ali-Link, 
@@ -26,14 +26,14 @@ import alisolarflare.tools.links.entities.Link;
  */
 public class SetAliLink implements CommandExecutor{
 	public List<Link> linkList = new ArrayList<Link>();
-	AliLinkSubPlug subplugin;
-	private AliPresents plugin;
+	AliLinkModule subplugin;
+	private JavaPlugin plugin;
 	
 	/**
 	 * Constructs the SetAliLink class
-	 * @param plugin	The plugin that contains the configuration file of AliPresents
+	 * @param plugin	The plugin that contains the configuration file of SetAliLink
 	 */
-	public SetAliLink(AliPresents plugin){
+	public SetAliLink(JavaPlugin plugin){
 		this.plugin = plugin;
 		load();
 	}

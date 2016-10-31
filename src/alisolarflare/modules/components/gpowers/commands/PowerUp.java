@@ -1,4 +1,4 @@
-package alisolarflare.tools.gpowers.commands;
+package alisolarflare.modules.components.gpowers.commands;
 
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;

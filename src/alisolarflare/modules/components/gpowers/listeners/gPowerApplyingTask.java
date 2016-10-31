@@ -1,19 +1,19 @@
-package alisolarflare.tools.gpowers.listeners;
+package alisolarflare.modules.components.gpowers.listeners;
 
 import org.bukkit.Color;
 import org.bukkit.entity.Player;
+import org.bukkit.plugin.java.JavaPlugin;
 import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
 import org.bukkit.scheduler.BukkitRunnable;
 
-import alisolarflare.AliPresents;
-import alisolarflare.tools.gpowers.gPowerMemory;
+import alisolarflare.modules.components.gpowers.gPowerMemory;
 
 public class gPowerApplyingTask extends BukkitRunnable{
 	
-	private AliPresents plugin;
+	private JavaPlugin plugin;
 
-	public gPowerApplyingTask(AliPresents plugin) {
+	public gPowerApplyingTask(JavaPlugin plugin) {
 		this.plugin = plugin;
 	}
 	

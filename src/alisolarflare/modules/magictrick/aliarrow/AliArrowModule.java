@@ -1,12 +1,12 @@
-package alisolarflare.magictrick.aliarrow;
+package alisolarflare.modules.magictrick.aliarrow;
 
 import java.util.logging.Level;
 import alisolarflare.AliPresents;
 
-public class AliArrowSubPlugin {
+public class AliArrowModule {
 	private AliPresents plugin;
 
-	public AliArrowSubPlugin(AliPresents plugin){
+	public AliArrowModule(AliPresents plugin){
 		this.plugin = plugin;
 	}
 	/**

@@ -1,4 +1,4 @@
-package alisolarflare.tools.flairdoors;
+package alisolarflare.modules.components.flairdoor.commands;
 
 import java.util.Arrays;
 import java.util.List;

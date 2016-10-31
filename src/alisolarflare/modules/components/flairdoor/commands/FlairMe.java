@@ -1,8 +1,10 @@
-package alisolarflare.tools.flairdoors;
+package alisolarflare.modules.components.flairdoor.commands;
 
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
+
+import alisolarflare.modules.components.flairdoor.listeners.PortalListener;
 
 public class FlairMe implements CommandExecutor{
 

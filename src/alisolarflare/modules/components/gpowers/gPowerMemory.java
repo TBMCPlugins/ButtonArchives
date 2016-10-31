@@ -1,4 +1,4 @@
-package alisolarflare.tools.gpowers;
+package alisolarflare.modules.components.gpowers;
 
 import java.util.HashMap;
 import java.util.Map;

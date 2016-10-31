@@ -1,4 +1,4 @@
-package alisolarflare.tools.shulker;
+package alisolarflare.modules.components.shulker.commands;
 
 import org.bukkit.Location;
 import org.bukkit.command.Command;

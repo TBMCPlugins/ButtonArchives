@@ -1,8 +1,9 @@
-package alisolarflare.events.uhc;
+package alisolarflare.modules.events.uhc;
 
 import org.bukkit.plugin.java.JavaPlugin;
 
-import alisolarflare.Module;
+import alisolarflare.modules.Module;
+import alisolarflare.modules.events.uhc.commands.AddToUHC;
 
 public class UHCModule extends Module {
 	public UHCMatch generalMemory;

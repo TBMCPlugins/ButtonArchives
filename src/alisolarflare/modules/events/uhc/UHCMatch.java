@@ -1,4 +1,4 @@
-package alisolarflare.events.uhc;
+package alisolarflare.modules.events.uhc;
 
 import java.util.ArrayList;
 import java.util.List;

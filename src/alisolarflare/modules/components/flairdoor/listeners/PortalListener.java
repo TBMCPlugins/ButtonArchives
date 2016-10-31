@@ -1,4 +1,4 @@
-package alisolarflare.tools.flairdoors;
+package alisolarflare.modules.components.flairdoor.listeners;
 
 import java.util.AbstractMap;
 import java.util.ArrayList;
@@ -15,18 +15,17 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerPortalEvent;
 import org.bukkit.material.MaterialData;
 import org.bukkit.material.Wool;
-
-import alisolarflare.AliPresents;
+import org.bukkit.plugin.java.JavaPlugin;
 
 public class PortalListener implements Listener{
 	AbstractMap<String,Location> portalMap = new HashMap<String,Location>();
 	public static List<String> playersToBeFlaired = new ArrayList<String>();
-	public AliPresents plugin;
+	public JavaPlugin plugin;
 	
 	//TODO: CREATE - LIST OF PORTALS (only x-z values)
 	
 	
-	public PortalListener(AliPresents plugin) {
+	public PortalListener(JavaPlugin plugin) {
 		this.plugin = plugin;
 	}
 	@EventHandler

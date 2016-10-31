@@ -1,22 +1,23 @@
-package alisolarflare.tools.flairdoors;
+package alisolarflare.modules.components.flairdoor;
 
-import alisolarflare.AliPresents;
+import org.bukkit.plugin.java.JavaPlugin;
 
-public class FlairDoorsSubPlug{
+import alisolarflare.modules.Module;
+import alisolarflare.modules.components.flairdoor.commands.FlairMe;
+import alisolarflare.modules.components.flairdoor.commands.SetFlairDoorColour;
+import alisolarflare.modules.components.flairdoor.listeners.PortalListener;
+
+public class FlairDoorModule extends Module{
 	@SuppressWarnings("unused")
-	private AliPresents plugin;
-	public FlairDoorsSubPlug(AliPresents plugin){
+	private JavaPlugin plugin;
+	public FlairDoorModule(JavaPlugin plugin){
 		this.plugin = plugin;
 	}
-	public void register(){
-		registerCommands();
-		registerEvents();
-	}
-	private void registerCommands() {
-		//plugin.getCommand("FlairMe").setExecutor(new FlairMe());
-	}
-	private void registerEvents() {
-		// TODO Auto-generated method stub
+	@Override
+	public void register(JavaPlugin plugin) {
+		plugin.getCommand("flairme").setExecutor(new FlairMe());
+		plugin.getCommand("setflairdoorcolour").setExecutor(new SetFlairDoorColour());	
 
+		plugin.getServer().getPluginManager().registerEvents(new PortalListener(plugin), plugin);
 	}
 }

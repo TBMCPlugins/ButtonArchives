@@ -1,12 +1,12 @@
-package alisolarflare.tools.links.entities;
+package alisolarflare.modules.components.links.entities;
 
 import java.io.Serializable;
 
 import org.bukkit.Location;
 import org.bukkit.Material;
 
-import alisolarflare.tools.links.AliLinkSubPlug;
-import alisolarflare.tools.links.tasks.UnpressTask;
+import alisolarflare.modules.components.links.AliLinkModule;
+import alisolarflare.modules.components.links.tasks.UnpressTask;
 
 public class Link implements Serializable{
 	/**
@@ -28,7 +28,7 @@ public class Link implements Serializable{
 		this.z = "" + location.getBlockZ();
 		//plugin.plugin.getConfig().set("frequency", 10);
 	}
-	public void press(AliLinkSubPlug plugin) {
+	public void press(AliLinkModule plugin) {
 		Location location = new Location(plugin.plugin.getServer().getWorld(world), Integer.parseInt(x), Integer.parseInt(y), Integer.parseInt(z));
 		location.getBlock().setType(Material.REDSTONE_BLOCK);
 		UnpressTask unPressTask = new UnpressTask(location);

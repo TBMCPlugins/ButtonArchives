@@ -1,10 +1,8 @@
-package alisolarflare;
+package alisolarflare.modules;
 
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.event.Listener;
 import org.bukkit.plugin.java.JavaPlugin;
-
-import alisolarflare.magictrick.aliarrow.AliArrowListener;
 
 /**
  * A Module class is a helper class that allows the compacting of projects into one single package. 

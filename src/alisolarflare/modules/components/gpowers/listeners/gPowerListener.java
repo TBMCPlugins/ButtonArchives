@@ -1,15 +1,15 @@
-package alisolarflare.tools.gpowers.listeners;
+package alisolarflare.modules.components.gpowers.listeners;
 
 import org.bukkit.event.Listener;
+import org.bukkit.plugin.java.JavaPlugin;
 import org.bukkit.scheduler.BukkitTask;
 
-import alisolarflare.AliPresents;
-
 public class gPowerListener implements Listener{
-	private AliPresents plugin;
+	private JavaPlugin plugin;
 	public gPowerApplyingTask powerApplyingTask;
 	public BukkitTask bukkitTask;
-	public gPowerListener(AliPresents plugin){
+	
+	public gPowerListener(JavaPlugin plugin){
 		this.plugin = plugin;
 		this.powerApplyingTask = new gPowerApplyingTask(this.plugin);
 		bukkitTask = powerApplyingTask.runTaskTimer(plugin, 190, 190);
