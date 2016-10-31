@@ -1,27 +1,24 @@
-package alisolarflare.uhc;
+package alisolarflare.events.uhc;
 
-import alisolarflare.AliPresents;
+import org.bukkit.plugin.java.JavaPlugin;
 
-public class UHCSubPlugin {
-	public AliPresents plugin;
+import alisolarflare.Module;
+
+public class UHCModule extends Module {
 	public UHCMatch generalMemory;
 
-	public UHCSubPlugin(AliPresents plugin){
-		this.plugin = plugin;		
+	public void register(JavaPlugin plugin){
+		registerCommands(plugin);
+		registerListeners(plugin);
+		registerMemoryUnits(plugin);
 	}
-	public void register(){
-		registerCommands();
-		registerListeners();
-		registerMemoryUnits();
+	private void registerListeners(JavaPlugin plugin) {
 	}
-	private void registerListeners() {
-	}
-	private void registerCommands() {
+	private void registerCommands(JavaPlugin plugin) {
 		// TODO Auto-generated method stub
-		plugin.getCommand("addToUHC").setExecutor(new AddToUHC(this.generalMemory));
+		registerCommand(plugin, "addToUHC", new AddToUHC(this.generalMemory));
 	}
-	private void registerMemoryUnits(){
+	private void registerMemoryUnits(JavaPlugin plugin){
 		generalMemory = new UHCMatch();
 	}
-	
 }

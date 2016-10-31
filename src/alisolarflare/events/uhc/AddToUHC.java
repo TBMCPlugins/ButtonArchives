@@ -1,4 +1,4 @@
-package alisolarflare.uhc;
+package alisolarflare.events.uhc;
 
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;

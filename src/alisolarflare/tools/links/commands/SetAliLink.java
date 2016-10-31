@@ -1,4 +1,4 @@
-package alisolarflare.links.commands;
+package alisolarflare.tools.links.commands;
 
 
 import java.util.ArrayList;
@@ -12,8 +12,8 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
 import alisolarflare.AliPresents;
-import alisolarflare.links.AliLinkSubPlug;
-import alisolarflare.links.entities.Link;
+import alisolarflare.tools.links.AliLinkSubPlug;
+import alisolarflare.tools.links.entities.Link;
 
 /**
  * This class manages the command /SetAliLink <frequency> [x] [y] [z].  This command creates an Ali-Link, 

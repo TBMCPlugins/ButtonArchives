@@ -3,19 +3,18 @@ package alisolarflare;
 import java.util.logging.Logger;
 
 import org.bukkit.plugin.PluginDescriptionFile;
-
-import alisolarflare.flairdoors.FlairMe;
-import alisolarflare.flairdoors.PortalListener;
-import alisolarflare.flairdoors.SetFlairDoorColour;
-import alisolarflare.gpowers.gPowerCommand;
-import alisolarflare.gpowers.commands.PowerDown;
-import alisolarflare.gpowers.commands.PowerUp;
-import alisolarflare.gpowers.listeners.gPowerListener;
-
 //import alisolarflare.links.AliLinkSubPlug;
 import org.bukkit.plugin.java.JavaPlugin;
-import alisolarflare.shulker.AliShulker;
-import alisolarflare.aliarrow.AliArrowSubPlugin;
+
+import alisolarflare.magictrick.aliarrow.AliArrowSubPlugin;
+import alisolarflare.tools.flairdoors.FlairMe;
+import alisolarflare.tools.flairdoors.PortalListener;
+import alisolarflare.tools.flairdoors.SetFlairDoorColour;
+import alisolarflare.tools.gpowers.gPowerCommand;
+import alisolarflare.tools.gpowers.commands.PowerDown;
+import alisolarflare.tools.gpowers.commands.PowerUp;
+import alisolarflare.tools.gpowers.listeners.gPowerListener;
+import alisolarflare.tools.shulker.AliShulker;
 
 public class AliPresents extends JavaPlugin{
 	public void onEnable(){
@@ -25,7 +24,7 @@ public class AliPresents extends JavaPlugin{
 		
 		logger.info(pdfFile.getName() + " has been started (V." + pdfFile.getVersion()+ ").");
 		
-		registerSubPlugins();
+		registerModules();
 		registerCommands();
 		registerEvents();
 		
@@ -37,9 +36,10 @@ public class AliPresents extends JavaPlugin{
 		getServer().getPluginManager().registerEvents(new PortalListener(this), this);
 		getServer().getPluginManager().registerEvents(new gPowerListener(this), this);
 	}
-	public void registerSubPlugins(){
-		AliArrowSubPlugin aliArrowSubPlugin = new AliArrowSubPlugin(this);
-		aliArrowSubPlugin.register();
+	public void registerModules(){
+		new AliArrowSubPlugin(this).register();
+		
+		
 		//AliLinkSubPlug alilinksubplugin = new AliLinkSubPlug(this);
 		//alilinksubplugin.register();
 	}

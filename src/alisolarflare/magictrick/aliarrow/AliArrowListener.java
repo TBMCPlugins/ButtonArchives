@@ -1,4 +1,4 @@
-package alisolarflare.aliarrow;
+package alisolarflare.magictrick.aliarrow;
 
 import org.bukkit.entity.Arrow;
 import org.bukkit.entity.EntityType;
@@ -16,6 +16,7 @@ public class AliArrowListener implements Listener {
 		this.plugin = plugin;
 	}
 	
+	@SuppressWarnings("deprecation")
 	@EventHandler
 	public void onProjectileLaunch(ProjectileLaunchEvent event){
 		try{

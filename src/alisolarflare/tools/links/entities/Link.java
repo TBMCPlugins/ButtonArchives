@@ -1,12 +1,12 @@
-package alisolarflare.links.entities;
+package alisolarflare.tools.links.entities;
 
 import java.io.Serializable;
 
 import org.bukkit.Location;
 import org.bukkit.Material;
 
-import alisolarflare.links.AliLinkSubPlug;
-import alisolarflare.links.tasks.UnpressTask;
+import alisolarflare.tools.links.AliLinkSubPlug;
+import alisolarflare.tools.links.tasks.UnpressTask;
 
 public class Link implements Serializable{
 	/**

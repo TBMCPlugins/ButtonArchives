@@ -1,10 +1,10 @@
-package alisolarflare.links;
+package alisolarflare.tools.links;
 import java.util.List;
 
 import alisolarflare.AliPresents;
-import alisolarflare.links.commands.PressAliLink;
-import alisolarflare.links.commands.SetAliLink;
-import alisolarflare.links.entities.Link;
+import alisolarflare.tools.links.commands.PressAliLink;
+import alisolarflare.tools.links.commands.SetAliLink;
+import alisolarflare.tools.links.entities.Link;
 
 public class AliLinkSubPlug{
 	public AliPresents plugin;

@@ -1,4 +1,4 @@
-package alisolarflare.flairdoors;
+package alisolarflare.tools.flairdoors;
 
 import java.util.AbstractMap;
 import java.util.ArrayList;

@@ -1,11 +1,11 @@
-package alisolarflare.links.serializer;
+package alisolarflare.tools.links.serializer;
 
 
 import java.io.FileOutputStream;
 import java.io.ObjectOutputStream;
 import java.util.List;
 
-import alisolarflare.links.entities.Link;
+import alisolarflare.tools.links.entities.Link;
 
 public class Serializer {
 

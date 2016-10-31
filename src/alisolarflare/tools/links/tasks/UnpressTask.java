@@ -1,4 +1,4 @@
-package alisolarflare.links.tasks;
+package alisolarflare.tools.links.tasks;
 
 import org.bukkit.Location;
 import org.bukkit.Material;

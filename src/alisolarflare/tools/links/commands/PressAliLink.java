@@ -1,11 +1,11 @@
-package alisolarflare.links.commands;
+package alisolarflare.tools.links.commands;
 
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 
-import alisolarflare.links.AliLinkSubPlug;
-import alisolarflare.links.entities.Link;
+import alisolarflare.tools.links.AliLinkSubPlug;
+import alisolarflare.tools.links.entities.Link;
 
 public class PressAliLink implements CommandExecutor{
 	private AliLinkSubPlug subplugin;

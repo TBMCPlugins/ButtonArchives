@@ -1,4 +1,4 @@
-package alisolarflare.flairdoors;
+package alisolarflare.tools.flairdoors;
 
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;

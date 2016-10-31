@@ -1,4 +1,4 @@
-package alisolarflare.gpowers.listeners;
+package alisolarflare.tools.gpowers.listeners;
 
 import org.bukkit.event.Listener;
 import org.bukkit.scheduler.BukkitTask;

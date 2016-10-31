@@ -1,4 +1,4 @@
-package alisolarflare.gpowers;
+package alisolarflare.tools.gpowers;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -87,6 +87,7 @@ public class gPowerMemory{
 	}
 	
 	public void saveMemoryState(){
+		@SuppressWarnings("unused")
 		Map<UUID, poweredPlayer> PlayerMap = new HashMap<UUID, poweredPlayer>();
 		//for (UUID uuidKey:PlayerMap.keySet()){
 			

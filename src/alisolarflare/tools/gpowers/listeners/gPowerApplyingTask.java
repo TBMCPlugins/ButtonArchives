@@ -1,4 +1,4 @@
-package alisolarflare.gpowers.listeners;
+package alisolarflare.tools.gpowers.listeners;
 
 import org.bukkit.Color;
 import org.bukkit.entity.Player;
@@ -7,7 +7,7 @@ import org.bukkit.potion.PotionEffectType;
 import org.bukkit.scheduler.BukkitRunnable;
 
 import alisolarflare.AliPresents;
-import alisolarflare.gpowers.gPowerMemory;
+import alisolarflare.tools.gpowers.gPowerMemory;
 
 public class gPowerApplyingTask extends BukkitRunnable{
 	
