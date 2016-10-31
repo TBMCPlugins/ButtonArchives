@@ -2,18 +2,17 @@ package alisolarflare.modules.magictrick.aliarrow;
 
 import org.bukkit.Particle;
 import org.bukkit.entity.Arrow;
+import org.bukkit.plugin.java.JavaPlugin;
 import org.bukkit.scheduler.BukkitRunnable;
 
-import alisolarflare.AliPresents;
-
 public class AliArrowTask extends BukkitRunnable{
-	AliPresents plugin;
+	JavaPlugin plugin;
 	String name;
 	Arrow arrow;
 	
 	
 	
-	public AliArrowTask(AliPresents plugin, Arrow arrow, String name){
+	public AliArrowTask(JavaPlugin plugin, Arrow arrow, String name){
 		this.name = name;
 		this.plugin = plugin;
 		this.arrow = arrow;

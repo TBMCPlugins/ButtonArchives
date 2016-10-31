@@ -1,27 +1,16 @@
 package alisolarflare.modules.magictrick.aliarrow;
 
-import java.util.logging.Level;
-import alisolarflare.AliPresents;
 
-public class AliArrowModule {
-	private AliPresents plugin;
+import org.bukkit.plugin.java.JavaPlugin;
+import alisolarflare.modules.Module;
 
-	public AliArrowModule(AliPresents plugin){
-		this.plugin = plugin;
-	}
+public class AliArrowModule extends Module{
 	/**
 	 * Registers the plugin, activating listeners, commands, and events
 	 */
-	public void register(){
-		registerEvents();
-		registerCommands();
-		plugin.getLogger().log(Level.INFO, "Discord Sub Plugin Registered!");
-	}
-	private void registerEvents(){
+	@Override
+	public void register(JavaPlugin plugin) {		
 		plugin.getServer().getPluginManager().registerEvents(new AliArrowListener(plugin), plugin);
-		
-	}
-	private void registerCommands(){
 		
 	}
 }

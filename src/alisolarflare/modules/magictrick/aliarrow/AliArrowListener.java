@@ -6,13 +6,12 @@ import org.bukkit.entity.Projectile;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.entity.ProjectileLaunchEvent;
-
-import alisolarflare.AliPresents;
+import org.bukkit.plugin.java.JavaPlugin;
 
 public class AliArrowListener implements Listener {
-	private final AliPresents plugin;
+	private final JavaPlugin plugin;
 	
-	public AliArrowListener(AliPresents plugin){
+	public AliArrowListener(JavaPlugin plugin){
 		this.plugin = plugin;
 	}
 	

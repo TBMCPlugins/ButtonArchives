@@ -9,26 +9,21 @@ import alisolarflare.modules.components.links.commands.SetAliLink;
 import alisolarflare.modules.components.links.entities.Link;
 
 public class AliLinkModule extends Module{
-	public JavaPlugin plugin;
 	private SetAliLink setAliLink;
 	
-	public AliLinkModule(JavaPlugin plugin){
-		this.plugin = plugin;
-		
-		
-	}
 	@Override
 	public void register(JavaPlugin plugin){
 		setAliLink = new SetAliLink(plugin);
 		plugin.getCommand("setalilink").setExecutor(setAliLink);
-		plugin.getCommand("pressalilink").setExecutor(new PressAliLink(this, setAliLink));
+		plugin.getCommand("pressalilink").setExecutor(new PressAliLink(plugin, setAliLink));
 		
 	}
-	public void saveLinkList(){
+	public void saveLinkList(JavaPlugin plugin){
 		plugin.getConfig().set("aliLinkList", setAliLink.linkList);
 	}
+	
 	@SuppressWarnings("unchecked")
-	public List<Link> loadLinkList(){
+	public List<Link> loadLinkList(JavaPlugin plugin){
 		return (List<Link>) plugin.getConfig().getList("aliLinkList");
 	}
 	

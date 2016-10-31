@@ -4,8 +4,8 @@ import java.io.Serializable;
 
 import org.bukkit.Location;
 import org.bukkit.Material;
+import org.bukkit.plugin.java.JavaPlugin;
 
-import alisolarflare.modules.components.links.AliLinkModule;
 import alisolarflare.modules.components.links.tasks.UnpressTask;
 
 public class Link implements Serializable{
@@ -28,10 +28,14 @@ public class Link implements Serializable{
 		this.z = "" + location.getBlockZ();
 		//plugin.plugin.getConfig().set("frequency", 10);
 	}
-	public void press(AliLinkModule plugin) {
-		Location location = new Location(plugin.plugin.getServer().getWorld(world), Integer.parseInt(x), Integer.parseInt(y), Integer.parseInt(z));
+	/**
+	 * Activates the Ali-Link
+	 * @param plugin
+	 */
+	public void press(JavaPlugin plugin) {
+		Location location = new Location(plugin.getServer().getWorld(world), Integer.parseInt(x), Integer.parseInt(y), Integer.parseInt(z));
 		location.getBlock().setType(Material.REDSTONE_BLOCK);
 		UnpressTask unPressTask = new UnpressTask(location);
-		unPressTask.runTaskTimer(plugin.plugin, 2, 1);
+		unPressTask.runTaskTimer(plugin, 2, 1);
 	}
 }
