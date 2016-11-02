@@ -4,10 +4,11 @@ import org.bukkit.plugin.java.JavaPlugin;
 
 import alisolarflare.modules.Module;
 import alisolarflare.modules.events.uhc.commands.AddToUHC;
+import alisolarflare.modules.events.uhc.commands.StartMatch;
+import alisolarflare.modules.events.uhc.memory.UHCMatch;
 
 public class UHCModule extends Module {
-	public UHCMatch generalMemory;
-	public String[] finiteStates = {"SETUP", "INTRO", "PEACE", "TENSION", "POWER", "END"};
+	public UHCMatch match;
 
 	public void register(JavaPlugin plugin){
 		registerCommands(plugin);
@@ -17,10 +18,10 @@ public class UHCModule extends Module {
 	private void registerListeners(JavaPlugin plugin) {
 	}
 	private void registerCommands(JavaPlugin plugin) {
-		// TODO Auto-generated method stub
-		registerCommand(plugin, "addToUHC", new AddToUHC(this.generalMemory));
+		registerCommand(plugin, "addToUHC", new AddToUHC(this.match));
+		registerCommand(plugin, "startMatch", new StartMatch(this.match));
 	}
 	private void registerMemoryUnits(JavaPlugin plugin){
-		generalMemory = new UHCMatch();
+		match = new UHCMatch(plugin.getConfig(), plugin.getConfig().getString("UHCMatchState"));
 	}
 }

@@ -9,10 +9,10 @@ import org.bukkit.scheduler.BukkitTask;
  * ghostie powers if an Ultrahardcore Match is going on,
  * and it's time for powers to activate
  */
-public class PlayerPowerCyclingListener implements Listener {
+public class MatchCyclingListener implements Listener {
 	public BukkitTask PowerCyclingTask;
 	
-	public PlayerPowerCyclingListener(JavaPlugin plugin){
-		PowerCyclingTask = (new PlayerPowerTask(plugin)).runTaskTimer(plugin, 20, 20);
+	public MatchCyclingListener(JavaPlugin plugin){
+		PowerCyclingTask = (new MatchMainLoop()).runTaskTimer(plugin, 20, 20);
 	}
 }

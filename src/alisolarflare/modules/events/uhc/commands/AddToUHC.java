@@ -5,7 +5,7 @@ import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
-import alisolarflare.modules.events.uhc.UHCMatch;
+import alisolarflare.modules.events.uhc.memory.UHCMatch;
 
 /**
  * This class handles the specific command /addToUHC which, in-game,
