@@ -7,6 +7,7 @@ import alisolarflare.modules.events.uhc.commands.AddToUHC;
 
 public class UHCModule extends Module {
 	public UHCMatch generalMemory;
+	public String[] finiteStates = {"SETUP", "INTRO", "PEACE", "TENSION", "POWER", "END"};
 
 	public void register(JavaPlugin plugin){
 		registerCommands(plugin);

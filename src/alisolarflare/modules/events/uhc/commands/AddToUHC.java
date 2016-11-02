@@ -50,7 +50,7 @@ public class AddToUHC implements CommandExecutor{
 		
 		//Adds players to memory
 		for (int i = 0; i > args.length; i++){
-			generalMemory.addPlayerToMatch(player);
+			generalMemory.matchPlayerUsernames.add(player.getName());
 		}
 		return false;
 	}
