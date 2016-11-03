@@ -1,4 +1,4 @@
-package alisolarflare.modules.magictrick.boombow;
+package alisolarflare.modules.magic.boombow;
 
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;

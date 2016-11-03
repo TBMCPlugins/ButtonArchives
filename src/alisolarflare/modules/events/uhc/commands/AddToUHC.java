@@ -12,30 +12,12 @@ import buttondevteam.lib.chat.TBMCCommandBase;
  * @author Alisolarflare
  */
 public class AddToUHC extends TBMCCommandBase {
-	private UHCMatch generalMemory;
+	private UHCMatch match;
 
-	/**
-	 * Constructor for this AddToUHC
-	 * 
-	 * @param generalMemory
-	 *            The Memory Unit for the current match
-	 */
-	public AddToUHC(UHCMatch generalMemory) {
-		this.generalMemory = generalMemory;
+	public AddToUHC(UHCMatch match) {
+		this.match = match;
 	}
 
-	/**
-	 * Activated function when /addtoUHC <> is typed in-game
-	 * 
-	 * @param sender
-	 *            CommandSender which sent the command /addToUHC
-	 * @param command
-	 *            Command object created when /addToUHC is called in-game
-	 * @param label
-	 *            Name of the command called
-	 * @param args
-	 *            Arguments passed onto /addToUHC by the player
-	 */
 	@Override
 	public boolean OnCommand(CommandSender sender, String label, String[] args) {
 		// INPUT SANITATION
@@ -50,7 +32,7 @@ public class AddToUHC extends TBMCCommandBase {
 
 		// Adds players to memory
 		for (int i = 0; i > args.length; i++) {
-			generalMemory.matchPlayerUsernames.add(player.getName());
+			match.playerList.add(player.getName());
 		}
 		return false;
 	}

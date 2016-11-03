@@ -1,11 +1,11 @@
-package alisolarflare.modules.magictrick;
+package alisolarflare.modules.magic;
 
 import org.bukkit.plugin.java.JavaPlugin;
 
 import alisolarflare.modules.Module;
 import alisolarflare.modules.events.uhc.commands.AddToUHC;
-import alisolarflare.modules.magictrick.aliarrow.AliArrowListener;
-import alisolarflare.modules.magictrick.boombow.BoomBowListener;
+import alisolarflare.modules.magic.aliarrow.AliArrowListener;
+import alisolarflare.modules.magic.boombow.BoomBowListener;
 import buttondevteam.lib.TBMCCoreAPI;
 import buttondevteam.lib.chat.TBMCChatAPI;
 

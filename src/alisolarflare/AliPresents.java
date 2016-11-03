@@ -11,7 +11,7 @@ import alisolarflare.modules.components.gpowers.GPowerModule;
 import alisolarflare.modules.components.links.AliLinkModule;
 import alisolarflare.modules.components.shulker.AliShulkerModule;
 import alisolarflare.modules.events.uhc.UHCModule;
-import alisolarflare.modules.magictrick.MagicModule;
+import alisolarflare.modules.magic.MagicModule;
 
 public class AliPresents extends JavaPlugin{
 	public void onEnable(){

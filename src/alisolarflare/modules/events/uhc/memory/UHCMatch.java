@@ -11,7 +11,7 @@ import org.bukkit.configuration.file.FileConfiguration;
  * @author Alisolarflare
  */
 public class UHCMatch {
-	public List<String> matchPlayerUsernames = new ArrayList<String>();	
+	public List<String> playerList = new ArrayList<String>();	
 	private MatchState matchState = MatchState.IDLE;
 	private FileConfiguration fileConfiguration;
 	

@@ -1,4 +1,4 @@
-package alisolarflare.modules.magictrick.aliarrow;
+package alisolarflare.modules.magic.aliarrow;
 
 import org.bukkit.entity.Arrow;
 import org.bukkit.entity.EntityType;

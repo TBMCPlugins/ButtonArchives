@@ -1,4 +1,4 @@
-package alisolarflare.modules.magictrick.boombow;
+package alisolarflare.modules.magic.boombow;
 
 import org.bukkit.GameMode;
 import org.bukkit.Location;
