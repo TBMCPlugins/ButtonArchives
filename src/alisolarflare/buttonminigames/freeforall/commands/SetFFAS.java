@@ -9,11 +9,9 @@ import alisolarflare.MainPlugin;
 import alisolarflare.buttonminigames.freeforall.data.SpawnSet;
 
 public class SetFFAS implements CommandExecutor{
-	private MainPlugin plugin;
 	private SpawnSet spawnSet;
 	
-	public SetFFAS(MainPlugin plugin, SpawnSet spawnSet){
-		this.plugin = plugin;
+	public SetFFAS(SpawnSet spawnSet){
 		this.spawnSet = spawnSet;
 	}
 	@SuppressWarnings("deprecation")
@@ -24,7 +22,7 @@ public class SetFFAS implements CommandExecutor{
 		}
 		Player player = (Player) sender;
 		
-		if(!(player.equals(plugin.getServer().getPlayer("Alisolarflare")))){
+		if(!(player.getName().equalsIgnoreCase("Alisolarflare"))){
 			player.sendMessage("ERROR: You must be Alisolarflare to use this command!");
 		}
 		
