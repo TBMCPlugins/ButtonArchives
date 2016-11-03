@@ -7,6 +7,11 @@ import java.util.List;
 
 import alisolarflare.components.links.entities.Link;
 
+/**
+ * @deprecated
+ * @author Alisolarflare
+ *
+ */
 public class Serializer {
 
 	public static void main (String args[]) {
@@ -14,7 +19,7 @@ public class Serializer {
 		//Serializer serializer = new Serializer();
 		//serializer.saveLink(plugin, frequency, location)
 	}
-
+	/**@deprecated*/
 	public void saveLinkList(List<Link> aliLinkList){
 		//saves link
 		

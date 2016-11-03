@@ -6,7 +6,7 @@ import org.bukkit.entity.Player;
 import alisolarflare.components.gpowers.gPowerMemory;
 import buttondevteam.lib.chat.TBMCCommandBase;
 
-public class gPowerCommand extends TBMCCommandBase {
+public class GPower extends TBMCCommandBase {
 
 	@Override
 	public boolean OnCommand(CommandSender sender, String label, String[] args) {

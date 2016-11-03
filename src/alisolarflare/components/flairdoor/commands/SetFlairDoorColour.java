@@ -7,6 +7,11 @@ import org.bukkit.command.CommandSender;
 
 import buttondevteam.lib.chat.TBMCCommandBase;
 
+/**
+ * @deprecated
+ * @author Alisolarflare
+ *
+ */
 public class SetFlairDoorColour extends TBMCCommandBase {
 	public static String FlairDoorColorMode = "null";
 	public static final List<String> COLOURMODES = Arrays.asList("red", "orange", "yellow", "green", "blue", "purple",

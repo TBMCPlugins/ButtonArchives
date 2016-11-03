@@ -1,4 +1,4 @@
-package alisolarflare.components.shulker.commands;
+package graveyard.shulker.commands;
 
 import org.bukkit.Location;
 import org.bukkit.command.CommandSender;
@@ -14,7 +14,7 @@ import buttondevteam.lib.chat.TBMCCommandBase;
 /**
  * @author Alisolarflare This class is responsible for the command /aliShulker, which in-game spawns a shulker that: Has a health of 10 Has a wither and invisibility effect present Has noAI And is
  *         Glowing
- */
+ *@deprecated*/
 public class AliShulker extends TBMCCommandBase {
 
 	@Override

@@ -1,10 +1,11 @@
-package alisolarflare.components.shulker;
+package graveyard.shulker;
 
 import org.bukkit.plugin.java.JavaPlugin;
 
 import alisolarflare.Module;
-import alisolarflare.components.shulker.commands.AliShulker;
+import graveyard.shulker.commands.AliShulker;
 
+/**@deprecated*/
 public class AliShulkerModule extends Module {
 
 	@Override

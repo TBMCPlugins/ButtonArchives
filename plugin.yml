@@ -3,17 +3,13 @@ name: AliPresents
 version: 2.0.1
 
 commands:
-  alishulker:
-    description: Spawns a shulker at player location Alishulker health withereffect invisibility true experiencedrops
   pressalilink:
     description: Presses an Ali Link pressalilink frequency
   setalilink:
     description: Creates an Ali Link setalilink frequency
-  setflairdoorcolour:
-    description: Sets the flair door colour mode, when lighting portals
   flairme:
     description: Activates the Flair Me Command. Ask Ali, she was fucking tired when writing this description
-  gpowercommand:
+  gpower:
     description: Testing command for ghostie powers
   powerup:
     description: Official g-power command that activates the ghostie powerups

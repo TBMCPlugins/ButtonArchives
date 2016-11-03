@@ -7,6 +7,11 @@ import java.util.List;
 
 import alisolarflare.components.links.entities.Link;
 
+/**
+ * @deprecated
+ * @author Alisolarflare
+ *
+ */
 public class Deserializer{
 
 	public static void main (String args[]) {
@@ -15,7 +20,8 @@ public class Deserializer{
 		//List<Link> aliLink = deserializer.loadLink(aliLink);
 		//System.out.println(aliLink);
 	}
-
+	
+	/**@deprecated*/
 	@SuppressWarnings("unchecked")
 	public List<Link> loadLinkList(){
 		List<Link> aliLinkList;
