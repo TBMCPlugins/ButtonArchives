@@ -4,7 +4,6 @@ import org.bukkit.plugin.java.JavaPlugin;
 
 import alisolarflare.modules.Module;
 import alisolarflare.modules.events.uhc.commands.AddToUHC;
-import alisolarflare.modules.events.uhc.commands.StartMatch;
 import alisolarflare.modules.events.uhc.memory.UHCMatch;
 import buttondevteam.lib.chat.TBMCChatAPI;
 

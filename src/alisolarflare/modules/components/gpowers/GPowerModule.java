@@ -3,8 +3,6 @@ package alisolarflare.modules.components.gpowers;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import alisolarflare.modules.Module;
-import alisolarflare.modules.components.gpowers.commands.PowerDown;
-import alisolarflare.modules.components.gpowers.commands.PowerUp;
 import alisolarflare.modules.components.gpowers.commands.gPowerCommand;
 import alisolarflare.modules.components.gpowers.listeners.gPowerListener;
 import buttondevteam.lib.TBMCCoreAPI;

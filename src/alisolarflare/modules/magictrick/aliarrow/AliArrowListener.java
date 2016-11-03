@@ -15,6 +15,7 @@ public class AliArrowListener implements Listener {
 		this.plugin = plugin;
 	}
 	
+	@SuppressWarnings("deprecation")
 	@EventHandler
 	public void onProjectileLaunch(ProjectileLaunchEvent event){
 		try{

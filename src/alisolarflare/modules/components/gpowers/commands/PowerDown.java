@@ -1,7 +1,5 @@
 package alisolarflare.modules.components.gpowers.commands;
 
-import org.bukkit.command.Command;
-import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 
 import buttondevteam.lib.chat.TBMCCommandBase;
