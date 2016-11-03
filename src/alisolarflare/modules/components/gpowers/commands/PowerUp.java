@@ -5,15 +5,35 @@ import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
+import buttondevteam.lib.chat.TBMCCommandBase;
 
-public class PowerUp implements CommandExecutor{
+public class PowerUp extends TBMCCommandBase {
 
 	@Override
-	public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
-		if (!(sender instanceof Player)){
-			sender.sendMessage("You must be a player to use this command!");
-		}
-		//gPowerMemory.PowerUpPlayer(player, colour);
+	public boolean OnCommand(CommandSender sender, String label, String[] args) {
+		// gPowerMemory.PowerUpPlayer(player, colour);
+		return false;
+	}
+
+	@Override
+	public String[] GetHelpText(String alias) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public String GetCommandPath() {
+		return "powerup";
+	}
+
+	@Override
+	public boolean GetPlayerOnly() {
+		return true;
+	}
+
+	@Override
+	public boolean GetModOnly() {
+		// TODO Auto-generated method stub
 		return false;
 	}
 
