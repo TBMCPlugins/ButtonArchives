@@ -4,6 +4,7 @@ import org.bukkit.plugin.java.JavaPlugin;
 
 import alisolarflare.Module;
 import alisolarflare.events.uhc.commands.AddToUHC;
+import alisolarflare.events.uhc.memory.MatchState;
 import alisolarflare.events.uhc.memory.UHCMatch;
 import buttondevteam.lib.chat.TBMCChatAPI;
 
@@ -24,6 +25,10 @@ public class UHCModule extends Module {
 	}
 
 	private void registerMemoryUnits(JavaPlugin plugin) {
-		match = new UHCMatch(plugin.getConfig(), plugin.getConfig().getString("UHCMatchState"));
+		if (plugin.getConfig().contains("UHCMatchState")){
+			match = new UHCMatch(plugin.getConfig(), MatchState.valueOf(plugin.getConfig().getString("UHCMatchState")));
+		}else{
+			match = new UHCMatch(plugin.getConfig(), MatchState.IDLE);
+		}
 	}
 }
