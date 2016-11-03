@@ -12,7 +12,5 @@ public class MagicModule extends Module{
 	public void register(JavaPlugin plugin) {
 		registerListener(plugin, new AliArrowListener(plugin));
 		registerListener(plugin, new BoomBowListener());
-		
 	}
-
 }

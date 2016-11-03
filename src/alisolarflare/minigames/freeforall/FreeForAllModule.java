@@ -12,19 +12,9 @@ public class FreeForAllModule extends Module{
 	
 	@Override
 	public void register(JavaPlugin plugin) {
-		registerMemory();
-		registerEvents();
-		registerCommands(plugin);
-	}
-	private void registerMemory() {
 		this.spawnSet = new SpawnSet();
-	}
-
-	private void registerEvents() {
-	}
-
-	private void registerCommands(JavaPlugin plugin) {
 		registerCommand(plugin, new SetFFAS(spawnSet));
+		
 	}
 	
 	public int getGameState() {return GameState;}

@@ -12,6 +12,8 @@ import alisolarflare.components.links.AliLinkModule;
 import alisolarflare.components.shulker.AliShulkerModule;
 import alisolarflare.events.uhc.UHCModule;
 import alisolarflare.magic.MagicModule;
+import alisolarflare.minigames.freeforall.FreeForAllModule;
+import alisolarflare.minigames.lobby.LobbyModule;
 
 public class AliPresents extends JavaPlugin{
 	public void onEnable(){
@@ -32,7 +34,12 @@ public class AliPresents extends JavaPlugin{
 		new GPowerModule().register(this);
 		new AliLinkModule().register(this);
 		new AliShulkerModule().register(this);
+		
 		new UHCModule().register(this);
+		
 		new MagicModule().register(this);
+		
+		new FreeForAllModule().register(this);
+		new LobbyModule().register(this);
 	}
 }

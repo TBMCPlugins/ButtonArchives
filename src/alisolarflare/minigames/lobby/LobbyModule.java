@@ -13,13 +13,6 @@ public class LobbyModule extends Module{
 	public List<String> fighters;
 
 	public void register(JavaPlugin plugin){
-		registerEvents();
-		registerCommands(plugin);
-	}
-	private void registerEvents() {
-	}
-
-	private void registerCommands(JavaPlugin plugin) {	
 		registerCommand(plugin, new ButtonFight(this));
 		registerCommand(plugin, new ButtonLeave(this));
 		registerCommand(plugin, new ListFighters(this));

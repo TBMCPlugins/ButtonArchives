@@ -15,6 +15,7 @@ public class AliLinkModule extends Module {
 	@Override
 	public void register(JavaPlugin plugin) {
 		setAliLink = new SetAliLink(plugin);
+		
 		registerCommand(plugin, new PressAliLink(plugin, setAliLink));
 		registerCommand(plugin, setAliLink);
 
