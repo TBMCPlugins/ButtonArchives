@@ -15,7 +15,7 @@ commands:
     description: Official g-power command that activates the ghostie powerups
   powerdown:
     description: Offical g-power command that deactivates the ghostie powerups
-  addToUHC:
+  addtouhc:
     description: Adds a player to the UltraHardcore match
-  startMatch:
+  startmatch:
     description: Starts an UltraHardcore match
