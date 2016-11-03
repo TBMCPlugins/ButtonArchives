@@ -2,7 +2,6 @@ package alisolarflare.events.uhc.commands;
 
 import org.bukkit.command.CommandSender;
 
-import alisolarflare.events.uhc.memory.MatchState;
 import alisolarflare.events.uhc.memory.UHCMatch;
 import buttondevteam.lib.chat.TBMCCommandBase;
 

@@ -8,7 +8,6 @@ import alisolarflare.Module;
 import alisolarflare.components.links.commands.PressAliLink;
 import alisolarflare.components.links.commands.SetAliLink;
 import alisolarflare.components.links.entities.Link;
-import buttondevteam.lib.chat.TBMCChatAPI;
 
 public class AliLinkModule extends Module {
 	private SetAliLink setAliLink;
@@ -16,8 +15,8 @@ public class AliLinkModule extends Module {
 	@Override
 	public void register(JavaPlugin plugin) {
 		setAliLink = new SetAliLink(plugin);
-		TBMCChatAPI.AddCommands(plugin, PressAliLink.class);
-		TBMCChatAPI.AddCommands(plugin, SetAliLink.class);
+		registerCommand(plugin, new PressAliLink(plugin, setAliLink));
+		registerCommand(plugin, setAliLink);
 
 	}
 

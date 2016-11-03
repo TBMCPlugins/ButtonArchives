@@ -3,6 +3,7 @@ package alisolarflare;
 import org.bukkit.event.Listener;
 import org.bukkit.plugin.java.JavaPlugin;
 
+import buttondevteam.lib.TBMCCoreAPI;
 import buttondevteam.lib.chat.TBMCChatAPI;
 import buttondevteam.lib.chat.TBMCCommandBase;
 
@@ -37,11 +38,11 @@ public abstract class Module{
 	 * @param label           Name of the command in plugin.yml
 	 * @param commandExecutor Custom coded CommandExecutor class 
 	 */
-	protected <T extends TBMCCommandBase> void registerCommand(JavaPlugin plugin, String label, Class<T> commandExecutor){
-		TBMCChatAPI.AddCommands(plugin, commandExecutor);
+	protected void registerCommand(JavaPlugin plugin, TBMCCommandBase commandBase){
+		TBMCChatAPI.AddCommand(plugin, commandBase);
 	}
 	protected Listener registerListener(JavaPlugin plugin, Listener listener){
-		plugin.getServer().getPluginManager().registerEvents(listener, plugin);
+		TBMCCoreAPI.RegisterEventsForExceptions(listener, plugin);
 		return listener;
 	}
 }
