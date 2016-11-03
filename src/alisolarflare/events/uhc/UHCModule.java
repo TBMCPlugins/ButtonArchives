@@ -4,6 +4,7 @@ import org.bukkit.plugin.java.JavaPlugin;
 
 import alisolarflare.Module;
 import alisolarflare.events.uhc.commands.AddToUHC;
+import alisolarflare.events.uhc.commands.StartMatch;
 import alisolarflare.events.uhc.memory.UHCMatch;
 import buttondevteam.lib.chat.TBMCChatAPI;
 
@@ -20,7 +21,8 @@ public class UHCModule extends Module {
 	}
 
 	private void registerCommands(JavaPlugin plugin) {
-		TBMCChatAPI.AddCommands(plugin, AddToUHC.class);
+		TBMCChatAPI.AddCommand(plugin, AddToUHC.class, match);
+		TBMCChatAPI.AddCommand(plugin, new StartMatch(match));
 	}
 
 	private void registerMemoryUnits(JavaPlugin plugin) {

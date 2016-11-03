@@ -10,7 +10,7 @@ public class AliShulkerModule extends Module {
 
 	@Override
 	public void register(JavaPlugin plugin) {
-		TBMCChatAPI.AddCommands(plugin, AliShulker.class);
+		TBMCChatAPI.AddCommand(plugin, AliShulker.class);
 	}
 
 }
