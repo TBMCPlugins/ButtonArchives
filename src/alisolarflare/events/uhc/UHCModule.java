@@ -12,9 +12,9 @@ public class UHCModule extends Module {
 	public UHCMatch match;
 
 	public void register(JavaPlugin plugin) {
+		registerMemoryUnits(plugin);
 		registerCommands(plugin);
 		registerListeners(plugin);
-		registerMemoryUnits(plugin);
 	}
 
 	private void registerListeners(JavaPlugin plugin) {
