@@ -6,12 +6,12 @@ import org.bukkit.plugin.PluginDescriptionFile;
 //import alisolarflare.links.AliLinkSubPlug;
 import org.bukkit.plugin.java.JavaPlugin;
 
-import alisolarflare.modules.components.flairdoor.FlairDoorModule;
-import alisolarflare.modules.components.gpowers.GPowerModule;
-import alisolarflare.modules.components.links.AliLinkModule;
-import alisolarflare.modules.components.shulker.AliShulkerModule;
-import alisolarflare.modules.events.uhc.UHCModule;
-import alisolarflare.modules.magic.MagicModule;
+import alisolarflare.components.flairdoor.FlairDoorModule;
+import alisolarflare.components.gpowers.GPowerModule;
+import alisolarflare.components.links.AliLinkModule;
+import alisolarflare.components.shulker.AliShulkerModule;
+import alisolarflare.events.uhc.UHCModule;
+import alisolarflare.magic.MagicModule;
 
 public class AliPresents extends JavaPlugin{
 	public void onEnable(){
