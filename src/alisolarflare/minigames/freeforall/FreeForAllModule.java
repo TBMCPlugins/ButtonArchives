@@ -22,7 +22,7 @@ public class FreeForAllModule extends Module{
 	}
 
 	private void registerCommands(JavaPlugin plugin) {
-		TBMCChatAPI.AddCommands(plugin, SetFFAS.class);			
+		TBMCChatAPI.AddCommands(plugin, SetFFAS.class);
 	}
 	private void registerMemory() {
 		this.spawnSet = new SpawnSet();

@@ -17,6 +17,7 @@ public class AliLinkModule extends Module {
 	public void register(JavaPlugin plugin) {
 		setAliLink = new SetAliLink(plugin);
 		TBMCChatAPI.AddCommands(plugin, PressAliLink.class);
+		TBMCChatAPI.AddCommands(plugin, SetAliLink.class);
 
 	}
 

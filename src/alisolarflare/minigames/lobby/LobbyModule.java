@@ -8,6 +8,7 @@ import alisolarflare.Module;
 import alisolarflare.minigames.lobby.commands.ButtonFight;
 import alisolarflare.minigames.lobby.commands.ButtonLeave;
 import alisolarflare.minigames.lobby.commands.ListFighters;
+import buttondevteam.lib.chat.TBMCChatAPI;
 
 public class LobbyModule extends Module{
 	public List<String> fighters;
@@ -20,8 +21,8 @@ public class LobbyModule extends Module{
 	}
 
 	private void registerCommands(JavaPlugin plugin) {	
-		plugin.getCommand("buttonfight").setExecutor(new ButtonFight(this));
-		plugin.getCommand("buttonleave").setExecutor(new ButtonLeave(this));
-		plugin.getCommand("listfighters").setExecutor(new ListFighters(this));
+		TBMCChatAPI.AddCommands(plugin, ButtonFight.class);
+		TBMCChatAPI.AddCommands(plugin, ButtonLeave.class);
+		TBMCChatAPI.AddCommands(plugin, ListFighters.class);
 	}
 }
