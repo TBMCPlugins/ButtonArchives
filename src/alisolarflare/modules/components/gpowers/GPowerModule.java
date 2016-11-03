@@ -7,16 +7,16 @@ import alisolarflare.modules.components.gpowers.commands.PowerDown;
 import alisolarflare.modules.components.gpowers.commands.PowerUp;
 import alisolarflare.modules.components.gpowers.commands.gPowerCommand;
 import alisolarflare.modules.components.gpowers.listeners.gPowerListener;
+import buttondevteam.lib.TBMCCoreAPI;
+import buttondevteam.lib.chat.TBMCChatAPI;
 
-public class GPowerModule extends Module{
+public class GPowerModule extends Module {
 
 	@Override
 	public void register(JavaPlugin plugin) {
-		plugin.getCommand("powerup").setExecutor(new PowerUp());
-		plugin.getCommand("powerdown").setExecutor(new PowerDown());
-		plugin.getCommand("gpowercommand").setExecutor(new gPowerCommand());
-		
-		plugin.getServer().getPluginManager().registerEvents(new gPowerListener(plugin), plugin);
+		TBMCChatAPI.AddCommands(plugin, gPowerCommand.class);
+
+		TBMCCoreAPI.RegisterEventsForExceptions(new gPowerListener(plugin), plugin);
 	}
 
 }

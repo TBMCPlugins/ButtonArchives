@@ -6,13 +6,14 @@ import alisolarflare.modules.Module;
 import alisolarflare.modules.components.flairdoor.commands.FlairMe;
 import alisolarflare.modules.components.flairdoor.commands.SetFlairDoorColour;
 import alisolarflare.modules.components.flairdoor.listeners.PortalListener;
+import buttondevteam.lib.TBMCCoreAPI;
+import buttondevteam.lib.chat.TBMCChatAPI;
 
-public class FlairDoorModule extends Module{
+public class FlairDoorModule extends Module {
 	@Override
 	public void register(JavaPlugin plugin) {
-		plugin.getCommand("flairme").setExecutor(new FlairMe());
-		plugin.getCommand("setflairdoorcolour").setExecutor(new SetFlairDoorColour());	
+		TBMCChatAPI.AddCommands(plugin, FlairMe.class);
 
-		plugin.getServer().getPluginManager().registerEvents(new PortalListener(plugin), plugin);
+		TBMCCoreAPI.RegisterEventsForExceptions(new PortalListener(plugin), plugin);
 	}
 }

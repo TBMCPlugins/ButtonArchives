@@ -1,8 +1,10 @@
 package alisolarflare.modules;
 
-import org.bukkit.command.CommandExecutor;
 import org.bukkit.event.Listener;
 import org.bukkit.plugin.java.JavaPlugin;
+
+import buttondevteam.lib.chat.TBMCChatAPI;
+import buttondevteam.lib.chat.TBMCCommandBase;
 
 /**
  * A Module class is a helper class that allows the compacting of projects into one single package. 
@@ -35,9 +37,8 @@ public abstract class Module implements Registerable{
 	 * @param label           Name of the command in plugin.yml
 	 * @param commandExecutor Custom coded CommandExecutor class 
 	 */
-	protected CommandExecutor registerCommand(JavaPlugin plugin, String label, CommandExecutor commandExecutor){
-		plugin.getCommand(label).setExecutor(commandExecutor);
-		return commandExecutor;
+	protected <T extends TBMCCommandBase> void registerCommand(JavaPlugin plugin, String label, Class<T> commandExecutor){
+		TBMCChatAPI.AddCommands(plugin, commandExecutor);
 	}
 	protected Listener registerListener(JavaPlugin plugin, Listener listener){
 		plugin.getServer().getPluginManager().registerEvents(listener, plugin);
