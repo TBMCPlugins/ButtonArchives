@@ -37,7 +37,6 @@ public class PortalListener implements Listener{
 		
 		//INIT - Player
 		Player player = event.getPlayer();
-		player.sendMessage("MAY THE FLAIRING COMMENCE");
 		
 		//SANITATION - PlayersToBeFlaired
 		if(!(playersToBeFlaired.contains(player.getName()))){
@@ -53,31 +52,31 @@ public class PortalListener implements Listener{
 		int z = player.getLocation().getBlockZ();
 		
 		//INIT - Blocks Under Portal
-		Block blockTopper = player.getWorld().getBlockAt(x,y-1,z);
-		Block blockMiddle = player.getWorld().getBlockAt(x,y-2,z);
-		Block blockBottom = player.getWorld().getBlockAt(x,y-3,z);
+		Block HigherBlock = player.getWorld().getBlockAt(x,y-1,z);
+		Block MiddleBlock = player.getWorld().getBlockAt(x,y-2,z);
+		Block BottomBlock = player.getWorld().getBlockAt(x,y-3,z);
 		
 		player.sendMessage("Blocks being inspected:");
-		player.sendMessage(blockTopper.toString());
-		player.sendMessage(blockMiddle.toString());
-		player.sendMessage(blockBottom.toString());
+		player.sendMessage(HigherBlock.toString());
+		player.sendMessage(MiddleBlock.toString());
+		player.sendMessage(BottomBlock.toString());
 		
 		//RECOLOUR PLAYER
-		if(blockTopper.getType() == Material.STONE){
+		if(HigherBlock.getType() == Material.STONE){
 			player.sendMessage("STONE DETECTED");
 			recolourPlayer(player, DyeColor.GRAY);
 			
 		//TOP BLOCK IS WOOL?
-		}else if(blockTopper.getType() == Material.WOOL){
+		}else if(HigherBlock.getType() == Material.WOOL){
 			player.sendMessage("WOOL DETECTED T");
-			Wool wool = (Wool) blockTopper.getState().getData();
+			Wool wool = (Wool) HigherBlock.getState().getData();
 			recolourPlayer(player, wool.getColor());
 		
 		//MIDDLE BLOCK IS WOOL?
-		}else if(blockMiddle.getType() == Material.WOOL){
+		}else if(MiddleBlock.getType() == Material.WOOL){
 
 			player.sendMessage("WOOL DETECTED M");
-			MaterialData mData = blockMiddle.getState().getData();
+			MaterialData mData = MiddleBlock.getState().getData();
 			player.sendMessage("MATERIAL DATA COLLECTED: "+ mData.toString());
 			Wool wool = (Wool) mData;
 			player.sendMessage("WOOL DATA CONVERTED: "+ wool.toString());
@@ -85,9 +84,9 @@ public class PortalListener implements Listener{
 			recolourPlayer(player, wool.getColor());
 		
 		//BOTTOM BLOCK IS WOOL?
-		}else if (blockBottom.getType() == Material.WOOL){
+		}else if (BottomBlock.getType() == Material.WOOL){
 			player.sendMessage("WOOL DETECTED B");
-			Wool wool = (Wool) blockBottom.getState().getData();
+			Wool wool = (Wool) BottomBlock.getState().getData();
 			recolourPlayer(player, wool.getColor());
 		}
 		

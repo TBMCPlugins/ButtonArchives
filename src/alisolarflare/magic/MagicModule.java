@@ -3,8 +3,8 @@ package alisolarflare.magic;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import alisolarflare.Module;
-import alisolarflare.magic.aliarrow.AliArrowListener;
-import alisolarflare.magic.boombow.BoomBowListener;
+import alisolarflare.magic.tricks.AliArrowListener;
+import alisolarflare.magic.tricks.BoomBowListener;
 
 public class MagicModule extends Module{
 

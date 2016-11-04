@@ -9,10 +9,10 @@ import org.bukkit.plugin.java.JavaPlugin;
 import alisolarflare.components.flairdoor.FlairDoorModule;
 import alisolarflare.components.gpowers.GPowerModule;
 import alisolarflare.components.links.AliLinkModule;
-import alisolarflare.events.uhc.UHCModule;
+import alisolarflare.creativeboundaries.CreativeBoundariesModule;
 import alisolarflare.magic.MagicModule;
-import alisolarflare.minigames.freeforall.FreeForAllModule;
-import alisolarflare.minigames.lobby.LobbyModule;
+import alisolarflare.minigames.MinigameModule;
+import alisolarflare.uhc.UHCModule;
 
 public class AliPresents extends JavaPlugin{
 	public void onEnable(){
@@ -27,8 +27,8 @@ public class AliPresents extends JavaPlugin{
 		new AliLinkModule().register(this);
 		new UHCModule().register(this);
 		new MagicModule().register(this);
-		new FreeForAllModule().register(this);
-		new LobbyModule().register(this);
+		new MinigameModule().register(this);
+		new CreativeBoundariesModule().register(this);
 		
 		logger.info(pdfFile.getName() + " has fully registered (V." + pdfFile.getVersion()+ ").");
 		
