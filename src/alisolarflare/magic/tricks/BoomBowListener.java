@@ -85,19 +85,18 @@ public class BoomBowListener implements Listener {
 		
 
 		//SET - Player Velocity
-		player.setVelocity(playerLocation.getDirection().normalize().multiply(2.5));
+		player.setVelocity(playerLocation.getDirection().normalize().multiply(3.0));
 
 		//CREATE - Explosion + damage
 		player.getWorld().playSound(playerLocation, Sound.ENTITY_GENERIC_EXPLODE, 10, -20);
 		player.getWorld().spawnParticle(Particle.EXPLOSION_HUGE, playerLocation, 2);
-		player.damage(9.0, player);
+		player.damage(7.0, player);
 		boomBow.setDurability((short) (boomBow.getDurability() + 3));
 
 
 
 
 	}
-	@EventHandler
 	public void FlyBowBoostDeath(PlayerDeathEvent event){
 		event.getEntity().getServer().broadcastMessage("[boombow debug]: "+event.getEntity().getLastDamageCause().getCause().toString());
 
