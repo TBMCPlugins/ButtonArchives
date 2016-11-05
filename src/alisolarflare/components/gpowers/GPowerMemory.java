@@ -9,7 +9,7 @@ import org.bukkit.entity.Player;
 public class GPowerMemory{
 	public Map<UUID, poweredPlayer> poweredPlayerList = new HashMap<UUID, poweredPlayer>();
 	
-	public void PowerUpPlayer(Player player, String colour){
+	public void configurePlayer(Player player, String colour, boolean powerIsActive){
 		poweredPlayerList.put(player.getUniqueId(), new poweredPlayer(player.getUniqueId(), colour, true));
 	}
 	public void PowerUpPlayer(Player player){

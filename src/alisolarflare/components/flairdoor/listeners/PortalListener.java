@@ -1,12 +1,9 @@
 package alisolarflare.components.flairdoor.listeners;
 
-import java.util.AbstractMap;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 
 import org.bukkit.DyeColor;
-import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.block.Block;
 import org.bukkit.entity.Player;
@@ -18,11 +15,8 @@ import org.bukkit.material.Wool;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public class PortalListener implements Listener{
-	AbstractMap<String,Location> portalMap = new HashMap<String,Location>();
 	public static List<String> playersToBeFlaired = new ArrayList<String>();
 	public JavaPlugin plugin;
-	
-	//TODO: CREATE - LIST OF PORTALS (only x-z values)
 	
 	
 	public PortalListener(JavaPlugin plugin) {
@@ -95,47 +89,54 @@ public class PortalListener implements Listener{
 		player.sendMessage("Recolouring Player as..." + dyecolour.toString());
 		String name = player.getName();
 		player.sendMessage("name:" + name);
+		String tempName = "";
 		for(int i = 0; i < name.length(); i++){
-			if (name.charAt(i) == '&'){
-				//TODO: Remove all &* symbols
-				name = name.substring(0, i) + name.substring(i + 1, name.length());
-				
+			if (name.charAt(i) != '&'){
+				tempName += name.charAt(i);
+			}else{
+				i++;
 			}
 		}
+		name = tempName;
 		player.sendMessage("Adjusted Name: " + name);
 		
-		if(dyecolour == DyeColor.GRAY){
+		switch(dyecolour){
+		case GRAY:
 			player.sendMessage("Adding GRAY");
-			player.setCustomName("&7" + name);
-			
-		}else if(dyecolour == DyeColor.RED){
+			name = "&7" + name;
+			break;
+		case RED:
 			player.sendMessage("Adding RED");
-			player.setCustomName("&4" + name);
-			
-		}else if(dyecolour == DyeColor.ORANGE){
+			name = "&4" + name;
+			break;
+		case ORANGE:
 			player.sendMessage("Adding ORANGE");
-			player.setCustomName("&6" + name);
-			
-		}else if(dyecolour == DyeColor.YELLOW){
+			name = "&6" + name;
+			break;
+		case YELLOW:
 			player.sendMessage("Adding YELLOW");
-			player.setCustomName("&e" + name);
-			
-		}else if(dyecolour == DyeColor.GREEN){
+			name = "&e" + name;
+			break;
+		case LIME:
+		case GREEN:
 			player.sendMessage("Adding GREEN");
-			player.setCustomName("&a" + name);
-			
-		}else if(dyecolour == DyeColor.BLUE){
+			name = "&a" + name;
+			break;
+		case CYAN:
+		case LIGHT_BLUE:
+		case BLUE:
 			player.sendMessage("Adding BLUE");
-			player.setCustomName("&9" + name);
-			
-		}else if(dyecolour == DyeColor.PURPLE){
+			name = "&9" + name;
+			break;
+		case PURPLE:
 			player.sendMessage("Adding PURPLE");
-			player.setCustomName("&5" + name);
-			
-		}else{
+			name = "&5" + name;
+			break;
+		default:
 			player.sendMessage("ERROR, PORTAL HAS INVALID UNDER-BLOCK");
-			return;
+			break;
 		}
+		player.setCustomName(name);
 		player.sendMessage("Your name is now: " + player.getCustomName() +"! Removing you from playersToBeFlaired...");
 		playersToBeFlaired.remove(player.getName());
 	}
