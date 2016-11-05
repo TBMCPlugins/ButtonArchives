@@ -24,14 +24,20 @@ public class PlotChangeListener implements Listener{
 	}
 	@EventHandler
 	public void onPlayerPlotChange(PlayerChangePlotEvent plotEvent){
-		if (dickmode == false)
-			return;
-		if (plotEvent.getPlayer().getGameMode() != GameMode.CREATIVE)
-			return;
-		if (!(cbCreatives.contains(plotEvent.getPlayer())))
-			return;
-		
 		Player player = plotEvent.getPlayer();
+		if (dickmode == false){
+			debug(player, "dickies");
+			return;
+		}
+		if (plotEvent.getPlayer().getGameMode() != GameMode.CREATIVE){
+			debug(player, "cray cray");
+			return;
+		}
+		if (!(cbCreatives.contains(plotEvent.getPlayer()))){
+			debug(player, "racism");
+			return;
+		}
+		
 		Resident currentResident = new Resident(player.getName());
 		Town town;
 		try {
