@@ -9,12 +9,12 @@ public class BoomBowDeathListener implements Listener{
 	@EventHandler
 	public void onBoomBowDeath(PlayerDeathEvent event){
 		Player player = event.getEntity();
-		if (player.getLastDamage() == 7.000042)
+		if (player.getLastDamage() == 7.000042){
 			player.sendMessage("42!");
 			event.setDeathMessage(player.getName() + "got trigger happy with the Boom Bow");
-		if (player.getLastDamage() < 7.000041 || player.getLastDamage() > 7.000043)
+		}
+		if (player.getLastDamage() < 7.000041 || player.getLastDamage() > 7.000043){
 			player.sendMessage("meaning of lyyyyyyfffe");
-			player.sendMessage(player.getCustomName() + player.getDisplayName() + player.getPlayerListName() + player.getName());
-		
+		}
 	}
 }
