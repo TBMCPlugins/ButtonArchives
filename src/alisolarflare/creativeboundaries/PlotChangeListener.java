@@ -25,6 +25,7 @@ public class PlotChangeListener implements Listener{
 	@EventHandler
 	public void onPlayerPlotChange(PlayerChangePlotEvent plotEvent){
 		Player player = plotEvent.getPlayer();
+		player.sendMessage("PING");
 		if (dickmode == false){
 			debug(player, "dickies");
 			return;
@@ -37,18 +38,21 @@ public class PlotChangeListener implements Listener{
 			debug(player, "racism");
 			return;
 		}
-		
+		player.sendMessage("PONG");
 		Resident currentResident = new Resident(player.getName());
 		Town town;
 		try {
+			player.sendMessage("PYONG");
 			debug(player, "1"+plotEvent.toString());
 			debug(player, "2"+plotEvent.getTo().toString());
 			debug(player, "3"+plotEvent.getTo().getTownBlock().toString());
 			debug(player, "4"+Boolean.toString(plotEvent.getTo().getTownBlock().hasTown()));
 			debug(player, "5"+plotEvent.getTo().getTownBlock().getTown().toString());
-			if (plotEvent.getTo().getTownBlock().hasTown())
+			player.sendMessage("-");
+			if (plotEvent.getTo().getTownBlock().hasTown()){
+				player.sendMessage("YANG");
 				town = plotEvent.getTo().getTownBlock().getTown();
-			else{
+			}else{
 				player.setGameMode(GameMode.SURVIVAL);
 				return;
 			}
@@ -62,7 +66,7 @@ public class PlotChangeListener implements Listener{
 			player.setGameMode(GameMode.SURVIVAL);
 	}
 	private void debug(Player player, String string){
-		if (player.getName() == "alisolarflare")
+		if (player.getName().equalsIgnoreCase("alisolarflare"))
 			player.sendMessage(string);
 	}
 }
