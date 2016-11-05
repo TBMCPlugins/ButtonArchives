@@ -54,7 +54,7 @@ public class BoomBowListener implements Listener {
 			if(tntStack.getAmount() > 3){
 				tntStack.setAmount(tntStack.getAmount()-3);
 			}else{
-				tntStack.setAmount(0);;
+				player.getInventory().remove(tntStack);
 			}
 
 		}else{
@@ -63,12 +63,12 @@ public class BoomBowListener implements Listener {
 	}
 
 
-
-	@SuppressWarnings("deprecation")
+	
 	public void Activate(PlayerInteractEvent event){
 		//INIT - Player variables
 		Player player = event.getPlayer();
 		Location playerLocation = player.getLocation();
+		ItemStack boomBow = player.getInventory().getItemInMainHand();
 
 		//TODO: NERF - boomDecay		
 		//TODO: NERF - endCrystal
@@ -85,19 +85,19 @@ public class BoomBowListener implements Listener {
 		
 
 		//SET - Player Velocity
-		player.setVelocity(event.getPlayer().getLocation().getDirection().normalize().multiply(2.5));
-		player.sendMessage("" + event.getPlayer().getVelocity().length());
+		player.setVelocity(playerLocation.getDirection().normalize().multiply(2.5));
 
 		//CREATE - Explosion + damage
 		player.getWorld().playSound(playerLocation, Sound.ENTITY_GENERIC_EXPLODE, 10, -20);
-		event.getPlayer().getWorld().spawnParticle(Particle.EXPLOSION_HUGE, playerLocation, 2);
+		player.getWorld().spawnParticle(Particle.EXPLOSION_HUGE, playerLocation, 2);
 		player.damage(9.0, player);
-		player.getItemInHand().setDurability((short) (player.getItemInHand().getDurability() + 3));
+		boomBow.setDurability((short) (boomBow.getDurability() + 3));
 
 
 
 
 	}
+	@EventHandler
 	public void FlyBowBoostDeath(PlayerDeathEvent event){
 		event.getEntity().getServer().broadcastMessage("[boombow debug]: "+event.getEntity().getLastDamageCause().getCause().toString());
 
