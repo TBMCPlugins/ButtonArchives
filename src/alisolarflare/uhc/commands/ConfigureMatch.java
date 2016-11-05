@@ -2,9 +2,14 @@ package alisolarflare.uhc.commands;
 
 import org.bukkit.command.CommandSender;
 
+import alisolarflare.uhc.memory.UHCMatch;
 import buttondevteam.lib.chat.TBMCCommandBase;
 
 public class ConfigureMatch extends TBMCCommandBase{
+
+	public ConfigureMatch(UHCMatch match) {
+		// TODO Auto-generated constructor stub
+	}
 
 	@Override
 	public String[] GetHelpText(String alias) {

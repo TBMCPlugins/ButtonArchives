@@ -3,10 +3,6 @@ name: AliPresents
 version: 2.0.1
 
 commands:
-  pressalilink:
-    description: Presses an Ali Link pressalilink frequency
-  setalilink:
-    description: Creates an Ali Link setalilink frequency
   flairme:
     description: Activates the Flair Me Command. Ask Ali, she was fucking tired when writing this description
   gpower:
@@ -15,7 +11,29 @@ commands:
     description: Official g-power command that activates the ghostie powerups
   powerdown:
     description: Offical g-power command that deactivates the ghostie powerups
+  pressalilink:
+    description: Presses an Ali Link pressalilink frequency
+  setalilink:
+    description: Creates an Ali Link setalilink frequency
+  cbgm0:
+    description: Creative Boundaries Gamemode 0, allows players to return to survival
+  cbgm1:
+    description: Creative Boundaries Gamemode 1, allows players to access creative within their towns. Creative is removed outside of towns, so be careful
+  setdickmode:
+    description: Should players automatically return to creative when outside town borders? Dickmode says yes.
+  joinminigame:
+    description: Join a Button Minigame
+  leaveminigame:
+    description: Leave a button minigame
+  listfighters:
+    description: List all fighters currently in a button minigame
+  setcolourspawn:
+    description: sets the spawn points for each colour in a button minigame
   addtouhc:
     description: Adds a player to the UltraHardcore match
+  configurematch:
+    description: Configures an UltraHardcore match
+  schedulematch:
+    description: Schedules an UltraHardcore match
   startmatch:
     description: Starts an UltraHardcore match
