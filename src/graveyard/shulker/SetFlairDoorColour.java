@@ -1,4 +1,4 @@
-package alisolarflare.components.flairdoor.commands;
+package graveyard.shulker;
 
 import java.util.Arrays;
 import java.util.List;
