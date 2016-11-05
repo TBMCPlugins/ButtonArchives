@@ -6,10 +6,10 @@ import alisolarflare.creativeboundaries.CreativeBoundariesModule;
 import buttondevteam.lib.chat.TBMCCommandBase;
 
 public class SetDickmode extends TBMCCommandBase{
-	private CreativeBoundariesModule plugin;
+	private CreativeBoundariesModule module;
 
-	public SetDickmode(CreativeBoundariesModule plugin){
-		this.plugin = plugin;
+	public SetDickmode(CreativeBoundariesModule module){
+		this.module = module;
 	}
 
 	@Override
@@ -21,12 +21,12 @@ public class SetDickmode extends TBMCCommandBase{
 			}
 			if(args[0].equalsIgnoreCase("TRUE") || args[0].equalsIgnoreCase("1")){
 				sender.sendMessage("Dickmode has been turned on!");
-				plugin.dickmode=(true);
+				module.dickmode=(true);
 				return true;
 			}
 			if(args[0].equalsIgnoreCase("FALSE") || args[0].equalsIgnoreCase("0")){
 				sender.sendMessage("Dickmode has been turned off!");
-				plugin.dickmode=(false);
+				module.dickmode=(false);
 				return true;
 			}
 			return false;

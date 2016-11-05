@@ -15,11 +15,12 @@ import com.palmergames.bukkit.towny.object.Town;
 
 public class PlotChangeListener implements Listener{
 	private boolean dickmode;
+	private List<Player> cbCreatives = new ArrayList<Player>();
 	public CreativeBoundariesModule plugin;
-	public List<Player> cbCreatives = new ArrayList<Player>();
 	public PlotChangeListener(CreativeBoundariesModule plugin){
 		this.plugin = plugin;
 		this.dickmode = plugin.dickmode;
+		this.cbCreatives = plugin.cbCreatives;
 	}
 	@EventHandler
 	public void onPlayerPlotChange(PlayerChangePlotEvent plotEvent){

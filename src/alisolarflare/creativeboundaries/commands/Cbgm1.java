@@ -10,9 +10,16 @@ import com.palmergames.bukkit.towny.object.Town;
 import com.palmergames.bukkit.towny.object.TownBlock;
 import com.palmergames.bukkit.towny.object.TownyUniverse;
 
+import alisolarflare.creativeboundaries.CreativeBoundariesModule;
 import buttondevteam.lib.chat.TBMCCommandBase;
 
 public class Cbgm1 extends TBMCCommandBase {
+
+	private CreativeBoundariesModule module;
+
+	public Cbgm1(CreativeBoundariesModule module) {
+		this.module = module;
+	}
 
 	@Override
 	public boolean OnCommand(CommandSender sender, String arg2, String[] arg3) {
@@ -46,6 +53,7 @@ public class Cbgm1 extends TBMCCommandBase {
 		for(Resident res : town.getResidents()){
 			if (res.getName().toString().equals(player.getName().toString())){
 				player.setGameMode(GameMode.CREATIVE);
+				module.cbCreatives.add(player);
 				return true;
 			}
 		}

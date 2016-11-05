@@ -43,7 +43,6 @@ public class PortalListener implements Listener{
 			return;
 		}
 		player.sendMessage("-MAY THE FLAIRING COMMENCE-");
-		player.sendMessage("Deactivating regular portal behaviour...");
 		event.setTo(player.getLocation());
 		
 		//INIT - x,y,z
@@ -52,14 +51,9 @@ public class PortalListener implements Listener{
 		int z = player.getLocation().getBlockZ();
 		
 		//INIT - Blocks Under Portal
-		Block HigherBlock = player.getWorld().getBlockAt(x,y-1,z);
-		Block MiddleBlock = player.getWorld().getBlockAt(x,y-2,z);
-		Block BottomBlock = player.getWorld().getBlockAt(x,y-3,z);
-		
-		player.sendMessage("Blocks being inspected:");
-		player.sendMessage(HigherBlock.toString());
-		player.sendMessage(MiddleBlock.toString());
-		player.sendMessage(BottomBlock.toString());
+		Block HigherBlock = player.getWorld().getBlockAt(x,y-2,z);
+		Block MiddleBlock = player.getWorld().getBlockAt(x,y-3,z);
+		Block BottomBlock = player.getWorld().getBlockAt(x,y-4,z);
 		
 		//RECOLOUR PLAYER
 		if(HigherBlock.getType() == Material.STONE){
@@ -77,9 +71,7 @@ public class PortalListener implements Listener{
 
 			player.sendMessage("WOOL DETECTED M");
 			MaterialData mData = MiddleBlock.getState().getData();
-			player.sendMessage("MATERIAL DATA COLLECTED: "+ mData.toString());
 			Wool wool = (Wool) mData;
-			player.sendMessage("WOOL DATA CONVERTED: "+ wool.toString());
 
 			recolourPlayer(player, wool.getColor());
 		
