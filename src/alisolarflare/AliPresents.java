@@ -21,7 +21,7 @@ public class AliPresents extends JavaPlugin{
 		
 		Logger logger = getLogger();
 		logger.info(pdfFile.getName() + " has been started (V." + pdfFile.getVersion()+ ").");
-
+		
 		new FlairDoorModule().register(this);
 		new GPowerModule().register(this);
 		new AliLinkModule().register(this);
