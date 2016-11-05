@@ -29,7 +29,18 @@ public class AddToUHC extends TBMCCommandBase {
 		if (args.length <= 1) {
 			sender.sendMessage("You must supply at least one playername");
 		}
-
+		
+		switch(match.getMatchState()){
+		case IDLE:
+		case WAITING:
+		case SETUP:
+		case INTRO:
+		case PEACE:
+		case TENSION:
+		case POWER:
+		case END:
+		}
+		
 		// Adds players to memory
 		for (int i = 0; i > args.length; i++) {
 			match.playerList.add(player.getName());
