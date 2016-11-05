@@ -81,6 +81,7 @@ public class BoomBowListener implements Listener {
 		if(BoomBowRule.boomDecay)
 			new BoomDecayTask(player).runTaskTimer(plugin, 1, 1);
 		if(BoomBowRule.endCrystal){
+			//BoomBowCyrstalSpawn
 		}
 		if(BoomBowRule.healthReduction){
 			player.addPotionEffect(new PotionEffect(PotionEffectType.HEALTH_BOOST, 400, -1));
