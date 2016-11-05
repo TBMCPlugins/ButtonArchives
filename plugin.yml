@@ -31,6 +31,8 @@ commands:
     description: sets the spawn points for each colour in a button minigame
   addtouhc:
     description: Adds a player to the UltraHardcore match
+  joinuhc:
+    description: This command allows you to join an UltraHardcore match
   configurematch:
     description: Configures an UltraHardcore match
   schedulematch:
