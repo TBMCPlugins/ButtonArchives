@@ -95,12 +95,12 @@ public class PortalListener implements Listener{
 		User user = essentials.getUser(player);
 		
 		player.sendMessage("Recolouring Player as..." + dyecolour.toString());
-		String name = user.getNickname();
+		String name = user._getNickname();
 		player.sendMessage("name:" + name);
 		String tempName = "";
 		for(int i = 0; i < name.length(); i++){
 			player.sendMessage("|"+name.charAt(i)+"|");
-			if (name.charAt(i) != '&'){
+			if (name.charAt(i) != '§'){
 				
 				tempName += name.charAt(i);
 			}else{
@@ -113,34 +113,34 @@ public class PortalListener implements Listener{
 		switch(dyecolour){
 		case GRAY:
 			player.sendMessage("Adding GRAY");
-			name = "&7" + name;
+			name = "§7" + name;
 			break;
 		case RED:
 			player.sendMessage("Adding RED");
-			name = "&4" + name;
+			name = "§4" + name;
 			break;
 		case ORANGE:
 			player.sendMessage("Adding ORANGE");
-			name = "&6" + name;
+			name = "§6" + name;
 			break;
 		case YELLOW:
 			player.sendMessage("Adding YELLOW");
-			name = "&e" + name;
+			name = "§e" + name;
 			break;
 		case LIME:
 		case GREEN:
 			player.sendMessage("Adding GREEN");
-			name = "&a" + name;
+			name = "§a" + name;
 			break;
 		case CYAN:
 		case LIGHT_BLUE:
 		case BLUE:
 			player.sendMessage("Adding BLUE");
-			name = "&9" + name;
+			name = "§9" + name;
 			break;
 		case PURPLE:
 			player.sendMessage("Adding PURPLE");
-			name = "&5" + name;
+			name = "§5" + name;
 			break;
 		default:
 			player.sendMessage("ERROR, PORTAL HAS INVALID UNDER-BLOCK");
