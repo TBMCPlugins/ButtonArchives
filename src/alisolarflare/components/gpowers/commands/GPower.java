@@ -3,8 +3,6 @@ package alisolarflare.components.gpowers.commands;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
-import com.mysql.fabric.xmlrpc.base.Data;
-
 import alisolarflare.components.gpowers.GPowerMemory;
 import buttondevteam.lib.chat.TBMCCommandBase;
 
@@ -19,6 +17,9 @@ public class GPower extends TBMCCommandBase {
 	@Override
 	public boolean OnCommand(CommandSender sender, String label, String[] args) {
 		sender.sendMessage("G power activate!");
+		if (!(sender instanceof Player)){
+			sender.sendMessage("You must be a player to use this command! Talk to a dev/ali if you think this is wrong");
+		}
 		Player player = (Player) sender;
 		if (args.length < 2) {
 			player.sendMessage("Proper Usage to test G-Powers:");

@@ -3,6 +3,7 @@ package alisolarflare.components.flairdoor.listeners;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.bukkit.Bukkit;
 import org.bukkit.DyeColor;
 import org.bukkit.Material;
 import org.bukkit.block.Block;
@@ -14,13 +15,18 @@ import org.bukkit.material.MaterialData;
 import org.bukkit.material.Wool;
 import org.bukkit.plugin.java.JavaPlugin;
 
+import com.earth2me.essentials.Essentials;
+import com.earth2me.essentials.User;
+
 public class PortalListener implements Listener{
 	public static List<String> playersToBeFlaired = new ArrayList<String>();
 	public JavaPlugin plugin;
-	
+
+	Essentials essentials;
 	
 	public PortalListener(JavaPlugin plugin) {
 		this.plugin = plugin;
+		this.essentials = ((Essentials) Bukkit.getPluginManager().getPlugin("Essentials"));
 	}
 	@EventHandler
 	public void onPortalEnter(PlayerPortalEvent event){
@@ -86,8 +92,10 @@ public class PortalListener implements Listener{
 		
 	}
 	public void recolourPlayer(Player player, DyeColor dyecolour){
+		User user = essentials.getUser(player);
+		
 		player.sendMessage("Recolouring Player as..." + dyecolour.toString());
-		String name = player.getName();
+		String name = user.getNickname();
 		player.sendMessage("name:" + name);
 		String tempName = "";
 		for(int i = 0; i < name.length(); i++){
@@ -136,8 +144,8 @@ public class PortalListener implements Listener{
 			player.sendMessage("ERROR, PORTAL HAS INVALID UNDER-BLOCK");
 			break;
 		}
-		player.setCustomName(name);
-		player.sendMessage("Your name is now: " + player.getCustomName() +"! Removing you from playersToBeFlaired...");
+		user.setNickname(name);
+		player.sendMessage("Your name is now: " + user.getNickname() +"! Removing you from playersToBeFlaired...");
 		playersToBeFlaired.remove(player.getName());
 	}
 }
