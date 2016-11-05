@@ -2,6 +2,7 @@ package alisolarflare.uhc.commands;
 
 import org.bukkit.command.CommandSender;
 
+import alisolarflare.uhc.memory.MatchState;
 import alisolarflare.uhc.memory.UHCMatch;
 import buttondevteam.lib.chat.TBMCCommandBase;
 
@@ -23,6 +24,7 @@ public class StartMatch extends TBMCCommandBase {
 		switch(match.getMatchState()){			
 		case IDLE:
 			sender.sendMessage("There is currently a match ready... Activating...");
+			match.setMatchState(MatchState.INTRO);
 			break;
 			
 		case WAITING:
@@ -30,7 +32,7 @@ public class StartMatch extends TBMCCommandBase {
 			break;
 			
 		case END:
-			sender.sendMessage("The match has ended! Would you like to restart?");
+			sender.sendMessage("The match has ended! Would you like to restart using current settings?");
 			break;
 			
 		default:

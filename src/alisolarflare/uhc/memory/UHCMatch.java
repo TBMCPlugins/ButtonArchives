@@ -24,4 +24,5 @@ public class UHCMatch {
 		matchState = newMS;
 		fileConfiguration.set("UHCMatchState", newMS.toString());
 	}
+	
 }

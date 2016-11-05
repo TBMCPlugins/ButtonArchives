@@ -13,8 +13,8 @@ import alisolarflare.minigames.data.SpawnSet;
 
 public class MinigameModule extends Module{
 	public SpawnSet spawnSet;
-	private int GameState;
 	public List<String> fighters;
+	private GameState gameState;
 	
 	@Override
 	public void register(JavaPlugin plugin) {
@@ -26,8 +26,8 @@ public class MinigameModule extends Module{
 		
 	}
 	
-	public int getGameState() {return GameState;}
-	public void setGameState(int gameState) {GameState = gameState;}
+	public GameState getGameState() {return gameState;}
+	public void setGameState(GameState gameState) {this.gameState = gameState;}
 	
 	
 }

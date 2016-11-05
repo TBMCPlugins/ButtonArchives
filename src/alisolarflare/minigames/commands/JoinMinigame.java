@@ -7,10 +7,10 @@ import alisolarflare.minigames.MinigameModule;
 import buttondevteam.lib.chat.TBMCCommandBase;
 
 public class JoinMinigame extends TBMCCommandBase {
-	private MinigameModule minigame;
+	private MinigameModule module;
 
-	public JoinMinigame(MinigameModule minigame) {
-		this.minigame = minigame;
+	public JoinMinigame(MinigameModule module) {
+		this.module = module;
 	}
 
 	@Override
@@ -21,14 +21,14 @@ public class JoinMinigame extends TBMCCommandBase {
 		}
 		
 		String name = sender.getName();
-		if (minigame.fighters.contains(name)) {
+		if (module.fighters.contains(name)) {
 			sender.sendMessage("You are already in the minigame!");
 			return false;
 		}
 
-		minigame.fighters.add(name);
+		module.fighters.add(name);
 
-		if (minigame.fighters.contains(name)) {
+		if (module.fighters.contains(name)) {
 			sender.sendMessage("You have joined the minigame!");
 		}
 		return false;

@@ -1,7 +1,5 @@
 package alisolarflare.minigames.commands;
 
-import java.util.stream.Collectors;
-
 import org.bukkit.command.CommandSender;
 
 import alisolarflare.minigames.MinigameModule;
@@ -16,7 +14,7 @@ public class ListFighters extends TBMCCommandBase {
 
 	@Override
 	public boolean OnCommand(CommandSender sender, String arg2, String[] arg3) {
-		sender.sendMessage(lobby.fighters.stream().map(Object::toString).collect(Collectors.joining(", ")));
+		sender.sendMessage(lobby.fighters.toString());
 		return false;
 	}
 

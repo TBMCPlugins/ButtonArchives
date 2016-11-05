@@ -8,26 +8,26 @@ import buttondevteam.lib.chat.TBMCCommandBase;
 
 public class LeaveMinigame extends TBMCCommandBase {
 
-	private MinigameModule lobby;
+	private MinigameModule module;
 
-	public LeaveMinigame(MinigameModule lobby) {
-		this.lobby = lobby;
+	public LeaveMinigame(MinigameModule module) {
+		this.module = module;
 	}
 
 	@Override
 	public boolean OnCommand(CommandSender sender, String arg2, String[] arg3) {
-		if(!(sender instanceof Player)){
+		if(!(sender instanceof Player))
 			sender.sendMessage("You must be a player to use this command!");
-		}
+		
 		
 		String name = sender.getName();
-		if (!(lobby.fighters.contains(name))) {
+		if (!(module.fighters.contains(name))) {
 			sender.sendMessage("You are not fighting!");
 			return false;
 		}
 		
-		while(lobby.fighters.contains(name)){
-			lobby.fighters.remove(name);
+		while(module.fighters.contains(name)){
+			module.fighters.remove(name);
 		}
 		sender.sendMessage("You have left the fighters category!");
 		
