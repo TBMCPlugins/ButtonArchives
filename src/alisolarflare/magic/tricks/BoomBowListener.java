@@ -12,11 +12,15 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.block.Action;
 import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.inventory.ItemStack;
+import org.bukkit.plugin.java.JavaPlugin;
 import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
 
 public class BoomBowListener implements Listener {
-
+	JavaPlugin plugin;
+	public BoomBowListener(JavaPlugin plugin){
+		this.plugin = plugin;
+	}
 	@EventHandler
 	public void ClickEvent(PlayerInteractEvent event){
 		FlyBowBoost(event);
@@ -74,7 +78,8 @@ public class BoomBowListener implements Listener {
 		//TODO: NERF - healthReduction
 		//TODO: NERF - localized
 		
-		if(BoomBowRule.boomDecay);
+		if(BoomBowRule.boomDecay)
+			new BoomDecayTask(player).runTaskTimer(plugin, 1, 1);
 		if(BoomBowRule.endCrystal){
 		}
 		if(BoomBowRule.healthReduction){

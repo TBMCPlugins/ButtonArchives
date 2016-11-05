@@ -23,7 +23,11 @@ public class BoomBowRule extends TBMCCommandBase{
 		}
 		if (args.length < 2){
 			player.sendMessage("Usage: /boomBowRule [rulename] [true/false]");
-			player.sendMessage("Rule settings: boomDecay, healthReduction, endCrystal, localized");
+			player.sendMessage("Rules:");
+			player.sendMessage("boomDecay" + boomDecay);
+			player.sendMessage("healthReduction" + healthReduction);
+			player.sendMessage("endCrystal" + endCrystal);
+			player.sendMessage("localized" + localized);
 			return false;
 		}
 		if(!(args[1].startsWith("t")|| args[1].startsWith("f"))){

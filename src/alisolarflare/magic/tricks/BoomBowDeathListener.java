@@ -10,9 +10,11 @@ public class BoomBowDeathListener implements Listener{
 	public void onBoomBowDeath(PlayerDeathEvent event){
 		Player player = event.getEntity();
 		if (player.getLastDamage() == 7.000042)
-			event.setDeathMessage(player.getCustomName() + player.getDisplayName() + player.getPlayerListName() + player.getName() + "got trigger happy with the Boom Bow");
+			player.sendMessage("42!");
+			event.setDeathMessage(player.getName() + "got trigger happy with the Boom Bow");
 		if (player.getLastDamage() < 7.000041 || player.getLastDamage() > 7.000043)
 			player.sendMessage("meaning of lyyyyyyfffe");
+			player.sendMessage(player.getCustomName() + player.getDisplayName() + player.getPlayerListName() + player.getName());
 		
 	}
 }
