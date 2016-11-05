@@ -12,6 +12,8 @@ import com.palmergames.bukkit.towny.event.PlayerChangePlotEvent;
 import com.palmergames.bukkit.towny.exceptions.NotRegisteredException;
 import com.palmergames.bukkit.towny.object.Resident;
 import com.palmergames.bukkit.towny.object.Town;
+import com.palmergames.bukkit.towny.object.TownBlock;
+import com.palmergames.bukkit.towny.object.TownyUniverse;
 
 public class PlotChangeListener implements Listener{
 	private List<Player> cbCreatives = new ArrayList<Player>();
@@ -37,31 +39,35 @@ public class PlotChangeListener implements Listener{
 			return;
 		}
 		player.sendMessage("PONG");
-		Resident currentResident = new Resident(player.getName());
-		Town town;
-		try {
-			player.sendMessage("PYONG");
-			debug(player, "1"+plotEvent.toString());
-			debug(player, "2"+plotEvent.getTo().toString());
-			debug(player, "3"+plotEvent.getTo().getTownBlock().toString());
-			debug(player, "4"+Boolean.toString(plotEvent.getTo().getTownBlock().hasTown()));
-			debug(player, "5"+plotEvent.getTo().getTownBlock().getTown().toString());
-			player.sendMessage("-");
-			if (plotEvent.getTo().getTownBlock().hasTown()){
-				player.sendMessage("YANG");
-				town = plotEvent.getTo().getTownBlock().getTown();
-			}else{
-				player.setGameMode(GameMode.SURVIVAL);
-				return;
-			}
-		} catch (NotRegisteredException e) {
-			e.printStackTrace();
-			debug(player, "6"+e.toString());
+		TownBlock tb = TownyUniverse.getTownBlock(player.getLocation());
+		if (tb == null) {
+			player.sendMessage("You aren't standing in a town or some other error occured.");
+			player.sendMessage("TownBlock is null.");
 			return;
 		}
-		debug(player, "7"+currentResident.toString());
-		if(!(town.hasResident(currentResident)))
+		Town town;
+		try {
+			town = tb.getTown();
+		} catch (NotRegisteredException e) {
+			player.sendMessage("You aren't standing in a town or some other error occured.");
+			player.sendMessage("TownBlock's town is not registered.");
+			return;
+		}
+		if (town == null) {
+			player.sendMessage("ERROR: The town you're standing in is Null.");
+			return;
+		}
+		
+		boolean townHasRes = false;
+		for(Resident res : town.getResidents()){
+			if (res.getName().toString().equals(player.getName().toString())){
+				player.sendMessage("DINGDINGDING");
+				townHasRes = true;			
+			}
+		}
+		if (!townHasRes){
 			player.setGameMode(GameMode.SURVIVAL);
+		}
 	}
 	private void debug(Player player, String string){
 		if (player.getName().equalsIgnoreCase("alisolarflare"))
