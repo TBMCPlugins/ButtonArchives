@@ -3,10 +3,16 @@ package alisolarflare.components.gpowers.commands;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
-import alisolarflare.components.gpowers.gPowerMemory;
+import alisolarflare.components.gpowers.GPowerMemory;
 import buttondevteam.lib.chat.TBMCCommandBase;
 
 public class GPower extends TBMCCommandBase {
+
+	private GPowerMemory gPowerMemory;
+
+	public GPower(GPowerMemory gPowerMemory) {
+		this.gPowerMemory = gPowerMemory;
+	}
 
 	@Override
 	public boolean OnCommand(CommandSender sender, String label, String[] args) {

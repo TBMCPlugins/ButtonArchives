@@ -10,9 +10,10 @@ public class GPowerModule extends Module {
 
 	@Override
 	public void register(JavaPlugin plugin) {
-		registerCommand(plugin, new GPower());
+		GPowerMemory gPowerMemory = new GPowerMemory();
+		registerCommand(plugin, new GPower(gPowerMemory));
 
-		registerListener(plugin, new gPowerListener(plugin));
+		registerListener(plugin, new gPowerListener(plugin, gPowerMemory));
 	}
 
 }
