@@ -51,8 +51,8 @@
 			<url>https://jitpack.io</url>
 		</repository>
 		<repository>
-            <id>ess-repo</id>
-            <url>http://repo.ess3.net</url>
+          <id>ess-repo</id>
+          <url>http://repo.ess3.net/content/groups/essentials</url>
         </repository>
 	</repositories>
 
