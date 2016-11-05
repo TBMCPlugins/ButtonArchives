@@ -99,7 +99,9 @@ public class PortalListener implements Listener{
 		player.sendMessage("name:" + name);
 		String tempName = "";
 		for(int i = 0; i < name.length(); i++){
+			player.sendMessage("|"+name.charAt(i)+"|");
 			if (name.charAt(i) != '&'){
+				
 				tempName += name.charAt(i);
 			}else{
 				i++;
