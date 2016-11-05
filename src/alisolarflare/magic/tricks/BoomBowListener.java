@@ -89,7 +89,7 @@ public class BoomBowListener implements Listener {
 		//CREATE - Explosion + damage
 		player.getWorld().playSound(playerLocation, Sound.ENTITY_GENERIC_EXPLODE, 10, -20);
 		player.getWorld().spawnParticle(Particle.EXPLOSION_HUGE, playerLocation, 2);
-		player.damage(7.0, player);
+		player.damage(7.000042, player);
 		boomBow.setDurability((short) (boomBow.getDurability() + 3));
 		if(boomBow.getDurability() < 0){
 			player.getInventory().setItemInMainHand(null);
