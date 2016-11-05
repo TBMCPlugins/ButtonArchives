@@ -4,9 +4,16 @@ import org.bukkit.GameMode;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
+import alisolarflare.creativeboundaries.CreativeBoundariesModule;
 import buttondevteam.lib.chat.TBMCCommandBase;
 
 public class Cbgm0 extends TBMCCommandBase{
+	
+	private CreativeBoundariesModule module;
+
+	public Cbgm0(CreativeBoundariesModule module) {
+		this.module = module;
+	}
 
 	@Override
 	public boolean OnCommand(CommandSender sender, String arg2, String[] arg3) {
@@ -17,6 +24,7 @@ public class Cbgm0 extends TBMCCommandBase{
 		
 		Player player = (Player) sender;
 		player.setGameMode(GameMode.SURVIVAL);
+		module.cbCreatives.remove(player);
 		return false;
 	}
 

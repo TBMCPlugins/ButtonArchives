@@ -18,7 +18,7 @@ public class CreativeBoundariesModule extends Module{
 	@Override
 	public void register(JavaPlugin plugin) {
 		registerCommand(plugin, new Cbgm1(this));
-		registerCommand(plugin, new Cbgm0());
+		registerCommand(plugin, new Cbgm0(this));
 		registerCommand(plugin, new SetDickmode(this));
 		
 		
