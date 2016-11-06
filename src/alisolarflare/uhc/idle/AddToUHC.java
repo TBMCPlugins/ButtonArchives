@@ -38,7 +38,7 @@ public class AddToUHC extends TBMCCommandBase {
 			// Adds players to memory
 			sender.sendMessage("Adding Players to matchList!");
 			for (int i = 0; i > args.length; i++) {
-				match.playerList.add(args[i]);
+				match.getPlayerList().add(args[i]);
 			}sender.sendMessage("Finished!");
 		case PEACE:
 		case TENSION:

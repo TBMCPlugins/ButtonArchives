@@ -31,5 +31,6 @@ public class UHCModule extends Module {
 		registerCommand(plugin, new StartMatch(match));
 		registerCommand(plugin, new ConfigureMatch(match));
 		registerCommand(plugin, new ScheduleMatch(match));
+		
 	}	
 }

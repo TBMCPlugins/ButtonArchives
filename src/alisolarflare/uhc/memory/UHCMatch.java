@@ -3,16 +3,25 @@ package alisolarflare.uhc.memory;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.bukkit.Location;
+import org.bukkit.World;
 import org.bukkit.configuration.file.FileConfiguration;
 
 
 public class UHCMatch {
-	public List<String> playerList = new ArrayList<String>();	
+	private FileConfiguration config;	
 	private MatchState matchState = MatchState.IDLE;
-	private FileConfiguration fileConfiguration;
+	private List<String> playerList = new ArrayList<String>();
 	
+	private Location lobbyLocation;
+	private Location spawnLocation;
+	
+	private World ultraHardcoreWorld;
+	
+	private int worldBorderMaxRadius;
+	private int worldBorderMinRadius;
 	public UHCMatch(FileConfiguration fileConfiguration, MatchState state) {
-		this.fileConfiguration = fileConfiguration;
+		this.config = fileConfiguration;
 		this.matchState = state;
 	}
 	
@@ -22,11 +31,28 @@ public class UHCMatch {
 	
 	public void setMatchState(MatchState newMS){
 		matchState = newMS;
-		fileConfiguration.set("UHCMatchState", newMS.toString());
+		config.set("UHCMatchState", newMS.toString());
 		switch(newMS){
 		default:
 			break;
 		}
+	}
+
+	public List<String> getPlayerList() {
+		return playerList;
+	}
+
+	public void setPlayerList(List<String> playerList) {
+		this.playerList = playerList;
+	}
+
+	public Location getLobbyLocation() {
+		
+		return lobbyLocation;
+	}
+
+	public void setLobbyLocation(Location lobbyLocation) {
+		this.lobbyLocation = lobbyLocation;
 	}
 	
 }

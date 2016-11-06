@@ -34,7 +34,7 @@ public class JoinUHC extends TBMCCommandBase{
 		case SETUP:
 		case INTRO:
 			player.sendMessage("Adding you to the UltraHardcore match!");
-			match.playerList.add(player.getName());
+			match.getPlayerList().add(player.getName());
 			break;
 			
 		//During the game
