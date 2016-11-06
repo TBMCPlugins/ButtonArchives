@@ -18,9 +18,9 @@ public class AliPresents extends JavaPlugin{
 	public void onEnable(){
 		PluginDescriptionFile pdfFile = getDescription();
 		
-		
 		Logger logger = getLogger();
 		logger.info(pdfFile.getName() + " has been started (V." + pdfFile.getVersion()+ ").");
+		
 		
 		new FlairDoorModule().register(this);
 		new GPowerModule().register(this);
@@ -29,6 +29,7 @@ public class AliPresents extends JavaPlugin{
 		new MagicModule().register(this);
 		new MinigameModule().register(this);
 		new CreativeBoundariesModule().register(this);
+		
 		
 		logger.info(pdfFile.getName() + " has fully registered (V." + pdfFile.getVersion()+ ").");
 		

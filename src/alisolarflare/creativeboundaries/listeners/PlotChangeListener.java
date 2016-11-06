@@ -1,4 +1,4 @@
-package alisolarflare.creativeboundaries;
+package alisolarflare.creativeboundaries.listeners;
 
 import org.bukkit.GameMode;
 import org.bukkit.entity.Player;
@@ -11,6 +11,8 @@ import com.palmergames.bukkit.towny.object.Resident;
 import com.palmergames.bukkit.towny.object.Town;
 import com.palmergames.bukkit.towny.object.TownBlock;
 import com.palmergames.bukkit.towny.object.TownyUniverse;
+
+import alisolarflare.creativeboundaries.CreativeBoundariesModule;
 
 public class PlotChangeListener implements Listener{
 	public CreativeBoundariesModule module;
