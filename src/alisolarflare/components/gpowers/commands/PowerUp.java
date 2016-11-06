@@ -18,6 +18,7 @@ public class PowerUp extends TBMCCommandBase {
 	public boolean OnCommand(CommandSender sender, String label, String[] args) {
 		if (!(sender instanceof Player))
 			sender.sendMessage("You must be a player to use this command! Contact a dev/ali if you think this is wrong");
+		
 		Player player = (Player) sender;
 		gPowerMemory.PowerUpPlayer(player);
 		return false;

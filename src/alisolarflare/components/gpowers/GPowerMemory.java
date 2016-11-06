@@ -13,17 +13,22 @@ public class GPowerMemory{
 		poweredPlayerList.put(player.getUniqueId(), new poweredPlayer(player.getUniqueId(), colour, true));
 	}
 	public void PowerUpPlayer(Player player){
+		player.sendMessage("Powering up!");
 		if(poweredPlayerList.containsKey(player.getUniqueId())){
 			poweredPlayerList.get(player.getUniqueId()).isPowersActive = true;
+			player.sendMessage("Powered up!");
 		}else{
 			player.sendMessage("You must instantiate your power settings using /GPower");
 		}
 	}
 	
 	public void PowerDownPlayer(Player player){
+		player.sendMessage("Powering down!");
 		if (poweredPlayerList.containsKey(player.getUniqueId())){
+			player.sendMessage("Powered down!");
 			poweredPlayerList.get(player.getUniqueId()).isPowersActive = false;
 		}else{
+			player.sendMessage("P down!");
 			return;
 		}
 		

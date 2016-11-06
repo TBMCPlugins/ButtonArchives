@@ -10,7 +10,6 @@ public class FlairDoorModule extends Module {
 	@Override
 	public void register(JavaPlugin plugin) {
 		registerCommand(plugin, new FlairMe());
-
 		registerListener(plugin, new PortalListener(plugin));
 	}
 }

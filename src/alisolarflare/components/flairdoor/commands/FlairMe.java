@@ -9,9 +9,8 @@ public class FlairMe extends TBMCCommandBase {
 
 	@Override
 	public boolean OnCommand(CommandSender sender, String label, String[] args) {
-		sender.sendMessage("Flairing..." + sender.getName());
 		PortalListener.playersToBeFlaired.add(sender.getName());
-		sender.sendMessage("Finished Preparation! Walk through a portal to get your flair");
+		sender.sendMessage("Setup Successful! Walk through a portal to get your flair");
 
 		return false;
 	}

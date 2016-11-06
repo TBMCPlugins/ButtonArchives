@@ -23,6 +23,10 @@ public class UHCMatch {
 	public void setMatchState(MatchState newMS){
 		matchState = newMS;
 		fileConfiguration.set("UHCMatchState", newMS.toString());
+		switch(newMS){
+		default:
+			break;
+		}
 	}
 	
 }
