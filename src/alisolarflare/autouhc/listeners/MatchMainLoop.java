@@ -1,4 +1,4 @@
-package alisolarflare.uhc.listeners;
+package alisolarflare.autouhc.listeners;
 
 import org.bukkit.scheduler.BukkitRunnable;
 

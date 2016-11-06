@@ -1,4 +1,4 @@
-package alisolarflare.uhc.memory;
+package alisolarflare.autouhc.memory;
 
 public enum MatchState {
 	IDLE, //Idle: Configure Match, Wait: Schedule Match, Intro: Start Match

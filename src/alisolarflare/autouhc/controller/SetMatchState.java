@@ -1,10 +1,10 @@
-package alisolarflare.uhc.controller;
+package alisolarflare.autouhc.controller;
 
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
-import alisolarflare.uhc.memory.MatchState;
-import alisolarflare.uhc.memory.UHCMatch;
+import alisolarflare.autouhc.memory.MatchState;
+import alisolarflare.autouhc.memory.UHCMatch;
 import buttondevteam.lib.chat.TBMCCommandBase;
 
 public class SetMatchState extends TBMCCommandBase{

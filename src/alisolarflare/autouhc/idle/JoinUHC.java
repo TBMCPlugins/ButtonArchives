@@ -1,9 +1,9 @@
-package alisolarflare.uhc.idle;
+package alisolarflare.autouhc.idle;
 
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
-import alisolarflare.uhc.memory.UHCMatch;
+import alisolarflare.autouhc.memory.UHCMatch;
 import buttondevteam.lib.chat.TBMCCommandBase;
 
 public class JoinUHC extends TBMCCommandBase{

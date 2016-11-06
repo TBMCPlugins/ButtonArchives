@@ -1,4 +1,4 @@
-package alisolarflare.uhc.memory;
+package alisolarflare.autouhc.memory;
 
 import java.util.ArrayList;
 import java.util.List;
