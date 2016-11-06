@@ -12,7 +12,7 @@ public class BoomBowDeathListener implements Listener{
 		
 		if (player.getLastDamage() > 7.42420 && player.getLastDamage() < 7.42429){
 			player.sendMessage("42!");
-			event.setDeathMessage(player.getName() + "got trigger happy with the Boom Bow");
+			event.setDeathMessage(player.getName() + " got trigger happy with the [Boom Bow]");
 		}
 	}
 }

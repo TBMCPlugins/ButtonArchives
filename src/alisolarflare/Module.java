@@ -8,10 +8,10 @@ import buttondevteam.lib.chat.TBMCChatAPI;
 import buttondevteam.lib.chat.TBMCCommandBase;
 
 /**
- * A Module class is a helper class that allows the compacting of projects into one single package. 
- * Each feature, whether game, arrow trail listener, or command tool, can have its command and listener
- * registration coded into the Module class, as well as any other pointers to memory units, or other
- * classes in the package. 
+ * A Module class allows the compacting of projects into one single package. 
+ * 
+ * Each feature can have its commands and listeners coded into the Module class,
+ * as well as any other pointers to memory units, or other classes in the package. 
  * 
  * This package can then be moved from eclipse project to eclipse project smoothly, 
  * as long as the destination project has the Module abstract class, and as long as all dependencies are either
@@ -21,19 +21,14 @@ import buttondevteam.lib.chat.TBMCCommandBase;
  */
 public abstract class Module{
 	/**
-	 * Registers the project, when called by the Main JavaPlugin class that handles
-	 * the main plugin. 
+	 * Registers the module, when called by the JavaPlugin class. Call
+	 * registerCommand() and registerListener() within this method.
 	 * 
-	 * To register a command, call plugin.getCommand(//label).setExecutor(//commandExecutor); where
-	 * label is a string containing the name of the command in plugin.yml, and where commandExecutor
-	 * is a class implementing command executor
-	 * 
-	 * To register a listener,
 	 * @param plugin	Plugin class called to register commands and listeners
 	 */
 	public abstract void register(JavaPlugin plugin);
 	/**
-	 * Lazy route to type plugin.getCommand("label").setExecutor
+	 * Registers a TBMCCommand to the plugin
 	 * @param plugin          Main plugin responsible for stuff
 	 * @param label           Name of the command in plugin.yml
 	 * @param commandExecutor Custom coded CommandExecutor class 
@@ -41,8 +36,15 @@ public abstract class Module{
 	protected void registerCommand(JavaPlugin plugin, TBMCCommandBase commandBase){
 		TBMCChatAPI.AddCommand(plugin, commandBase);
 	}
+	/**
+	 * Registers a Listener to this plugin
+	 * @param plugin          Main plugin responsible for stuff
+	 * @param label           Name of the command in plugin.yml
+	 * @param commandExecutor Custom coded CommandExecutor class 
+	 */
 	protected Listener registerListener(JavaPlugin plugin, Listener listener){
 		TBMCCoreAPI.RegisterEventsForExceptions(listener, plugin);
 		return listener;
 	}
+	
 }

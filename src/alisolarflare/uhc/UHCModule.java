@@ -3,6 +3,7 @@ package alisolarflare.uhc;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import alisolarflare.Module;
+import alisolarflare.uhc.controller.SetMatchState;
 import alisolarflare.uhc.idle.AddToUHC;
 import alisolarflare.uhc.idle.JoinUHC;
 import alisolarflare.uhc.intro.ConfigureMatch;
@@ -23,6 +24,8 @@ public class UHCModule extends Module {
 			match = new UHCMatch(plugin.getConfig(), MatchState.IDLE);
 		}
 		
+
+		registerCommand(plugin, new SetMatchState(match));
 		registerCommand(plugin, new AddToUHC(match));
 		registerCommand(plugin, new JoinUHC(match));
 		registerCommand(plugin, new StartMatch(match));
