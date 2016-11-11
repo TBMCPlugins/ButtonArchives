@@ -51,3 +51,7 @@ commands:
     description: Admin command that activates gpowers on a uhc
   setworldborders:
     description: sets the worldborders to a uhc match
+  startuhc:
+    description: starts an ultrahardcore match
+  starttimer:
+    description: starts an ultrahardcore timer
