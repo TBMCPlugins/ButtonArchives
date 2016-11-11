@@ -1,12 +1,12 @@
-package alisolarflare.components.gpowers;
+package alisolarflare.easyuhc.gpowers;
 
 import org.bukkit.plugin.java.JavaPlugin;
 
 import alisolarflare.Module;
-import alisolarflare.components.gpowers.commands.GPower;
-import alisolarflare.components.gpowers.commands.PowerDown;
-import alisolarflare.components.gpowers.commands.PowerUp;
-import alisolarflare.components.gpowers.listeners.gPowerListener;
+import alisolarflare.easyuhc.gpowers.commands.GPower;
+import alisolarflare.easyuhc.gpowers.commands.PowerDown;
+import alisolarflare.easyuhc.gpowers.commands.PowerUp;
+import alisolarflare.easyuhc.gpowers.listeners.gPowerListener;
 
 public class GPowerModule extends Module {
 

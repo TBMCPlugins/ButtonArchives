@@ -1,9 +1,9 @@
-package alisolarflare.components.gpowers.listeners;
+package alisolarflare.easyuhc.gpowers.listeners;
 
 import org.bukkit.event.Listener;
 import org.bukkit.plugin.java.JavaPlugin;
 
-import alisolarflare.components.gpowers.GPowerMemory;
+import alisolarflare.easyuhc.gpowers.GPowerMemory;
 
 public class gPowerListener implements Listener{
 	

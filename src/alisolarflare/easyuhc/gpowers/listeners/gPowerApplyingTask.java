@@ -1,4 +1,4 @@
-package alisolarflare.components.gpowers.listeners;
+package alisolarflare.easyuhc.gpowers.listeners;
 
 import java.util.Map;
 import java.util.UUID;
@@ -10,7 +10,7 @@ import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
 import org.bukkit.scheduler.BukkitRunnable;
 
-import alisolarflare.components.gpowers.GPowerMemory.poweredPlayer;
+import alisolarflare.easyuhc.gpowers.GPowerMemory.poweredPlayer;
 
 public class gPowerApplyingTask extends BukkitRunnable{
 	

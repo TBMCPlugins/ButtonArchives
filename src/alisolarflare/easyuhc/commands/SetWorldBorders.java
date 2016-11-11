@@ -2,13 +2,13 @@ package alisolarflare.easyuhc.commands;
 
 import org.bukkit.command.CommandSender;
 
-import buttondevteam.lib.chat.TBMCCommandBase;
+import alisolarflare.DevCommand;
 
-public class SetupWorldBorders extends TBMCCommandBase {
+public class SetWorldBorders extends DevCommand {
 	
 	@Override
 	public boolean OnCommand(CommandSender sender, String alias, String[] args) {
-		// TODO Auto-generated method stub
+		
 		return false;
 	}
 	
@@ -17,17 +17,4 @@ public class SetupWorldBorders extends TBMCCommandBase {
 		// TODO Auto-generated method stub
 		return null;
 	}
-
-	@Override
-	public boolean GetPlayerOnly() {
-		// TODO Auto-generated method stub
-		return false;
-	}
-
-	@Override
-	public boolean GetModOnly() {
-		// TODO Auto-generated method stub
-		return false;
-	}
-
 }

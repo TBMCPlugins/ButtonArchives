@@ -7,10 +7,10 @@ import org.bukkit.plugin.PluginDescriptionFile;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import alisolarflare.components.flairdoor.FlairDoorModule;
-import alisolarflare.components.gpowers.GPowerModule;
 import alisolarflare.components.links.AliLinkModule;
 import alisolarflare.creativeboundaries.CreativeBoundariesModule;
 import alisolarflare.easyuhc.EasyUHCModule;
+import alisolarflare.easyuhc.gpowers.GPowerModule;
 import alisolarflare.magic.MagicModule;
 import alisolarflare.minigames.MinigameModule;
 

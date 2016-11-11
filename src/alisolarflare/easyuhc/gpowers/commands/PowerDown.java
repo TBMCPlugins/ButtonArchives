@@ -1,9 +1,9 @@
-package alisolarflare.components.gpowers.commands;
+package alisolarflare.easyuhc.gpowers.commands;
 
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
-import alisolarflare.components.gpowers.GPowerMemory;
+import alisolarflare.easyuhc.gpowers.GPowerMemory;
 import buttondevteam.lib.chat.TBMCCommandBase;
 
 public class PowerDown extends TBMCCommandBase {
