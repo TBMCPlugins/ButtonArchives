@@ -33,8 +33,8 @@ public abstract class Module{
 	 * @param label           Name of the command in plugin.yml
 	 * @param commandExecutor Custom coded CommandExecutor class 
 	 */
-	protected void registerCommand(JavaPlugin plugin, DevCommand devCommand){
-		plugin.getCommand(devCommand.GetLabel()).setExecutor(devCommand);
+	protected void registerCommand(JavaPlugin plugin, TBMCCommandBase commandBase){
+		TBMCChatAPI.AddCommand(plugin, commandBase);
 	}
 	/**
 	 * Registers a Listener to this plugin
