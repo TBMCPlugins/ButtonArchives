@@ -30,7 +30,7 @@ commands:
   setcolourspawn:
     description: sets the spawn points for each colour in a button minigame
   setmatchstate:
-  	description: sets the current state of the ultrahardcore game.
+    description: sets the current state of the ultrahardcore game.
   addtouhc:
     description: Adds a player to the UltraHardcore match
   joinuhc:
