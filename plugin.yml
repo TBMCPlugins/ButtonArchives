@@ -41,3 +41,13 @@ commands:
     description: Schedules an UltraHardcore match
   startmatch:
     description: Starts an UltraHardcore match
+  spreadplayers:
+    description: Admin command that spreads players around an ultrahardcore match
+  teleporttouhc:
+    description: Teleports you to the ultrahardcore match
+  setuhclobby:
+    description: Sets the area where a uhc will take place
+  activatepowers:
+    description: Admin command that activates gpowers on a uhc
+  setworldborders:
+    description: sets the worldborders to a uhc match
