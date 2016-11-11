@@ -4,7 +4,7 @@ version: 2.0.1
 
 commands:
   flairme:
-    description: Activates the Flair Me Command. Ask Ali, she was tired when writing this description
+    description: Activates the Flair Me Command. Ask Ali - she was tired when writing this description
   gpower:
     description: Testing command for ghostie powers
   powerup:
@@ -16,9 +16,9 @@ commands:
   setalilink:
     description: Creates an Ali Link setalilink frequency
   cbgm0:
-    description: Creative Boundaries Gamemode 0, allows players to return to survival
+    description: Creative Boundaries Gamemode 0 - allows players to return to survival
   cbgm1:
-    description: Creative Boundaries Gamemode 1, allows players to access creative within their towns. Creative is removed outside of towns, so be careful
+    description: Creative Boundaries Gamemode 1 - allows players to access creative within their towns. Creative is removed outside of towns, so be careful
   setdickmode:
     description: Should players automatically return to creative when outside town borders? Dickmode says yes.
   joinminigame:
@@ -55,3 +55,5 @@ commands:
     description: starts an ultrahardcore match
   starttimer:
     description: starts an ultrahardcore timer
+  powerall:
+    description: activate every player's power

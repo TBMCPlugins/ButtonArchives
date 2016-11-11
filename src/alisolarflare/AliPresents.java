@@ -10,7 +10,6 @@ import alisolarflare.components.flairdoor.FlairDoorModule;
 import alisolarflare.components.links.AliLinkModule;
 import alisolarflare.creativeboundaries.CreativeBoundariesModule;
 import alisolarflare.easyuhc.EasyUHCModule;
-import alisolarflare.easyuhc.gpowers.GPowerModule;
 import alisolarflare.magic.MagicModule;
 import alisolarflare.minigames.MinigameModule;
 
@@ -23,7 +22,6 @@ public class AliPresents extends JavaPlugin{
 		
 		
 		new FlairDoorModule().register(this);
-		new GPowerModule().register(this);
 		new AliLinkModule().register(this);
 		new EasyUHCModule().register(this);
 		new MagicModule().register(this);

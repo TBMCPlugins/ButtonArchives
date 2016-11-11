@@ -13,7 +13,7 @@ import org.bukkit.scheduler.BukkitRunnable;
 import alisolarflare.easyuhc.gpowers.GPowerMemory.poweredPlayer;
 
 public class gPowerApplyingTask extends BukkitRunnable{
-	private int powerLength = 200;
+	private int powerLength = 300;
 	private Server server;
 	private Map<UUID, poweredPlayer> poweredPlayerList;
 
@@ -35,6 +35,9 @@ public class gPowerApplyingTask extends BukkitRunnable{
 
 	private void activatePower(Player player, String colour) {
 		//GREY
+		for (PotionEffect potionEffect : player.getActivePotionEffects()){
+			player.removePotionEffect(potionEffect.getType());
+		}
 		if ((colour.startsWith("grey") || colour.startsWith("gra")) && (player.getWorld().getTime() > 12575 && player.getWorld().getTime() < 22925)){
 			player.addPotionEffect(new PotionEffect(PotionEffectType.REGENERATION, powerLength, 0, true, false, Color.GRAY), true);
 			player.addPotionEffect(new PotionEffect(PotionEffectType.NIGHT_VISION, powerLength+100, 0, true, false, Color.GRAY), true);
