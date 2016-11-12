@@ -3,9 +3,9 @@ package alisolarflare.components.flairdoor.commands;
 import org.bukkit.command.CommandSender;
 
 import alisolarflare.components.flairdoor.listeners.PortalListener;
-import buttondevteam.lib.chat.TBMCCommandBase;
+import alisolarflare.modules.PlayerCommand;
 
-public class FlairMe extends TBMCCommandBase {
+public class FlairMe extends PlayerCommand {
 
 	@Override
 	public boolean OnCommand(CommandSender sender, String label, String[] args) {
@@ -25,15 +25,4 @@ public class FlairMe extends TBMCCommandBase {
 	public String GetCommandPath() {
 		return "flairme";
 	}
-
-	@Override
-	public boolean GetPlayerOnly() {
-		return true;
-	}
-
-	@Override
-	public boolean GetModOnly() {
-		return false;
-	}
-
 }

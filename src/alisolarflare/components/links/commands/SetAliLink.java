@@ -11,7 +11,7 @@ import org.bukkit.plugin.java.JavaPlugin;
 
 import alisolarflare.components.links.AliLinkModule;
 import alisolarflare.components.links.entities.Link;
-import buttondevteam.lib.chat.TBMCCommandBase;
+import alisolarflare.modules.PlayerCommand;
 
 /**
  * This class manages the command /SetAliLink <frequency> [x] [y] [z]. This command creates an Ali-Link, a location in a world that when called on by {@link PressAliLink}, creates a temporary redstone
@@ -21,7 +21,7 @@ import buttondevteam.lib.chat.TBMCCommandBase;
  * @author Alisolarflare
  *
  */
-public class SetAliLink extends TBMCCommandBase {
+public class SetAliLink extends PlayerCommand {
 	public List<Link> linkList = new ArrayList<Link>();
 	AliLinkModule subplugin;
 	private JavaPlugin plugin;
@@ -120,21 +120,4 @@ public class SetAliLink extends TBMCCommandBase {
 		// TODO Auto-generated method stub
 		return null;
 	}
-
-	@Override
-	public String GetCommandPath() {
-		return "setalilink";
-	}
-
-	@Override
-	public boolean GetPlayerOnly() {
-		return true;
-	}
-
-	@Override
-	public boolean GetModOnly() {
-		// TODO Auto-generated method stub
-		return false;
-	}
-
 }

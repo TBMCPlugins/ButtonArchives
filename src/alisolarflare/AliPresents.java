@@ -8,10 +8,10 @@ import org.bukkit.plugin.java.JavaPlugin;
 
 import alisolarflare.components.flairdoor.FlairDoorModule;
 import alisolarflare.components.links.AliLinkModule;
-import alisolarflare.creativeboundaries.CreativeBoundariesModule;
-import alisolarflare.easyuhc.EasyUHCModule;
-import alisolarflare.magic.MagicModule;
-import alisolarflare.minigames.MinigameModule;
+import alisolarflare.modules.creativeboundaries.CreativeBoundariesModule;
+import alisolarflare.modules.easyuhc.EasyUHCModule;
+import alisolarflare.modules.magic.MagicModule;
+import alisolarflare.modules.minigames.MinigameModule;
 
 public class AliPresents extends JavaPlugin{
 	public void onEnable(){

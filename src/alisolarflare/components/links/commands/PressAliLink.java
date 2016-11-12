@@ -4,9 +4,9 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import alisolarflare.components.links.entities.Link;
-import buttondevteam.lib.chat.TBMCCommandBase;
+import alisolarflare.modules.PlayerCommand;
 
-public class PressAliLink extends TBMCCommandBase {
+public class PressAliLink extends PlayerCommand {
 	private JavaPlugin plugin;
 	private SetAliLink setAliLink;
 
@@ -36,25 +36,6 @@ public class PressAliLink extends TBMCCommandBase {
 
 	@Override
 	public String[] GetHelpText(String alias) {
-		// TODO Auto-generated method stub
 		return null;
 	}
-
-	@Override
-	public String GetCommandPath() {
-		return "pressalilink";
-	}
-
-	@Override
-	public boolean GetPlayerOnly() {
-		// TODO Auto-generated method stub
-		return false;
-	}
-
-	@Override
-	public boolean GetModOnly() {
-		// TODO Auto-generated method stub
-		return false;
-	}
-
 }

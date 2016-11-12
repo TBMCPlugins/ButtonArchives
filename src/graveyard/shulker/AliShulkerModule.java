@@ -2,7 +2,7 @@ package graveyard.shulker;
 
 import org.bukkit.plugin.java.JavaPlugin;
 
-import alisolarflare.Module;
+import alisolarflare.modules.Module;
 import graveyard.shulker.commands.AliShulker;
 
 /**@deprecated*/

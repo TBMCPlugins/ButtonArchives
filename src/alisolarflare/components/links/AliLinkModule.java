@@ -4,10 +4,10 @@ import java.util.List;
 
 import org.bukkit.plugin.java.JavaPlugin;
 
-import alisolarflare.Module;
 import alisolarflare.components.links.commands.PressAliLink;
 import alisolarflare.components.links.commands.SetAliLink;
 import alisolarflare.components.links.entities.Link;
+import alisolarflare.modules.Module;
 
 public class AliLinkModule extends Module {
 	private SetAliLink setAliLink;
