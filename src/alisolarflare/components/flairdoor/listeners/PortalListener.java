@@ -11,7 +11,6 @@ import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerPortalEvent;
-import org.bukkit.material.MaterialData;
 import org.bukkit.material.Wool;
 import org.bukkit.plugin.java.JavaPlugin;
 
@@ -30,109 +29,105 @@ public class PortalListener implements Listener{
 	}
 	@EventHandler
 	public void onPortalEnter(PlayerPortalEvent event){
-		//SANITATION - Player
 		if(!(event.getPlayer() instanceof Player)){
 			return;
 		}
 		
-		//INIT - Player
 		Player player = event.getPlayer();
 		
-		//SANITATION - PlayersToBeFlaired
 		if(!(playersToBeFlaired.contains(player.getName()))){
 			return;
 		}
-		player.sendMessage("-MAY THE FLAIRING COMMENCE-");
+		
 		event.setTo(player.getLocation());
 		
-		//INIT - x,y,z
 		int x = player.getLocation().getBlockX();
 		int y = player.getLocation().getBlockY();
 		int z = player.getLocation().getBlockZ();
 		
-		//INIT - Blocks Under Portal
-		Block HigherBlock = player.getWorld().getBlockAt(x,y-2,z);
-		Block MiddleBlock = player.getWorld().getBlockAt(x,y-3,z);
-		Block BottomBlock = player.getWorld().getBlockAt(x,y-4,z);
+		Block HigherBlock = player.getWorld().getBlockAt(x,y-2,z); //Block under obsidian
+		Block MiddleBlock = player.getWorld().getBlockAt(x,y-3,z); //Block under higher block
+		Block BottomBlock = player.getWorld().getBlockAt(x,y-4,z); //Block under middle block
 		
-		//RECOLOUR PLAYER
 		if(HigherBlock.getType() == Material.STONE){
 			recolourPlayer(player, DyeColor.GRAY);
-			
-		//TOP BLOCK IS WOOL?
-		}else if(HigherBlock.getType() == Material.WOOL){
-			Wool wool = (Wool) HigherBlock.getState().getData();
-			recolourPlayer(player, wool.getColor());
-		
-		//MIDDLE BLOCK IS WOOL?
-		}else if(MiddleBlock.getType() == Material.WOOL){
-			MaterialData mData = MiddleBlock.getState().getData();
-			Wool wool = (Wool) mData;
-
-			recolourPlayer(player, wool.getColor());
-		
-		//BOTTOM BLOCK IS WOOL?
-		}else if (BottomBlock.getType() == Material.WOOL){
-			Wool wool = (Wool) BottomBlock.getState().getData();
-			recolourPlayer(player, wool.getColor());
+			return;
 		}
+		
+		DyeColor woolColour = DyeColor.PINK; //Illegal value
+		if(HigherBlock.getType() == Material.WOOL){
+			woolColour = ((Wool) HigherBlock.getState().getData()).getColor();
+		}else if(MiddleBlock.getType() == Material.WOOL){
+			woolColour = ((Wool) MiddleBlock.getState().getData()).getColor();
+		}else if (BottomBlock.getType() == Material.WOOL){
+			woolColour = ((Wool) BottomBlock.getState().getData()).getColor();
+		}else{
+			return;
+		}
+		
+		recolourPlayer(player, woolColour);
 		
 	}
 	public void recolourPlayer(Player player, DyeColor dyecolour){
 		User user = essentials.getUser(player);
 		
 		String name = user._getNickname();
-		String tempName = "";
+		String sanitizedName = "";
 		for(int i = 0; i < name.length(); i++){
 			if (name.charAt(i) != '§'){
-				tempName += name.charAt(i);
+				sanitizedName += name.charAt(i);
 			}else{
 				i++;
 			}
 		}
-		name = tempName;
+		
+		String colourChanger = "";
 		
 		switch(dyecolour){
-		case GRAY:
-			player.sendMessage("Adding §7GRAY!§f");
-			name = "§7" + name;
+		case GRAY:        
+			colourChanger = "§7"; 
 			break;
 		case RED:
-			player.sendMessage("Adding §4RED!§f");
-			name = "§4" + name;
+			colourChanger = "§4"; 
 			break;
-		case ORANGE:
-			player.sendMessage("Adding §6ORANGE!§f");
-			name = "§6" + name;
+		case ORANGE:      
+			colourChanger = "§6"; 
 			break;
 		case YELLOW:
-			player.sendMessage("Adding §eYELLOW!§f");
-			name = "§e" + name;
+			colourChanger = "§e"; 
 			break;
 		case LIME:
+			colourChanger = "§a"; 
+			break;
 		case GREEN:
-			player.sendMessage("Adding §aGREEN!§f");
-			name = "§a" + name;
+			colourChanger = "§a"; 
 			break;
 		case CYAN:
+			colourChanger = "§9"; 
+			break;
 		case LIGHT_BLUE:
-		case BLUE:
-			player.sendMessage("Adding §9BLUE!§f");
-			name = "§9" + name;
+			colourChanger = "§9"; 
+			break;
+		case BLUE: 
+			colourChanger = "§9"; 
 			break;
 		case PURPLE:
-			player.sendMessage("Adding §5PURPLE!§f");
-			name = "§5" + name;
+			colourChanger = "§5"; 
 			break;
 		case WHITE:
-			player.sendMessage("Adding §fWHITE!§f");
-			name = "§f" + name;
+			colourChanger = "§f"; 
+			break;
 		default:
 			player.sendMessage("ERROR, PORTAL HAS INVALID UNDER-BLOCK");
 			break;
 		}
-		user.setNickname(name);
+		
+		String newName = colourChanger + sanitizedName;
+		user.setNickname(newName);
+		
+		player.sendMessage("Adding the colour " + colourChanger + dyecolour.name() + "§f!");
 		player.sendMessage("Your name is now: " + user.getNickname() +"!");
+		
 		playersToBeFlaired.remove(player.getName());
 	}
 }
