@@ -19,10 +19,4 @@ public class PowerAll extends ModCommand{
 		}
 		return false;
 	}
-
-	@Override
-	public String[] GetHelpText(String alias) {
-		// TODO Auto-generated method stub
-		return null;
-	}
 }

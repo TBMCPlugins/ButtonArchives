@@ -16,12 +16,6 @@ public class FlairMe extends PlayerCommand {
 	}
 
 	@Override
-	public String[] GetHelpText(String alias) {
-		// TODO Auto-generated method stub
-		return new String[] { "" };
-	}
-
-	@Override
 	public String GetCommandPath() {
 		return "flairme";
 	}

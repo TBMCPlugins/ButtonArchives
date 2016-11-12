@@ -17,11 +17,5 @@ public class SetUHCLobby extends ModCommand{
 		module.lobbyLocation = ((Player) sender).getLocation();
 		return false;
 	}
-
-	@Override
-	public String[] GetHelpText(String alias) {
-		// TODO Auto-generated method stub
-		return null;
-	}
 	
 }

@@ -67,10 +67,5 @@ public class SetMatchState extends ModCommand{
 		// TODO Auto-generated method stub
 		return false;
 	}
-
-	@Override
-	public String[] GetHelpText(String alias) {
-		return new String[] { "" };
-	}
 	
 }

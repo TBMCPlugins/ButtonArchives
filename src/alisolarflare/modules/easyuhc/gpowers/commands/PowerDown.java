@@ -24,12 +24,6 @@ public class PowerDown extends PlayerCommand {
 	}
 
 	@Override
-	public String[] GetHelpText(String alias) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
 	public String GetCommandPath() {
 		return "powerdown";
 	}

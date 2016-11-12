@@ -11,10 +11,4 @@ public class TeleportToUHC extends PlayerCommand{
 		// TODO Auto-generated method stub
 		return false;
 	}
-
-	@Override
-	public String[] GetHelpText(String alias) {
-		// TODO Auto-generated method stub
-		return null;
-	}
 }

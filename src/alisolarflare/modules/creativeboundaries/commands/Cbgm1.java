@@ -60,10 +60,4 @@ public class Cbgm1 extends PlayerCommand {
 		player.sendMessage("Sorry, you're not part of this town");
 		return false;
 	}
-
-	@Override
-	public String[] GetHelpText(String alias) {
-		// TODO Auto-generated method stub
-		return null;
-	}
 }

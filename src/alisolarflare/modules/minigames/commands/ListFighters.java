@@ -17,10 +17,4 @@ public class ListFighters extends PlayerCommand {
 		sender.sendMessage(lobby.fighters.toString());
 		return false;
 	}
-
-	@Override
-	public String[] GetHelpText(String alias) {
-		// TODO Auto-generated method stub
-		return null;
-	}
 }

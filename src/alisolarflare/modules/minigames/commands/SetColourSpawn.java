@@ -65,9 +65,4 @@ public class SetColourSpawn extends PlayerCommand{
 		}
 		return false;
 	}
-	@Override
-	public String[] GetHelpText(String arg0) {
-		// TODO Auto-generated method stub
-		return null;
-	}
 }

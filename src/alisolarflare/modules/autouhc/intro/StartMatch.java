@@ -45,12 +45,6 @@ public class StartMatch extends ModCommand {
 	}
 
 	@Override
-	public String[] GetHelpText(String alias) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
 	public String GetCommandPath() {
 		return "startmatch";
 	}
