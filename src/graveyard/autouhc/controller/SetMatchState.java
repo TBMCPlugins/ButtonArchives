@@ -3,7 +3,7 @@ package graveyard.autouhc.controller;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
-import alisolarflare.modules.ModCommand;
+import alisolarflare.components.ModCommand;
 import graveyard.autouhc.memory.MatchState;
 import graveyard.autouhc.memory.UHCMatch;
 /**@deprecated*/

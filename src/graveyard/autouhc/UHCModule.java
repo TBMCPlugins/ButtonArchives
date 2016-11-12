@@ -1,12 +1,12 @@
 package graveyard.autouhc;
 import org.bukkit.plugin.java.JavaPlugin;
 
-import alisolarflare.modules.Module;
+import alisolarflare.components.Component;
 import graveyard.autouhc.memory.MatchState;
 import graveyard.autouhc.memory.UHCMatch;
 
 /**@deprecated*/
-public class UHCModule extends Module {
+public class UHCModule extends Component {
 	public UHCMatch match;
 
 	public void register(JavaPlugin plugin) {

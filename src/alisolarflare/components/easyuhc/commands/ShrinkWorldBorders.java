@@ -1,19 +1,14 @@
-package graveyard.autouhc.intro;
+package alisolarflare.components.easyuhc.commands;
 
 import org.bukkit.command.CommandSender;
 
 import alisolarflare.components.ModCommand;
-import graveyard.autouhc.memory.UHCMatch;
-/**@deprecated*/
-public class ConfigureMatch extends ModCommand{
 
-	public ConfigureMatch(UHCMatch match) {
-		// TODO Auto-generated constructor stub
-	}
+public class ShrinkWorldBorders extends ModCommand {
 
 	@Override
 	public boolean OnCommand(CommandSender sender, String alias, String[] args) {
 		// TODO Auto-generated method stub
 		return false;
-	}
+	}	
 }

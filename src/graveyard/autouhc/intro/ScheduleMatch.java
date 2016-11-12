@@ -2,7 +2,7 @@ package graveyard.autouhc.intro;
 
 import org.bukkit.command.CommandSender;
 
-import alisolarflare.modules.ModCommand;
+import alisolarflare.components.ModCommand;
 import graveyard.autouhc.memory.UHCMatch;
 /**@deprecated*/
 public class ScheduleMatch extends ModCommand{

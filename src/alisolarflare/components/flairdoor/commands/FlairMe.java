@@ -3,8 +3,8 @@ package alisolarflare.components.flairdoor.commands;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
+import alisolarflare.components.PlayerCommand;
 import alisolarflare.components.flairdoor.listeners.PortalListener;
-import alisolarflare.modules.PlayerCommand;
 
 public class FlairMe extends PlayerCommand {
 

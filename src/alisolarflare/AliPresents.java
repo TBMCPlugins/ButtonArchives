@@ -6,12 +6,12 @@ import org.bukkit.plugin.PluginDescriptionFile;
 //import alisolarflare.links.AliLinkSubPlug;
 import org.bukkit.plugin.java.JavaPlugin;
 
-import alisolarflare.components.flairdoor.FlairDoorModule;
-import alisolarflare.components.links.AliLinkModule;
-import alisolarflare.modules.creativeboundaries.CreativeBoundariesModule;
-import alisolarflare.modules.easyuhc.EasyUHCModule;
-import alisolarflare.modules.magic.MagicModule;
-import alisolarflare.modules.minigames.MinigameModule;
+import alisolarflare.components.alilinks.AliLinkComponent;
+import alisolarflare.components.creativeboundaries.CreativeBoundariesComponent;
+import alisolarflare.components.easyuhc.EasyUHCComponent;
+import alisolarflare.components.flairdoor.FlairDoorComponent;
+import alisolarflare.components.magic.MagicComponent;
+import alisolarflare.components.minigames.MinigameModule;
 
 public class AliPresents extends JavaPlugin{
 	public void onEnable(){
@@ -21,12 +21,12 @@ public class AliPresents extends JavaPlugin{
 		logger.info(pdfFile.getName() + " has been started (V." + pdfFile.getVersion()+ ").");
 		
 		
-		new FlairDoorModule().register(this);
-		new AliLinkModule().register(this);
-		new EasyUHCModule().register(this);
-		new MagicModule().register(this);
+		new FlairDoorComponent().register(this);
+		new AliLinkComponent().register(this);
+		new EasyUHCComponent().register(this);
+		new MagicComponent().register(this);
 		new MinigameModule().register(this);
-		new CreativeBoundariesModule().register(this);
+		new CreativeBoundariesComponent().register(this);
 		
 		
 		logger.info(pdfFile.getName() + " has fully registered (V." + pdfFile.getVersion()+ ").");
