@@ -8,7 +8,7 @@ import graveyard.autouhc.memory.UHCMatch;
 
 public class StartMatch extends ModCommand {
 	private UHCMatch match;
-
+	/**@deprecated*/
 	public StartMatch(UHCMatch match) {
 		this.match = match;
 	}

@@ -9,6 +9,7 @@ import org.bukkit.scheduler.BukkitTask;
  * ghostie powers if an Ultrahardcore Match is going on,
  * and it's time for powers to activate
  */
+/**@deprecated*/
 public class MatchCyclingListener implements Listener {
 	public BukkitTask PowerCyclingTask;
 	

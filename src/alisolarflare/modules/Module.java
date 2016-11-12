@@ -1,5 +1,6 @@
 package alisolarflare.modules;
 
+import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.event.Listener;
 import org.bukkit.plugin.java.JavaPlugin;
 
@@ -20,6 +21,7 @@ import buttondevteam.lib.chat.TBMCCommandBase;
  *
  */
 public abstract class Module{
+
 	/**
 	 * Registers the module, when called by the JavaPlugin class. Call
 	 * registerCommand() and registerListener() within this method.
@@ -45,6 +47,25 @@ public abstract class Module{
 	protected Listener registerListener(JavaPlugin plugin, Listener listener){
 		TBMCCoreAPI.RegisterEventsForExceptions(listener, plugin);
 		return listener;
+	}
+
+	public void saveData(FileConfiguration config, String pathToData, Object data){
+		
+		config.set("moduledata." + this.getClassName() + "." + pathToData, data);
+	}
+	public Object getData(FileConfiguration config, String pathToData, Object data){
+		return config.get("moduledata." + this.getClassName() + "." + pathToData, data);
+	}
+	
+	public String getClassName(){
+		Class<?> enclosingClass = getClass().getEnclosingClass();
+		String className = "nullModule";
+		if (enclosingClass != null) {
+		  className = (enclosingClass.getName());
+		} else {
+		  className = (getClass().getName());
+		}
+		return className;
 	}
 	
 }

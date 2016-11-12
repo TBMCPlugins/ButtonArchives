@@ -5,7 +5,7 @@ import org.bukkit.entity.Player;
 
 import alisolarflare.modules.ModCommand;
 import graveyard.autouhc.memory.UHCMatch;
-
+/**@deprecated*/
 public class JoinUHC extends ModCommand{
 
 	private UHCMatch match;

@@ -6,7 +6,7 @@ import org.bukkit.entity.Player;
 import alisolarflare.modules.ModCommand;
 import graveyard.autouhc.memory.MatchState;
 import graveyard.autouhc.memory.UHCMatch;
-
+/**@deprecated*/
 public class SetMatchState extends ModCommand{
 
 	UHCMatch match;

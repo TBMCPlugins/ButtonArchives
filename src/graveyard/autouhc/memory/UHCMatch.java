@@ -7,7 +7,7 @@ import org.bukkit.Location;
 import org.bukkit.World;
 import org.bukkit.configuration.file.FileConfiguration;
 
-
+/**@deprecated*/
 public class UHCMatch {
 	private FileConfiguration config;	
 	private MatchState matchState = MatchState.IDLE;

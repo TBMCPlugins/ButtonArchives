@@ -1,5 +1,5 @@
 package graveyard.autouhc.memory;
-
+/**@deprecated*/
 public enum MatchState {
 	IDLE, //Idle: Configure Match, Wait: Schedule Match, Intro: Start Match
 	WAITING, //SETUP: Scheduled Time, INTRO: No Setup

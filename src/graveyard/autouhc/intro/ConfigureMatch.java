@@ -4,7 +4,7 @@ import org.bukkit.command.CommandSender;
 
 import alisolarflare.modules.ModCommand;
 import graveyard.autouhc.memory.UHCMatch;
-
+/**@deprecated*/
 public class ConfigureMatch extends ModCommand{
 
 	public ConfigureMatch(UHCMatch match) {

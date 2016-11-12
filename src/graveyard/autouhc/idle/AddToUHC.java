@@ -11,6 +11,7 @@ import graveyard.autouhc.memory.UHCMatch;
  * 
  * @author Alisolarflare
  */
+/**@deprecated*/
 public class AddToUHC extends ModCommand {
 	private UHCMatch match;
 
