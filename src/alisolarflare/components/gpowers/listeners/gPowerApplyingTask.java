@@ -25,7 +25,7 @@ public class gPowerApplyingTask extends BukkitRunnable{
 	//REPEATS EVERY 5 SECONDS
 	@Override
 	public void run() {
-		server.broadcastMessage("ping!");
+		//server.broadcastMessage("ping!");
 		for (Player player : server.getOnlinePlayers()){
 			if(poweredPlayerList.containsKey(player.getUniqueId()) && poweredPlayerList.get(player.getUniqueId()).isPowersActive){
 				activatePower(player, poweredPlayerList.get(player.getUniqueId()).colour);
