@@ -18,7 +18,7 @@ import com.earth2me.essentials.Essentials;
 import com.earth2me.essentials.User;
 
 public class PortalListener implements Listener{
-	public static List<String> playersToBeFlaired = new ArrayList<String>();
+	public static List<Player> playersToBeFlaired = new ArrayList<Player>();
 	public JavaPlugin plugin;
 
 	Essentials essentials;
@@ -35,7 +35,7 @@ public class PortalListener implements Listener{
 		
 		Player player = event.getPlayer();
 		
-		if(!(playersToBeFlaired.contains(player.getName()))){
+		if(!(playersToBeFlaired.contains(player))){
 			return;
 		}
 		

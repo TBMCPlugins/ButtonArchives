@@ -11,11 +11,6 @@ import alisolarflare.modules.easyuhc.commands.SpreadPlayers;
 import alisolarflare.modules.easyuhc.commands.StartTimer;
 import alisolarflare.modules.easyuhc.commands.StartUHC;
 import alisolarflare.modules.easyuhc.commands.TeleportToUHC;
-import alisolarflare.modules.easyuhc.gpowers.GPowerMemory;
-import alisolarflare.modules.easyuhc.gpowers.commands.GPower;
-import alisolarflare.modules.easyuhc.gpowers.commands.PowerDown;
-import alisolarflare.modules.easyuhc.gpowers.commands.PowerUp;
-import alisolarflare.modules.easyuhc.gpowers.listeners.gPowerListener;
 
 public class EasyUHCModule extends Module{
 	public Location lobbyLocation;
@@ -23,12 +18,6 @@ public class EasyUHCModule extends Module{
 	public void register(JavaPlugin plugin) {
 
 
-		GPowerMemory gPowerMemory = new GPowerMemory();
-		registerCommand(plugin, new GPower(gPowerMemory));
-		registerCommand(plugin, new PowerUp(gPowerMemory));
-		registerCommand(plugin, new PowerDown(gPowerMemory));
-
-		registerListener(plugin, new gPowerListener(plugin, gPowerMemory));
 		
 		registerCommand(plugin, new ActivatePowers());
 		registerCommand(plugin, new SetUHCLobby(this));
