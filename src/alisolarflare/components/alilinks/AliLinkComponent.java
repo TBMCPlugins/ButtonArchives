@@ -1,6 +1,8 @@
 package alisolarflare.components.alilinks;
 
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 import org.bukkit.plugin.java.JavaPlugin;
 
@@ -10,24 +12,26 @@ import alisolarflare.components.alilinks.commands.SetAliLink;
 import alisolarflare.components.alilinks.entities.Link;
 
 public class AliLinkComponent extends Component {
-	private SetAliLink setAliLink;
 
+	private List<Link> linkList;
+	private List<Map<String,String>> linkData;
 	@Override
 	public void register(JavaPlugin plugin) {
-		setAliLink = new SetAliLink(plugin);
+		this.linkList = MapToLinkList(plugin.getConfig().getMapList("aliLinkList"));
+		for (Link link: linkList){
+			linkData.add(link.toMap());
+		}
 		
-		registerCommand(plugin, new PressAliLink(plugin, setAliLink));
-		registerCommand(plugin, setAliLink);
+		registerCommand(plugin, new PressAliLink(plugin, linkList));
+		registerCommand(plugin, new SetAliLink(plugin.getConfig(), linkList, linkData));
 
 	}
-
-	public void saveLinkList(JavaPlugin plugin) {
-		plugin.getConfig().set("aliLinkList", setAliLink.linkList);
-	}
-
 	@SuppressWarnings("unchecked")
-	public List<Link> loadLinkList(JavaPlugin plugin) {
-		return (List<Link>) plugin.getConfig().getList("aliLinkList");
+	private List<Link> MapToLinkList(List<Map<?, ?>> mapList) {
+		List<Link> linkList = new ArrayList<Link>();
+		for (Map<?, ?> MapWithLinkData : mapList){
+			linkList.add(new Link((Map<String,String>) MapWithLinkData));
+		}
+		return linkList;
 	}
-
 }

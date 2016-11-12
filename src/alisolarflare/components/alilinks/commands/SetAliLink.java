@@ -2,122 +2,62 @@ package alisolarflare.components.alilinks.commands;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 import org.apache.commons.lang3.StringUtils;
-import org.bukkit.Location;
+import org.bukkit.World;
 import org.bukkit.command.CommandSender;
+import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.entity.Player;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import alisolarflare.components.PlayerCommand;
-import alisolarflare.components.alilinks.AliLinkComponent;
 import alisolarflare.components.alilinks.entities.Link;
 
-/**
- * This class manages the command /SetAliLink <frequency> [x] [y] [z]. This command creates an Ali-Link, a location in a world that when called on by {@link PressAliLink}, creates a temporary redstone
- * block, enabling wireless redstone
- * 
- * @see PressAliLink
- * @author Alisolarflare
- *
- */
 public class SetAliLink extends PlayerCommand {
-	public List<Link> linkList = new ArrayList<Link>();
-	AliLinkComponent subplugin;
-	private JavaPlugin plugin;
-
-	/**
-	 * Constructs the SetAliLink class
-	 * 
-	 * @param plugin
-	 *            The plugin that contains the configuration file of SetAliLink
-	 */
-	public SetAliLink(JavaPlugin plugin) {
-		this.plugin = plugin;
-		load();
+	public List<Link> linkList;
+	public List<Map<String, String>> linkData;
+	private FileConfiguration config;
+	
+	public SetAliLink(FileConfiguration config, List<Link> linkList, List<Map<String, String>> linkData) {
+		this.linkList = linkList;
+		this.linkData = linkData;		
+		this.config = config;
 	}
 
-	/**
-	 * This command creates an Ali-Link which, when activated by the command /PressAliLink, creates a temporary redstone block if and only if /PressAliLink [frequency] matches the frequency saved when
-	 * /SetAliLink [frequency] is called.
-	 * 
-	 * @see Class#PressAliLink
-	 * @param sender
-	 *            Player who sent the command
-	 * @param command
-	 *            Command Object created
-	 * @param label
-	 *            Name of the command
-	 * @param args
-	 *            Arguments: [frequency] [x-coordinate] [y-coordinate] [z-coordinate], where the coordinates point to the intended location of the Ali-Link
-	 */
 	@Override
 	public boolean OnCommand(CommandSender sender, String label, String[] args) {
-		sender.sendMessage("you pressed shit");
+		Player player = (Player) sender;
+		player.sendMessage("you pressed");
 		if (args == null || args.length < 1) {
 			sender.sendMessage("You must specify a link frequency");
 			sender.sendMessage("/pressalilink [name]");
 			return false;
 		}
-		Player player = (Player) sender;
-		if (args.length < 4) {
-			player.sendMessage("short");
-			linkList.add(new Link(args[0], player.getLocation()));
-			save(player);
-			player.sendMessage("end");
-			return false;
-		}
-		if (StringUtils.isNumericSpace(args[1]) && StringUtils.isNumericSpace(args[2])
-				&& StringUtils.isNumericSpace(args[3])) {
-			player.sendMessage("CUUUSTOM");
-			linkList.add(new Link(args[0], new Location(player.getWorld(), Double.parseDouble(args[1]),
-					Double.parseDouble(args[2]), Double.parseDouble(args[3]))));
-			save(player);
-			player.sendMessage("FINISHED");
-		} else {
-			player.sendMessage("UNCUSTOOM");
-			linkList.add(new Link(args[0], player.getLocation()));
-			save(player);
-			player.sendMessage("UNFINISHED");
-			return false;
-		}
-		return false;
-	}
 
-	/**
-	 * Tries to save the entire SetAliLink class into memory, which includes all of the current Ali-links saved and in use.
-	 * 
-	 * @param player
-	 */
-	private void save(Player player) {
-		player.sendMessage("SAAAVING");
-		player.sendMessage("SAVE FAILED: TELL ALI TO FIX THE SAVE AND UN-COMMENT THE PARAGRAPH SHE COMMENTED");
-		player.sendMessage("Link will only last until next server restart");
-		return;
-		/*
-		 * subplugin.plugin.getConfig().set("aliLinkList", subplugin.linkList); try { player.sendMessage("SAVIN"); subplugin.plugin.saveConfig(); player.sendMessage("GOOD SAVE"); } catch (Exception e)
-		 * { player.sendMessage("YOU FUCKED STUFF UP"); // TODO Auto-generated catch block e.printStackTrace(); }
-		 */
-	}
-
-	/**
-	 * Attempts to load the previous saved state of AliLinks, from the plugin configuration file
-	 */
-	@SuppressWarnings("unchecked")
-	private void load() {
-		try {
-			linkList = (List<Link>) plugin.getConfig().getList("aliLinkList");
-			if (linkList == null || linkList.isEmpty()) {
-				linkList = new ArrayList<Link>();
+		String frequency = args[0];
+		World world = player.getWorld();
+		Double x = player.getLocation().getX();
+		Double y = player.getLocation().getY();
+		Double z = player.getLocation().getZ();
+		
+		if (args.length > 4) {
+			boolean arg1isNumber = StringUtils.isNumericSpace(args[1]);
+			boolean arg2isNumber = StringUtils.isNumericSpace(args[2]);
+			boolean arg3isNumber = StringUtils.isNumericSpace(args[3]);
+			if (arg1isNumber && arg2isNumber && arg3isNumber) {
+				x = Double.parseDouble(args[1]);
+				y = Double.parseDouble(args[2]);
+				z = Double.parseDouble(args[3]);
 			}
-		} catch (Exception e) {
-			e.printStackTrace();
 		}
+		Link link = new Link(frequency, world, x, y, z);
+		linkList.add(link);
+		linkData.add(link.toMap());
+		saveLinkList();
+		return true;
 	}
-
-	@Override
-	public String[] GetHelpText(String alias) {
-		// TODO Auto-generated method stub
-		return null;
+	private void saveLinkList(){
+		config.set("aliLinkList", linkData);
 	}
 }
