@@ -21,11 +21,12 @@ public class PowerUp extends PlayerCommand {
 		
 		Player player = (Player) sender;
 		gPowerMemory.PowerUpPlayer(player);
-		return false;
+		return true;
 	}
-
 	@Override
-	public String GetCommandPath() {
-		return "powerup";
+	public String[] GetHelpText(String alias){
+		return new String[]{
+				"Usage: Type /PowerUp to activate your registered G-Power"
+		};
 	}
 }

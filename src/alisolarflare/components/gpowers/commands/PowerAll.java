@@ -17,6 +17,11 @@ public class PowerAll extends ModCommand{
 		for (poweredPlayer poweredPlayer : gPowerMemory.poweredPlayerList.values()){
 			poweredPlayer.isPowersActive = true;
 		}
-		return false;
+		return true;
+	}
+	public String[] GetHelpText(String alias){
+		return new String[]{
+				"Usage: Type /PowerAll to activate all powers for all players with gpowers"
+		};
 	}
 }

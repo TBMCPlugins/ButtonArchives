@@ -11,8 +11,11 @@ public abstract class ModCommand extends TBMCCommandBase{
 
 	@Override
 	public String[] GetHelpText(String alias){
-		return new String[] {"This command doesn't have help text, ask a dev to add one, using public String[] GetHelpText. "
-				+ "If you're a dev, write the help text you lazy bastard. -Ali"};
+		return new String[] {
+				"This command doesn't have help text, ask a dev to add one",
+				" using public String[] GetHelpText. ",
+				"If you're a dev, write the help text you lazy bastard. -Ali"
+		};
 	}
 
 	@Override

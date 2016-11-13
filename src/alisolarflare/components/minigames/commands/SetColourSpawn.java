@@ -3,10 +3,10 @@ package alisolarflare.components.minigames.commands;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
-import alisolarflare.components.PlayerCommand;
+import alisolarflare.components.ModCommand;
 import alisolarflare.components.minigames.data.SpawnSet;
 
-public class SetColourSpawn extends PlayerCommand{
+public class SetColourSpawn extends ModCommand{
 	private SpawnSet spawnSet;
 	
 	public SetColourSpawn(SpawnSet spawnSet){
@@ -14,14 +14,7 @@ public class SetColourSpawn extends PlayerCommand{
 	}
 	@Override
 	public boolean OnCommand(CommandSender sender, String label, String[] args) {
-		if (!(sender instanceof Player))
-			sender.sendMessage("ERROR: You must be a player to use this command!");
-		
 		Player player = (Player) sender;
-		
-		if(!(player.getName().equalsIgnoreCase("Alisolarflare")))
-			player.sendMessage("ERROR: You must be Alisolarflare to use this command!");
-		
 		
 		if(args.length == 0){
 			sender.sendMessage("ERROR: Arguments required.");
@@ -63,6 +56,12 @@ public class SetColourSpawn extends PlayerCommand{
 			sender.sendMessage("Purple Spawn Set!");
 			break;
 		}
-		return false;
+		return true;
+	}
+	public String[] GetHelpText(String alias){
+		return new String[] {
+				"Usage:  /SetColourSpawn <colour>",
+				"Colours: red, orange, yellow, green, blue, purple"
+		};
 	}
 }

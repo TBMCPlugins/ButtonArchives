@@ -23,7 +23,7 @@ public class LeaveMinigame extends PlayerCommand {
 		String name = sender.getName();
 		if (!(module.fighters.contains(name))) {
 			sender.sendMessage("You are not fighting!");
-			return false;
+			return true;
 		}
 		
 		while(module.fighters.contains(name)){
@@ -31,6 +31,12 @@ public class LeaveMinigame extends PlayerCommand {
 		}
 		sender.sendMessage("You have left the fighters category!");
 		
-		return false;
+		return true;
+	}
+	@Override 
+	public String[] GetHelpText(String alias){
+		return new String[]{
+				"Usage: Type /LeaveMinigame to leave the current minigame!"
+		};
 	}
 }

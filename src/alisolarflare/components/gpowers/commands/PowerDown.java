@@ -16,15 +16,14 @@ public class PowerDown extends PlayerCommand {
 
 	@Override
 	public boolean OnCommand(CommandSender sender, String label, String[] args) {
-		if (!(sender instanceof Player))
-			sender.sendMessage("You must be a player to use this command! Contact dev/ali if you think this is wrong");
 		Player player = (Player) sender;
 		gPowerMemory.PowerDownPlayer(player);
-		return false;
+		return true;
 	}
-
 	@Override
-	public String GetCommandPath() {
-		return "powerdown";
+	public String[] GetHelpText(String alias){
+		return new String[]{
+			"Usage: Type /PowerDown to disable your g-power"
+		};
 	}
 }

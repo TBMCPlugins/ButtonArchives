@@ -19,12 +19,9 @@ public class PressAliLink extends PlayerCommand {
 
 	@Override
 	public boolean OnCommand(CommandSender sender, String label, String[] args) {
-
-		sender.getServer().broadcastMessage(linkList.toString() + "over.");
-
 		if (args.length < 1) {
 			sender.sendMessage("You must specify a link frequency");
-			sender.sendMessage("/pressalilink [frequency]");
+			return false;
 		}
 		for (Link link : linkList) {
 			for (String inputlink : args) {
@@ -33,6 +30,13 @@ public class PressAliLink extends PlayerCommand {
 				}
 			}
 		}
-		return false;
+		sender.sendMessage("Link pressed!");
+		return true;
+	}
+	@Override
+	public String[] GetHelpText(String alias){
+		return new String[]{
+			"Usage: /pressalilink <frequency>"
+		};
 	}
 }

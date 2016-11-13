@@ -1,6 +1,5 @@
 package alisolarflare.components.alilinks.commands;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
@@ -9,7 +8,6 @@ import org.bukkit.World;
 import org.bukkit.command.CommandSender;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.entity.Player;
-import org.bukkit.plugin.java.JavaPlugin;
 
 import alisolarflare.components.PlayerCommand;
 import alisolarflare.components.alilinks.entities.Link;
@@ -51,13 +49,21 @@ public class SetAliLink extends PlayerCommand {
 				z = Double.parseDouble(args[3]);
 			}
 		}
+		
 		Link link = new Link(frequency, world, x, y, z);
 		linkList.add(link);
 		linkData.add(link.toMap());
 		saveLinkList();
+		
 		return true;
 	}
 	private void saveLinkList(){
 		config.set("aliLinkList", linkData);
+	}
+	@Override
+	public String[] GetHelpText(String alias){
+		return new String[]{
+			"Usage: /setalilink <frequency> [x] [y] [z]"
+		};
 	}
 }

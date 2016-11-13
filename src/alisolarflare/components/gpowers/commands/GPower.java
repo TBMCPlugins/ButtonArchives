@@ -16,10 +16,6 @@ public class GPower extends PlayerCommand {
 
 	@Override
 	public boolean OnCommand(CommandSender sender, String label, String[] args) {
-		sender.sendMessage("G power activate!");
-		if (!(sender instanceof Player)){
-			sender.sendMessage("You must be a player to use this command! Talk to a dev/ali if you think this is wrong");
-		}
 		Player player = (Player) sender;
 		if (args.length < 2) {
 			player.sendMessage("Proper Usage to test G-Powers:");
@@ -32,7 +28,6 @@ public class GPower extends PlayerCommand {
 			colour = args[0];
 		} else {
 			player.sendMessage("error: colour. Proper Usage to configure G-Powers:");
-			player.sendMessage("/gpowertest [colour=red,orange,yellow,green,blue,purple,grey] [active=true/false]");
 			return false;
 		}
 		boolean isActive;
@@ -42,18 +37,22 @@ public class GPower extends PlayerCommand {
 			isActive = false;
 		} else {
 			player.sendMessage("error: active. Proper Usage to configure G-Powers:");
-			player.sendMessage("/gpowertest [colour=red,orange,yellow,green,blue,purple] [active=true/false]");
 			return false;
 		}
 		player.sendMessage("Terms Vaild!");
 		player.sendMessage("Saving Data: "+ player.getName() + "|" + colour + "|" + isActive);
 		gPowerMemory.configurePlayer(player, colour, isActive);
 		
-		return false;
+		return true;
 	}
 
 	@Override
 	public String GetCommandPath() {
 		return "gpower";
+	}
+	public String[] GetHelpText(String alias){
+		return new String[]{
+				"Usage: /gpowertest [colour=red,orange,yellow,green,blue,purple,grey] [active=true/false]"
+		};
 	}
 }

@@ -1,5 +1,7 @@
 package alisolarflare.components.creativeboundaries.commands;
 
+import java.util.List;
+
 import org.bukkit.GameMode;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
@@ -9,10 +11,10 @@ import alisolarflare.components.creativeboundaries.CreativeBoundariesComponent;
 
 public class Cbgm0 extends PlayerCommand{
 	
-	private CreativeBoundariesComponent module;
+	private List<Player> cbCreatives;
 
-	public Cbgm0(CreativeBoundariesComponent module) {
-		this.module = module;
+	public Cbgm0(CreativeBoundariesComponent component) {
+		this.cbCreatives = component.cbCreatives;
 	}
 
 	@Override
@@ -24,7 +26,12 @@ public class Cbgm0 extends PlayerCommand{
 		
 		Player player = (Player) sender;
 		player.setGameMode(GameMode.SURVIVAL);
-		module.cbCreatives.remove(player);
-		return false;
+		cbCreatives.remove(player);
+		return true;
+	}
+	public String[] GetHelpText(String alias){
+		return new String[]{
+			"Creative Boundaries Usage: /cbgm0"
+		};
 	}
 }

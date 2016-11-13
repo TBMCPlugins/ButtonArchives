@@ -1,5 +1,7 @@
 package alisolarflare.components.creativeboundaries.commands;
 
+import java.util.List;
+
 import org.bukkit.GameMode;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
@@ -15,25 +17,21 @@ import alisolarflare.components.creativeboundaries.CreativeBoundariesComponent;
 
 public class Cbgm1 extends PlayerCommand {
 
-	private CreativeBoundariesComponent module;
+	List<Player> cbCreatives;
 
-	public Cbgm1(CreativeBoundariesComponent module) {
-		this.module = module;
+	public Cbgm1(CreativeBoundariesComponent component) {
+		this.cbCreatives = component.cbCreatives;
 	}
 
 	@Override
 	public boolean OnCommand(CommandSender sender, String arg2, String[] arg3) {
-
-		if (!(sender instanceof Player)) {
-			sender.sendMessage("You must be a player to use this command!");
-			return false;
-		}
+		
 
 		Player player = (Player) sender;
-
 		TownBlock tb = TownyUniverse.getTownBlock(player.getLocation());
+		
 		if (tb == null) {
-			player.sendMessage("You aren't standing in a town or some other error occured.");
+			player.sendMessage("Some error occured.");
 			player.sendMessage("TownBlock is null.");
 			return false;
 		}
@@ -41,23 +39,30 @@ public class Cbgm1 extends PlayerCommand {
 		try {
 			town = tb.getTown();
 		} catch (NotRegisteredException e) {
-			player.sendMessage("You aren't standing in a town or some other error occured.");
-			player.sendMessage("TownBlock's town is not registered.");
-			return false;
-		}
-		if (town == null) {
-			player.sendMessage("ERROR: The town you're standing in is Null.");
+			player.sendMessage("You aren't standing in a town, head to your home town to use this command.");
 			return false;
 		}
 		
+		boolean playerIsInTown = false;
 		for(Resident res : town.getResidents()){
 			if (res.getName().toString().equals(player.getName().toString())){
-				player.setGameMode(GameMode.CREATIVE);
-				module.cbCreatives.add(player);
-				return true;
+				playerIsInTown = true;
+				break;
 			}
 		}
-		player.sendMessage("Sorry, you're not part of this town");
-		return false;
+		if (!playerIsInTown){
+			player.sendMessage("Sorry, you're not part of this town");
+			return false;
+		}
+		
+		player.setGameMode(GameMode.CREATIVE);
+		cbCreatives.add(player);
+		return true;
+	}
+	@Override
+	public String[] GetHelpText(String alias){
+		return new String[] {
+			"Usage: When in a town that you either own or are a resident of, type /cbgm1 to gain creative"
+		};
 	}
 }

@@ -12,11 +12,13 @@ public class FlairMe extends PlayerCommand {
 	public boolean OnCommand(CommandSender sender, String label, String[] args) {
 		PortalListener.playersToBeFlaired.add((Player) sender);
 		sender.sendMessage("Setup Successful! Walk through a portal to get your flair");
-		return false;
+		return true;
 	}
-
 	@Override
-	public String GetCommandPath() {
-		return "flairme";
+	public String[] GetHelpText(String alias){
+		return new String[]{
+			"Usage: Type /flairme and enter a portal with coloured",
+			"wool underneath to change your flair"
+		};
 	}
 }

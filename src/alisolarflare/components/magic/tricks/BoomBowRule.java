@@ -22,7 +22,6 @@ public class BoomBowRule extends ModCommand{
 			return false;
 		}
 		if (args.length < 2){
-			player.sendMessage("Usage: /boomBowRule [rulename] [true/false]");
 			player.sendMessage("Rules:");
 			player.sendMessage("boomDecay" + boomDecay);
 			player.sendMessage("healthReduction" + healthReduction);
@@ -31,7 +30,6 @@ public class BoomBowRule extends ModCommand{
 			return false;
 		}
 		if(!(args[1].startsWith("t")|| args[1].startsWith("f"))){
-			player.sendMessage("Usage: /boomBowRule [rulename] [true/false]");
 			return false;
 		}
 		boolean gameRule = false;
@@ -53,21 +51,16 @@ public class BoomBowRule extends ModCommand{
 			break;
 		default:
 			player.sendMessage("Error: "+args[0]+" not defined as a rule");
-			player.sendMessage("Usage: /boomBowRule [rulename] [true/false]");
-			player.sendMessage("Rule settings: boomDecay, healthReduction, endCrystal, localized");
-			break;
+			return false;
 		}
 		
-		return false;
+		return true;
 	}
 	@Override
-	public String GetCommandPath() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-	@Override
-	public String[] GetHelpText(String arg0) {
-		// TODO Auto-generated method stub
-		return null;
+	public String[] GetHelpText(String alias) {
+		return new String[]{
+				"Usage: /boomBowRule [rulename] [true/false]",
+				"Rule settings: boomDecay, healthReduction, endCrystal, localized"
+		};
 	}
 }
