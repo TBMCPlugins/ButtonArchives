@@ -6,6 +6,7 @@ import alisolarflare.components.ModCommand;
 import graveyard.autouhc.memory.MatchState;
 import graveyard.autouhc.memory.UHCMatch;
 
+/**@deprecated*/
 public class StartMatch extends ModCommand {
 	private UHCMatch match;
 	/**@deprecated*/

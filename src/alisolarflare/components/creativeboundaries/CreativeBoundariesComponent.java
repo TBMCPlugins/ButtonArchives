@@ -10,7 +10,6 @@ import alisolarflare.components.Component;
 import alisolarflare.components.creativeboundaries.commands.Cbgm0;
 import alisolarflare.components.creativeboundaries.commands.Cbgm1;
 import alisolarflare.components.creativeboundaries.commands.SetDickmode;
-import alisolarflare.components.creativeboundaries.listeners.ItemRestrictionListener;
 import alisolarflare.components.creativeboundaries.listeners.PlotChangeListener;
 
 

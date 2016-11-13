@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.bukkit.Location;
-import org.bukkit.World;
 import org.bukkit.configuration.file.FileConfiguration;
 
 /**@deprecated*/
@@ -14,12 +13,6 @@ public class UHCMatch {
 	private List<String> playerList = new ArrayList<String>();
 	
 	private Location lobbyLocation;
-	private Location spawnLocation;
-	
-	private World ultraHardcoreWorld;
-	
-	private int worldBorderMaxRadius;
-	private int worldBorderMinRadius;
 	public UHCMatch(FileConfiguration fileConfiguration, MatchState state) {
 		this.config = fileConfiguration;
 		this.matchState = state;
