@@ -1,8 +1,5 @@
 package alisolarflare.components.flairdoor.listeners;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import org.bukkit.Bukkit;
 import org.bukkit.DyeColor;
 import org.bukkit.Material;
@@ -17,14 +14,18 @@ import org.bukkit.plugin.java.JavaPlugin;
 import com.earth2me.essentials.Essentials;
 import com.earth2me.essentials.User;
 
+import alisolarflare.components.flairdoor.FlairDoorComponent;
+
 public class PortalListener implements Listener{
-	public static List<Player> playersToBeFlaired = new ArrayList<Player>();
 	public JavaPlugin plugin;
 
 	Essentials essentials;
+
+	private FlairDoorComponent component;
 	
-	public PortalListener(JavaPlugin plugin) {
+	public PortalListener(JavaPlugin plugin, FlairDoorComponent component) {
 		this.plugin = plugin;
+		this.component = component;
 		this.essentials = ((Essentials) Bukkit.getPluginManager().getPlugin("Essentials"));
 	}
 	@EventHandler
@@ -35,7 +36,7 @@ public class PortalListener implements Listener{
 		
 		Player player = event.getPlayer();
 		
-		if(!(playersToBeFlaired.contains(player))){
+		if(!(component.playersToBeFlaired.contains(player))){
 			return;
 		}
 		
@@ -128,6 +129,6 @@ public class PortalListener implements Listener{
 		player.sendMessage("Adding the colour " + colourChanger + dyecolour.name() + "§f!");
 		player.sendMessage("Your name is now: " + user.getNickname() +"!");
 		
-		playersToBeFlaired.remove(player.getName());
+		component.playersToBeFlaired.remove(player.getName());
 	}
 }
