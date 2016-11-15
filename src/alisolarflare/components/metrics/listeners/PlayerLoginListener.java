@@ -2,7 +2,7 @@ package alisolarflare.components.metrics.listeners;
 
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
-import org.bukkit.event.player.PlayerLoginEvent;
+import org.bukkit.event.player.PlayerJoinEvent;
 
 import alisolarflare.components.metrics.MetricsModule;
 
@@ -13,7 +13,7 @@ public class PlayerLoginListener implements Listener{
 		this.module = module;
 	}
 	@EventHandler
-	public void onPlayerLogin(PlayerLoginEvent event){
+	public void onPlayerLogin(PlayerJoinEvent event){
 		module.saveData(module.metricsYml, "loginlog."+System.currentTimeMillis()+event.getPlayer().getName(), event.getPlayer().getName());
 		module.metricsList.add("loginlog."+System.currentTimeMillis()+event.getPlayer().getName());
 		event.getPlayer();
