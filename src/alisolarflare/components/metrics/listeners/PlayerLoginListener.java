@@ -14,7 +14,8 @@ public class PlayerLoginListener implements Listener{
 	}
 	@EventHandler
 	public void onPlayerLogin(PlayerLoginEvent event){
-		module.saveData(module.metricsYml, "loginlog."+System.currentTimeMillis(), event.getPlayer().getName());
+		module.saveData(module.metricsYml, "loginlog."+System.currentTimeMillis()+event.getPlayer().getName(), event.getPlayer().getName());
+		module.metricsList.add("loginlog."+System.currentTimeMillis()+event.getPlayer().getName());
 		event.getPlayer();
 	}
 }
