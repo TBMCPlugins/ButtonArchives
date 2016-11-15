@@ -35,18 +35,18 @@ public class SetAliLink extends PlayerCommand {
 
 		String frequency = args[0];
 		World world = player.getWorld();
-		Double x = player.getLocation().getX();
-		Double y = player.getLocation().getY();
-		Double z = player.getLocation().getZ();
+		int x = player.getLocation().getBlockX();
+		int y = player.getLocation().getBlockY();
+		int z = player.getLocation().getBlockZ();
 		
 		if (args.length > 4) {
 			boolean arg1isNumber = StringUtils.isNumericSpace(args[1]);
 			boolean arg2isNumber = StringUtils.isNumericSpace(args[2]);
 			boolean arg3isNumber = StringUtils.isNumericSpace(args[3]);
 			if (arg1isNumber && arg2isNumber && arg3isNumber) {
-				x = Double.parseDouble(args[1]);
-				y = Double.parseDouble(args[2]);
-				z = Double.parseDouble(args[3]);
+				x = Integer.parseInt(args[1]);
+				y = Integer.parseInt(args[2]);
+				z = Integer.parseInt(args[3]);
 			}
 		}
 		

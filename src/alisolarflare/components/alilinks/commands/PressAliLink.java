@@ -18,14 +18,15 @@ public class PressAliLink extends PlayerCommand {
 	}
 
 	@Override
-	public boolean OnCommand(CommandSender sender, String label, String[] args) {
-		if (args.length < 1) {
+	public boolean OnCommand(CommandSender sender, String label, String[] inputFrequencies) {
+		if (inputFrequencies.length < 1) {
 			sender.sendMessage("You must specify a link frequency");
 			return false;
 		}
+		
 		for (Link link : linkList) {
-			for (String inputlink : args) {
-				if (inputlink.equals(link.frequency)) {
+			for (String frequency : inputFrequencies) {
+				if (frequency.equals(link.frequency)) {
 					link.press(plugin);
 				}
 			}
