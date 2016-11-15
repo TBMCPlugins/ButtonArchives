@@ -6,10 +6,10 @@ import org.bukkit.event.player.PlayerJoinEvent;
 
 import alisolarflare.components.metrics.MetricsModule;
 
-public class PlayerLoginListener implements Listener{
+public class PlayerJoinListener implements Listener{
 	
 	private MetricsModule module;
-	public PlayerLoginListener(MetricsModule module){
+	public PlayerJoinListener(MetricsModule module){
 		this.module = module;
 	}
 	@EventHandler

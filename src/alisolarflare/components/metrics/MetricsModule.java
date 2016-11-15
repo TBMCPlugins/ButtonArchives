@@ -12,7 +12,7 @@ import org.bukkit.plugin.java.JavaPlugin;
 
 import alisolarflare.components.Component;
 import alisolarflare.components.metrics.commands.GetMetrics;
-import alisolarflare.components.metrics.listeners.PlayerLoginListener;
+import alisolarflare.components.metrics.listeners.PlayerJoinListener;
 
 public class MetricsModule extends Component{
 
@@ -30,7 +30,7 @@ public class MetricsModule extends Component{
 		
 		metricsList = metricsYml.getStringList("playerLogins");
 		registerCommand(plugin, new GetMetrics(this));
-		registerListener(plugin, new PlayerLoginListener(this));
+		registerListener(plugin, new PlayerJoinListener(this));
 	}
 	
 	private FileConfiguration loadFileConfiguration(JavaPlugin plugin, String fileName) throws FileNotFoundException, IOException, InvalidConfigurationException {
