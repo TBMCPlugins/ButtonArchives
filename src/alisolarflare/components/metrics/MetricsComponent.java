@@ -14,8 +14,9 @@ import org.bukkit.plugin.java.JavaPlugin;
 import alisolarflare.components.Component;
 import alisolarflare.components.metrics.commands.GetMetrics;
 import alisolarflare.components.metrics.listeners.PlayerJoinListener;
+import buttondevteam.lib.TBMCCoreAPI;
 
-public class MetricsModule extends Component{
+public class MetricsComponent extends Component{
 
 	public FileConfiguration metricsYml; // DATA - STRING
 	public List<String> metricsList;
@@ -24,16 +25,17 @@ public class MetricsModule extends Component{
 	public void register(JavaPlugin plugin){
 		registerCommand(plugin, new GetMetrics(this));
 		registerListener(plugin, new PlayerJoinListener(this));
+
+		metricsList = new ArrayList<String>();
 		
 		try {
 			metricsYml = loadFileConfiguration(plugin, "metrics.yml");
+			metricsList = metricsYml.getStringList("playerLogins");
 		} catch (IOException | InvalidConfigurationException e) {
-			e.printStackTrace();
+			TBMCCoreAPI.SendException("metrics.yml in AliPresents could not be created!", e);
 			return;
 		}
-		//metricsList = metricsYml.getStringList("playerLogins");
 		
-		metricsList = new ArrayList<String>();
 	}
 	
 	private FileConfiguration loadFileConfiguration(JavaPlugin plugin, String fileName) throws FileNotFoundException, IOException, InvalidConfigurationException {

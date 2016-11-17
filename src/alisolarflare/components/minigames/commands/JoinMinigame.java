@@ -3,12 +3,12 @@ package alisolarflare.components.minigames.commands;
 import org.bukkit.command.CommandSender;
 
 import alisolarflare.components.PlayerCommand;
-import alisolarflare.components.minigames.MinigameModule;
+import alisolarflare.components.minigames.MinigameComponent;
 
 public class JoinMinigame extends PlayerCommand {
-	private MinigameModule module;
+	private MinigameComponent module;
 
-	public JoinMinigame(MinigameModule module) {
+	public JoinMinigame(MinigameComponent module) {
 		this.module = module;
 	}
 

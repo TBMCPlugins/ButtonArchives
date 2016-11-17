@@ -4,13 +4,13 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
 import alisolarflare.components.ModCommand;
-import alisolarflare.components.metrics.MetricsModule;
+import alisolarflare.components.metrics.MetricsComponent;
 
 public class GetMetrics extends ModCommand{
 
-	private MetricsModule module;
+	private MetricsComponent module;
 
-	public GetMetrics(MetricsModule metricsModule) {
+	public GetMetrics(MetricsComponent metricsModule) {
 		this.module = metricsModule;
 	}
 

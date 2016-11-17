@@ -11,7 +11,7 @@ import alisolarflare.components.minigames.commands.ListFighters;
 import alisolarflare.components.minigames.commands.SetColourSpawn;
 import alisolarflare.components.minigames.data.SpawnSet;
 
-public class MinigameModule extends Component{
+public class MinigameComponent extends Component{
 	public SpawnSet spawnSet;
 	public List<String> fighters;
 	private GameState gameState;

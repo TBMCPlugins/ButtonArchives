@@ -3,12 +3,12 @@ package alisolarflare.components.minigames.commands;
 import org.bukkit.command.CommandSender;
 
 import alisolarflare.components.PlayerCommand;
-import alisolarflare.components.minigames.MinigameModule;
+import alisolarflare.components.minigames.MinigameComponent;
 
 public class ListFighters extends PlayerCommand {
-	private MinigameModule lobby;
+	private MinigameComponent lobby;
 
-	public ListFighters(MinigameModule lobby) {
+	public ListFighters(MinigameComponent lobby) {
 		this.lobby = lobby;
 	}
 

@@ -10,8 +10,11 @@ import alisolarflare.components.alilinks.AliLinkComponent;
 import alisolarflare.components.creativeboundaries.CreativeBoundariesComponent;
 import alisolarflare.components.easyuhc.EasyUHCComponent;
 import alisolarflare.components.flairdoor.FlairDoorComponent;
+import alisolarflare.components.gpowers.GPowerComponent;
+import alisolarflare.components.insurance.InsuranceComponent;
 import alisolarflare.components.magic.MagicComponent;
-import alisolarflare.components.minigames.MinigameModule;
+import alisolarflare.components.metrics.MetricsComponent;
+import alisolarflare.components.minigames.MinigameComponent;
 
 public class AliPresents extends JavaPlugin{
 	public void onEnable(){
@@ -21,12 +24,15 @@ public class AliPresents extends JavaPlugin{
 		logger.info(pdfFile.getName() + " has been started (V." + pdfFile.getVersion()+ ").");
 		
 		
-		new FlairDoorComponent().register(this);
 		new AliLinkComponent().register(this);
-		new EasyUHCComponent().register(this);
-		new MagicComponent().register(this);
-		new MinigameModule().register(this);
 		new CreativeBoundariesComponent().register(this);
+		new EasyUHCComponent().register(this);
+		new FlairDoorComponent().register(this);
+		new GPowerComponent().register(this);
+		new InsuranceComponent().register(this);
+		new MagicComponent().register(this);
+		new MetricsComponent().register(this);
+		new MinigameComponent().register(this);
 		
 		
 		logger.info(pdfFile.getName() + " has fully registered (V." + pdfFile.getVersion()+ ").");

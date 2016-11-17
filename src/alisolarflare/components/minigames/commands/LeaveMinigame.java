@@ -4,13 +4,13 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
 import alisolarflare.components.PlayerCommand;
-import alisolarflare.components.minigames.MinigameModule;
+import alisolarflare.components.minigames.MinigameComponent;
 
 public class LeaveMinigame extends PlayerCommand {
 
-	private MinigameModule module;
+	private MinigameComponent module;
 
-	public LeaveMinigame(MinigameModule module) {
+	public LeaveMinigame(MinigameComponent module) {
 		this.module = module;
 	}
 
