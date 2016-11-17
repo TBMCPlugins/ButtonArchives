@@ -2,9 +2,7 @@ package alisolarflare.components;
 
 import org.bukkit.command.CommandSender;
 
-import buttondevteam.lib.chat.TBMCCommandBase;
-
-public abstract class ModCommand extends TBMCCommandBase{
+public abstract class ModCommand extends BaseCommand{
 
 	@Override
 	public abstract boolean OnCommand(CommandSender sender, String alias, String[] args);

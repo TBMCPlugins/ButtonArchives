@@ -1,8 +1,6 @@
 package alisolarflare.components;
 
-import buttondevteam.lib.chat.TBMCCommandBase;
-
-public abstract class PlayerCommand extends TBMCCommandBase{
+public abstract class PlayerCommand extends BaseCommand{
 	@Override
 	public boolean GetPlayerOnly() {
 		// TODO Auto-generated method stub
