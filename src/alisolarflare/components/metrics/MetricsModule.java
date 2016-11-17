@@ -3,6 +3,7 @@ package alisolarflare.components.metrics;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 
 import org.bukkit.configuration.InvalidConfigurationException;
@@ -27,8 +28,9 @@ public class MetricsModule extends Component{
 			e.printStackTrace();
 			return;
 		}
+		//metricsList = metricsYml.getStringList("playerLogins");
 		
-		metricsList = metricsYml.getStringList("playerLogins");
+		metricsList = new ArrayList<String>();
 		registerCommand(plugin, new GetMetrics(this));
 		registerListener(plugin, new PlayerJoinListener(this));
 	}
