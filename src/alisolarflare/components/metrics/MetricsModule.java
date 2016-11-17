@@ -22,6 +22,9 @@ public class MetricsModule extends Component{
 
 	@Override
 	public void register(JavaPlugin plugin){
+		registerCommand(plugin, new GetMetrics(this));
+		registerListener(plugin, new PlayerJoinListener(this));
+		
 		try {
 			metricsYml = loadFileConfiguration(plugin, "metrics.yml");
 		} catch (IOException | InvalidConfigurationException e) {
@@ -31,8 +34,6 @@ public class MetricsModule extends Component{
 		//metricsList = metricsYml.getStringList("playerLogins");
 		
 		metricsList = new ArrayList<String>();
-		registerCommand(plugin, new GetMetrics(this));
-		registerListener(plugin, new PlayerJoinListener(this));
 	}
 	
 	private FileConfiguration loadFileConfiguration(JavaPlugin plugin, String fileName) throws FileNotFoundException, IOException, InvalidConfigurationException {
