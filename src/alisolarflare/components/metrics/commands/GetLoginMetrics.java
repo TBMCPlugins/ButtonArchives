@@ -6,11 +6,11 @@ import org.bukkit.entity.Player;
 import alisolarflare.components.ModCommand;
 import alisolarflare.components.metrics.MetricsComponent;
 
-public class GetMetrics extends ModCommand{
+public class GetLoginMetrics extends ModCommand{
 
 	private MetricsComponent module;
 
-	public GetMetrics(MetricsComponent metricsModule) {
+	public GetLoginMetrics(MetricsComponent metricsModule) {
 		this.module = metricsModule;
 	}
 

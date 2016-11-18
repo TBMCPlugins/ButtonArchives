@@ -12,7 +12,7 @@ import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import alisolarflare.components.Component;
-import alisolarflare.components.metrics.commands.GetMetrics;
+import alisolarflare.components.metrics.commands.GetLoginMetrics;
 import alisolarflare.components.metrics.listeners.PlayerJoinListener;
 import buttondevteam.lib.TBMCCoreAPI;
 
@@ -23,7 +23,7 @@ public class MetricsComponent extends Component{
 
 	@Override
 	public void register(JavaPlugin plugin){
-		registerCommand(plugin, new GetMetrics(this));
+		registerCommand(plugin, new GetLoginMetrics(this));
 		registerListener(plugin, new PlayerJoinListener(this));
 
 		metricsList = new ArrayList<String>();
