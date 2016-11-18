@@ -23,5 +23,9 @@ public class GetLoginMetrics extends ModCommand{
 		}
 		return true;
 	}
+	@Override
+	public String GetCommandPath(){
+		return "getLoginMetrics";
+	}
 
 }
