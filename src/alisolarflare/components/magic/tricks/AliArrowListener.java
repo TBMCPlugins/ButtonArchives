@@ -31,7 +31,6 @@ public class AliArrowListener implements Listener {
 		
 		for (String permittedUsername : AliArrowTask.permittedUsers){
 			if(permittedUsername.equalsIgnoreCase(username)){
-				BaseCommand.SendDebugPotato(player, "HAHAHAHHAHA NICE");
 				new AliArrowTask(arrow,username).runTaskTimer(plugin, 2, 1);
 			    break;
 			}

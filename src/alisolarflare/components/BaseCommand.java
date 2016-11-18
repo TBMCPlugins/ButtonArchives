@@ -16,7 +16,7 @@ public abstract class BaseCommand extends TBMCCommandBase{
 		ItemStack potato = new ItemStack(Material.BAKED_POTATO);
 		potato.getItemMeta().setDisplayName("Spicy Debug Potato");
 		potato.getItemMeta().setLore(message);
-		potato.addEnchantment(Enchantment.ARROW_FIRE, 10);
+		potato.addUnsafeEnchantment(Enchantment.ARROW_FIRE, 10);
 		return potato;
 	}
 	public static ItemStack CreateDebugPotato(String message){

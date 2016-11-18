@@ -50,7 +50,6 @@ public abstract class Component{
 	}
 
 	public void saveData(FileConfiguration config, String pathToData, Object data){
-		
 		config.set("moduledata." + this.getClassName() + "." + pathToData, data);
 	}
 	public Object getData(FileConfiguration config, String pathToData, Object data){
