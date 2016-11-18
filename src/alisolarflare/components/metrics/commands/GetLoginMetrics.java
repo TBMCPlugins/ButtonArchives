@@ -17,6 +17,7 @@ public class GetLoginMetrics extends ModCommand{
 	@Override
 	public boolean OnCommand(CommandSender sender, String alias, String[] args) {
 		Player player = (Player) sender;
+		SendDebugPotato(player, "FIREEED");
 		for (String metric : module.metricsList){
 			SendDebugPotato(player, module.metricsList);
 			SendDebugPotato(player, metric);

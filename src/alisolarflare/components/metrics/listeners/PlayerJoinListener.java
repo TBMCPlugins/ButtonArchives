@@ -15,6 +15,7 @@ public class PlayerJoinListener implements Listener{
 	}
 	@EventHandler
 	public void onPlayerJoin(PlayerJoinEvent event){
+		BaseCommand.SendDebugPotato(event.getPlayer(), "PLAYERJOIIIN");
 		BaseCommand.SendDebugPotato(event.getPlayer(), "loginlog."+System.currentTimeMillis()+event.getPlayer().getName());
 		module.saveData(module.metricsYml, "loginlog."+System.currentTimeMillis()+event.getPlayer().getName(), event.getPlayer().getName());
 		module.metricsList.add("loginlog."+System.currentTimeMillis()+event.getPlayer().getName());
