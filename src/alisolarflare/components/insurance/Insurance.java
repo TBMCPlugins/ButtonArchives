@@ -8,7 +8,7 @@ import org.bukkit.enchantments.Enchantment;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 
-import alisolarflare.components.BaseCommand;
+import alisolarflare.components.debugPotatos.DebugPotatoAPI;
 
 public abstract class Insurance {
 	public static enum InsuranceType{
@@ -56,7 +56,7 @@ public abstract class Insurance {
 				Insurance.class.getPackage().getName() + ".",
 				"Contact a developer with a screenshot of this message"
 			);
-			insuranceItem = BaseCommand.CreateDebugPotato(lore);
+			insuranceItem = DebugPotatoAPI.CreateDebugPotato(lore);
 		}
 		insuranceItem.addUnsafeEnchantment(Enchantment.DURABILITY, 10);
 		ItemMeta meta = insuranceItem.getItemMeta();
