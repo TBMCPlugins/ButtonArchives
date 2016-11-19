@@ -8,7 +8,6 @@ import org.bukkit.enchantments.Enchantment;
 import org.bukkit.inventory.ItemStack;
 
 import alisolarflare.components.BaseCommand;
-import alisolarflare.components.insurance.Insurance.InsuranceType;
 
 public class Insurance {
 	public static enum InsuranceType{
@@ -51,7 +50,7 @@ public class Insurance {
 			);
 			insuranceItem = BaseCommand.CreateDebugPotato(lore);
 		}
-		insuranceItem.addEnchantment(Enchantment.DURABILITY, 10);
+		insuranceItem.addUnsafeEnchantment(Enchantment.DURABILITY, 10);
 		insuranceItem.getItemMeta().setLore(lore);
 		return insuranceItem;
 	}
