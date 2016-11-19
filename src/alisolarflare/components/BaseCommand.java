@@ -1,5 +1,6 @@
 package alisolarflare.components;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -25,14 +26,37 @@ public abstract class BaseCommand extends TBMCCommandBase{
 	public static ItemStack CreateDebugPotato(String message){
 		return CreateDebugPotato(Arrays.asList(message));
 	}
-	
 	public static void SendDebugPotato(Player player, List<String> message){
 		player.getInventory().addItem(CreateDebugPotato(message));
 		player.getWorld().playSound(player.getLocation(), Sound.ENTITY_SLIME_SQUISH, 0, 0);
 		return;
 	}
-	public static void SendDebugPotato(Player player, String message){
+	public static void SendDebugPotato(Player player, String[] message){
 		SendDebugPotato(player, Arrays.asList(message));
+	}
+	public static void SendDebugPotato(Player player, String message){
+		
+		SendDebugPotato(player, StringToMessage(message));
+	}
+	public static List<String> StringToMessage(String message){
+		String[] splitString = message.split("\\s+");
+		List<String> newMessage = new ArrayList<String>();
+		String currentLine = "";
+		int currentLineLength = 0;
+		int wordlength;
+		int maxLineLength = 40;
+		for (String word : splitString){
+			wordlength = word.length();
+			if (currentLineLength == 0 || (currentLineLength + wordlength) < maxLineLength){
+				currentLine += word + " ";
+				currentLineLength += wordlength +1;
+			}else{
+				newMessage.add(currentLine);
+				currentLine = word + " ";
+				currentLineLength = word.length();
+			}
+		}
+		return newMessage;
 	}
 	
 }

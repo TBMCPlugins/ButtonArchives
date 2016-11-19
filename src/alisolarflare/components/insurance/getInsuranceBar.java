@@ -16,10 +16,7 @@ public class getInsuranceBar extends ModCommand {
 			player.getInventory().addItem(Insurance.getInsurance(InsuranceType.Ingot, Integer.parseInt(args[0])));
 		}else{
 			player.getInventory().addItem(Insurance.getInsurance(InsuranceType.Ingot));
-
-			SendDebugPotato(player, "Hwat the fuck!");
 		}
-		return false;
+		return true;
 	}
-
 }

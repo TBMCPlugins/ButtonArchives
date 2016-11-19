@@ -59,7 +59,7 @@ commands:
     description: activate every player's power
   setproximitylocation:
     description: sets one of two proximity blocks to create a space that players can change their flairs with using flairportals. Ask ali XD
-  getLoginMetrics:
+  getloginmetrics:
     description: Gets metrics
   getinsurance:
     description: Gets insurance
