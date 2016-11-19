@@ -14,7 +14,7 @@ public class PlayerJoinListener implements Listener{
 	}
 	@EventHandler
 	public void onPlayerJoin(PlayerJoinEvent event){
-		//module.saveData(module.metricsYml, "loginlog."+System.currentTimeMillis()+event.getPlayer().getName(), event.getPlayer().getName());
+		module.saveData(module.metricsYml, "loginlog."+System.currentTimeMillis()+event.getPlayer().getName(), event.getPlayer().getName());
 		module.metricsList.add("loginlog."+System.currentTimeMillis()+event.getPlayer().getName());
 		
 	}
