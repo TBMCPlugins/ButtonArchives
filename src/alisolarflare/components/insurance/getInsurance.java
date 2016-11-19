@@ -8,35 +8,40 @@ import alisolarflare.components.ModCommand;
 import alisolarflare.components.insurance.Insurance.InsuranceType;
 
 public class getInsurance extends ModCommand {
-
+	private final int defaultAmount = 1;
+	private final InsuranceType defaultInsuranceType  = InsuranceType.Block;
 	@Override
 	public boolean OnCommand(CommandSender sender, String alias, String[] args) {
 		Player player = (Player) sender;
-		if (args.length == 0){
-			player.getInventory().addItem(Insurance.getInsurance(InsuranceType.Block));
-			return true;
-		}else if(args.length == 1){
+		
+		int amount = defaultAmount;
+		InsuranceType insuranceType = defaultInsuranceType;
+		
+		switch(args.length){
+		case 0:
+			break;
+		case 1:
 			if (StringUtils.isNumeric(args[0])){
-				int amount = Integer.parseInt(args[0]);
-				player.getInventory().addItem(Insurance.getInsurance(InsuranceType.Block, amount));
-				return true;
+				amount = Integer.parseInt(args[0]);
+				break;
+			}else if (Insurance.isInsuranceType(args[0])){
+				insuranceType = InsuranceType.valueOf(args[0]);
+				break;
 			}else{
-				if (Insurance.isInsuranceType(args[0])){
-					player.getInventory().addItem((Insurance.getInsurance(InsuranceType.valueOf(args[0]))));
-					return true;
-				}else{
-					return false;
-				}
+				return false;
 			}
-		}else if (args.length >=2){
+		default:
 			if (StringUtils.isNumeric(args[0]) && Insurance.isInsuranceType(args[1])){
-				player.getInventory().addItem((Insurance.getInsurance(InsuranceType.valueOf(args[1]), Integer.parseInt(args[0]))));
-				return true;
+				amount = Integer.parseInt(args[0]);
+				insuranceType = InsuranceType.valueOf(args[0]);
+				break;
 			}else{
 				return false;
 			}
 		}
-		return false;
+
+		player.getInventory().addItem(Insurance.getInsurance(insuranceType, amount));
+		return true;
 	}
 	@Override
 	public String[] GetHelpText(String alias){
