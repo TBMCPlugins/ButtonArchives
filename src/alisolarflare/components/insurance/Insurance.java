@@ -8,7 +8,7 @@ import org.bukkit.enchantments.Enchantment;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 
-import alisolarflare.components.debugPotatos.DebugPotatoAPI;
+import buttondevteam.lib.DebugPotatoAPI;
 
 public abstract class Insurance {
 	public static enum InsuranceType{
