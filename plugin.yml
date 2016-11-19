@@ -61,11 +61,11 @@ commands:
     description: sets one of two proximity blocks to create a space that players can change their flairs with using flairportals. Ask ali XD
   getLoginMetrics:
     description: Gets metrics
-  getInsurance:
+  getinsurance:
     description: Gets insurance
-  getInsuranceNugget:
+  getinsurancenugget:
     description: Gets insurance nugget
-  getInsuranceBar:
+  getinsurancebar:
     description: Gets insurance bar
-  getInsuranceBlock:
+  getinsuranceblock:
     description: Gets insurance block
