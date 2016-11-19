@@ -8,14 +8,17 @@ import org.bukkit.Sound;
 import org.bukkit.enchantments.Enchantment;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
+import org.bukkit.inventory.meta.ItemMeta;
 
 import buttondevteam.lib.chat.TBMCCommandBase;
 
 public abstract class BaseCommand extends TBMCCommandBase{
 	public static ItemStack CreateDebugPotato(List<String> message){
 		ItemStack potato = new ItemStack(Material.BAKED_POTATO);
-		potato.getItemMeta().setDisplayName("Spicy Debug Potato");
-		potato.getItemMeta().setLore(message);
+		ItemMeta meta = potato.getItemMeta();
+		meta.setDisplayName("Spicy Debug Potato");
+		meta.setLore(message);
+		potato.setItemMeta(meta);
 		potato.addUnsafeEnchantment(Enchantment.ARROW_FIRE, 10);
 		return potato;
 	}

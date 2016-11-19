@@ -6,6 +6,7 @@ import java.util.List;
 import org.bukkit.Material;
 import org.bukkit.enchantments.Enchantment;
 import org.bukkit.inventory.ItemStack;
+import org.bukkit.inventory.meta.ItemMeta;
 
 import alisolarflare.components.BaseCommand;
 
@@ -51,7 +52,10 @@ public abstract class Insurance {
 			insuranceItem = BaseCommand.CreateDebugPotato(lore);
 		}
 		insuranceItem.addUnsafeEnchantment(Enchantment.DURABILITY, 10);
-		insuranceItem.getItemMeta().setLore(lore);
+		ItemMeta meta = insuranceItem.getItemMeta();
+		meta.setLore(lore);
+		meta.setDisplayName("Insurance " + insuranceType.toString());
+		insuranceItem.setItemMeta(meta);
 		return insuranceItem;
 	}
 	public static ItemStack getInsurance(InsuranceType insuranceType, int amount){
