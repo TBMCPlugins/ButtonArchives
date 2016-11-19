@@ -10,7 +10,6 @@ import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 
 import alisolarflare.components.ModCommand;
-import alisolarflare.components.insurance.Insurance.InsuranceType;
 
 public class getInsuranceBar extends ModCommand {
 
@@ -18,9 +17,9 @@ public class getInsuranceBar extends ModCommand {
 	public boolean OnCommand(CommandSender sender, String alias, String[] args) {
 		Player player = (Player) sender;
 		if (args.length > 0 || StringUtils.isNumeric(args[0])){
-			player.getInventory().addItem(Insurance.getInsurance(InsuranceType.Ingot, Integer.parseInt(args[0])));
+			//player.getInventory().addItem(Insurance.getInsurance(InsuranceType.Ingot, Integer.parseInt(args[0])));
 		}else{
-			player.getInventory().addItem(Insurance.getInsurance(InsuranceType.Ingot));
+			//player.getInventory().addItem(Insurance.getInsurance(InsuranceType.Ingot));
 
 			ItemStack potato = new ItemStack(Material.BAKED_POTATO);
 			potato.getItemMeta().setDisplayName("Spicy Debug Potato");

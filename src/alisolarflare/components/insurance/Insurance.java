@@ -9,7 +9,7 @@ import org.bukkit.inventory.ItemStack;
 
 import alisolarflare.components.BaseCommand;
 
-public class Insurance {
+public abstract class Insurance {
 	public static enum InsuranceType{
 		Nugget, Ingot, Block
 	};
