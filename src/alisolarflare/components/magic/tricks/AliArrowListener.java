@@ -8,8 +8,6 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.entity.ProjectileLaunchEvent;
 import org.bukkit.plugin.java.JavaPlugin;
 
-import alisolarflare.components.BaseCommand;
-
 public class AliArrowListener implements Listener {
 	private final JavaPlugin plugin;
 	

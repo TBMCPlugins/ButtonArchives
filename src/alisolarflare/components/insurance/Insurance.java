@@ -9,7 +9,6 @@ import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 
 import buttondevteam.lib.DebugPotato;
-import buttondevteam.lib.DebugPotatoAPI;
 
 public abstract class Insurance {
 	public static enum InsuranceType{
