@@ -8,6 +8,7 @@ import org.bukkit.enchantments.Enchantment;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 
+import buttondevteam.lib.DebugPotato;
 import buttondevteam.lib.DebugPotatoAPI;
 
 public abstract class Insurance {
@@ -56,7 +57,9 @@ public abstract class Insurance {
 				Insurance.class.getPackage().getName() + ".",
 				"Contact a developer with a screenshot of this message"
 			);
-			insuranceItem = DebugPotatoAPI.CreateDebugPotato(lore);
+			DebugPotato potato = new DebugPotato();
+			potato.setMessage(lore);
+			insuranceItem = potato.toItemStack();
 		}
 		insuranceItem.addUnsafeEnchantment(Enchantment.DURABILITY, 10);
 		ItemMeta meta = insuranceItem.getItemMeta();

@@ -99,7 +99,8 @@ public class BoomBowListener implements Listener {
 		boomBow.setDurability((short) (boomBow.getDurability() + 3));
 		if(boomBow.getDurability() < 0){
 			player.getInventory().setItemInMainHand(null);
-			player.getWorld().playSound(playerLocation, Sound.ENTITY_ITEM_BREAK, 0, 0);
+			player.getWorld().playSound(playerLocation, Sound.ENTITY_ITEM_BREAK, 0, 0)
+			;
 		}
 
 	}
