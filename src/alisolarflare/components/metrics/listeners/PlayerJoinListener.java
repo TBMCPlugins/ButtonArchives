@@ -6,7 +6,6 @@ import org.bukkit.event.player.PlayerJoinEvent;
 
 import alisolarflare.components.metrics.MetricsComponent;
 import buttondevteam.lib.DebugPotato;
-import buttondevteam.lib.DebugPotatoAPI;
 
 public class PlayerJoinListener implements Listener{
 	
@@ -26,11 +25,11 @@ public class PlayerJoinListener implements Listener{
 						"Time: " + System.currentTimeMillis(),
 						"MetricsYML: " + module.metricsYml.toString()
 				});
-				DebugPotatoAPI.SendDebugPotato(potato, event.getPlayer());
+				potato.Send(event.getPlayer());
 			}catch (Exception ex){
 				DebugPotato potato = new DebugPotato();
 				potato.setMessage("Something went REALLLY wrong");
-				DebugPotatoAPI.SendDebugPotato(potato, event.getPlayer());
+				potato.Send(event.getPlayer());
 			}
 		}
 		module.metricsList.add("loginlog."+System.currentTimeMillis()+event.getPlayer().getName());
