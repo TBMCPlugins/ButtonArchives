@@ -54,7 +54,6 @@ public class SetAliLink extends PlayerCommand {
 		linkList.add(link);
 		linkData.add(link.toMap());
 		saveLinkList();
-		
 		return true;
 	}
 	private void saveLinkList(){

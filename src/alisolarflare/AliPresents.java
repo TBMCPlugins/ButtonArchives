@@ -25,16 +25,16 @@ public class AliPresents extends JavaPlugin{
 		logger.info(pdfFile.getName() + " has been started (V." + pdfFile.getVersion()+ ").");
 		
 		
-		new AliLinkComponent().register(this);
-		new BankChestComponent().register(this);
-		new CreativeBoundariesComponent().register(this);
-		new EasyUHCComponent().register(this);
-		new FlairDoorComponent().register(this);
-		new GPowerComponent().register(this);
-		new InsuranceComponent().register(this);
-		new MagicComponent().register(this);
-		new MetricsComponent().register(this);
-		new MinigameComponent().register(this);
+		//new AliLinkComponent().register(this);
+		//new BankChestComponent().register(this);
+		//new CreativeBoundariesComponent().register(this);
+		//new EasyUHCComponent().register(this);
+		//new FlairDoorComponent().register(this);
+		//new GPowerComponent().register(this);
+		//new InsuranceComponent().register(this);
+		//new MagicComponent().register(this);
+		//new MetricsComponent().register(this);
+		//new MinigameComponent().register(this);
 		
 		
 		logger.info(pdfFile.getName() + " has fully registered (V." + pdfFile.getVersion()+ ").");
