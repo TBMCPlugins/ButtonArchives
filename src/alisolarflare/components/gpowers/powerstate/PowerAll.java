@@ -1,8 +1,8 @@
-package alisolarflare.components.gpowers.commands;
+package alisolarflare.components.gpowers.powerstate;
 
 import org.bukkit.entity.Player;
 
-import alisolarflare.components.ModCommand;
+import alisolarflare.architecture.commands.ModCommand;
 import alisolarflare.components.gpowers.GPowerMemory;
 import alisolarflare.components.gpowers.GPowerMemory.poweredPlayer;
 

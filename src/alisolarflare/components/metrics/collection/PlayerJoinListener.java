@@ -1,4 +1,4 @@
-package alisolarflare.components.metrics.listeners;
+package alisolarflare.components.metrics.collection;
 
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;

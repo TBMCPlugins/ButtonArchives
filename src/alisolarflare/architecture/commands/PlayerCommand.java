@@ -1,4 +1,4 @@
-package alisolarflare.components;
+package alisolarflare.architecture.commands;
 
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;

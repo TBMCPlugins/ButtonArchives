@@ -11,9 +11,9 @@ import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.plugin.java.JavaPlugin;
 
-import alisolarflare.components.Component;
-import alisolarflare.components.metrics.commands.GetLoginMetrics;
-import alisolarflare.components.metrics.listeners.PlayerJoinListener;
+import alisolarflare.architecture.Component;
+import alisolarflare.components.metrics.collection.PlayerJoinListener;
+import alisolarflare.components.metrics.output.GetLoginMetrics;
 import buttondevteam.lib.TBMCCoreAPI;
 
 public class MetricsComponent extends Component{

@@ -1,4 +1,4 @@
-package alisolarflare.components;
+package alisolarflare.architecture.commands;
 
 import buttondevteam.lib.chat.TBMCCommandBase;
 

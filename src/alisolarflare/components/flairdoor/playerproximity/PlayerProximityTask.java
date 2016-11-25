@@ -1,4 +1,4 @@
-package alisolarflare.components.flairdoor.listeners;
+package alisolarflare.components.flairdoor.playerproximity;
 
 import org.bukkit.Location;
 import org.bukkit.entity.Player;

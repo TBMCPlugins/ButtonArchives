@@ -2,7 +2,7 @@ package alisolarflare.components.insurance;
 
 import org.bukkit.plugin.java.JavaPlugin;
 
-import alisolarflare.components.Component;
+import alisolarflare.architecture.Component;
 
 public class InsuranceComponent extends Component {
 

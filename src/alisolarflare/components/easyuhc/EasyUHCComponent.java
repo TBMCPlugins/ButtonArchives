@@ -3,7 +3,7 @@ package alisolarflare.components.easyuhc;
 import org.bukkit.Location;
 import org.bukkit.plugin.java.JavaPlugin;
 
-import alisolarflare.components.Component;
+import alisolarflare.architecture.Component;
 import alisolarflare.components.easyuhc.commands.ActivatePowers;
 import alisolarflare.components.easyuhc.commands.SetUHCLobby;
 import alisolarflare.components.easyuhc.commands.SetWorldBorders;

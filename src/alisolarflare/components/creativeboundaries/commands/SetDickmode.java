@@ -2,7 +2,7 @@ package alisolarflare.components.creativeboundaries.commands;
 
 import org.bukkit.entity.Player;
 
-import alisolarflare.components.ModCommand;
+import alisolarflare.architecture.commands.ModCommand;
 import alisolarflare.components.creativeboundaries.CreativeBoundariesComponent;
 
 public class SetDickmode extends ModCommand{

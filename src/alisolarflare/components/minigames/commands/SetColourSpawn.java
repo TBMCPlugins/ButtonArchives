@@ -2,7 +2,7 @@ package alisolarflare.components.minigames.commands;
 
 import org.bukkit.entity.Player;
 
-import alisolarflare.components.ModCommand;
+import alisolarflare.architecture.commands.ModCommand;
 import alisolarflare.components.minigames.data.SpawnSet;
 
 public class SetColourSpawn extends ModCommand{

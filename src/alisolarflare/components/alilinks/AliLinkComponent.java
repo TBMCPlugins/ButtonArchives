@@ -7,7 +7,7 @@ import java.util.Map;
 import org.bukkit.Server;
 import org.bukkit.plugin.java.JavaPlugin;
 
-import alisolarflare.components.Component;
+import alisolarflare.architecture.Component;
 import alisolarflare.components.alilinks.commands.PressAliLink;
 import alisolarflare.components.alilinks.commands.SetAliLink;
 import alisolarflare.components.alilinks.entities.Link;

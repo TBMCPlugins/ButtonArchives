@@ -5,7 +5,7 @@ import java.util.List;
 import org.bukkit.entity.Player;
 import org.bukkit.plugin.java.JavaPlugin;
 
-import alisolarflare.components.PlayerCommand;
+import alisolarflare.architecture.commands.PlayerCommand;
 import alisolarflare.components.alilinks.entities.Link;
 
 public class PressAliLink extends PlayerCommand {

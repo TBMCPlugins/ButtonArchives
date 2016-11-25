@@ -2,7 +2,7 @@ package alisolarflare.components.magic;
 
 import org.bukkit.plugin.java.JavaPlugin;
 
-import alisolarflare.components.Component;
+import alisolarflare.architecture.Component;
 import alisolarflare.components.magic.tricks.AliArrowListener;
 import alisolarflare.components.magic.tricks.BoomBowDeathListener;
 import alisolarflare.components.magic.tricks.BoomBowListener;

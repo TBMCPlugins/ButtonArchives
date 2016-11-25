@@ -6,7 +6,7 @@ import java.util.List;
 import org.bukkit.entity.Player;
 import org.bukkit.plugin.java.JavaPlugin;
 
-import alisolarflare.components.Component;
+import alisolarflare.architecture.Component;
 import alisolarflare.components.creativeboundaries.commands.Cbgm0;
 import alisolarflare.components.creativeboundaries.commands.Cbgm1;
 import alisolarflare.components.creativeboundaries.commands.SetDickmode;

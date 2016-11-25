@@ -1,4 +1,4 @@
-package alisolarflare.components;
+package alisolarflare.architecture;
 
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.event.Listener;

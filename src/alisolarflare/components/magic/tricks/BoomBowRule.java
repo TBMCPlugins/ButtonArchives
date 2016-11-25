@@ -2,7 +2,7 @@ package alisolarflare.components.magic.tricks;
 
 import org.bukkit.entity.Player;
 
-import alisolarflare.components.ModCommand;
+import alisolarflare.architecture.commands.ModCommand;
 //HEHEHHEHEH EAASSSTER EGGS
 public class BoomBowRule extends ModCommand{
 	public static boolean boomDecay;

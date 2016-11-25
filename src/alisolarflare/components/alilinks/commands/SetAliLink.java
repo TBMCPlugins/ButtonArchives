@@ -8,7 +8,7 @@ import org.bukkit.World;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.entity.Player;
 
-import alisolarflare.components.PlayerCommand;
+import alisolarflare.architecture.commands.PlayerCommand;
 import alisolarflare.components.alilinks.entities.Link;
 
 public class SetAliLink extends PlayerCommand {

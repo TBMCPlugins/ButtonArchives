@@ -11,7 +11,7 @@ import com.palmergames.bukkit.towny.object.Town;
 import com.palmergames.bukkit.towny.object.TownBlock;
 import com.palmergames.bukkit.towny.object.TownyUniverse;
 
-import alisolarflare.components.PlayerCommand;
+import alisolarflare.architecture.commands.PlayerCommand;
 import alisolarflare.components.creativeboundaries.CreativeBoundariesComponent;
 
 public class Cbgm1 extends PlayerCommand {

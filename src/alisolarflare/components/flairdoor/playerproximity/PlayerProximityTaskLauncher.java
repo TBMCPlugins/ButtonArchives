@@ -1,4 +1,4 @@
-package alisolarflare.components.flairdoor.listeners;
+package alisolarflare.components.flairdoor.playerproximity;
 
 import org.bukkit.event.Listener;
 import org.bukkit.plugin.java.JavaPlugin;

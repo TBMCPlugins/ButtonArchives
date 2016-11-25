@@ -5,7 +5,7 @@ import java.util.List;
 import org.bukkit.GameMode;
 import org.bukkit.entity.Player;
 
-import alisolarflare.components.PlayerCommand;
+import alisolarflare.architecture.commands.PlayerCommand;
 import alisolarflare.components.creativeboundaries.CreativeBoundariesComponent;
 
 public class Cbgm0 extends PlayerCommand{

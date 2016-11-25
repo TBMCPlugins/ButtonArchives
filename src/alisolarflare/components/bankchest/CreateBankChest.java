@@ -2,7 +2,7 @@ package alisolarflare.components.bankchest;
 
 import org.bukkit.entity.Player;
 
-import alisolarflare.components.ModCommand;
+import alisolarflare.architecture.commands.ModCommand;
 
 public class CreateBankChest extends ModCommand {
 

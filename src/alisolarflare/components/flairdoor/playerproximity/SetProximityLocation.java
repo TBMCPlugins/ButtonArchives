@@ -1,8 +1,8 @@
-package alisolarflare.components.flairdoor.commands;
+package alisolarflare.components.flairdoor.playerproximity;
 
 import org.bukkit.entity.Player;
 
-import alisolarflare.components.ModCommand;
+import alisolarflare.architecture.commands.ModCommand;
 import alisolarflare.components.flairdoor.FlairDoorComponent;
 
 public class SetProximityLocation extends ModCommand{

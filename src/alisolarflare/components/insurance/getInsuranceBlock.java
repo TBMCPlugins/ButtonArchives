@@ -3,7 +3,7 @@ package alisolarflare.components.insurance;
 import org.apache.commons.lang3.StringUtils;
 import org.bukkit.entity.Player;
 
-import alisolarflare.components.ModCommand;
+import alisolarflare.architecture.commands.ModCommand;
 import alisolarflare.components.insurance.Insurance.InsuranceType;
 
 public class getInsuranceBlock extends ModCommand {

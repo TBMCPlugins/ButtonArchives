@@ -2,7 +2,7 @@ package alisolarflare.components.easyuhc.commands;
 
 import org.bukkit.entity.Player;
 
-import alisolarflare.components.PlayerCommand;
+import alisolarflare.architecture.commands.PlayerCommand;
 
 public class TeleportToUHC extends PlayerCommand{
 

@@ -2,7 +2,7 @@ package alisolarflare.components.minigames.commands;
 
 import org.bukkit.entity.Player;
 
-import alisolarflare.components.PlayerCommand;
+import alisolarflare.architecture.commands.PlayerCommand;
 import alisolarflare.components.minigames.MinigameComponent;
 
 public class JoinMinigame extends PlayerCommand {

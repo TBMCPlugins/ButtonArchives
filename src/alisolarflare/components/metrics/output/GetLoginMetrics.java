@@ -1,8 +1,8 @@
-package alisolarflare.components.metrics.commands;
+package alisolarflare.components.metrics.output;
 
 import org.bukkit.entity.Player;
 
-import alisolarflare.components.ModCommand;
+import alisolarflare.architecture.commands.ModCommand;
 import alisolarflare.components.metrics.MetricsComponent;
 
 public class GetLoginMetrics extends ModCommand{

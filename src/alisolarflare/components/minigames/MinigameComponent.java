@@ -4,7 +4,7 @@ import java.util.List;
 
 import org.bukkit.plugin.java.JavaPlugin;
 
-import alisolarflare.components.Component;
+import alisolarflare.architecture.Component;
 import alisolarflare.components.minigames.commands.JoinMinigame;
 import alisolarflare.components.minigames.commands.LeaveMinigame;
 import alisolarflare.components.minigames.commands.ListFighters;

@@ -1,4 +1,4 @@
-package alisolarflare.components;
+package alisolarflare.architecture.commands;
 
 public abstract class ModCommand extends PlayerCommand{
 

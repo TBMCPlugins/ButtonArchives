@@ -2,11 +2,11 @@ package alisolarflare.components.gpowers;
 
 import org.bukkit.plugin.java.JavaPlugin;
 
-import alisolarflare.components.Component;
+import alisolarflare.architecture.Component;
 import alisolarflare.components.gpowers.commands.GPower;
-import alisolarflare.components.gpowers.commands.PowerDown;
-import alisolarflare.components.gpowers.commands.PowerUp;
-import alisolarflare.components.gpowers.listeners.gPowerListener;
+import alisolarflare.components.gpowers.enchant.Enchanter;
+import alisolarflare.components.gpowers.powerstate.PowerDown;
+import alisolarflare.components.gpowers.powerstate.PowerUp;
 
 public class GPowerComponent extends Component {
 
@@ -17,7 +17,7 @@ public class GPowerComponent extends Component {
 		registerCommand(plugin, new PowerUp(gPowerMemory));
 		registerCommand(plugin, new PowerDown(gPowerMemory));
 
-		registerListener(plugin, new gPowerListener(plugin, gPowerMemory));
+		registerListener(plugin, new Enchanter(plugin, gPowerMemory));
 
 	}
 

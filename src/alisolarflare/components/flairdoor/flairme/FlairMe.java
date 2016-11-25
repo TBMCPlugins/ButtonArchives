@@ -1,8 +1,8 @@
-package alisolarflare.components.flairdoor.commands;
+package alisolarflare.components.flairdoor.flairme;
 
 import org.bukkit.entity.Player;
 
-import alisolarflare.components.PlayerCommand;
+import alisolarflare.architecture.commands.PlayerCommand;
 import alisolarflare.components.flairdoor.FlairDoorComponent;
 
 public class FlairMe extends PlayerCommand {

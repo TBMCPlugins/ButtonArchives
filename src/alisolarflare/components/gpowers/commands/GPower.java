@@ -2,7 +2,7 @@ package alisolarflare.components.gpowers.commands;
 
 import org.bukkit.entity.Player;
 
-import alisolarflare.components.PlayerCommand;
+import alisolarflare.architecture.commands.PlayerCommand;
 import alisolarflare.components.gpowers.GPowerMemory;
 
 public class GPower extends PlayerCommand {
