@@ -1,6 +1,5 @@
 package alisolarflare.components.flairdoor.commands;
 
-import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
 import alisolarflare.components.PlayerCommand;
@@ -13,9 +12,9 @@ public class FlairMe extends PlayerCommand {
 		this.component = flairDoorComponent;
 	}
 	@Override
-	public boolean OnCommand(CommandSender sender, String label, String[] args) {
-		component.playersToBeFlaired.add((Player) sender);
-		sender.sendMessage("Setup Successful! Walk through a portal to get your flair");
+	public boolean OnCommand(Player player, String label, String[] args) {
+		component.playersToBeFlaired.add(player);
+		player.sendMessage("Setup Successful! Walk through a portal to get your flair");
 		return true;
 	}
 	@Override

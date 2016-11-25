@@ -1,6 +1,6 @@
 package alisolarflare.components.minigames.commands;
 
-import org.bukkit.command.CommandSender;
+import org.bukkit.entity.Player;
 
 import alisolarflare.components.PlayerCommand;
 import alisolarflare.components.minigames.MinigameComponent;
@@ -13,8 +13,8 @@ public class ListFighters extends PlayerCommand {
 	}
 
 	@Override
-	public boolean OnCommand(CommandSender sender, String arg2, String[] arg3) {
-		sender.sendMessage(lobby.fighters.toString());
+	public boolean OnCommand(Player player, String arg2, String[] arg3) {
+		player.sendMessage(lobby.fighters.toString());
 		return true;
 	}
 	@Override

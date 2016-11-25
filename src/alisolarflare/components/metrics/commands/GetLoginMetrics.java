@@ -1,6 +1,5 @@
 package alisolarflare.components.metrics.commands;
 
-import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
 import alisolarflare.components.ModCommand;
@@ -15,10 +14,12 @@ public class GetLoginMetrics extends ModCommand{
 	}
 
 	@Override
-	public boolean OnCommand(CommandSender sender, String alias, String[] args) {
-		Player player = (Player) sender;
+	public boolean OnCommand(Player player, String alias, String[] args) {
 		for (String metric : module.metricsList){
 			player.sendMessage(metric);
+		}
+		if (args.length < 1){
+			return true;
 		}
 		return true;
 	}

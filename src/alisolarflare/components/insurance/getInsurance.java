@@ -1,7 +1,6 @@
 package alisolarflare.components.insurance;
 
 import org.apache.commons.lang.StringUtils;
-import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
 import alisolarflare.components.ModCommand;
@@ -11,9 +10,7 @@ public class getInsurance extends ModCommand {
 	private final int defaultAmount = 1;
 	private final InsuranceType defaultInsuranceType  = InsuranceType.Block;
 	@Override
-	public boolean OnCommand(CommandSender sender, String alias, String[] args) {
-		Player player = (Player) sender;
-		
+	public boolean OnCommand(Player player, String alias, String[] args) {
 		int amount = defaultAmount;
 		InsuranceType insuranceType = defaultInsuranceType;
 		

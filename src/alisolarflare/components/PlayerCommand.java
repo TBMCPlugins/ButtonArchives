@@ -1,6 +1,14 @@
 package alisolarflare.components;
 
+import org.bukkit.command.CommandSender;
+import org.bukkit.entity.Player;
+
 public abstract class PlayerCommand extends BaseCommand{
+	@Override
+	public boolean OnCommand(CommandSender sender, String alias, String[] args){
+		return OnCommand((Player) sender, alias, args);
+	}
+	public abstract boolean OnCommand(Player player, String alias, String[] args);
 	@Override
 	public boolean GetPlayerOnly() {
 		// TODO Auto-generated method stub

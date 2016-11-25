@@ -3,7 +3,6 @@ package alisolarflare.components.creativeboundaries.commands;
 import java.util.List;
 
 import org.bukkit.GameMode;
-import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
 import com.palmergames.bukkit.towny.exceptions.NotRegisteredException;
@@ -24,10 +23,7 @@ public class Cbgm1 extends PlayerCommand {
 	}
 
 	@Override
-	public boolean OnCommand(CommandSender sender, String arg2, String[] arg3) {
-		
-
-		Player player = (Player) sender;
+	public boolean OnCommand(Player player, String arg2, String[] arg3) {
 		TownBlock tb = TownyUniverse.getTownBlock(player.getLocation());
 		
 		if (tb == null) {

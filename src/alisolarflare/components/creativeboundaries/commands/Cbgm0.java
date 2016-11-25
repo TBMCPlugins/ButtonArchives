@@ -3,7 +3,6 @@ package alisolarflare.components.creativeboundaries.commands;
 import java.util.List;
 
 import org.bukkit.GameMode;
-import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
 import alisolarflare.components.PlayerCommand;
@@ -18,13 +17,7 @@ public class Cbgm0 extends PlayerCommand{
 	}
 
 	@Override
-	public boolean OnCommand(CommandSender sender, String arg2, String[] arg3) {
-		if (!(sender instanceof Player)){
-			sender.sendMessage("You must be a player to use this command!");
-			return false;
-		}
-		
-		Player player = (Player) sender;
+	public boolean OnCommand(Player player, String arg2, String[] arg3) {
 		player.setGameMode(GameMode.SURVIVAL);
 		cbCreatives.remove(player);
 		return true;

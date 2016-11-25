@@ -1,6 +1,5 @@
 package alisolarflare.components.gpowers.commands;
 
-import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
 import alisolarflare.components.PlayerCommand;
@@ -15,8 +14,7 @@ public class GPower extends PlayerCommand {
 	}
 
 	@Override
-	public boolean OnCommand(CommandSender sender, String label, String[] args) {
-		Player player = (Player) sender;
+	public boolean OnCommand(Player player, String label, String[] args) {
 		if (args.length < 2) {
 			player.sendMessage("Proper Usage to test G-Powers:");
 			player.sendMessage("/gpowertest [colour=red,orange,yellow,green,blue,purple] [active=true/false]");

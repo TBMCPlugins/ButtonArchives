@@ -1,6 +1,5 @@
 package alisolarflare.components.minigames.commands;
 
-import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
 import alisolarflare.components.PlayerCommand;
@@ -15,21 +14,21 @@ public class LeaveMinigame extends PlayerCommand {
 	}
 
 	@Override
-	public boolean OnCommand(CommandSender sender, String arg2, String[] arg3) {
-		if(!(sender instanceof Player))
-			sender.sendMessage("You must be a player to use this command!");
+	public boolean OnCommand(Player player, String arg2, String[] arg3) {
+		if(!(player instanceof Player))
+			player.sendMessage("You must be a player to use this command!");
 		
 		
-		String name = sender.getName();
+		String name = player.getName();
 		if (!(module.fighters.contains(name))) {
-			sender.sendMessage("You are not fighting!");
+			player.sendMessage("You are not fighting!");
 			return true;
 		}
 		
 		while(module.fighters.contains(name)){
 			module.fighters.remove(name);
 		}
-		sender.sendMessage("You have left the fighters category!");
+		player.sendMessage("You have left the fighters category!");
 		
 		return true;
 	}

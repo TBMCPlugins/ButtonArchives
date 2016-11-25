@@ -1,6 +1,5 @@
 package alisolarflare.components.magic.tricks;
 
-import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
 import alisolarflare.components.ModCommand;
@@ -11,12 +10,7 @@ public class BoomBowRule extends ModCommand{
 	public static boolean endCrystal;
 	public static boolean localized;;
 	@Override
-	public boolean OnCommand(CommandSender sender, String label, String[] args) {
-		if (sender instanceof Player == false){
-			sender.sendMessage("You must be a player to use this command");
-			return false;
-		}
-		Player player = (Player) sender;
+	public boolean OnCommand(Player player, String label, String[] args) {
 		if (player.getName().equals("alisolarflare") == false){
 			player.sendMessage("You must be alisolarflare to use this command");
 			return false;
