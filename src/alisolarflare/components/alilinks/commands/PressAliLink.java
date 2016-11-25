@@ -2,7 +2,7 @@ package alisolarflare.components.alilinks.commands;
 
 import java.util.List;
 
-import org.bukkit.command.CommandSender;
+import org.bukkit.entity.Player;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import alisolarflare.components.PlayerCommand;
@@ -18,9 +18,9 @@ public class PressAliLink extends PlayerCommand {
 	}
 
 	@Override
-	public boolean OnCommand(CommandSender sender, String label, String[] inputFrequencies) {
+	public boolean OnCommand(Player player, String label, String[] inputFrequencies) {
 		if (inputFrequencies.length < 1) {
-			sender.sendMessage("You must specify a link frequency");
+			player.sendMessage("You must specify a link frequency");
 			return false;
 		}
 		
@@ -31,7 +31,7 @@ public class PressAliLink extends PlayerCommand {
 				}
 			}
 		}
-		sender.sendMessage("Link pressed!");
+		player.sendMessage("Link pressed!");
 		return true;
 	}
 	@Override

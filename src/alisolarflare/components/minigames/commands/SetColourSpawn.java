@@ -1,6 +1,5 @@
 package alisolarflare.components.minigames.commands;
 
-import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
 import alisolarflare.components.ModCommand;
@@ -13,11 +12,9 @@ public class SetColourSpawn extends ModCommand{
 		this.spawnSet = spawnSet;
 	}
 	@Override
-	public boolean OnCommand(CommandSender sender, String label, String[] args) {
-		Player player = (Player) sender;
-		
+	public boolean OnCommand(Player player, String label, String[] args) {
 		if(args.length == 0){
-			sender.sendMessage("ERROR: Arguments required.");
+			player.sendMessage("ERROR: Arguments required.");
 			return false;
 		}
 		
@@ -26,34 +23,34 @@ public class SetColourSpawn extends ModCommand{
 		input.toLowerCase();
 		switch(input){
 		case ("r"):
-			sender.sendMessage("Setting Red Spawn...");
+			player.sendMessage("Setting Red Spawn...");
 			spawnSet.setRSpawn(player.getLocation());
-			sender.sendMessage("Red Spawn Set!");
+			player.sendMessage("Red Spawn Set!");
 			break;
 		case ("o"):
-			sender.sendMessage("Setting Orange Spawn...");
+			player.sendMessage("Setting Orange Spawn...");
 			spawnSet.setRSpawn(player.getLocation());
-			sender.sendMessage("Orange Spawn Set!");
+			player.sendMessage("Orange Spawn Set!");
 			break;
 		case ("y"):
-			sender.sendMessage("Setting Yellow Spawn...");
+			player.sendMessage("Setting Yellow Spawn...");
 			spawnSet.setRSpawn(player.getLocation());
-			sender.sendMessage("Yellow Spawn Set!");
+			player.sendMessage("Yellow Spawn Set!");
 			break;
 		case ("g"):
-			sender.sendMessage("Setting Green Spawn...");
+			player.sendMessage("Setting Green Spawn...");
 			spawnSet.setRSpawn(player.getLocation());
-			sender.sendMessage("Green Spawn Set!");
+			player.sendMessage("Green Spawn Set!");
 			break;
 		case ("b"):
-			sender.sendMessage("Setting Blue Spawn...");
+			player.sendMessage("Setting Blue Spawn...");
 			spawnSet.setRSpawn(player.getLocation());
-			sender.sendMessage("Blue Spawn Set!");
+			player.sendMessage("Blue Spawn Set!");
 			break;
 		case ("p"):
-			sender.sendMessage("Setting Purple Spawn...");
+			player.sendMessage("Setting Purple Spawn...");
 			spawnSet.setRSpawn(player.getLocation());
-			sender.sendMessage("Purple Spawn Set!");
+			player.sendMessage("Purple Spawn Set!");
 			break;
 		}
 		return true;

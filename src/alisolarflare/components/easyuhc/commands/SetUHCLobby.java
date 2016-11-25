@@ -1,6 +1,5 @@
 package alisolarflare.components.easyuhc.commands;
 
-import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
 import alisolarflare.components.ModCommand;
@@ -13,8 +12,8 @@ public class SetUHCLobby extends ModCommand{
 	}
 
 	@Override
-	public boolean OnCommand(CommandSender sender, String alias, String[] args) {
-		module.lobbyLocation = ((Player) sender).getLocation();
+	public boolean OnCommand(Player player, String alias, String[] args) {
+		module.lobbyLocation = player.getLocation();
 		return false;
 	}
 	

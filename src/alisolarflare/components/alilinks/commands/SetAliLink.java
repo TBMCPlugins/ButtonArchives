@@ -5,7 +5,6 @@ import java.util.Map;
 
 import org.apache.commons.lang3.StringUtils;
 import org.bukkit.World;
-import org.bukkit.command.CommandSender;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.entity.Player;
 
@@ -24,12 +23,10 @@ public class SetAliLink extends PlayerCommand {
 	}
 
 	@Override
-	public boolean OnCommand(CommandSender sender, String label, String[] args) {
-		Player player = (Player) sender;
-		player.sendMessage("you pressed");
+	public boolean OnCommand(Player player, String label, String[] args) {
 		if (args == null || args.length < 1) {
-			sender.sendMessage("You must specify a link frequency");
-			sender.sendMessage("/pressalilink [name]");
+			player.sendMessage("You must specify a link frequency");
+			player.sendMessage("/pressalilink [name]");
 			return false;
 		}
 

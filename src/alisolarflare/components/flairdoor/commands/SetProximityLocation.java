@@ -1,6 +1,5 @@
 package alisolarflare.components.flairdoor.commands;
 
-import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
 import alisolarflare.components.ModCommand;
@@ -15,13 +14,11 @@ public class SetProximityLocation extends ModCommand{
 	}
 
 	@Override
-	public boolean OnCommand(CommandSender sender, String alias, String[] args) {
+	public boolean OnCommand(Player player, String alias, String[] args) {
 		if (args.length < 1){
-			sender.sendMessage("You must enter an argument");
+			player.sendMessage("You must enter an argument");
 			return false;
 		}
-		
-		Player player = (Player) sender;
 		String firstChar = args[0].substring(0, 1);
 		
 		switch(firstChar){

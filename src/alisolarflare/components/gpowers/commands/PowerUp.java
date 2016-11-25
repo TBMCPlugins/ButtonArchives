@@ -1,6 +1,5 @@
 package alisolarflare.components.gpowers.commands;
 
-import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
 import alisolarflare.components.PlayerCommand;
@@ -15,11 +14,7 @@ public class PowerUp extends PlayerCommand {
 	}
 
 	@Override
-	public boolean OnCommand(CommandSender sender, String label, String[] args) {
-		if (!(sender instanceof Player))
-			sender.sendMessage("You must be a player to use this command! Contact a dev/ali if you think this is wrong");
-		
-		Player player = (Player) sender;
+	public boolean OnCommand(Player player, String label, String[] args) {
 		gPowerMemory.PowerUpPlayer(player);
 		return true;
 	}

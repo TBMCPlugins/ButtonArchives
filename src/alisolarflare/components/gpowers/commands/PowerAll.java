@@ -1,6 +1,6 @@
 package alisolarflare.components.gpowers.commands;
 
-import org.bukkit.command.CommandSender;
+import org.bukkit.entity.Player;
 
 import alisolarflare.components.ModCommand;
 import alisolarflare.components.gpowers.GPowerMemory;
@@ -13,7 +13,7 @@ public class PowerAll extends ModCommand{
 		this.gPowerMemory = gPowerMemory;
 	}
 	@Override
-	public boolean OnCommand(CommandSender sender, String alias, String[] args) {
+	public boolean OnCommand(Player player, String alias, String[] args) {
 		for (poweredPlayer poweredPlayer : gPowerMemory.poweredPlayerList.values()){
 			poweredPlayer.isPowersActive = true;
 		}

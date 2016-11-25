@@ -1,6 +1,5 @@
 package alisolarflare.components.gpowers.commands;
 
-import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
 import alisolarflare.components.PlayerCommand;
@@ -15,8 +14,7 @@ public class PowerDown extends PlayerCommand {
 	}
 
 	@Override
-	public boolean OnCommand(CommandSender sender, String label, String[] args) {
-		Player player = (Player) sender;
+	public boolean OnCommand(Player player, String label, String[] args) {
 		gPowerMemory.PowerDownPlayer(player);
 		return true;
 	}
