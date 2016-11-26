@@ -15,6 +15,6 @@ public class MagicComponent extends Component{
 		registerListener(plugin, new AliArrowListener(plugin));
 		registerListener(plugin, new BoomBowDeathListener());
 		registerListener(plugin, new BoomBowListener(plugin));
-		registerListener(plugin, new CannonBowListener());
+		registerListener(plugin, new CannonBowListener(plugin));
 	}
 }

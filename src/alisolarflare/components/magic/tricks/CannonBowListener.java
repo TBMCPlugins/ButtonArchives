@@ -10,14 +10,18 @@ import org.bukkit.entity.Player;
 import org.bukkit.entity.TNTPrimed;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
+import org.bukkit.event.entity.EntityExplodeEvent;
 import org.bukkit.event.entity.ProjectileLaunchEvent;
 import org.bukkit.inventory.ItemStack;
+import org.bukkit.plugin.java.JavaPlugin;
 
 public class CannonBowListener implements Listener {
-	
-	public CannonBowListener(){
+	JavaPlugin plugin;
+	public CannonBowListener(JavaPlugin plugin){
+		this.plugin = plugin;
 	}
 	
+	@SuppressWarnings("deprecation")
 	@EventHandler
 	public void onProjectileLaunch(ProjectileLaunchEvent event){
 		if(event.getEntity().getType() != EntityType.ARROW)
@@ -46,8 +50,18 @@ public class CannonBowListener implements Listener {
 		player.getWorld().playSound(player.getLocation(), Sound.ENTITY_GENERIC_EXPLODE, 0, 0);
 		player.getWorld().playEffect(player.getLocation(), Effect.EXPLOSION, 1);
 		arrow.remove();
-		
 		return;
+		
+	}
+
+	@EventHandler
+	public void onTnTExplode(EntityExplodeEvent event) {
+		if (event.getEntityType() != EntityType.PRIMED_TNT)
+			return;
+		if (!event.getEntity().getCustomName().equals("CANNON BOW TNT"))
+			return;
+		event.setYield(0);
+			
 		
 	}
 }
