@@ -1,11 +1,13 @@
 package alisolarflare.components.magic.tricks;
 
+import org.bukkit.Effect;
 import org.bukkit.Material;
+import org.bukkit.Sound;
 import org.bukkit.enchantments.Enchantment;
 import org.bukkit.entity.Arrow;
-import org.bukkit.entity.Entity;
 import org.bukkit.entity.EntityType;
 import org.bukkit.entity.Player;
+import org.bukkit.entity.TNTPrimed;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.entity.ProjectileLaunchEvent;
@@ -36,10 +38,14 @@ public class CannonBowListener implements Listener {
 		if (!player.getInventory().contains(Material.TNT))
 			return;
 			
-		Entity tnt = arrow.getWorld().spawnEntity(arrow.getLocation(), EntityType.PRIMED_TNT);
-		tnt.setVelocity(arrow.getVelocity());
-		arrow.remove();
+		TNTPrimed tnt = (TNTPrimed) arrow.getWorld().spawnEntity(arrow.getLocation(), EntityType.PRIMED_TNT);
+		tnt.setVelocity(arrow.getVelocity().normalize().multiply(3.0));
+		tnt.setCustomName("CANNON BOW TNT");
 		
+		player.setVelocity(arrow.getVelocity().multiply(-1).normalize());
+		player.getWorld().playSound(player.getLocation(), Sound.ENTITY_GENERIC_EXPLODE, 0, 0);
+		player.getWorld().playEffect(player.getLocation(), Effect.EXPLOSION, 1);
+		arrow.remove();
 		
 		return;
 		
