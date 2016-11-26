@@ -10,8 +10,8 @@ import org.bukkit.plugin.java.JavaPlugin;
 import alisolarflare.architecture.Component;
 import alisolarflare.components.flairdoor.flairme.FlairMe;
 import alisolarflare.components.flairdoor.listeners.PortalListener;
-import alisolarflare.components.flairdoor.playerproximity.PlayerProximityTaskLauncher;
-import alisolarflare.components.flairdoor.playerproximity.SetProximityLocation;
+import alisolarflare.components.flairdoor.proximitydetector.PlayerProximityLoop;
+import alisolarflare.components.flairdoor.proximitydetector.SetProximityLocation;
 
 public class FlairDoorComponent extends Component {
 	public List<Player> playersToBeFlaired = new ArrayList<Player>();
@@ -22,6 +22,6 @@ public class FlairDoorComponent extends Component {
 		registerCommand(plugin, new FlairMe(this));
 		registerCommand(plugin, new SetProximityLocation(this));
 		registerListener(plugin, new PortalListener(plugin, this));
-		registerListener(plugin, new PlayerProximityTaskLauncher(plugin, this));
+		registerListener(plugin, new PlayerProximityLoop(plugin, this));
 	}
 }

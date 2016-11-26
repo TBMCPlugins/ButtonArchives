@@ -4,7 +4,7 @@ import org.bukkit.plugin.java.JavaPlugin;
 
 import alisolarflare.architecture.Component;
 import alisolarflare.components.gpowers.commands.GPower;
-import alisolarflare.components.gpowers.enchant.Enchanter;
+import alisolarflare.components.gpowers.enchant.EnchantingLoop;
 import alisolarflare.components.gpowers.powerstate.PowerDown;
 import alisolarflare.components.gpowers.powerstate.PowerUp;
 
@@ -17,7 +17,7 @@ public class GPowerComponent extends Component {
 		registerCommand(plugin, new PowerUp(gPowerMemory));
 		registerCommand(plugin, new PowerDown(gPowerMemory));
 
-		registerListener(plugin, new Enchanter(plugin, gPowerMemory));
+		registerListener(plugin, new EnchantingLoop(plugin, gPowerMemory));
 
 	}
 

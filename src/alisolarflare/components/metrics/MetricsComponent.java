@@ -1,54 +1,29 @@
 package alisolarflare.components.metrics;
 
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.bukkit.configuration.InvalidConfigurationException;
-import org.bukkit.configuration.file.FileConfiguration;
-import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import alisolarflare.architecture.Component;
 import alisolarflare.components.metrics.collection.PlayerJoinListener;
+import alisolarflare.components.metrics.files.MetricsFile;
 import alisolarflare.components.metrics.output.GetLoginMetrics;
-import buttondevteam.lib.TBMCCoreAPI;
 
 public class MetricsComponent extends Component{
-
-	public FileConfiguration metricsYml; // DATA - STRING
+	String defaultPath = "metrics";
+	String defaultFilePath = (defaultPath + "/metrics.txt");
+	String playerLoginsFilePath  = (defaultPath + "/playerLogins.txt");
+	
+	public MetricsFile playerLoginsFile; // DATA - STRING
 	public List<String> metricsList;
 
 	@Override
 	public void register(JavaPlugin plugin){
+		playerLoginsFile = new MetricsFile(playerLoginsFilePath);
 		registerCommand(plugin, new GetLoginMetrics(this));
-		registerListener(plugin, new PlayerJoinListener(this));
+		registerListener(plugin, new PlayerJoinListener(this, playerLoginsFile));
 		
 		metricsList = new ArrayList<String>();
-		try {
-			metricsYml = loadFileConfiguration(plugin, "metrics.yml");
-			metricsList = metricsYml.getStringList("playerLogins");
-		} catch (IOException | InvalidConfigurationException e) {
-			TBMCCoreAPI.SendException("metrics.yml in AliPresents could not be created!", e);
-			return;
-		}
-		
-	}
-	private FileConfiguration loadFileConfiguration(JavaPlugin plugin, String fileName) throws FileNotFoundException, IOException, InvalidConfigurationException {
-
-		File file = new File(plugin.getDataFolder(), fileName);
-
-		if (!file.exists()) {
-			file.getParentFile().mkdirs();
-			plugin.saveResource(fileName, false);
-		}
-		
-		FileConfiguration config = new YamlConfiguration();
-		
-		config.load(file);
-		
-		return config;
 	}
 }

@@ -15,11 +15,8 @@ public class GetLoginMetrics extends ModCommand{
 
 	@Override
 	public boolean OnCommand(Player player, String alias, String[] args) {
-		for (String metric : module.metricsList){
+		for (String metric : module.playerLoginsFile.toArrayList()){
 			player.sendMessage(metric);
-		}
-		if (args.length < 1){
-			return true;
 		}
 		return true;
 	}

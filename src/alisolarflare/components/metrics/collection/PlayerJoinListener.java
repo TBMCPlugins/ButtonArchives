@@ -5,33 +5,19 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerJoinEvent;
 
 import alisolarflare.components.metrics.MetricsComponent;
-import buttondevteam.lib.DebugPotato;
+import alisolarflare.components.metrics.files.MetricsFile;
 
 public class PlayerJoinListener implements Listener{
 	
 	private MetricsComponent module;
-	public PlayerJoinListener(MetricsComponent module){
+	private MetricsFile playerLoginsFile;
+	public PlayerJoinListener(MetricsComponent module, MetricsFile playerLoginsFile){
 		this.module = module;
+		this.playerLoginsFile = playerLoginsFile;
 	}
 	@EventHandler
 	public void onPlayerJoin(PlayerJoinEvent event){
-		try{
-			module.saveData(module.metricsYml, "loginlog."+System.currentTimeMillis()+event.getPlayer().getName(), event.getPlayer().getName());
-		}catch(NullPointerException e){
-			try{
-				DebugPotato potato = new DebugPotato();
-				potato.setMessage(new String[]{
-						"Module: "+ module.toString(),
-						"Time: " + System.currentTimeMillis(),
-						"MetricsYML: " + module.metricsYml.toString()
-				});
-				potato.Send(event.getPlayer());
-			}catch (Exception ex){
-				DebugPotato potato = new DebugPotato();
-				potato.setMessage("Something went REALLLY wrong");
-				potato.Send(event.getPlayer());
-			}
-		}
+		playerLoginsFile.AddLine("loginlog."+System.currentTimeMillis()+event.getPlayer().getName());
 		module.metricsList.add("loginlog."+System.currentTimeMillis()+event.getPlayer().getName());
 		
 	}
