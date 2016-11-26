@@ -1,7 +1,8 @@
 package alisolarflare.components.magic.tricks;
 
-import org.bukkit.Effect;
+import org.bukkit.Location;
 import org.bukkit.Material;
+import org.bukkit.Particle;
 import org.bukkit.Sound;
 import org.bukkit.enchantments.Enchantment;
 import org.bukkit.entity.Arrow;
@@ -21,7 +22,6 @@ public class CannonBowListener implements Listener {
 		this.plugin = plugin;
 	}
 	
-	@SuppressWarnings("deprecation")
 	@EventHandler
 	public void onProjectileLaunch(ProjectileLaunchEvent event){
 		if(event.getEntity().getType() != EntityType.ARROW)
@@ -43,12 +43,13 @@ public class CannonBowListener implements Listener {
 			return;
 			
 		TNTPrimed tnt = (TNTPrimed) arrow.getWorld().spawnEntity(arrow.getLocation(), EntityType.PRIMED_TNT);
-		tnt.setVelocity(arrow.getVelocity().normalize().multiply(3.0));
+		tnt.setVelocity(player.getEyeLocation().getDirection().normalize().multiply(2.0));
 		tnt.setCustomName("CANNON BOW TNT");
+		tnt.setFuseTicks(20);
 		
-		player.setVelocity(arrow.getVelocity().multiply(-1).normalize());
-		player.getWorld().playSound(player.getLocation(), Sound.ENTITY_GENERIC_EXPLODE, 0, 0);
-		player.getWorld().playEffect(player.getLocation(), Effect.EXPLOSION, 1);
+		player.setVelocity(player.getEyeLocation().getDirection().normalize().multiply(-1));
+		player.getWorld().playSound(player.getLocation(), Sound.ENTITY_GENERIC_EXPLODE, 2.0F, 0);
+		player.getWorld().spawnParticle(Particle.EXPLOSION_NORMAL, player.getLocation(), 1);
 		arrow.remove();
 		return;
 		
@@ -60,7 +61,9 @@ public class CannonBowListener implements Listener {
 			return;
 		if (!event.getEntity().getCustomName().equals("CANNON BOW TNT"))
 			return;
-		event.setYield(0);
+		Location loc = event.getEntity().getLocation();
+		event.getEntity().getWorld().createExplosion(loc.getX(), loc.getY(), loc.getZ(), 3, false, false);
+		event.setCancelled(true);
 			
 		
 	}
