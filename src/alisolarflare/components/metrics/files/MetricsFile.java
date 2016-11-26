@@ -2,6 +2,7 @@ package alisolarflare.components.metrics.files;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
+import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.FileWriter;
@@ -17,33 +18,36 @@ public class MetricsFile {
 		this.fileName = directory;
 	}
 	public void AddLine(String string){
-		BufferedWriter outputStream = null;
+		BufferedWriter inputStream = null;
 		try {
-			outputStream = new BufferedWriter(new FileWriter(fileName, true));
-			outputStream.write(string);
-			outputStream.newLine();
-			outputStream.close();
+			File file = new File("metrics/playerLogins.txt");
+			TBMCCoreAPI.sendDebugMessage("Metrics File Exists: " + file.exists());
+			inputStream = new BufferedWriter(new FileWriter(fileName, true));
+			TBMCCoreAPI.sendDebugMessage("Input Stream Created!");
+			inputStream.write(string);
+			inputStream.newLine();
+			inputStream.close();
 		} catch (IOException e) {
-			TBMCCoreAPI.SendException(fileName +" Output Stream could not be created!", e);
+			TBMCCoreAPI.SendException(fileName +" Input Stream could not be created! ", e);
 		}
 	}
 	public List<String> toArrayList(){
-		BufferedReader inputStream = null;
+		BufferedReader outputStream = null;
 		try {
-			inputStream = new BufferedReader(new FileReader(fileName));
+			outputStream = new BufferedReader(new FileReader(fileName));
 			
 			List<String> outputList = new ArrayList<String>();
 			String currentLine;
 			
-			while ((currentLine = inputStream.readLine()) != null){
+			while ((currentLine = outputStream.readLine()) != null){
 				outputList.add(currentLine);
 			}
-			inputStream.close();
+			outputStream.close();
 			return outputList;
 		} catch (FileNotFoundException e) {
-			TBMCCoreAPI.SendException(" could not be found", e);
+			TBMCCoreAPI.SendException(fileName + " could not be found", e);
 		} catch (IOException e1) {
-			TBMCCoreAPI.SendException("encountered an I/O Exception!", e1);
+			TBMCCoreAPI.SendException(fileName + "encountered an I/O Exception!", e1);
 		}
 		return new ArrayList<String>();
 	}
