@@ -59,6 +59,9 @@ public class BoomBowListener implements Listener {
 			}else{
 				player.getInventory().remove(tntStack);
 			}
+			if (bow.getDurability() < 0){
+				player.getInventory().clear(player.getInventory().getHeldItemSlot());
+			}
 
 		}else{
 			return;
