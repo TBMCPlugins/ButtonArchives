@@ -43,9 +43,9 @@ public class CannonBowListener implements Listener {
 			return;
 			
 		TNTPrimed tnt = (TNTPrimed) arrow.getWorld().spawnEntity(arrow.getLocation(), EntityType.PRIMED_TNT);
-		tnt.setVelocity(player.getEyeLocation().getDirection().normalize().multiply(2.0));
+		tnt.setVelocity(player.getEyeLocation().getDirection().normalize().multiply(1.0));
 		tnt.setCustomName("CANNON BOW TNT");
-		tnt.setFuseTicks(20);
+		tnt.setFuseTicks(40);
 		
 		player.setVelocity(player.getEyeLocation().getDirection().normalize().multiply(-1));
 		player.getWorld().playSound(player.getLocation(), Sound.ENTITY_GENERIC_EXPLODE, 2.0F, 0);
