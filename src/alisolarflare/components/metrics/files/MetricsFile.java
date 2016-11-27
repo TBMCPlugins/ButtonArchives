@@ -13,17 +13,17 @@ import java.util.List;
 import buttondevteam.lib.TBMCCoreAPI;
 
 public class MetricsFile { 
-	private String fileName = "metrics/playerLogins.txt";
+	private String fileName = "AliPresents/metrics/playerLogins.txt";
 	public MetricsFile(String directory){
 		this.fileName = directory;
 	}
 	public void AddLine(String string){
 		BufferedWriter inputStream = null;
 		try {
-			File file = new File("metrics/playerLogins.txt");
-			TBMCCoreAPI.sendDebugMessage("Metrics File Exists: " + file.exists());
+			File file = new File(fileName);
+			TBMCCoreAPI.SendException("Metrics File Exists: " + file.exists(), new IOException());
 			inputStream = new BufferedWriter(new FileWriter(fileName, true));
-			TBMCCoreAPI.sendDebugMessage("Input Stream Created!");
+			TBMCCoreAPI.SendException("Input Stream Created!", new IOException());
 			inputStream.write(string);
 			inputStream.newLine();
 			inputStream.close();
