@@ -13,7 +13,7 @@ import java.util.List;
 import buttondevteam.lib.TBMCCoreAPI;
 
 public class MetricsFile { 
-	private String fileName = "AliPresents/metrics/playerLogins.txt";
+	private String fileName = "/AliPresents/metrics/playerLogins.txt";
 	public MetricsFile(String directory){
 		this.fileName = directory;
 	}
@@ -21,9 +21,9 @@ public class MetricsFile {
 		BufferedWriter inputStream = null;
 		try {
 			File file = new File(fileName);
-			TBMCCoreAPI.SendException("Metrics File Exists: " + file.exists(), new IOException());
+			TBMCCoreAPI.sendDebugMessage("Metrics File Exists: " + file.exists());
 			inputStream = new BufferedWriter(new FileWriter(fileName, true));
-			TBMCCoreAPI.SendException("Input Stream Created!", new IOException());
+			TBMCCoreAPI.sendDebugMessage("Input Stream Created!");
 			inputStream.write(string);
 			inputStream.newLine();
 			inputStream.close();
