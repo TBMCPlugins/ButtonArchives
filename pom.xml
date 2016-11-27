@@ -21,6 +21,10 @@
 					<include>*.yml</include>
 				</includes>
 			</resource>
+			<resource>
+				<directory>metrics</directory>
+				<include>**/*.txt</include>
+			</resource>
 		</resources>
 		<plugins>
 			<plugin>
