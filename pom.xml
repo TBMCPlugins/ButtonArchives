@@ -23,7 +23,9 @@
 			</resource>
 			<resource>
 				<directory>metrics</directory>
-				<include>**/*.txt</include>
+				<includes>
+					<include>**/*.txt</include>
+				</includes>
 			</resource>
 		</resources>
 		<plugins>
