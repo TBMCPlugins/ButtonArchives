@@ -23,6 +23,7 @@ public class GetLoginMetrics extends ModCommand{
 
 	@Override
 	public boolean OnCommand(Player player, String alias, String[] args) {
+		player.sendMessage("FIRED");
 		if (args.length == 1){
 			BufferedReader outputStream = null;
 			try {
@@ -40,12 +41,27 @@ public class GetLoginMetrics extends ModCommand{
 				}
 			} catch (FileNotFoundException e) {
 				TBMCCoreAPI.SendException(args[0] + " could not be found", e);
+				if (outputStream != null){
+					try {
+						outputStream.close();
+					} catch (IOException e1) {
+						e1.printStackTrace();
+					}
+				}
 			} catch (IOException e1) {
 				TBMCCoreAPI.SendException(args[0] + "encountered an I/O Exception!", e1);
+				if (outputStream != null){
+					try {
+						outputStream.close();
+					} catch (IOException e2) {
+						e2.printStackTrace();
+					}
+				}
 			}
-		}
-		for (String metric : module.playerLoginsFile.toArrayList()){
-			player.sendMessage(metric);
+		}else{
+			for (String metric : module.playerLoginsFile.toArrayList()){
+				player.sendMessage(metric);
+			}
 		}
 		return true;
 	}
