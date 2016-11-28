@@ -6,15 +6,15 @@ import alisolarflare.architecture.commands.PlayerCommand;
 import alisolarflare.components.minigames.MinigameComponent;
 
 public class ListFighters extends PlayerCommand {
-	private MinigameComponent lobby;
+	private MinigameComponent component;
 
-	public ListFighters(MinigameComponent lobby) {
-		this.lobby = lobby;
+	public ListFighters(MinigameComponent component) {
+		this.component = component;
 	}
 
 	@Override
 	public boolean OnCommand(Player player, String arg2, String[] arg3) {
-		player.sendMessage(lobby.fighters.toString());
+		player.sendMessage(component.fighters.toString());
 		return true;
 	}
 	@Override

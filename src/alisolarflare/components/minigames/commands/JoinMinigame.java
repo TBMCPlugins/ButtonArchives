@@ -1,28 +1,25 @@
 package alisolarflare.components.minigames.commands;
 
+import java.util.List;
+
 import org.bukkit.entity.Player;
 
 import alisolarflare.architecture.commands.PlayerCommand;
 import alisolarflare.components.minigames.MinigameComponent;
 
 public class JoinMinigame extends PlayerCommand {
-	private MinigameComponent module;
+	private List<String> fighterList;
 
-	public JoinMinigame(MinigameComponent module) {
-		this.module = module;
+	public JoinMinigame(MinigameComponent component) {
+		this.fighterList = component.fighters;
 	}
 
 	@Override
-	public boolean OnCommand(Player player, String arg2, String[] arg3) {		
-		String name = player.getName();
-		if (module.fighters.contains(name)) {
+	public boolean OnCommand(Player player, String arg2, String[] arg3) {	
+		if (fighterList.contains(player.getName())) {
 			player.sendMessage("You are already in the minigame!");
-			return true;
-		}
-
-		module.fighters.add(name);
-
-		if (module.fighters.contains(name)) {
+		}else{
+			fighterList.add(player.getName());
 			player.sendMessage("You have joined the minigame!");
 		}
 		return true;

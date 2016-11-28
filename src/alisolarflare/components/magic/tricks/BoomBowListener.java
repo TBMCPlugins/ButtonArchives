@@ -12,6 +12,7 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.block.Action;
 import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.inventory.ItemStack;
+import org.bukkit.inventory.PlayerInventory;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
@@ -41,26 +42,27 @@ public class BoomBowListener implements Listener {
 
 		//PLAYER SANITATION
 		Player player = event.getPlayer();
-		if(player.getGameMode().equals(GameMode.CREATIVE))return;
+		PlayerInventory inventory = player.getInventory();
+		if(player.getGameMode().equals(GameMode.SPECTATOR))return;
 
 		if(bow.containsEnchantment(Enchantment.ARROW_INFINITE)){
 			//HAS INIFINITY			
 			Activate(event);
 
-		}else if((player.getInventory().contains(Material.TNT))){
+		}else if((inventory.contains(Material.TNT))){
 			//HAS TNT
 			Activate(event);
 
-			//Reduce tnt by 1
-			int tntSlot = player.getInventory().first(Material.TNT);
-			ItemStack tntStack = player.getInventory().getItem(tntSlot);
-			if(tntStack.getAmount() > 3){
-				tntStack.setAmount(tntStack.getAmount()-3);
+			//Reduce TNT
+			ItemStack tnt = inventory.getItem(inventory.first(Material.TNT));
+			
+			if(tnt.getAmount() > 3){
+				tnt.setAmount(tnt.getAmount()-3);
 			}else{
-				player.getInventory().remove(tntStack);
+				inventory.remove(tnt);
 			}
 			if (bow.getDurability() < 0){
-				player.getInventory().clear(player.getInventory().getHeldItemSlot());
+				inventory.clear(inventory.getHeldItemSlot());
 			}
 
 		}else{
@@ -100,10 +102,9 @@ public class BoomBowListener implements Listener {
 		player.getWorld().spawnParticle(Particle.EXPLOSION_HUGE, playerLocation, 2);
 		player.damage(7.42425, player);
 		boomBow.setDurability((short) (boomBow.getDurability() + 3));
-		if(boomBow.getDurability() < 0){
+		if(boomBow.getDurability() > 385){
 			player.getInventory().setItemInMainHand(null);
-			player.getWorld().playSound(playerLocation, Sound.ENTITY_ITEM_BREAK, 0, 0)
-			;
+			player.getWorld().playSound(playerLocation, Sound.ENTITY_ITEM_BREAK, 0, 0);
 		}
 
 	}

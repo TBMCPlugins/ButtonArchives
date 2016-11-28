@@ -12,6 +12,7 @@ import org.bukkit.plugin.java.JavaPlugin;
 import alisolarflare.components.alilinks.tasks.UnpressTask;
 
 public class Link{
+	
 	public String frequency;
 	public World world;
 	public int x;

@@ -1,16 +1,17 @@
 package alisolarflare.components.minigames.commands;
 
+import java.util.List;
+
 import org.bukkit.entity.Player;
 
 import alisolarflare.architecture.commands.PlayerCommand;
 import alisolarflare.components.minigames.MinigameComponent;
 
 public class LeaveMinigame extends PlayerCommand {
+	private List<String> fighters;
 
-	private MinigameComponent module;
-
-	public LeaveMinigame(MinigameComponent module) {
-		this.module = module;
+	public LeaveMinigame(MinigameComponent components) {
+		this.fighters = components.fighters;
 	}
 
 	@Override
@@ -18,15 +19,14 @@ public class LeaveMinigame extends PlayerCommand {
 		if(!(player instanceof Player))
 			player.sendMessage("You must be a player to use this command!");
 		
-		
 		String name = player.getName();
-		if (!(module.fighters.contains(name))) {
+		if (!(fighters.contains(name))) {
 			player.sendMessage("You are not fighting!");
 			return true;
 		}
 		
-		while(module.fighters.contains(name)){
-			module.fighters.remove(name);
+		while(fighters.contains(name)){
+			fighters.remove(name);
 		}
 		player.sendMessage("You have left the fighters category!");
 		

@@ -11,10 +11,8 @@ commands:
     description: Official g-power command that activates the ghostie powerups
   powerdown:
     description: Offical g-power command that deactivates the ghostie powerups
-  pressalilink:
-    description: Presses an Ali Link pressalilink frequency
-  setalilink:
-    description: Creates an Ali Link setalilink frequency
+  alilink:
+    description: Arguments: <press/set>
   cbgm0:
     description: Creative Boundaries Gamemode 0 - allows players to return to survival
   cbgm1:

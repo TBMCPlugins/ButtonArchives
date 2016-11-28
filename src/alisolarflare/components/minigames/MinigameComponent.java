@@ -2,6 +2,7 @@ package alisolarflare.components.minigames;
 
 import java.util.List;
 
+import org.bukkit.entity.Player;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import alisolarflare.architecture.Component;
@@ -14,7 +15,7 @@ import alisolarflare.components.minigames.data.SpawnSet;
 public class MinigameComponent extends Component{
 	public SpawnSet spawnSet;
 	public List<String> fighters;
-	private GameState gameState;
+	public GameState gameState;
 	
 	@Override
 	public void register(JavaPlugin plugin) {
@@ -25,9 +26,11 @@ public class MinigameComponent extends Component{
 		registerCommand(plugin, new ListFighters(this));
 		
 	}
-	
-	public GameState getGameState() {return gameState;}
-	public void setGameState(GameState gameState) {this.gameState = gameState;}
-	
-	
+	public class Fighter {
+		public Player player;
+		public String colour;
+		public Fighter(Player player, String colour){
+			this.colour = colour;
+		}
+	}
 }

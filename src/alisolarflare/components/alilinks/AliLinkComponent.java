@@ -8,23 +8,21 @@ import org.bukkit.Server;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import alisolarflare.architecture.Component;
-import alisolarflare.components.alilinks.commands.PressAliLink;
-import alisolarflare.components.alilinks.commands.SetAliLink;
+import alisolarflare.components.alilinks.commands.AliLink;
 import alisolarflare.components.alilinks.entities.Link;
 
 public class AliLinkComponent extends Component {
 
 	private List<Link> linkList;
-	private List<Map<String,String>> linkData;
+	private List<Map<String,String>> linkMap;
 	@Override
 	public void register(JavaPlugin plugin) {
 		this.linkList = MapToLinkList(plugin.getConfig().getMapList("aliLinkList"), plugin.getServer());
 		for (Link link: linkList){
-			linkData.add(link.toMap());
+			linkMap.add(link.toMap());
 		}
 		
-		registerCommand(plugin, new PressAliLink(plugin, linkList));
-		registerCommand(plugin, new SetAliLink(plugin.getConfig(), linkList, linkData));
+		registerCommand(plugin, new AliLink(plugin, linkList));
 
 	}
 	@SuppressWarnings("unchecked")
