@@ -1,4 +1,4 @@
-package graveyard.thebuttonrebirth;
+/*package graveyard.thebuttonrebirth;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -68,3 +68,4 @@ public class ButtonRebirthPlugin extends JavaPlugin{
 		shrineCreator.createShrine(chestX, chestY, chestZ, 10, Material.BEDROCK);
 	}
 }
+*/

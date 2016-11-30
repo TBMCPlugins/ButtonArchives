@@ -1,4 +1,4 @@
-package graveyard.thebuttonrebirth.tasks;
+/*package graveyard.thebuttonrebirth.tasks;
 
 import java.time.Clock;
 import java.time.LocalDateTime;
@@ -135,7 +135,7 @@ public class StealChestTask extends BukkitRunnable{
 					totalDiamonds += (stack.getAmount() *1);
 					
 				}
-			}catch(Exception e){/*stack is empty*/}
+			}catch(Exception e){stack is empty}
 		}
 		shrineInventory.clear();
 		diamondsInserted += totalDiamonds;
@@ -198,3 +198,4 @@ public class StealChestTask extends BukkitRunnable{
 		return closestPlayer;
 	}
 }
+*/

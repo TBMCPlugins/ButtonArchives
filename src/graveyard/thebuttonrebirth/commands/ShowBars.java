@@ -1,4 +1,4 @@
-package graveyard.thebuttonrebirth.commands;
+/*package graveyard.thebuttonrebirth.commands;
 
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
@@ -28,3 +28,4 @@ public class ShowBars implements CommandExecutor{
 	}
 	
 }
+*/

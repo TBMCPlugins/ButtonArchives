@@ -3,19 +3,12 @@ package alisolarflare.components.gpowers.powerstate;
 import org.bukkit.entity.Player;
 
 import alisolarflare.architecture.commands.PlayerCommand;
-import alisolarflare.components.gpowers.GPowerMemory;
+import alisolarflare.components.gpowers.GPowerAPI;
 
 public class PowerUp extends PlayerCommand {
-
-	private GPowerMemory gPowerMemory;
-
-	public PowerUp(GPowerMemory gPowerMemory) {
-		this.gPowerMemory = gPowerMemory;
-	}
-
 	@Override
 	public boolean OnCommand(Player player, String label, String[] args) {
-		gPowerMemory.PowerUpPlayer(player);
+		GPowerAPI.PowerUpPlayer(player);
 		return true;
 	}
 	@Override

@@ -1,9 +1,9 @@
-package alisolarflare.components.minigames.commands;
+/*package graveyard.minigames.commands;
 
 import org.bukkit.entity.Player;
 
 import alisolarflare.architecture.commands.PlayerCommand;
-import alisolarflare.components.minigames.MinigameComponent;
+import graveyard.minigames.MinigameComponent;
 
 public class ListFighters extends PlayerCommand {
 	private MinigameComponent component;
@@ -24,3 +24,4 @@ public class ListFighters extends PlayerCommand {
 		};
 	}
 }
+*/

@@ -1,4 +1,4 @@
-package graveyard.thebuttonrebirth.admin;
+/*package graveyard.thebuttonrebirth.admin;
 
 import org.bukkit.Material;
 import org.bukkit.World;
@@ -96,7 +96,7 @@ public class CreateShrine implements CommandExecutor{
 			sender.sendMessage("Error in CreateShrine Class: No world defined in config...");
 			sender.sendMessage("Defining world based on player location.");
 			
-			/*
+			
 			//Changes world variable in config file
 			if (sender instanceof Player){
 				Player player = (Player) sender;
@@ -107,14 +107,14 @@ public class CreateShrine implements CommandExecutor{
 				//Sends player the result of the change
 				sender.sendMessage("World variable set to " + player.getWorld().getName() + "in config file");
 			}
-			*/
+			
 		}
-		/*
+		
 		if (!(player.hasPermission("Moderator") || player.hasPermission("Admin"))){
 			player.sendMessage(ChatColor.RED + "You must be in the group Moderator or Admin to access this command!");
 			return false;
 		}
-		 */
+		 
 		chestX = plugin.getConfig().getInt("chestX");
 		chestY = plugin.getConfig().getInt("chestY");
 		chestZ = plugin.getConfig().getInt("chestZ");
@@ -126,3 +126,4 @@ public class CreateShrine implements CommandExecutor{
 		return false;
 	}
 }
+*/

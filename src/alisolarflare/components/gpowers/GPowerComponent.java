@@ -12,12 +12,11 @@ public class GPowerComponent extends Component {
 
 	@Override
 	public void register(JavaPlugin plugin) {
-		GPowerMemory gPowerMemory = new GPowerMemory();
-		registerCommand(plugin, new GPower(gPowerMemory));
-		registerCommand(plugin, new PowerUp(gPowerMemory));
-		registerCommand(plugin, new PowerDown(gPowerMemory));
+		registerCommand(plugin, new GPower());
+		registerCommand(plugin, new PowerUp());
+		registerCommand(plugin, new PowerDown());
 
-		registerListener(plugin, new EnchantingLoop(plugin, gPowerMemory));
+		registerListener(plugin, new EnchantingLoop(plugin));
 
 	}
 

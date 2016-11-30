@@ -1,11 +1,11 @@
-package alisolarflare.components.minigames.commands;
+/*package graveyard.minigames.commands;
 
 import java.util.List;
 
 import org.bukkit.entity.Player;
 
 import alisolarflare.architecture.commands.PlayerCommand;
-import alisolarflare.components.minigames.MinigameComponent;
+import graveyard.minigames.MinigameComponent;
 
 public class LeaveMinigame extends PlayerCommand {
 	private List<String> fighters;
@@ -39,3 +39,4 @@ public class LeaveMinigame extends PlayerCommand {
 		};
 	}
 }
+*/

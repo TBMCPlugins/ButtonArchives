@@ -1,9 +1,9 @@
-package alisolarflare.components.minigames.commands;
+/*package graveyard.minigames.commands;
 
 import org.bukkit.entity.Player;
 
 import alisolarflare.architecture.commands.ModCommand;
-import alisolarflare.components.minigames.data.SpawnSet;
+import graveyard.minigames.data.SpawnSet;
 
 public class SetColourSpawn extends ModCommand{
 	private SpawnSet spawnSet;
@@ -62,3 +62,4 @@ public class SetColourSpawn extends ModCommand{
 		};
 	}
 }
+*/

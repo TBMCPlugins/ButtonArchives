@@ -1,4 +1,4 @@
-package alisolarflare.components.minigames;
+/*package graveyard.minigames;
 
 import java.util.List;
 
@@ -6,11 +6,11 @@ import org.bukkit.entity.Player;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import alisolarflare.architecture.Component;
-import alisolarflare.components.minigames.commands.JoinMinigame;
-import alisolarflare.components.minigames.commands.LeaveMinigame;
-import alisolarflare.components.minigames.commands.ListFighters;
-import alisolarflare.components.minigames.commands.SetColourSpawn;
-import alisolarflare.components.minigames.data.SpawnSet;
+import graveyard.minigames.commands.JoinMinigame;
+import graveyard.minigames.commands.LeaveMinigame;
+import graveyard.minigames.commands.ListFighters;
+import graveyard.minigames.commands.SetColourSpawn;
+import graveyard.minigames.data.SpawnSet;
 
 public class MinigameComponent extends Component{
 	public SpawnSet spawnSet;
@@ -34,3 +34,4 @@ public class MinigameComponent extends Component{
 		}
 	}
 }
+*/

@@ -1,4 +1,4 @@
-package graveyard.thebuttonrebirth.tasks;
+/*package graveyard.thebuttonrebirth.tasks;
 
 import java.time.Clock;
 import java.time.Duration;
@@ -213,7 +213,7 @@ public class CyclicalDisplayTask extends BukkitRunnable{
 						if (stack.getType() == Material.DIAMOND_BLOCK){
 							totalDiamonds += stack.getAmount();
 						}	
-					}catch(Exception e){/*stack isn't a diamond block*/}
+					}catch(Exception e){stack isn't a diamond block}
 				}
 
 				diamondBar.setProgress((diamondsInserted+totalDiamonds)/(double)minimumDiamondBlocks);
@@ -243,3 +243,4 @@ public class CyclicalDisplayTask extends BukkitRunnable{
 		currentBar = barCycleDuration * (bar);
 	}
 }
+*/

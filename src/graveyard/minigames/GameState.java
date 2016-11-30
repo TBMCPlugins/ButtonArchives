@@ -1,5 +1,6 @@
-package alisolarflare.components.minigames;
+/*package graveyard.minigames;
 
 public enum GameState {
 	Idle, FreeForAll, Heroes;
 }
+*/

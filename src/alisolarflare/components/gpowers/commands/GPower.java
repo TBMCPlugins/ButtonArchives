@@ -3,16 +3,9 @@ package alisolarflare.components.gpowers.commands;
 import org.bukkit.entity.Player;
 
 import alisolarflare.architecture.commands.PlayerCommand;
-import alisolarflare.components.gpowers.GPowerMemory;
+import alisolarflare.components.gpowers.GPowerAPI;
 
 public class GPower extends PlayerCommand {
-
-	private GPowerMemory gPowerMemory;
-
-	public GPower(GPowerMemory gPowerMemory) {
-		this.gPowerMemory = gPowerMemory;
-	}
-
 	@Override
 	public boolean OnCommand(Player player, String label, String[] args) {
 		if (args.length < 2) {
@@ -39,7 +32,7 @@ public class GPower extends PlayerCommand {
 		}
 		player.sendMessage("Terms Vaild!");
 		player.sendMessage("Saving Data: "+ player.getName() + "|" + colour + "|" + isActive);
-		gPowerMemory.configurePlayer(player, colour, isActive);
+		GPowerAPI.addPlayer(player, colour, isActive);
 		
 		return true;
 	}

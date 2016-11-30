@@ -1,4 +1,4 @@
-package alisolarflare.components.minigames.data;
+/*package graveyard.minigames.data;
 
 import org.bukkit.Location;
 
@@ -11,3 +11,4 @@ public class SpawnSet {
 	public Location PSpawn;
 	
 }
+*/
