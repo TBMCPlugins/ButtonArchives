@@ -17,7 +17,7 @@ commands:
     description: Creative Boundaries Gamemode 0 - allows players to return to survival
   cbgm1:
     description: Creative Boundaries Gamemode 1 - allows players to access creative within their towns. Creative is removed outside of towns so be careful
-  setdickmode:
+  setforceboundaries:
     description: Should players automatically return to creative when outside town borders? Dickmode says yes.
   joinminigame:
     description: Join a Button Minigame
