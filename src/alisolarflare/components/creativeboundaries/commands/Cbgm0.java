@@ -1,25 +1,14 @@
 package alisolarflare.components.creativeboundaries.commands;
 
-import java.util.List;
-
-import org.bukkit.GameMode;
 import org.bukkit.entity.Player;
 
 import alisolarflare.architecture.commands.PlayerCommand;
-import alisolarflare.components.creativeboundaries.CreativeBoundariesComponent;
+import alisolarflare.components.creativeboundaries.CreativeBoundariesAPI;
 
 public class Cbgm0 extends PlayerCommand{
-	
-	private List<Player> cbCreatives;
-
-	public Cbgm0(CreativeBoundariesComponent component) {
-		this.cbCreatives = component.cbCreatives;
-	}
-
 	@Override
 	public boolean OnCommand(Player player, String arg2, String[] arg3) {
-		player.setGameMode(GameMode.SURVIVAL);
-		cbCreatives.remove(player);
+		CreativeBoundariesAPI.toSurvival(player);
 		return true;
 	}
 	public String[] GetHelpText(String alias){
