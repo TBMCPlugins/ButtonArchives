@@ -13,8 +13,8 @@ import alisolarflare.components.alilinks.entities.Link;
 
 public class AliLinkComponent extends Component {
 
-	private List<Link> linkList;
 	private List<Map<String,String>> linkMap;
+	private List<Link> linkList;
 	@Override
 	public void register(JavaPlugin plugin) {
 		this.linkList = MapToLinkList(plugin.getConfig().getMapList("aliLinkList"), plugin.getServer());
@@ -22,7 +22,7 @@ public class AliLinkComponent extends Component {
 			linkMap.add(link.toMap());
 		}
 		
-		registerCommand(plugin, new AliLink(plugin, linkList));
+		registerCommand(plugin, new AliLink(plugin));
 
 	}
 	@SuppressWarnings("unchecked")
