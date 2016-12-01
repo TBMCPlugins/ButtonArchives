@@ -6,7 +6,7 @@ import org.bukkit.event.Listener;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.bukkit.scheduler.BukkitRunnable;
 
-import alisolarflare.components.gpowers.GPowerAPI;
+import alisolarflare.components.gpowers.api.GPowerAPI;
 
 public class EnchantingLoop extends BukkitRunnable implements Listener{
 	private Server server;

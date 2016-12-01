@@ -3,7 +3,7 @@ package alisolarflare.components.gpowers.commands;
 import org.bukkit.entity.Player;
 
 import alisolarflare.architecture.commands.PlayerCommand;
-import alisolarflare.components.gpowers.GPowerAPI;
+import alisolarflare.components.gpowers.api.GPowerAPI;
 
 public class GPower extends PlayerCommand {
 	@Override

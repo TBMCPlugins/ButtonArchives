@@ -1,4 +1,4 @@
-package alisolarflare.components.gpowers;
+package alisolarflare.components.gpowers.api;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -8,6 +8,8 @@ import org.bukkit.Color;
 import org.bukkit.entity.Player;
 import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
+
+import alisolarflare.components.gpowers.PoweredPlayer;
 
 public class GPowerAPI{
 	public static final int defaultPowerLength = 300;

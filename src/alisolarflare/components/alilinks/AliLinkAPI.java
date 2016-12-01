@@ -60,7 +60,7 @@ public class AliLinkAPI {
 		linkList.add(link);
 		return true;
 	}
-	@SuppressWarnings("unchecked")
+	@SuppressWarnings({ "unchecked", "unused" })
 	private List<Link> MapToLinkList(List<Map<?, ?>> mapList, Server server) {
 		List<Link> linkList = new ArrayList<Link>();
 		for (Map<?, ?> MapWithLinkData : mapList){
