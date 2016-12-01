@@ -19,29 +19,37 @@ public class Link{
 	public int y;
 	public int z;
 	
-	public Link (String frequency, World world, int x, int y, int z){
-		this.frequency = frequency;
-		this.world = world;
-		this.x = x;
-		this.y = y;
-		this.z = z;
+	/**Constructor for copying links*/
+	public Link(Link link){
+		this.frequency = link.frequency;
+		this.world = link.world;
+		this.x = link.x;
+		this.y = link.y;
+		this.z = link.z;
 	}
-	
-	public Link(String frequency, Location location, Server server){
-		this.frequency = frequency;
-		this.world = server.getWorld(location.getWorld().getName());
-		this.x = location.getBlockX();
-		this.y = location.getBlockY();
-		this.z = location.getBlockZ();
-		//plugin.plugin.getConfig().set("frequency", 10);
-	}
-	
+	/**Constructor for deserialization*/
 	public Link(Map<String,String> linkFromMap, Server server){
 		this.frequency = linkFromMap.get("frequency");
 		this.world = server.getWorld(linkFromMap.get("world"));
 		this.x = Integer.parseInt(linkFromMap.get("x"));
 		this.y = Integer.parseInt(linkFromMap.get("y"));
 		this.z = Integer.parseInt(linkFromMap.get("z"));
+	}
+	/**Constructor for Location inputs*/
+	public Link(String frequency, Location location){
+		this.frequency = frequency;
+		this.world = location.getWorld();
+		this.x = location.getBlockX();
+		this.y = location.getBlockY();
+		this.z = location.getBlockZ();
+	}
+	/**Pure Constructor*/
+	public Link(String frequency, World world, int x, int y, int z){
+		this.frequency = frequency;
+		this.world = world;
+		this.x = x;
+		this.y = y;
+		this.z = z;
 	}
 	
 	/**
@@ -51,7 +59,7 @@ public class Link{
 	public void press(JavaPlugin plugin) {
 		Location location = new Location(this.world, this.x, this.y, this.z);
 		location.getBlock().setType(Material.REDSTONE_BLOCK);
-		new UnpressTask(location).runTaskTimer(plugin, 2, 1);
+		new UnpressTask(location).runTaskLater(plugin, 2);
 	}
 	
 	public Map<String,String> toMap(){

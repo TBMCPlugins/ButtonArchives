@@ -21,7 +21,7 @@ public class AliLink extends PlayerCommand{
 		case "press": 
 			return AliLinkAPI.sendPressEvent(player, inputFrequencies, plugin);
 		case "set":   
-			AliLinkAPI.createAliLink(player, inputFrequencies);
+			return AliLinkAPI.createAliLink(player, inputFrequencies);
 		default:
 			return false;
 		}

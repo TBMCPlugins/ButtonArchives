@@ -1,9 +1,12 @@
 package alisolarflare.components.alilinks;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Map;
 
 import org.apache.commons.lang3.StringUtils;
+import org.bukkit.Server;
 import org.bukkit.World;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
@@ -56,5 +59,13 @@ public class AliLinkAPI {
 		Link link = new Link(frequency, world, x, y, z);
 		linkList.add(link);
 		return true;
+	}
+	@SuppressWarnings("unchecked")
+	private List<Link> MapToLinkList(List<Map<?, ?>> mapList, Server server) {
+		List<Link> linkList = new ArrayList<Link>();
+		for (Map<?, ?> MapWithLinkData : mapList){
+			linkList.add(new Link((Map<String,String>) MapWithLinkData, server));
+		}
+		return linkList;
 	}
 }

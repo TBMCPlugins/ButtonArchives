@@ -17,5 +17,4 @@ public class UnpressTask extends BukkitRunnable {
 		location.getBlock().setData((byte) 14);
 		this.cancel();
 	}
-
 }
