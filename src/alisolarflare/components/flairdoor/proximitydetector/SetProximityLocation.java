@@ -3,15 +3,8 @@ package alisolarflare.components.flairdoor.proximitydetector;
 import org.bukkit.entity.Player;
 
 import alisolarflare.architecture.commands.ModCommand;
-import alisolarflare.components.flairdoor.FlairDoorComponent;
 
 public class SetProximityLocation extends ModCommand{
-
-	private FlairDoorComponent component;
-
-	public SetProximityLocation(FlairDoorComponent flairDoorComponent) {
-		this.component = flairDoorComponent;
-	}
 
 	@Override
 	public boolean OnCommand(Player player, String alias, String[] args) {
@@ -24,11 +17,11 @@ public class SetProximityLocation extends ModCommand{
 		switch(firstChar){
 		case "s":
 		case "0":
-			component.startLocation = player.getLocation();
+			PlayerProximityLoop.setStartLocation(player.getLocation());
 			return true;
 		case "e":
 		case "1":
-			component.endLocation = player.getLocation();
+			PlayerProximityLoop.setEndLocation(player.getLocation());
 			return true;
 		default:
 			player.sendMessage("You must provide a vaild argument!");

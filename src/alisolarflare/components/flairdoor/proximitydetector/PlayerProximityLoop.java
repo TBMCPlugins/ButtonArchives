@@ -9,38 +9,36 @@ import org.bukkit.scheduler.BukkitRunnable;
 import alisolarflare.components.flairdoor.FlairDoorComponent;
 
 public class PlayerProximityLoop extends BukkitRunnable implements Listener{
-	private JavaPlugin plugin;
-	private FlairDoorComponent component;
-	private Location startLocation;
-	private Location endLocation;
+	private static JavaPlugin plugin;
+	private static FlairDoorComponent component;
+	private static Location startLocation;
+	private static Location endLocation;
 	
-	private int sX;
-	private int sY;
-	private int sZ;
-	private int eX;
-	private int eY;
-	private int eZ;
+	private static int sX;
+	private static int sY;
+	private static int sZ;
+	private static int eX;
+	private static int eY;
+	private static int eZ;
 	
 	public PlayerProximityLoop(JavaPlugin plugin, FlairDoorComponent component) {
-		this.plugin = plugin;
-		this.component = component;
-		setStartLocation(component.startLocation);
-		setEndLocation(component.endLocation);
+		PlayerProximityLoop.plugin = plugin;
+		PlayerProximityLoop.component = component;
 		this.runTaskTimer(plugin, 0, 20);
 	}
-	public void setStartLocation(Location location){
-		this.sX = startLocation.getBlockX();
-		this.sY = startLocation.getBlockY();
-		this.sZ = startLocation.getBlockZ();
-		this.startLocation = location;
-		this.endLocation.setWorld(location.getWorld());
+	public static void setStartLocation(Location location){
+		PlayerProximityLoop.sX = location.getBlockX();
+		PlayerProximityLoop.sY = location.getBlockY();
+		PlayerProximityLoop.sZ = location.getBlockZ();
+		PlayerProximityLoop.startLocation = location;
+		PlayerProximityLoop.endLocation.setWorld(location.getWorld());
 	}
-	public void setEndLocation(Location location){
-		this.eX = startLocation.getBlockX();
-		this.eY = startLocation.getBlockY();
-		this.eZ = startLocation.getBlockZ();
-		this.endLocation = location;
-		this.startLocation.setWorld(location.getWorld());
+	public static void setEndLocation(Location location){
+		PlayerProximityLoop.eX = location.getBlockX();
+		PlayerProximityLoop.eY = location.getBlockY();
+		PlayerProximityLoop.eZ = location.getBlockZ();
+		PlayerProximityLoop.startLocation.setWorld(location.getWorld());
+		PlayerProximityLoop.endLocation = location;
 	}
 
 	@Override
