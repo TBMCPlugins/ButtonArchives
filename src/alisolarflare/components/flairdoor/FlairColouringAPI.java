@@ -5,21 +5,72 @@ import org.bukkit.DyeColor;
 import com.earth2me.essentials.User;
 
 public class FlairColouringAPI {
-
 	public static void recolourPlayer(User user, DyeColor dyecolour){
 		String name = user._getNickname();
 		String sanitizedName = "";
 		for(int i = 0; i < name.length(); i++){
-			if (name.charAt(i) != '§'){
-				sanitizedName += name.charAt(i);
+			if (name.charAt(i) == '§'){
+				i++;//Skips the data value, the 4 in "§4Alisolarflare"
 			}else{
-				i++;
+				sanitizedName += name.charAt(i);
 			}
 		}
-		
-		String colourChanger = "";
-		
-		switch(dyecolour){
+
+		String colourCode = dyeToColourCode(dyecolour);
+		String newName = colourCode + sanitizedName;
+
+		user.setNickname(newName);
+		user.sendMessage("Adding the colour " + colourCode + dyecolour.name() + "§f!");
+		user.sendMessage("Your name is now: " + user.getNickname() +"!");
+	}
+	public static String shiftColoursRight(String input){
+		String output = "";
+		for(int ptr = 0; ptr < input.length(); ptr++){
+			if (input.charAt(ptr) == '§'){
+				System.out.println(input);
+				for (int i = ptr + 2; i < input.length(); i++){
+					if (i < input.length() - 2){
+						if (input.charAt(i - 1) == '§' || input.charAt(i) == '§'){
+							continue;
+						}else{//SecondPtr points to a legal character
+							System.out.println("Found legal character! "+input.charAt(i));
+							System.out.println("Changing String!"+ output + "<" +input.substring(ptr, i)+ "|" +input.charAt(i) + ">" + input.substring(i+1, input.length()));
+							output += input.charAt(i) + input.substring(ptr, i);
+							System.out.println("Changed String: " + output);
+
+							ptr = i;
+							break;
+						}
+					}else{
+						if (i < input.length() - 1){
+							output += input.charAt(i) + input.substring(ptr, i);
+							System.out.println(output);
+							ptr = i++;
+						}else{
+							output += input.charAt(i) + input.substring(ptr, i);
+							ptr = i;
+						}
+					}
+
+				}
+			}else{
+				output += input.charAt(ptr); //copy over
+			}
+		}
+
+		return output;
+	}
+	public static void main(String[] args){
+		String yo = "§3A§4lisolarflare";
+		for(int i = 0; i < 20; i++){
+			yo = shiftColoursRight(yo);
+			System.out.println(yo);
+			System.out.println("--------------------");
+		}
+	}
+	public static String dyeToColourCode(DyeColor dyeColour){
+		String colourChanger;
+		switch(dyeColour){
 		case WHITE:
 			colourChanger = "§f";
 			break;
@@ -72,11 +123,6 @@ public class FlairColouringAPI {
 			colourChanger = "§m";
 			break;
 		}
-		
-		String newName = colourChanger + sanitizedName;
-		user.setNickname(newName);
-		
-		user.sendMessage("Adding the colour " + colourChanger + dyecolour.name() + "§f!");
-		user.sendMessage("Your name is now: " + user.getNickname() +"!");
+		return colourChanger;
 	}
 }
