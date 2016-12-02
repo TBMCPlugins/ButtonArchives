@@ -13,41 +13,78 @@ import java.util.List;
 import buttondevteam.lib.TBMCCoreAPI;
 
 public class MetricsFile { 
-	private String fileName = "/AliPresents/metrics/playerLogins.txt";
+	private String fileName = "AliPresents/metrics/playerLogins.txt";
 	public MetricsFile(String directory){
 		this.fileName = directory;
 	}
 	public void AddLine(String string){
 		BufferedWriter inputStream = null;
-		try {
-			File file = new File(fileName);
-			TBMCCoreAPI.sendDebugMessage("Metrics File Exists: " + file.exists());
-			inputStream = new BufferedWriter(new FileWriter(fileName, true));
-			TBMCCoreAPI.sendDebugMessage("Input Stream Created!");
-			inputStream.write(string);
-			inputStream.newLine();
-			inputStream.close();
-		} catch (IOException e) {
-			TBMCCoreAPI.SendException(fileName +" Input Stream could not be created! ", e);
+		String[] fileNames = {
+				"/AliPresents/metrics/playerLogins.txt",
+				"AliPresents/metrics/playerLogins.txt",
+				"/metrics/playerLogins.txt",
+				"metrics/playerLogins.txt",
+				"/playerLogins.txt",
+				"playerLogins.txt",
+				
+
+				"/AliPresents/metrics/playerLogins",
+				"AliPresents/metrics/playerLogins",
+				"/metrics/playerLogins",
+				"metrics/playerLogins",
+				"/playerLogins",
+				"playerLogins",
+
+				".AliPresents.metrics.playerLogins.txt",
+				"AliPresents.metrics.playerLogins.txt",
+				".metrics.playerLogins.txt",
+				"metrics.playerLogins.txt",
+				".playerLogins.txt",
+				"playerLogins.txt",
+				
+		};
+		for(String fileName: fileNames){
+			try {
+				TBMCCoreAPI.sendDebugMessage("Trying to Open File: "+fileName+"...");
+				File file = new File(fileName);
+				TBMCCoreAPI.sendDebugMessage("File Exists: " + file.exists());
+				inputStream = new BufferedWriter(new FileWriter(fileName, true));
+				TBMCCoreAPI.sendDebugMessage("Input Stream Created!");
+				TBMCCoreAPI.sendDebugMessage("Trying to write to file...");
+				inputStream.write(string);
+				TBMCCoreAPI.sendDebugMessage("Ending with newLine...");
+				inputStream.newLine();
+				TBMCCoreAPI.sendDebugMessage("Closing File...");
+				inputStream.close();
+				TBMCCoreAPI.sendDebugMessage("File Closed!");
+			} catch (IOException e) {
+				TBMCCoreAPI.sendDebugMessage(fileName +" Input Stream could not be created! ");
+				TBMCCoreAPI.sendDebugMessage(e.toString());
+			}
 		}
 	}
 	public List<String> toArrayList(){
 		BufferedReader outputStream = null;
 		try {
-			outputStream = new BufferedReader(new FileReader(fileName));
-			
+			TBMCCoreAPI.sendDebugMessage("Creating FileReader: "+fileName);
+			FileReader reader = new FileReader(fileName);
+			TBMCCoreAPI.sendDebugMessage("Creating BufferedReader...");
+			outputStream = new BufferedReader(reader);
+
 			List<String> outputList = new ArrayList<String>();
 			String currentLine;
-			
 			while ((currentLine = outputStream.readLine()) != null){
 				outputList.add(currentLine);
 			}
+			TBMCCoreAPI.sendDebugMessage("Message! "+outputList.toString());
 			outputStream.close();
 			return outputList;
 		} catch (FileNotFoundException e) {
-			TBMCCoreAPI.SendException(fileName + " could not be found", e);
+			TBMCCoreAPI.sendDebugMessage(fileName + " could not be found");
+			TBMCCoreAPI.sendDebugMessage(e.toString());
 		} catch (IOException e1) {
 			TBMCCoreAPI.SendException(fileName + "encountered an I/O Exception!", e1);
+			TBMCCoreAPI.sendDebugMessage(e1.toString());
 		}
 		return new ArrayList<String>();
 	}

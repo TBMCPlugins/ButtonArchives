@@ -11,7 +11,7 @@ import alisolarflare.components.metrics.files.MetricsFile;
 import alisolarflare.components.metrics.output.GetLoginMetrics;
 
 public class MetricsComponent extends Component{
-	String defaultPath = "/AliPresents/metrics";
+	String defaultPath = "metrics";
 	String defaultFilePath = (defaultPath + "/metrics.txt");
 	String playerLoginsFilePath  = (defaultPath + "/playerLogins.txt");
 	
