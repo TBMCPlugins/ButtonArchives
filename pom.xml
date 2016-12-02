@@ -3,7 +3,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.github.tbmcplugins</groupId>
 	<artifactId>AliPresents</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>2.0.2-SNAPSHOT</version>
 	<name>AliPresents</name>
 	<description>A bucket of aaall the stuff Ali makes. It's a bit smelly.</description>
 	<build>
@@ -23,9 +23,6 @@
 			</resource>
 			<resource>
 				<directory>metrics</directory>
-				<includes>
-					<include>*.txt</include>
-				</includes>
 			</resource>
 		</resources>
 		<plugins>
@@ -60,6 +57,10 @@
           <id>ess-repo</id>
           <url>http://repo.ess3.net/content/groups/essentials</url>
         </repository>
+        <repository>
+        	<id>citizensnpcs</id>
+        	<url>http://repo.citizensnpcs.co/</url>
+        </repository>
 	</repositories>
 
 	<dependencies>
@@ -84,15 +85,10 @@
             <artifactId>Essentials</artifactId>
             <version>2.13.1</version>
         </dependency> 
-        <dependency>
-           <groupId>org.apache.logging.log4j</groupId>
-           <artifactId>log4j-api</artifactId>
-           <version>2.7</version>
-         </dependency>
          <dependency>
-           <groupId>org.apache.logging.log4j</groupId>
-           <artifactId>log4j-core</artifactId>
-           <version>2.7</version>
-         </dependency>                            
+           <groupId>net.citizensnpcs</groupId>
+           <artifactId>citizens-v1_11_R1</artifactId>
+           <version>2.0.21-SNAPSHOT</version>
+         </dependency>                          
 	</dependencies>
 </project>
