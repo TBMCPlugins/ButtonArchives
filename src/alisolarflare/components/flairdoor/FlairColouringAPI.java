@@ -25,33 +25,24 @@ public class FlairColouringAPI {
 	}
 	public static String shiftColoursRight(String input){
 		String output = "";
+		if (input.length() <= 2){
+			return input;
+		}
 		for(int ptr = 0; ptr < input.length(); ptr++){
 			if (input.charAt(ptr) == '§'){
-				System.out.println(input);
+				boolean foundLegalCharacter = false;
 				for (int i = ptr + 2; i < input.length(); i++){
-					if (i < input.length() - 2){
-						if (input.charAt(i - 1) == '§' || input.charAt(i) == '§'){
-							continue;
-						}else{//SecondPtr points to a legal character
-							System.out.println("Found legal character! "+input.charAt(i));
-							System.out.println("Changing String!"+ output + "<" +input.substring(ptr, i)+ "|" +input.charAt(i) + ">" + input.substring(i+1, input.length()));
-							output += input.charAt(i) + input.substring(ptr, i);
-							System.out.println("Changed String: " + output);
-
-							ptr = i;
-							break;
-						}
-					}else{
-						if (i < input.length() - 1){
-							output += input.charAt(i) + input.substring(ptr, i);
-							System.out.println(output);
-							ptr = i++;
-						}else{
-							output += input.charAt(i) + input.substring(ptr, i);
-							ptr = i;
-						}
+					if (input.charAt(i - 1) == '§' || input.charAt(i) == '§'){
+						continue;
+					}else{//SecondPtr points to a legal character
+						foundLegalCharacter = true;
+						output += input.charAt(i) + input.substring(ptr, i);
+						ptr = i;
+						break;
 					}
-
+				}
+				if (foundLegalCharacter == false){
+					break;
 				}
 			}else{
 				output += input.charAt(ptr); //copy over
@@ -59,14 +50,6 @@ public class FlairColouringAPI {
 		}
 
 		return output;
-	}
-	public static void main(String[] args){
-		String yo = "§3A§4lisolarflare";
-		for(int i = 0; i < 20; i++){
-			yo = shiftColoursRight(yo);
-			System.out.println(yo);
-			System.out.println("--------------------");
-		}
 	}
 	public static String dyeToColourCode(DyeColor dyeColour){
 		String colourChanger;
