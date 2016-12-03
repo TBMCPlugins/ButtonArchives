@@ -60,7 +60,7 @@ public class CannonBowListener implements Listener {
 	@EventHandler
 	public void onTnTExplode(EntityExplodeEvent event) {
 		if (event.getEntityType() != EntityType.PRIMED_TNT) return;
-		if (!event.getEntity().getCustomName().equals(launchedTNTName)) return;
+		if (event.getEntity().getCustomName() != "CANNON BOW TNT:42170") return;
 		
 		Location loc = event.getEntity().getLocation();
 		event.getEntity().getWorld().createExplosion(loc.getX(), loc.getY(), loc.getZ(), 3, false, false);
