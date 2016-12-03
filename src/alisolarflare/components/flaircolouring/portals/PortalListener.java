@@ -1,4 +1,4 @@
-package alisolarflare.components.flairdoor.listeners;
+package alisolarflare.components.flaircolouring.portals;
 
 import org.bukkit.Bukkit;
 import org.bukkit.DyeColor;
@@ -13,17 +13,17 @@ import org.bukkit.plugin.java.JavaPlugin;
 
 import com.earth2me.essentials.Essentials;
 
-import alisolarflare.components.flairdoor.FlairColouringAPI;
-import alisolarflare.components.flairdoor.FlairDoorComponent;
+import alisolarflare.components.flaircolouring.FlairColouringAPI;
+import alisolarflare.components.flaircolouring.FlairColouringComponent;
 
 public class PortalListener implements Listener{
 	public JavaPlugin plugin;
 
 	Essentials essentials;
 
-	private FlairDoorComponent component;
+	private FlairColouringComponent component;
 	
-	public PortalListener(JavaPlugin plugin, FlairDoorComponent component) {
+	public PortalListener(JavaPlugin plugin, FlairColouringComponent component) {
 		this.plugin = plugin;
 		this.component = component;
 		this.essentials = ((Essentials) Bukkit.getPluginManager().getPlugin("Essentials"));

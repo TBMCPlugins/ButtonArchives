@@ -1,4 +1,4 @@
-package alisolarflare.components.flairdoor.proximitydetector;
+package alisolarflare.components.flaircolouring.portals;
 
 import org.bukkit.Location;
 import org.bukkit.entity.Player;
@@ -6,11 +6,11 @@ import org.bukkit.event.Listener;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.bukkit.scheduler.BukkitRunnable;
 
-import alisolarflare.components.flairdoor.FlairDoorComponent;
+import alisolarflare.components.flaircolouring.FlairColouringComponent;
 
 public class PlayerProximityLoop extends BukkitRunnable implements Listener{
 	private static JavaPlugin plugin;
-	private static FlairDoorComponent component;
+	private static FlairColouringComponent component;
 	private static Location startLocation;
 	private static Location endLocation;
 	
@@ -21,7 +21,7 @@ public class PlayerProximityLoop extends BukkitRunnable implements Listener{
 	private static int eY;
 	private static int eZ;
 	
-	public PlayerProximityLoop(JavaPlugin plugin, FlairDoorComponent component) {
+	public PlayerProximityLoop(JavaPlugin plugin, FlairColouringComponent component) {
 		PlayerProximityLoop.plugin = plugin;
 		PlayerProximityLoop.component = component;
 		this.runTaskTimer(plugin, 0, 20);

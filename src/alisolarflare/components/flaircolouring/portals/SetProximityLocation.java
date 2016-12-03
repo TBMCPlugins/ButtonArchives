@@ -1,4 +1,4 @@
-package alisolarflare.components.flairdoor.proximitydetector;
+package alisolarflare.components.flaircolouring.portals;
 
 import org.bukkit.entity.Player;
 

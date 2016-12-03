@@ -1,4 +1,4 @@
-package alisolarflare.components.flairdoor;
+package alisolarflare.components.flaircolouring;
 
 import org.bukkit.DyeColor;
 
@@ -23,7 +23,10 @@ public class FlairColouringAPI {
 		user.sendMessage("Adding the colour " + colourCode + dyecolour.name() + "§f!");
 		user.sendMessage("Your name is now: " + user.getNickname() +"!");
 	}
-	public static String shiftColoursRight(String input){
+	public static String colourShiftRight(String input, DyeColor newDye){
+		return dyeToColourCode(newDye) + shiftColoursRight(input);
+	}
+	private static String shiftColoursRight(String input){
 		String output = "";
 		if (input.length() <= 2){
 			return input;

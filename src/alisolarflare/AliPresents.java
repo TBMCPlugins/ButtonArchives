@@ -9,7 +9,7 @@ import org.bukkit.plugin.java.JavaPlugin;
 import alisolarflare.components.alilinks.AliLinkComponent;
 import alisolarflare.components.bankchest.BankChestComponent;
 import alisolarflare.components.creativeboundaries.CreativeBoundariesComponent;
-import alisolarflare.components.flairdoor.FlairDoorComponent;
+import alisolarflare.components.flaircolouring.FlairColouringComponent;
 import alisolarflare.components.gpowers.GPowerComponent;
 import alisolarflare.components.insurance.InsuranceComponent;
 import alisolarflare.components.magic.MagicComponent;
@@ -26,7 +26,7 @@ public class AliPresents extends JavaPlugin{
 		new AliLinkComponent().register(this);
 		new BankChestComponent().register(this);
 		new CreativeBoundariesComponent().register(this);
-		new FlairDoorComponent().register(this);
+		new FlairColouringComponent().register(this);
 		new GPowerComponent().register(this);
 		new InsuranceComponent().register(this);
 		new MagicComponent().register(this);

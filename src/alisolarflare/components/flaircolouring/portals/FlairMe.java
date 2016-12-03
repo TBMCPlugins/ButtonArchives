@@ -1,14 +1,14 @@
-package alisolarflare.components.flairdoor.flairme;
+package alisolarflare.components.flaircolouring.portals;
 
 import org.bukkit.entity.Player;
 
 import alisolarflare.architecture.commands.PlayerCommand;
-import alisolarflare.components.flairdoor.FlairDoorComponent;
+import alisolarflare.components.flaircolouring.FlairColouringComponent;
 
 public class FlairMe extends PlayerCommand {
 
-	private FlairDoorComponent component;
-	public FlairMe(FlairDoorComponent flairDoorComponent) {
+	private FlairColouringComponent component;
+	public FlairMe(FlairColouringComponent flairDoorComponent) {
 		this.component = flairDoorComponent;
 	}
 	@Override
