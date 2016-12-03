@@ -7,9 +7,6 @@ import org.bukkit.inventory.meta.ItemMeta;
 
 public class LetterDye {
 	public static boolean isLetterDye(ItemStack item){
-		if(item.getType() != Material.INK_SACK) return false;
-		if(item.getItemMeta().hasEnchant(Enchantment.LUCK) && (item.getItemMeta().getEnchantLevel(Enchantment.LUCK) == 10)) return false;
-		if(item.getItemMeta().getDisplayName() == "LetterDye") return false;
 		return true;
 	}
 	public static ItemStack getLetterDye(){

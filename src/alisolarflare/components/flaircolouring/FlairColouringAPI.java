@@ -88,7 +88,7 @@ public class FlairColouringAPI {
 			colourChanger = "§2"; 
 			break;
 		case LIGHT_BLUE:
-			colourChanger = "&b"; 
+			colourChanger = "§b"; 
 			break;
 		case CYAN:
 			colourChanger = "§3"; 

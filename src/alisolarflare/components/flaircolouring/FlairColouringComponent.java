@@ -27,6 +27,6 @@ public class FlairColouringComponent extends Component {
 		
 		registerListener(plugin, new PortalListener(plugin, this));
 		registerListener(plugin, new PlayerProximityLoop(plugin, this));
-		registerListener(plugin, new LetterDyeListener((Essentials) Bukkit.getPluginManager().getPlugin("Essentials")));
+		//registerListener(plugin, new LetterDyeListener((Essentials) Bukkit.getPluginManager().getPlugin("Essentials")));
 	}
 }

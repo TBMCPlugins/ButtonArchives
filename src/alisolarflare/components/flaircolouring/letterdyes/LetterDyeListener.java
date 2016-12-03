@@ -1,9 +1,12 @@
 package alisolarflare.components.flaircolouring.letterdyes;
 
+import org.bukkit.Material;
+import org.bukkit.enchantments.Enchantment;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.block.Action;
 import org.bukkit.event.player.PlayerInteractEvent;
+import org.bukkit.inventory.ItemStack;
 import org.bukkit.material.Dye;
 
 import com.earth2me.essentials.Essentials;
@@ -20,6 +23,10 @@ public class LetterDyeListener implements Listener{
 	public void onLetterDye(PlayerInteractEvent event){
 		if((event.getAction() == Action.PHYSICAL)) return;
 		if (LetterDye.isLetterDye(event.getItem())) return;
+		ItemStack item = event.getItem();
+		if(item.getType() != Material.INK_SACK) return;
+		if(item.getItemMeta().hasEnchant(Enchantment.LUCK) && (item.getItemMeta().getEnchantLevel(Enchantment.LUCK) == 10)) return;
+		if(item.getItemMeta().getDisplayName() == "LetterDye") return;
 		
 		Dye dye = (Dye) event.getItem().getData();
 		User user = essentials.getUser(event.getPlayer());
