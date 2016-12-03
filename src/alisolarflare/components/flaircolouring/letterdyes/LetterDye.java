@@ -6,9 +6,6 @@ import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 
 public class LetterDye {
-	public static boolean isLetterDye(ItemStack item){
-		return true;
-	}
 	public static ItemStack getLetterDye(){
 		ItemStack item = new ItemStack(Material.INK_SACK);
 		item.addUnsafeEnchantment(Enchantment.LUCK, 10);

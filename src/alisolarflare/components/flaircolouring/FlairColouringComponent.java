@@ -3,15 +3,11 @@ package alisolarflare.components.flaircolouring;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 import org.bukkit.plugin.java.JavaPlugin;
 
-import com.earth2me.essentials.Essentials;
-
 import alisolarflare.architecture.Component;
 import alisolarflare.components.flaircolouring.letterdyes.GetLetterDye;
-import alisolarflare.components.flaircolouring.letterdyes.LetterDyeListener;
 import alisolarflare.components.flaircolouring.portals.FlairMe;
 import alisolarflare.components.flaircolouring.portals.PlayerProximityLoop;
 import alisolarflare.components.flaircolouring.portals.PortalListener;
