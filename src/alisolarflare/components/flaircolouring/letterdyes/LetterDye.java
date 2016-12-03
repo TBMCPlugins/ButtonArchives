@@ -14,7 +14,7 @@ public class LetterDye {
 	}
 	public static ItemStack getLetterDye(){
 		ItemStack item = new ItemStack(Material.INK_SACK);
-		item.addEnchantment(Enchantment.LUCK, 10);
+		item.addUnsafeEnchantment(Enchantment.LUCK, 10);
 		ItemMeta meta = item.getItemMeta();
 		meta.setDisplayName("LetterDye");
 		item.setItemMeta(meta);
