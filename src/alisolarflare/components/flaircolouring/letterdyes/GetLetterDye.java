@@ -10,5 +10,4 @@ public class GetLetterDye extends PlayerCommand{
 		player.getInventory().addItem(LetterDye.getLetterDye());
 		return false;
 	}
-	
 }

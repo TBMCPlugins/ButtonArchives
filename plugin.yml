@@ -69,3 +69,5 @@ commands:
     description: Gets insurance block
   createbankchest:
     description: Creates a Bank Chest
+  getletterdye:
+    description: Creates Letter Dye
