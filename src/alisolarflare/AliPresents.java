@@ -8,6 +8,7 @@ import org.bukkit.plugin.java.JavaPlugin;
 
 import alisolarflare.components.alilinks.AliLinkComponent;
 import alisolarflare.components.bankchest.BankChestComponent;
+import alisolarflare.components.cashmob.CashMobComponent;
 import alisolarflare.components.creativeboundaries.CreativeBoundariesComponent;
 import alisolarflare.components.flaircolouring.FlairColouringComponent;
 import alisolarflare.components.gpowers.GPowerComponent;
@@ -25,6 +26,7 @@ public class AliPresents extends JavaPlugin{
 		
 		new AliLinkComponent().register(this);
 		new BankChestComponent().register(this);
+		new CashMobComponent().register(this);
 		new CreativeBoundariesComponent().register(this);
 		new FlairColouringComponent().register(this);
 		new GPowerComponent().register(this);
