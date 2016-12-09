@@ -23,6 +23,11 @@ public class CreativeBoundariesAPI {
 		cbCreatives.remove(player);
 	}
 	public static boolean toCreative(Player player){
+		if (player.getWorld().getName().equalsIgnoreCase("World")){
+			player.sendMessage("Creative Boundaries is disabled on the New Map!");
+			return true;
+		}
+		
 		TownBlock tb = TownyUniverse.getTownBlock(player.getLocation());
 		
 		if (tb == null) {

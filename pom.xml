@@ -21,9 +21,6 @@
 					<include>*.yml</include>
 				</includes>
 			</resource>
-			<resource>
-				<directory>metrics</directory>
-			</resource>
 		</resources>
 		<plugins>
 			<plugin>

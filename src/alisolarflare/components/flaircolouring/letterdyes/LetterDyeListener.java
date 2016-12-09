@@ -24,10 +24,12 @@ public class LetterDyeListener implements Listener{
 		try{
 			if((event.getAction() != Action.RIGHT_CLICK_AIR)) return;
 			ItemStack item = event.getItem();
+			
 			if(item.getType() != Material.INK_SACK) return;
-			if(item.getItemMeta().hasEnchant(Enchantment.LUCK) && (item.getItemMeta().getEnchantLevel(Enchantment.LUCK) == 10)) return;
+			if(item.getItemMeta().hasEnchant(Enchantment.LUCK)) return;
+			if(item.getItemMeta().getEnchantLevel(Enchantment.LUCK) == 10) return;
 			if(item.getItemMeta().getDisplayName() == "LetterDye") return;
-		
+			
 			Dye dye = (Dye) event.getItem().getData();
 			User user = essentials.getUser(event.getPlayer());
 			user.setNickname(FlairColouringAPI.colourShiftRight(user._getNickname(), dye.getColor()));

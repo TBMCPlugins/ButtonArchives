@@ -13,6 +13,7 @@ import alisolarflare.components.flaircolouring.FlairColouringComponent;
 import alisolarflare.components.gpowers.GPowerComponent;
 import alisolarflare.components.insurance.InsuranceComponent;
 import alisolarflare.components.magic.MagicComponent;
+import alisolarflare.components.spawn.SpawnComponent;
 
 public class AliPresents extends JavaPlugin{
 	public void onEnable(){
@@ -30,6 +31,7 @@ public class AliPresents extends JavaPlugin{
 		new InsuranceComponent().register(this);
 		new MagicComponent().register(this);
 		//new MetricsComponent().register(this);
+		new SpawnComponent().register(this);
 		
 		
 		logger.info(pdfFile.getName() + " has fully registered (V." + pdfFile.getVersion()+ ").");

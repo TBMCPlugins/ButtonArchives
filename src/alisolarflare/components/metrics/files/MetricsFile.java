@@ -13,54 +13,28 @@ import java.util.List;
 import buttondevteam.lib.TBMCCoreAPI;
 
 public class MetricsFile { 
-	private String fileName = "AliPresents/metrics/playerLogins.txt";
-	public MetricsFile(String directory){
-		this.fileName = directory;
+	private String fileName = "src/alisolarflare/resources/metrics/playerLogins.txt";
+	public MetricsFile(String filePath){
+		this.fileName = filePath;
 	}
 	public void AddLine(String string){
 		BufferedWriter inputStream = null;
-		String[] fileNames = {
-				"/AliPresents/metrics/playerLogins.txt",
-				"AliPresents/metrics/playerLogins.txt",
-				"/metrics/playerLogins.txt",
-				"metrics/playerLogins.txt",
-				"/playerLogins.txt",
-				"playerLogins.txt",
-				
-
-				"/AliPresents/metrics/playerLogins",
-				"AliPresents/metrics/playerLogins",
-				"/metrics/playerLogins",
-				"metrics/playerLogins",
-				"/playerLogins",
-				"playerLogins",
-
-				".AliPresents.metrics.playerLogins.txt",
-				"AliPresents.metrics.playerLogins.txt",
-				".metrics.playerLogins.txt",
-				"metrics.playerLogins.txt",
-				".playerLogins.txt",
-				"playerLogins.txt",
-				
-		};
-		for(String fileName: fileNames){
-			try {
-				TBMCCoreAPI.sendDebugMessage("Trying to Open File: "+fileName+"...");
-				File file = new File(fileName);
-				TBMCCoreAPI.sendDebugMessage("File Exists: " + file.exists());
-				inputStream = new BufferedWriter(new FileWriter(fileName, true));
-				TBMCCoreAPI.sendDebugMessage("Input Stream Created!");
-				TBMCCoreAPI.sendDebugMessage("Trying to write to file...");
-				inputStream.write(string);
-				TBMCCoreAPI.sendDebugMessage("Ending with newLine...");
-				inputStream.newLine();
-				TBMCCoreAPI.sendDebugMessage("Closing File...");
-				inputStream.close();
-				TBMCCoreAPI.sendDebugMessage("File Closed!");
-			} catch (IOException e) {
-				TBMCCoreAPI.sendDebugMessage(fileName +" Input Stream could not be created! ");
-				TBMCCoreAPI.sendDebugMessage(e.toString());
-			}
+		try {
+			TBMCCoreAPI.sendDebugMessage("Trying to Open File: "+fileName+"...");
+			File file = new File(fileName);
+			TBMCCoreAPI.sendDebugMessage("File Exists: " + file.exists());
+			inputStream = new BufferedWriter(new FileWriter(fileName, true));
+			TBMCCoreAPI.sendDebugMessage("Input Stream Created!");
+			TBMCCoreAPI.sendDebugMessage("Trying to write to file...");
+			inputStream.write(string);
+			TBMCCoreAPI.sendDebugMessage("Ending with newLine...");
+			inputStream.newLine();
+			TBMCCoreAPI.sendDebugMessage("Closing File...");
+			inputStream.close();
+			TBMCCoreAPI.sendDebugMessage("File Closed!");
+		} catch (IOException e) {
+			TBMCCoreAPI.sendDebugMessage(fileName +" Input Stream could not be created! ");
+			TBMCCoreAPI.sendDebugMessage(e.toString());
 		}
 	}
 	public List<String> toArrayList(){
