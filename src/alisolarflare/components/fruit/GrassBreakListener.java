@@ -19,13 +19,13 @@ public class GrassBreakListener implements Listener {
 			Location location = event.getBlock().getLocation();
 			World world = event.getBlock().getWorld();
 			
-			/*
+			
 			if (Math.random() > 0.05){
 				switch(world.getBiome(location.getBlockX(), location.getBlockZ())){
 				}
-			}*/
+			}
 			
-			switch((int) (Math.random()* 100)){
+			switch((int) (Math.random()* 60)){
 			case 1: // 1% chance
 				world.dropItem(location, new ItemStack(Material.CARROT_ITEM));
 				break;
