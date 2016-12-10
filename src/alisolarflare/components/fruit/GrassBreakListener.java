@@ -25,20 +25,22 @@ public class GrassBreakListener implements Listener {
 				}
 			}
 			
-			switch((int) (Math.random()* 60)){
-			case 1: // 1% chance
+			switch((int) (Math.random()* 70)){
+			case 1:
+			case 2:
 				world.dropItem(location, new ItemStack(Material.CARROT_ITEM));
 				break;
-			case 2: // 1% chance
+			case 3: // 1% chance
 				world.dropItem(location, new ItemStack(Material.BEETROOT_SEEDS));
 				break;
-			case 3: // 1% chance
+			case 4:
+			case 7:
 				world.dropItem(location, new ItemStack(Material.POTATO_ITEM));
 				break;
-			case 4: // 1% chance
+			case 5: // 1% chance
 				world.dropItem(location, new ItemStack(Material.FEATHER));
 				break;
-			case 5: // 1% chance
+			case 6: // 1% chance
 				world.dropItem(location, new ItemStack(Material.YELLOW_FLOWER));
 				break;
 			default:
