@@ -3,6 +3,7 @@ package alisolarflare.components.fruit;
 import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.World;
+import org.bukkit.block.Biome;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.block.BlockBreakEvent;
@@ -18,20 +19,26 @@ public class GrassBreakListener implements Listener {
 			Location location = event.getBlock().getLocation();
 			World world = event.getBlock().getWorld();
 			
+			/*
+			if (Math.random() > 0.05){
+				switch(world.getBiome(location.getBlockX(), location.getBlockZ())){
+				}
+			}*/
+			
 			switch((int) (Math.random()* 100)){
-			case 1: // 2% chance
-				world.dropItem(location, new ItemStack(Material.CARROT));
+			case 1: // 1% chance
+				world.dropItem(location, new ItemStack(Material.CARROT_ITEM));
 				break;
-			case 2: // 2% chance
+			case 2: // 1% chance
 				world.dropItem(location, new ItemStack(Material.BEETROOT_SEEDS));
 				break;
-			case 3: // 2% chance
-				world.dropItem(location, new ItemStack(Material.POTATO));
+			case 3: // 1% chance
+				world.dropItem(location, new ItemStack(Material.POTATO_ITEM));
 				break;
-			case 4: // 2% chance
+			case 4: // 1% chance
 				world.dropItem(location, new ItemStack(Material.FEATHER));
 				break;
-			case 5: // 2% chance
+			case 5: // 1% chance
 				world.dropItem(location, new ItemStack(Material.YELLOW_FLOWER));
 				break;
 			default:
