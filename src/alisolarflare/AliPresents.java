@@ -11,6 +11,7 @@ import alisolarflare.components.bankchest.BankChestComponent;
 import alisolarflare.components.cashmob.CashMobComponent;
 import alisolarflare.components.creativeboundaries.CreativeBoundariesComponent;
 import alisolarflare.components.flaircolouring.FlairColouringComponent;
+import alisolarflare.components.fruit.FruitComponent;
 import alisolarflare.components.gpowers.GPowerComponent;
 import alisolarflare.components.insurance.InsuranceComponent;
 import alisolarflare.components.magic.MagicComponent;
@@ -29,6 +30,7 @@ public class AliPresents extends JavaPlugin{
 		new CashMobComponent().register(this);
 		new CreativeBoundariesComponent().register(this);
 		new FlairColouringComponent().register(this);
+		new FruitComponent().register(this);
 		new GPowerComponent().register(this);
 		new InsuranceComponent().register(this);
 		new MagicComponent().register(this);
