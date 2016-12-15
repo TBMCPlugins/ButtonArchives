@@ -1,9 +1,16 @@
 package buttondevteam.alipresents.architecture.commands;
 
+import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
 public abstract class PlayerCommand extends BaseCommand{
+	/**replaces CommandExecutor functionality*/
+	@Override
+	public boolean onCommand(CommandSender commandSender, Command command, String string, String[] args){
+		return OnCommand(commandSender, string, args);
+	}
+	/**replaces TBMCCommandBase functionality*/
 	@Override
 	public boolean OnCommand(CommandSender sender, String alias, String[] args){
 		return OnCommand((Player) sender, alias, args);

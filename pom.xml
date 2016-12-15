@@ -33,33 +33,6 @@
 			</plugin>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-shade-plugin</artifactId>
-				<version>2.4.2</version>
-				<executions>
-					<execution>
-						<phase>package</phase>
-						<goals>
-							<goal>shade</goal>
-						</goals>
-						<configuration>
-							<artifactSet>
-								<excludes>
-									<exclude>org.spigotmc:spigot-api</exclude>
-									<exclude>com.github.TBMCPlugins.ButtonCore:ButtonCore</exclude>
-									<exclude>net.ess3:Essentials</exclude>
-								</excludes> <!-- TODO: http://stackoverflow.com/questions/28458058/maven-shade-plugin-exclude-a-dependency-and-all-its-transitive-dependencies -->
-							</artifactSet>
-							<pluginExecution>
-								<action>
-									<execute />
-								</action>
-							</pluginExecution>
-						</configuration>
-					</execution>
-				</executions>
-			</plugin>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-resources-plugin</artifactId>
 				<version>3.0.1</version>
 				<executions>

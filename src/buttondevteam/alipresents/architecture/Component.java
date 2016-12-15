@@ -4,9 +4,9 @@ import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.event.Listener;
 import org.bukkit.plugin.java.JavaPlugin;
 
+import buttondevteam.alipresents.architecture.commands.BaseCommand;
 import buttondevteam.lib.TBMCCoreAPI;
 import buttondevteam.lib.chat.TBMCChatAPI;
-import buttondevteam.lib.chat.TBMCCommandBase;
 
 /**
  * A Module class allows the compacting of projects into one single package. 
@@ -35,8 +35,9 @@ public abstract class Component{
 	 * @param label           Name of the command in plugin.yml
 	 * @param commandExecutor Custom coded CommandExecutor class 
 	 */
-	protected void registerCommand(JavaPlugin plugin, TBMCCommandBase commandBase){
+	protected void registerCommand(JavaPlugin plugin, BaseCommand commandBase){
 		TBMCChatAPI.AddCommand(plugin, commandBase);
+		//plugin.getCommand(commandBase.getClass().getSimpleName().toString()).setExecutor(commandBase);
 	}
 	/**
 	 * Registers a Listener to this plugin
