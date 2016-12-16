@@ -15,7 +15,8 @@ public class AliLinkComponent extends Component {
 
 	@Override
 	public void register(JavaPlugin plugin) {
-		registerCommand(p = plugin, new Press());
+		p = plugin;
+		registerCommand(plugin, new Press());
 		registerCommand(plugin, new Set());
 	}
 }
