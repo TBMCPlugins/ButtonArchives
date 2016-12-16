@@ -2,31 +2,13 @@ package buttondevteam.alipresents.components.alilinks.commands;
 
 import org.bukkit.entity.Player;
 
-import buttondevteam.alipresents.architecture.commands.subcommands.SubCommand;
+import buttondevteam.alipresents.architecture.commands.PlayerCommand;
 
-public class Press extends SubCommand{
+public class Press extends PlayerCommand{
 
 	@Override
-	protected boolean onCommand(Player player, String label, String[] args) {
+	public boolean OnCommand(Player player, String alias, String[] args) {
 		// TODO Auto-generated method stub
 		return false;
-	}
-
-	@Override
-	public boolean getPlayerOnly() {
-		// TODO Auto-generated method stub
-		return false;
-	}
-
-	@Override
-	public boolean getModOnly() {
-		// TODO Auto-generated method stub
-		return false;
-	}
-
-	@Override
-	public String[] GetHelpText(String alias) {
-		// TODO Auto-generated method stub
-		return null;
 	}
 }
