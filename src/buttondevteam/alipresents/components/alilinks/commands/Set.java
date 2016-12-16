@@ -3,12 +3,18 @@ package buttondevteam.alipresents.components.alilinks.commands;
 import org.bukkit.entity.Player;
 
 import buttondevteam.alipresents.architecture.commands.ModCommand;
+import buttondevteam.alipresents.components.alilinks.AliLinkAPI;
 
-public class Set extends ModCommand{
+public class Set extends ModCommand {
 	@Override
-	public boolean OnCommand(Player player, String alias, String[] args) {
-		// TODO Auto-generated method stub
-		return false;
+	public String GetCommandPath() {
+		return "alilink set";
 	}
 
+	@Override
+	public boolean OnCommand(Player player, String alias, String[] args) {
+		if (args.length < 1)
+			return false;
+		return AliLinkAPI.createAliLink(player, args);
+	}
 }

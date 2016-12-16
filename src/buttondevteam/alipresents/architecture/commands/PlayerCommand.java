@@ -18,13 +18,11 @@ public abstract class PlayerCommand extends BaseCommand{
 	public abstract boolean OnCommand(Player player, String alias, String[] args);
 	@Override
 	public boolean GetPlayerOnly() {
-		// TODO Auto-generated method stub
 		return true;
 	}
 
 	@Override
 	public boolean GetModOnly() {
-		// TODO Auto-generated method stub
 		return false;
 	}
 	@Override
