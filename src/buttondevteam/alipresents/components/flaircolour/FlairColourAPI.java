@@ -6,7 +6,10 @@ import com.earth2me.essentials.User;
 
 public class FlairColourAPI {
 	public static void recolourPlayer(User user, DyeColor dyecolour){
-		String name = user._getNickname();
+		String name = "";
+		if ((name = user._getNickname()) == null && (name = user.getDisplayName()) == null){
+			name = user.getName();
+		}
 		String sanitizedName = "";
 		for(int i = 0; i < name.length(); i++){
 			if (name.charAt(i) == '§'){
