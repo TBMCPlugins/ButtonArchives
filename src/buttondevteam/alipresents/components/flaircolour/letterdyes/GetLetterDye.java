@@ -1,4 +1,4 @@
-package buttondevteam.alipresents.components.flaircolouring.letterdyes;
+package buttondevteam.alipresents.components.flaircolour.letterdyes;
 
 import org.bukkit.entity.Player;
 

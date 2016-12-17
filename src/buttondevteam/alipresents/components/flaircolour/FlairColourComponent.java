@@ -1,4 +1,4 @@
-package buttondevteam.alipresents.components.flaircolouring;
+package buttondevteam.alipresents.components.flaircolour;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -13,15 +13,15 @@ import org.bukkit.plugin.java.JavaPlugin;
 import com.earth2me.essentials.Essentials;
 
 import buttondevteam.alipresents.architecture.Component;
-import buttondevteam.alipresents.components.flaircolouring.letterdyes.GetLetterDye;
-import buttondevteam.alipresents.components.flaircolouring.letterdyes.LetterDye;
-import buttondevteam.alipresents.components.flaircolouring.letterdyes.LetterDyeListener;
-import buttondevteam.alipresents.components.flaircolouring.portals.FlairMe;
-import buttondevteam.alipresents.components.flaircolouring.portals.PlayerProximityLoop;
-import buttondevteam.alipresents.components.flaircolouring.portals.PortalListener;
-import buttondevteam.alipresents.components.flaircolouring.portals.SetProximityLocation;
+import buttondevteam.alipresents.components.flaircolour.letterdyes.GetLetterDye;
+import buttondevteam.alipresents.components.flaircolour.letterdyes.LetterDye;
+import buttondevteam.alipresents.components.flaircolour.letterdyes.LetterDyeListener;
+import buttondevteam.alipresents.components.flaircolour.portals.FlairMe;
+import buttondevteam.alipresents.components.flaircolour.portals.PlayerProximityLoop;
+import buttondevteam.alipresents.components.flaircolour.portals.PortalListener;
+import buttondevteam.alipresents.components.flaircolour.portals.SetProximityLocation;
 
-public class FlairColouringComponent extends Component {
+public class FlairColourComponent extends Component {
 	public List<Player> playersToBeFlaired = new ArrayList<Player>();
 	@Override
 	public void register(JavaPlugin plugin) {

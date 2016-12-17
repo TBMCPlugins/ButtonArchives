@@ -17,4 +17,8 @@ public class PowerUp extends PlayerCommand {
 				"Usage: Type /PowerUp to activate your registered G-Power"
 		};
 	}
+	@Override
+	public String GetCommandPath() {
+		return "gpower powerup";
+	}
 }

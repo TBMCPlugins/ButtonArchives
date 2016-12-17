@@ -11,7 +11,7 @@ commands:
     description: creates creative boundaries
   debug:
     description: debug commands
-  flaircolouring:
+  flaircolour:
     description: flaaairs
   fruit:
     description: fruits

@@ -17,4 +17,9 @@ public class PowerDown extends PlayerCommand {
 			"Usage: Type /PowerDown to disable your g-power"
 		};
 	}
+
+	@Override
+	public String GetCommandPath() {
+		return "gpower powerdown";
+	}
 }

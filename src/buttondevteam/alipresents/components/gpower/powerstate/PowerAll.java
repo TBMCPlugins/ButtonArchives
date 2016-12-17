@@ -16,4 +16,8 @@ public class PowerAll extends ModCommand{
 				"Usage: Type /PowerAll to activate all powers for all players with gpowers"
 		};
 	}
+	@Override
+	public String GetCommandPath() {
+		return "gpower powerall";
+	}
 }
