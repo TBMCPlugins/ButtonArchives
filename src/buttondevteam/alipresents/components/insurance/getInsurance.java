@@ -34,6 +34,10 @@ public class getInsurance extends ModCommand {
 			// <amount> <type> argument
 			if (StringUtils.isNumeric(args[0]) && Insurance.isInsuranceType(args[1])){
 				amount = Integer.parseInt(args[0]);
+				insuranceType = InsuranceType.valueOf(args[1]);
+				break;
+			}else if (StringUtils.isNumeric(args[1]) && Insurance.isInsuranceType(args[0])){
+				amount = Integer.parseInt(args[1]);
 				insuranceType = InsuranceType.valueOf(args[0]);
 				break;
 			}else{
