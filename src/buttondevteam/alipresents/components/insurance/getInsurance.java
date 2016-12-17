@@ -8,7 +8,7 @@ import buttondevteam.alipresents.components.insurance.Insurance.InsuranceType;
 
 public class getInsurance extends ModCommand {
 	private final int defaultAmount = 1;
-	private final InsuranceType defaultInsuranceType  = InsuranceType.Block;
+	private final InsuranceType defaultInsuranceType  = InsuranceType.block;
 	@Override
 	public boolean OnCommand(Player player, String alias, String[] args) {
 		int amount = defaultAmount;

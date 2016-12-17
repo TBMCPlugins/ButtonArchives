@@ -11,9 +11,9 @@ public class getInsuranceIngot extends ModCommand {
 	@Override
 	public boolean OnCommand(Player player, String alias, String[] args) {
 		if (args.length > 0 && StringUtils.isNumeric(args[0])){
-			player.getInventory().addItem(Insurance.getInsurance(InsuranceType.Ingot, Integer.parseInt(args[0])));
+			player.getInventory().addItem(Insurance.getInsurance(InsuranceType.ingot, Integer.parseInt(args[0])));
 		}else{
-			player.getInventory().addItem(Insurance.getInsurance(InsuranceType.Ingot));
+			player.getInventory().addItem(Insurance.getInsurance(InsuranceType.ingot));
 		}
 		return true;
 	}
