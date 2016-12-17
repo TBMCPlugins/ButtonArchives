@@ -1,4 +1,4 @@
-package buttondevteam.alipresents.components.flaircolouring.portals;
+package buttondevteam.alipresents.components.flaircolour.portals;
 
 import org.bukkit.entity.Player;
 
@@ -36,4 +36,9 @@ public class SetProximityLocation extends ModCommand{
 			"change their colour state."
 		};
 	}
+	@Override
+	public String GetCommandPath() {
+		return "flaircolour setproximitylocation";
+	}
+	
 }

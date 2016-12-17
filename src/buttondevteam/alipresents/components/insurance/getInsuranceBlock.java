@@ -18,4 +18,8 @@ public class getInsuranceBlock extends ModCommand {
 		return false;
 	}
 
+	@Override
+	public String GetCommandPath() {
+		return "insurance getblock";
+	}
 }

@@ -6,6 +6,11 @@ import buttondevteam.alipresents.architecture.commands.ModCommand;
 import buttondevteam.alipresents.components.creativeboundaries.CreativeBoundariesAPI;
 
 public class SetForceBoundaries extends ModCommand{
+
+	@Override
+	public String GetCommandPath() {
+		return "cb set forceboundaries";
+	}
 	@Override
 	public boolean OnCommand(Player player, String label, String[] args) {
 		return (CreativeBoundariesAPI.setForceBoundaries(player, args));

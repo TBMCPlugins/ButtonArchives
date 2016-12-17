@@ -1,11 +1,15 @@
-package buttondevteam.alipresents.components.gpowers.commands;
+package buttondevteam.alipresents.components.gpower.commands;
 
 import org.bukkit.entity.Player;
 
 import buttondevteam.alipresents.architecture.commands.PlayerCommand;
-import buttondevteam.alipresents.components.gpowers.api.GPowerAPI;
+import buttondevteam.alipresents.components.gpower.api.GPowerAPI;
 
 public class GPower extends PlayerCommand {
+	@Override
+	public String GetCommandPath() {
+		return "gpower";
+	}
 	@Override
 	public boolean OnCommand(Player player, String label, String[] args) {
 		if (args.length < 2) {
@@ -35,11 +39,6 @@ public class GPower extends PlayerCommand {
 		GPowerAPI.addPlayer(player, colour, isActive);
 		
 		return true;
-	}
-
-	@Override
-	public String GetCommandPath() {
-		return "gpower";
 	}
 	public String[] GetHelpText(String alias){
 		return new String[]{

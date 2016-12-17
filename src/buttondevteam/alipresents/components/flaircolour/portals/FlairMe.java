@@ -1,14 +1,18 @@
-package buttondevteam.alipresents.components.flaircolouring.portals;
+package buttondevteam.alipresents.components.flaircolour.portals;
 
 import org.bukkit.entity.Player;
 
 import buttondevteam.alipresents.architecture.commands.PlayerCommand;
-import buttondevteam.alipresents.components.flaircolouring.FlairColouringComponent;
+import buttondevteam.alipresents.components.flaircolour.FlairColourComponent;
 
 public class FlairMe extends PlayerCommand {
+	@Override
+	public String GetCommandPath() {
+		return "flaircolour flairme";
+	}
 
-	private FlairColouringComponent component;
-	public FlairMe(FlairColouringComponent flairDoorComponent) {
+	private FlairColourComponent component;
+	public FlairMe(FlairColourComponent flairDoorComponent) {
 		this.component = flairDoorComponent;
 	}
 	@Override

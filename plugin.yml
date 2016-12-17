@@ -3,71 +3,23 @@ name: AliPresents
 version: 2.0.2
 
 commands:
-  flairme:
-    description: Activates the Flair Me Command. Ask Ali - she was tired when writing this description
-  gpower:
-    description: Testing command for ghostie powers
-  powerup:
-    description: Official g-power command that activates the ghostie powerups
-  powerdown:
-    description: Offical g-power command that deactivates the ghostie powerups
   alilink:
-    description: Arguments - press or set
-  cbgm0:
-    description: Creative Boundaries Gamemode 0 - allows players to return to survival
-  cbgm1:
-    description: Creative Boundaries Gamemode 1 - allows players to access creative within their towns. Creative is removed outside of towns so be careful
-  setforceboundaries:
-    description: Should players automatically return to creative when outside town borders? Dickmode says yes.
-  joinminigame:
-    description: Join a Button Minigame
-  leaveminigame:
-    description: Leave a button minigame
-  listfighters:
-    description: List all fighters currently in a button minigame
-  setcolourspawn:
-    description: sets the spawn points for each colour in a button minigame
-  setmatchstate:
-    description: sets the current state of the ultrahardcore game.
-  addtouhc:
-    description: Adds a player to the UltraHardcore match
-  joinuhc:
-    description: This command allows you to join an UltraHardcore match
-  configurematch:
-    description: Configures an UltraHardcore match
-  schedulematch:
-    description: Schedules an UltraHardcore match
-  startmatch:
-    description: Starts an UltraHardcore match
-  spreadplayers:
-    description: Admin command that spreads players around an ultrahardcore match
-  teleporttouhc:
-    description: Teleports you to the ultrahardcore match
-  setuhclobby:
-    description: Sets the area where a uhc will take place
-  activatepowers:
-    description: Admin command that activates gpowers on a uhc
-  setworldborders:
-    description: sets the worldborders to a uhc match
-  startuhc:
-    description: starts an ultrahardcore match
-  starttimer:
-    description: starts an ultrahardcore timer
-  powerall:
-    description: activate every player's power
-  setproximitylocation:
-    description: sets one of two proximity blocks to create a space that players can change their flairs with using flairportals. Ask ali XD
-  getloginmetrics:
-    description: Gets metrics
-  getinsurance:
-    description: Gets insurance
-  getinsurancenugget:
-    description: Gets insurance nugget
-  getinsurancebar:
-    description: Gets insurance bar
-  getinsuranceblock:
-    description: Gets insurance block
-  createbankchest:
-    description: Creates a Bank Chest
-  getletterdye:
-    description: Creates Letter Dye
+    description: creates wireless redstone
+  cashmob:
+    description: creates mobs
+  cb:
+    description: creates creative boundaries
+  debug:
+    description: debug commands
+  flaircolour:
+    description: flaaairs
+  fruit:
+    description: fruits
+  gpower:
+    description: powerssss
+  insurance:
+    description: item block insurance
+  magic:
+    description: magic
+  metrics:
+    description: metrics system

@@ -1,9 +1,9 @@
-package buttondevteam.alipresents.components.gpowers.powerstate;
+package buttondevteam.alipresents.components.gpower.powerstate;
 
 import org.bukkit.entity.Player;
 
 import buttondevteam.alipresents.architecture.commands.PlayerCommand;
-import buttondevteam.alipresents.components.gpowers.api.GPowerAPI;
+import buttondevteam.alipresents.components.gpower.api.GPowerAPI;
 
 public class PowerDown extends PlayerCommand {
 	@Override
@@ -16,5 +16,10 @@ public class PowerDown extends PlayerCommand {
 		return new String[]{
 			"Usage: Type /PowerDown to disable your g-power"
 		};
+	}
+
+	@Override
+	public String GetCommandPath() {
+		return "gpower powerdown";
 	}
 }

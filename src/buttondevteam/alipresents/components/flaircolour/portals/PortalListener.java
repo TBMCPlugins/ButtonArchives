@@ -1,4 +1,4 @@
-package buttondevteam.alipresents.components.flaircolouring.portals;
+package buttondevteam.alipresents.components.flaircolour.portals;
 
 import org.bukkit.Bukkit;
 import org.bukkit.DyeColor;
@@ -13,17 +13,17 @@ import org.bukkit.plugin.java.JavaPlugin;
 
 import com.earth2me.essentials.Essentials;
 
-import buttondevteam.alipresents.components.flaircolouring.FlairColouringAPI;
-import buttondevteam.alipresents.components.flaircolouring.FlairColouringComponent;
+import buttondevteam.alipresents.components.flaircolour.FlairColourAPI;
+import buttondevteam.alipresents.components.flaircolour.FlairColourComponent;
 
 public class PortalListener implements Listener{
 	public JavaPlugin plugin;
 
 	Essentials essentials;
 
-	private FlairColouringComponent component;
+	private FlairColourComponent component;
 	
-	public PortalListener(JavaPlugin plugin, FlairColouringComponent component) {
+	public PortalListener(JavaPlugin plugin, FlairColourComponent component) {
 		this.plugin = plugin;
 		this.component = component;
 		this.essentials = ((Essentials) Bukkit.getPluginManager().getPlugin("Essentials"));
@@ -51,7 +51,7 @@ public class PortalListener implements Listener{
 		Block BottomBlock = player.getWorld().getBlockAt(x,y-4,z); //Block under middle block
 		
 		if(HigherBlock.getType() == Material.STONE){
-			FlairColouringAPI.recolourPlayer(essentials.getUser(player), DyeColor.GRAY);
+			FlairColourAPI.recolourPlayer(essentials.getUser(player), DyeColor.GRAY);
 			component.playersToBeFlaired.remove(player.getName());
 			return;
 		}
@@ -67,7 +67,7 @@ public class PortalListener implements Listener{
 			return;
 		}
 		
-		FlairColouringAPI.recolourPlayer(essentials.getUser(player), woolColour);
+		FlairColourAPI.recolourPlayer(essentials.getUser(player), woolColour);
 		component.playersToBeFlaired.remove(player.getName());
 		
 	}

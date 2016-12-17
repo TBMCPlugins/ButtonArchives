@@ -7,24 +7,24 @@ import org.bukkit.entity.Player;
 public abstract class PlayerCommand extends BaseCommand{
 	/**replaces CommandExecutor functionality*/
 	@Override
-	public boolean onCommand(CommandSender commandSender, Command command, String string, String[] args){
-		return OnCommand(commandSender, string, args);
+	public boolean onCommand(CommandSender sender, Command command, String string, String[] args){
+		sender.sendMessage("activating" + string.toString());
+		return OnCommand(sender, string, args);
 	}
 	/**replaces TBMCCommandBase functionality*/
 	@Override
 	public boolean OnCommand(CommandSender sender, String alias, String[] args){
+		sender.sendMessage("activating" + alias.toString());
 		return OnCommand((Player) sender, alias, args);
 	}
 	public abstract boolean OnCommand(Player player, String alias, String[] args);
 	@Override
 	public boolean GetPlayerOnly() {
-		// TODO Auto-generated method stub
 		return true;
 	}
 
 	@Override
 	public boolean GetModOnly() {
-		// TODO Auto-generated method stub
 		return false;
 	}
 	@Override

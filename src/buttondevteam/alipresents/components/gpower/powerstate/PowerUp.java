@@ -1,9 +1,9 @@
-package buttondevteam.alipresents.components.gpowers.powerstate;
+package buttondevteam.alipresents.components.gpower.powerstate;
 
 import org.bukkit.entity.Player;
 
 import buttondevteam.alipresents.architecture.commands.PlayerCommand;
-import buttondevteam.alipresents.components.gpowers.api.GPowerAPI;
+import buttondevteam.alipresents.components.gpower.api.GPowerAPI;
 
 public class PowerUp extends PlayerCommand {
 	@Override
@@ -16,5 +16,9 @@ public class PowerUp extends PlayerCommand {
 		return new String[]{
 				"Usage: Type /PowerUp to activate your registered G-Power"
 		};
+	}
+	@Override
+	public String GetCommandPath() {
+		return "gpower powerup";
 	}
 }

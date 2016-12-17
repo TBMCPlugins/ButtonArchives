@@ -12,7 +12,6 @@ public abstract class ModCommand extends PlayerCommand{
 
 	@Override
 	public boolean GetModOnly() {
-		// TODO Auto-generated method stub
 		return true;
 	}
 }

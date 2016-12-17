@@ -1,10 +1,10 @@
-package buttondevteam.alipresents.components.flaircolouring;
+package buttondevteam.alipresents.components.flaircolour;
 
 import org.bukkit.DyeColor;
 
 import com.earth2me.essentials.User;
 
-public class FlairColouringAPI {
+public class FlairColourAPI {
 	public static void recolourPlayer(User user, DyeColor dyecolour){
 		String name = user._getNickname();
 		String sanitizedName = "";

@@ -1,4 +1,4 @@
-package buttondevteam.alipresents.components.flaircolouring.portals;
+package buttondevteam.alipresents.components.flaircolour.portals;
 
 import org.bukkit.Location;
 import org.bukkit.entity.Player;
@@ -6,11 +6,11 @@ import org.bukkit.event.Listener;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.bukkit.scheduler.BukkitRunnable;
 
-import buttondevteam.alipresents.components.flaircolouring.FlairColouringComponent;
+import buttondevteam.alipresents.components.flaircolour.FlairColourComponent;
 
 public class PlayerProximityLoop extends BukkitRunnable implements Listener{
 	private static JavaPlugin plugin;
-	private static FlairColouringComponent component;
+	private static FlairColourComponent component;
 	private static Location startLocation;
 	private static Location endLocation;
 	
@@ -21,7 +21,7 @@ public class PlayerProximityLoop extends BukkitRunnable implements Listener{
 	private static int eY;
 	private static int eZ;
 	
-	public PlayerProximityLoop(JavaPlugin plugin, FlairColouringComponent component) {
+	public PlayerProximityLoop(JavaPlugin plugin, FlairColourComponent component) {
 		PlayerProximityLoop.plugin = plugin;
 		PlayerProximityLoop.component = component;
 		this.runTaskTimer(plugin, 0, 20);

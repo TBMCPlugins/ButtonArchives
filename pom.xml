@@ -73,13 +73,13 @@
 			<url>https://jitpack.io</url>
 		</repository>
 		<repository>
-          <id>ess-repo</id>
-          <url>http://repo.ess3.net/content/groups/essentials</url>
-        </repository>
-        <repository>
-        	<id>citizensnpcs</id>
-        	<url>http://repo.citizensnpcs.co/</url>
-        </repository>
+			<id>ess-repo</id>
+			<url>http://repo.ess3.net/content/groups/essentials</url>
+		</repository>
+		<repository>
+			<id>citizensnpcs</id>
+			<url>http://repo.citizensnpcs.co/</url>
+		</repository>
 	</repositories>
 
 	<dependencies>
@@ -100,14 +100,14 @@
 			<version>master-SNAPSHOT</version>
 		</dependency>
 		<dependency>
-            <groupId>net.ess3</groupId>
-            <artifactId>Essentials</artifactId>
-            <version>2.14-SNAPSHOT</version>
-        </dependency> 
-         <dependency>
-           <groupId>net.citizensnpcs</groupId>
-           <artifactId>citizens-v1_11_R1</artifactId>
-           <version>2.0.21-SNAPSHOT</version>
-         </dependency>                          
+			<groupId>net.ess3</groupId>
+			<artifactId>Essentials</artifactId>
+			<version>2.14-SNAPSHOT</version>
+		</dependency>
+		<dependency>
+			<groupId>net.citizensnpcs</groupId>
+			<artifactId>citizens-v1_11_R1</artifactId>
+			<version>2.0.21-SNAPSHOT</version>
+		</dependency>
 	</dependencies>
 </project>

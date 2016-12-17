@@ -1,4 +1,4 @@
-package buttondevteam.alipresents.components.gpowers.api;
+package buttondevteam.alipresents.components.gpower.api;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -9,7 +9,7 @@ import org.bukkit.entity.Player;
 import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
 
-import buttondevteam.alipresents.components.gpowers.PoweredPlayer;
+import buttondevteam.alipresents.components.gpower.PoweredPlayer;
 
 public class GPowerAPI{
 	public static final int defaultPowerLength = 300;

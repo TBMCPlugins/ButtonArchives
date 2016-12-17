@@ -1,4 +1,4 @@
-package buttondevteam.alipresents.components.flaircolouring.letterdyes;
+package buttondevteam.alipresents.components.flaircolour.letterdyes;
 
 import org.bukkit.Material;
 import org.bukkit.enchantments.Enchantment;
@@ -12,7 +12,7 @@ import org.bukkit.material.Dye;
 import com.earth2me.essentials.Essentials;
 import com.earth2me.essentials.User;
 
-import buttondevteam.alipresents.components.flaircolouring.FlairColouringAPI;
+import buttondevteam.alipresents.components.flaircolour.FlairColourAPI;
 
 public class LetterDyeListener implements Listener{
 	private Essentials essentials;
@@ -32,7 +32,7 @@ public class LetterDyeListener implements Listener{
 			
 			Dye dye = (Dye) event.getItem().getData();
 			User user = essentials.getUser(event.getPlayer());
-			user.setNickname(FlairColouringAPI.colourShiftRight(user._getNickname(), dye.getColor()));
+			user.setNickname(FlairColourAPI.colourShiftRight(user._getNickname(), dye.getColor()));
 		}catch(Exception e){
 			event.getPlayer().sendMessage(e.getStackTrace().toString());
 		}
