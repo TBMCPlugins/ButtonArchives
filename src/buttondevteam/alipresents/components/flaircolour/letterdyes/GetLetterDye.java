@@ -14,4 +14,10 @@ public class GetLetterDye extends PlayerCommand{
 		player.getInventory().addItem(LetterDye.getLetterDye());
 		return false;
 	}
+	@Override
+	public String[] GetHelpText(String alias){
+		return new String[]{
+			"Usage: Type /"+this.GetCommandPath()+" to get letter dyes that can change your username!"
+		};
+	}
 }

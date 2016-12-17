@@ -14,7 +14,7 @@ public class PowerUp extends PlayerCommand {
 	@Override
 	public String[] GetHelpText(String alias){
 		return new String[]{
-				"Usage: Type /PowerUp to activate your registered G-Power"
+				"Usage: Type /"+this.GetCommandPath()+" to activate your registered G-Power"
 		};
 	}
 	@Override

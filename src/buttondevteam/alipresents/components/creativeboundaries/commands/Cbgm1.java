@@ -17,7 +17,7 @@ public class Cbgm1 extends PlayerCommand {
 	@Override
 	public String[] GetHelpText(String alias){
 		return new String[] {
-			"Usage: When in a town that you either own or are a resident of, type /cbgm1 to gain creative"
+			"Usage: When in a town that you either own or are a resident of, type /"+this.GetCommandPath()+" to gain creative"
 		};
 	}
 }

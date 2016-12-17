@@ -44,8 +44,9 @@ public class Test extends ModCommand{
 	@Override
 	public String[] GetHelpText(String alias){
 		return new String[]{
-			"Usage: /gpowertest [colour=red,orange,yellow,green,blue,purple,grey] [active=true/false]"
+			"Usage: /"+this.GetCommandPath()+" [colour=red,orange,yellow,green,blue,purple,grey] [active=true/false]"
 		};
 	}
+	
 
 }

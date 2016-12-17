@@ -17,6 +17,6 @@ public class SetForceBoundaries extends ModCommand{
 	}
 	@Override
 	public String[] GetHelpText(String alias){
-		return new String[]{"Usage: /SetForceBoundaries <True/False/0/1>"};
+		return new String[]{"Usage: /"+this.GetCommandPath()+" <True/False/0/1>"};
 	}
 }

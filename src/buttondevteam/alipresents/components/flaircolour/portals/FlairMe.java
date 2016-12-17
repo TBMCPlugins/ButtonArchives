@@ -24,7 +24,7 @@ public class FlairMe extends PlayerCommand {
 	@Override
 	public String[] GetHelpText(String alias){
 		return new String[]{
-			"Usage: Type /flairme and enter a portal with coloured",
+			"Usage: Type /"+this.GetCommandPath()+" and enter a portal with coloured",
 			"wool underneath to change your flair"
 		};
 	}

@@ -25,7 +25,7 @@ public class getInsuranceIngot extends ModCommand {
 	@Override
 	public String[] GetHelpText(String alias){
 		return new String[]{
-				"Usage: /insurance getingot [amount]",
+				"Usage: /"+this.GetCommandPath()+" [amount]",
 				"This command returns an insurance ingot, which on death,",
 				"saves one row of inventory"
 		};

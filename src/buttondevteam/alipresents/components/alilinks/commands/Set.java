@@ -17,4 +17,11 @@ public class Set extends ModCommand {
 			return false;
 		return AliLinkAPI.createAliLink(player, args);
 	}
+	@Override
+	public String[] GetHelpText(String alias){
+		return new String[] {
+			"Usage:  type /"+this.GetCommandPath()+" <frequency> set a wireless redstone block that listens",
+			"for signals from the players pressing the frequency of your choice"
+		};
+	}
 }

@@ -30,7 +30,7 @@ public class SetProximityLocation extends ModCommand{
 	}
 	public String[] GetHelpText(String alias){
 		return new String[] {
-			"Usage: /SetProximityLocation <start/end/0/1>",
+			"Usage: /"+this.GetCommandPath()+" <start/end/0/1>",
 			"Use this command to set a proximity space: all players",
 			"within this space will become flair-able, and portals will",
 			"change their colour state."

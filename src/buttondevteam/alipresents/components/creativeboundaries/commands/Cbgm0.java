@@ -16,6 +16,6 @@ public class Cbgm0 extends PlayerCommand{
 		return true;
 	}
 	public String[] GetHelpText(String alias){
-		return new String[]{"Creative Boundaries Usage: /cbgm0"};
+		return new String[]{"Creative Boundaries Usage: /"+this.GetCommandPath()+""};
 	}
 }

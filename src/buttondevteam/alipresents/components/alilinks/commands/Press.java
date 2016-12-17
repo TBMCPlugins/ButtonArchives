@@ -18,4 +18,11 @@ public class Press extends PlayerCommand {
 			return false;
 		return AliLinkAPI.sendPressEvent(player, args, AliLinkComponent.getPlugin());
 	}
+	@Override
+	public String[] GetHelpText(String alias){
+		return new String[] {
+			"Usage:  type /"+this.GetCommandPath()+" <frequency> activate a wireless redstone block listening",
+			"to your frequency of choice"
+		};
+	}
 }
