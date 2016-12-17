@@ -1,4 +1,4 @@
-package buttondevteam.alipresents.components.gpowers;
+package buttondevteam.alipresents.components.gpower;
 
 import java.util.UUID;
 

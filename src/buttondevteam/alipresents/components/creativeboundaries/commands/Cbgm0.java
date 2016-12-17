@@ -7,6 +7,10 @@ import buttondevteam.alipresents.components.creativeboundaries.CreativeBoundarie
 
 public class Cbgm0 extends PlayerCommand{
 	@Override
+	public String GetCommandPath() {
+		return "cb gm1";
+	}
+	@Override
 	public boolean OnCommand(Player player, String arg2, String[] arg3) {
 		CreativeBoundariesAPI.toSurvival(player);
 		return true;

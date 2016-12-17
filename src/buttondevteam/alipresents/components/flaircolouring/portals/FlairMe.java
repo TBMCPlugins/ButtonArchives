@@ -6,6 +6,10 @@ import buttondevteam.alipresents.architecture.commands.PlayerCommand;
 import buttondevteam.alipresents.components.flaircolouring.FlairColouringComponent;
 
 public class FlairMe extends PlayerCommand {
+	@Override
+	public String GetCommandPath() {
+		return "flaircolouring flairme";
+	}
 
 	private FlairColouringComponent component;
 	public FlairMe(FlairColouringComponent flairDoorComponent) {

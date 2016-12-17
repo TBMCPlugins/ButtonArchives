@@ -7,12 +7,11 @@ import org.bukkit.plugin.PluginDescriptionFile;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import buttondevteam.alipresents.components.alilinks.AliLinkComponent;
-import buttondevteam.alipresents.components.bankchest.BankChestComponent;
 import buttondevteam.alipresents.components.cashmob.CashMobComponent;
 import buttondevteam.alipresents.components.creativeboundaries.CreativeBoundariesComponent;
 import buttondevteam.alipresents.components.flaircolouring.FlairColouringComponent;
 import buttondevteam.alipresents.components.fruit.FruitComponent;
-import buttondevteam.alipresents.components.gpowers.GPowerComponent;
+import buttondevteam.alipresents.components.gpower.GPowerComponent;
 import buttondevteam.alipresents.components.insurance.InsuranceComponent;
 import buttondevteam.alipresents.components.magic.MagicComponent;
 import buttondevteam.alipresents.components.spawn.SpawnComponent;
@@ -26,7 +25,6 @@ public class AliPresents extends JavaPlugin{
 		
 		
 		new AliLinkComponent().register(this);
-		new BankChestComponent().register(this);
 		new CashMobComponent().register(this);
 		new CreativeBoundariesComponent().register(this);
 		new FlairColouringComponent().register(this);

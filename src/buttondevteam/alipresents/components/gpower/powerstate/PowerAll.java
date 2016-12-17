@@ -1,9 +1,9 @@
-package buttondevteam.alipresents.components.gpowers.powerstate;
+package buttondevteam.alipresents.components.gpower.powerstate;
 
 import org.bukkit.entity.Player;
 
 import buttondevteam.alipresents.architecture.commands.ModCommand;
-import buttondevteam.alipresents.components.gpowers.api.GPowerAPI;
+import buttondevteam.alipresents.components.gpower.api.GPowerAPI;
 
 public class PowerAll extends ModCommand{
 	@Override

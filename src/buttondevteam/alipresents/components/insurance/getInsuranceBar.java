@@ -17,4 +17,9 @@ public class getInsuranceBar extends ModCommand {
 		}
 		return true;
 	}
+
+	@Override
+	public String GetCommandPath() {
+		return "insurance getBar";
+	}
 }

@@ -1,12 +1,12 @@
-package buttondevteam.alipresents.components.gpowers;
+package buttondevteam.alipresents.components.gpower;
 
 import org.bukkit.plugin.java.JavaPlugin;
 
 import buttondevteam.alipresents.architecture.Component;
-import buttondevteam.alipresents.components.gpowers.commands.GPower;
-import buttondevteam.alipresents.components.gpowers.enchant.EnchantingLoop;
-import buttondevteam.alipresents.components.gpowers.powerstate.PowerDown;
-import buttondevteam.alipresents.components.gpowers.powerstate.PowerUp;
+import buttondevteam.alipresents.components.gpower.commands.GPower;
+import buttondevteam.alipresents.components.gpower.enchant.EnchantingLoop;
+import buttondevteam.alipresents.components.gpower.powerstate.PowerDown;
+import buttondevteam.alipresents.components.gpower.powerstate.PowerUp;
 
 public class GPowerComponent extends Component {
 

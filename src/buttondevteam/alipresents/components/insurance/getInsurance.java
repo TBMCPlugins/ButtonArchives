@@ -51,4 +51,9 @@ public class getInsurance extends ModCommand {
 		};
 	}
 
+	@Override
+	public String GetCommandPath() {
+		return "insurance get";
+	}
+
 }
