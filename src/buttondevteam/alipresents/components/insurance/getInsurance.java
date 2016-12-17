@@ -15,9 +15,9 @@ public class getInsurance extends ModCommand {
 		InsuranceType insuranceType = defaultInsuranceType;
 		
 		switch(args.length){
-		case 0:
+		case 0: // no arguments
 			break;
-		case 1:
+		case 1: // <amount> or <type> argument
 			if (StringUtils.isNumeric(args[0])){
 				amount = Integer.parseInt(args[0]);
 				break;
@@ -25,14 +25,22 @@ public class getInsurance extends ModCommand {
 				insuranceType = InsuranceType.valueOf(args[0]);
 				break;
 			}else{
+				player.sendMessage("Invalid Argument " + args[0]);
+				player.sendMessage("Enter a type of insurance or a number as an argument");
+				player.sendMessage(Insurance.InsuranceType.values().toString());
 				return false;
 			}
-		default:
+		default: 
+			// <amount> <type> argument
 			if (StringUtils.isNumeric(args[0]) && Insurance.isInsuranceType(args[1])){
 				amount = Integer.parseInt(args[0]);
 				insuranceType = InsuranceType.valueOf(args[0]);
 				break;
 			}else{
+				player.sendMessage("Invalid Argument " + args[0] + "|" + args[1]);
+				player.sendMessage("Usage /" + this.GetCommandPath() 
+					+ " <amount>"
+					+ " <" + Insurance.InsuranceType.values().toString() + ">");
 				return false;
 			}
 		}

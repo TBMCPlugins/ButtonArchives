@@ -15,11 +15,19 @@ public class getInsuranceNugget extends ModCommand {
 		}else{
 			player.getInventory().addItem(Insurance.getInsurance(InsuranceType.Nugget));
 		}
-		return false;
+		return true;
 	}
 	@Override
 	public String GetCommandPath() {
 		return "insurance getnugget";
+	}
+	@Override
+	public String[] GetHelpText(String alias){
+		return new String[]{
+				"Usage: /insurance getnugget [amount]",
+				"This command returns an insurance nugget, which on death,",
+				"saves one itemslot in the inventory"
+		};
 	}
 
 }

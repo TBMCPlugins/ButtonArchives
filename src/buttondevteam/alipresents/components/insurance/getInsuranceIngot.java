@@ -6,7 +6,7 @@ import org.bukkit.entity.Player;
 import buttondevteam.alipresents.architecture.commands.ModCommand;
 import buttondevteam.alipresents.components.insurance.Insurance.InsuranceType;
 
-public class getInsuranceBar extends ModCommand {
+public class getInsuranceIngot extends ModCommand {
 
 	@Override
 	public boolean OnCommand(Player player, String alias, String[] args) {
@@ -20,6 +20,14 @@ public class getInsuranceBar extends ModCommand {
 
 	@Override
 	public String GetCommandPath() {
-		return "insurance getBar";
+		return "insurance getingot";
+	}
+	@Override
+	public String[] GetHelpText(String alias){
+		return new String[]{
+				"Usage: /insurance getingot [amount]",
+				"This command returns an insurance ingot, which on death,",
+				"saves one row of inventory"
+		};
 	}
 }
