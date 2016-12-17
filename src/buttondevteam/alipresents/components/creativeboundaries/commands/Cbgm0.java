@@ -8,7 +8,7 @@ import buttondevteam.alipresents.components.creativeboundaries.CreativeBoundarie
 public class Cbgm0 extends PlayerCommand{
 	@Override
 	public String GetCommandPath() {
-		return "cb gm1";
+		return "cb gm0";
 	}
 	@Override
 	public boolean OnCommand(Player player, String arg2, String[] arg3) {
