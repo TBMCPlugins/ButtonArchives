@@ -12,7 +12,7 @@ public class GetLetterDye extends PlayerCommand{
 	@Override
 	public boolean OnCommand(Player player, String alias, String[] args) {
 		player.getInventory().addItem(LetterDye.getLetterDye());
-		return false;
+		return true;
 	}
 	@Override
 	public String[] GetHelpText(String alias){
