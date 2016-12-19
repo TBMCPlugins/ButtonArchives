@@ -12,6 +12,7 @@ import buttondevteam.alipresents.components.creativeboundaries.CreativeBoundarie
 import buttondevteam.alipresents.components.flaircolour.FlairColourComponent;
 import buttondevteam.alipresents.components.fruit.FruitComponent;
 import buttondevteam.alipresents.components.gpower.GPowerComponent;
+import buttondevteam.alipresents.components.hotfix.HotfixComponent;
 import buttondevteam.alipresents.components.insurance.InsuranceComponent;
 import buttondevteam.alipresents.components.magic.MagicComponent;
 import buttondevteam.alipresents.components.spawn.SpawnComponent;
@@ -30,6 +31,7 @@ public class AliPresents extends JavaPlugin{
 		new FlairColourComponent().register(this);
 		new FruitComponent().register(this);
 		new GPowerComponent().register(this);
+		new HotfixComponent().register(this);
 		new InsuranceComponent().register(this);
 		new MagicComponent().register(this);
 		//new MetricsComponent().register(this);
