@@ -8,13 +8,11 @@ public abstract class PlayerCommand extends BaseCommand{
 	/**replaces CommandExecutor functionality*/
 	@Override
 	public boolean onCommand(CommandSender sender, Command command, String string, String[] args){
-		sender.sendMessage("activating" + string.toString());
 		return OnCommand(sender, string, args);
 	}
 	/**replaces TBMCCommandBase functionality*/
 	@Override
 	public boolean OnCommand(CommandSender sender, String alias, String[] args){
-		sender.sendMessage("activating" + alias.toString());
 		return OnCommand((Player) sender, alias, args);
 	}
 	public abstract boolean OnCommand(Player player, String alias, String[] args);
