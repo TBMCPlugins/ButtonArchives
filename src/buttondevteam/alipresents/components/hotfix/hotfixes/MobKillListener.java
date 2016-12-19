@@ -1,4 +1,4 @@
-package buttondevteam.alipresents.components.cashmob;
+package buttondevteam.alipresents.components.hotfix.hotfixes;
 
 import java.math.BigDecimal;
 

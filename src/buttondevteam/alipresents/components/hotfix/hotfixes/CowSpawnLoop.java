@@ -1,4 +1,4 @@
-package buttondevteam.alipresents.components.spawn.cows;
+package buttondevteam.alipresents.components.hotfix.hotfixes;
 
 import org.bukkit.Location;
 import org.bukkit.Material;
