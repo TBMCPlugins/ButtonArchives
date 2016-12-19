@@ -11,15 +11,24 @@ public class getInsuranceBlock extends ModCommand {
 	@Override
 	public boolean OnCommand(Player player, String alias, String[] args) {
 		if (args.length > 0 && StringUtils.isNumeric(args[0])){
-			player.getInventory().addItem(Insurance.getInsurance(InsuranceType.Block, Integer.parseInt(args[0])));
+			player.getInventory().addItem(Insurance.getInsurance(InsuranceType.block, Integer.parseInt(args[0])));
 		}else{
-			player.getInventory().addItem(Insurance.getInsurance(InsuranceType.Block));
+			player.getInventory().addItem(Insurance.getInsurance(InsuranceType.block));
 		}
-		return false;
+		return true;
 	}
 
 	@Override
 	public String GetCommandPath() {
 		return "insurance getblock";
+	}
+	@Override
+	public String[] GetHelpText(String alias){
+		return new String[]{
+				"Usage: /"+this.GetCommandPath()+" [amount]",
+				"This command returns an insurance block, which on death,",
+				"splits into 9 insurance ingot which each saves 1 row of",
+				"inventory per ingot"
+		};
 	}
 }

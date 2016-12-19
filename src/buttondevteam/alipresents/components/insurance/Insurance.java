@@ -12,13 +12,13 @@ import buttondevteam.lib.DebugPotato;
 
 public abstract class Insurance {
 	public static enum InsuranceType{
-		Nugget, Ingot, Block
+		nugget, ingot, block
 	};
 	public static ItemStack getInsurance(InsuranceType insuranceType){
 		ItemStack insuranceItem;
 		List<String> lore;
 		switch(insuranceType){
-		case Nugget:
+		case nugget:
 			insuranceItem = new ItemStack(Material.GOLD_NUGGET);
 			lore = Arrays.asList(
 				"This insurance nugget will protect ",
@@ -28,7 +28,7 @@ public abstract class Insurance {
 				"one nugget."
 			);
 			break;
-		case Ingot:
+		case ingot:
 			insuranceItem = new ItemStack(Material.GOLD_INGOT);
 			lore = Arrays.asList(
 				"This insurance ingot will protect ",
@@ -38,7 +38,7 @@ public abstract class Insurance {
 				"row costing one ingot."
 			);
 			break;
-		case Block:
+		case block:
 			insuranceItem = new ItemStack(Material.GOLD_BLOCK);
 			lore = Arrays.asList(
 					"This insurance block will give your ",
@@ -74,7 +74,7 @@ public abstract class Insurance {
 	}
 	public static boolean isInsuranceType(String string){
 		for (InsuranceType insuranceType : Insurance.InsuranceType.values()){
-			if (string.equalsIgnoreCase(insuranceType.toString())){
+			if (string.equals(insuranceType.toString())){
 				return true;
 			}
 		}

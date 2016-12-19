@@ -6,20 +6,28 @@ import org.bukkit.entity.Player;
 import buttondevteam.alipresents.architecture.commands.ModCommand;
 import buttondevteam.alipresents.components.insurance.Insurance.InsuranceType;
 
-public class getInsuranceBar extends ModCommand {
+public class getInsuranceIngot extends ModCommand {
 
 	@Override
 	public boolean OnCommand(Player player, String alias, String[] args) {
 		if (args.length > 0 && StringUtils.isNumeric(args[0])){
-			player.getInventory().addItem(Insurance.getInsurance(InsuranceType.Ingot, Integer.parseInt(args[0])));
+			player.getInventory().addItem(Insurance.getInsurance(InsuranceType.ingot, Integer.parseInt(args[0])));
 		}else{
-			player.getInventory().addItem(Insurance.getInsurance(InsuranceType.Ingot));
+			player.getInventory().addItem(Insurance.getInsurance(InsuranceType.ingot));
 		}
 		return true;
 	}
 
 	@Override
 	public String GetCommandPath() {
-		return "insurance getBar";
+		return "insurance getingot";
+	}
+	@Override
+	public String[] GetHelpText(String alias){
+		return new String[]{
+				"Usage: /"+this.GetCommandPath()+" [amount]",
+				"This command returns an insurance ingot, which on death,",
+				"saves one row of inventory"
+		};
 	}
 }

@@ -10,7 +10,7 @@ public class InsuranceComponent extends Component {
 	public void register(JavaPlugin plugin) {
 		registerCommand(plugin, new getInsurance());
 		registerCommand(plugin, new getInsuranceNugget());
-		registerCommand(plugin, new getInsuranceBar());
+		registerCommand(plugin, new getInsuranceIngot());
 		registerCommand(plugin, new getInsuranceBlock());
 	}
 

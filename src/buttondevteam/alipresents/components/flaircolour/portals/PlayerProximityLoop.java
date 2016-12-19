@@ -13,14 +13,14 @@ public class PlayerProximityLoop extends BukkitRunnable implements Listener{
 	private static FlairColourComponent component;
 	private static Location startLocation;
 	private static Location endLocation;
-	
+
 	private static int sX;
 	private static int sY;
 	private static int sZ;
 	private static int eX;
 	private static int eY;
 	private static int eZ;
-	
+
 	public PlayerProximityLoop(JavaPlugin plugin, FlairColourComponent component) {
 		PlayerProximityLoop.plugin = plugin;
 		PlayerProximityLoop.component = component;
@@ -31,14 +31,21 @@ public class PlayerProximityLoop extends BukkitRunnable implements Listener{
 		PlayerProximityLoop.sY = location.getBlockY();
 		PlayerProximityLoop.sZ = location.getBlockZ();
 		PlayerProximityLoop.startLocation = location;
-		PlayerProximityLoop.endLocation.setWorld(location.getWorld());
+
+		if (endLocation == null)
+			PlayerProximityLoop.endLocation = location;
+		else
+			PlayerProximityLoop.endLocation.setWorld(location.getWorld());
 	}
 	public static void setEndLocation(Location location){
 		PlayerProximityLoop.eX = location.getBlockX();
 		PlayerProximityLoop.eY = location.getBlockY();
 		PlayerProximityLoop.eZ = location.getBlockZ();
 		PlayerProximityLoop.startLocation.setWorld(location.getWorld());
-		PlayerProximityLoop.endLocation = location;
+		if (endLocation == null)
+			PlayerProximityLoop.endLocation = location;
+		else
+			PlayerProximityLoop.endLocation.setWorld(location.getWorld());
 	}
 
 	@Override
@@ -65,8 +72,8 @@ public class PlayerProximityLoop extends BukkitRunnable implements Listener{
 			if((playerZ < sZ && playerZ < eZ) || (playerZ > sZ && playerZ > eZ))
 				continue;
 			component.playersToBeFlaired.add(player);
-			
+
 		}
 	}
-	
+
 }

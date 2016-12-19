@@ -15,6 +15,7 @@ public class CreativeBoundariesComponent extends Component{
 		registerCommand(plugin, new Cbgm1());
 		registerCommand(plugin, new Cbgm0());
 		registerCommand(plugin, new SetForceBoundaries());
+		
 		registerListener(plugin, new PlotChangeListener());
 		//registerListener(plugin, new ItemRestrictionListener(this));
 	}

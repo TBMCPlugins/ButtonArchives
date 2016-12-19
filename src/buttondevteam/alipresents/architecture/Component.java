@@ -21,7 +21,6 @@ import buttondevteam.lib.chat.TBMCChatAPI;
  *
  */
 public abstract class Component{
-
 	/**
 	 * Registers the module, when called by the JavaPlugin class. Call
 	 * registerCommand() and registerListener() within this method.

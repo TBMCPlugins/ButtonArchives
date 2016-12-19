@@ -15,7 +15,7 @@ import org.bukkit.plugin.java.JavaPlugin;
 import buttondevteam.alipresents.components.alilinks.entities.Link;
 
 public class AliLinkAPI {
-	private static List<Link> linkList;
+	public static List<Link> linkList = new ArrayList<Link>();
 	/**"Usage: /pressalilink <frequency>"*/
 	public static boolean sendPressEvent(CommandSender sender, String[] inputFrequencies, JavaPlugin plugin) {
 		if (inputFrequencies.length == 0) {

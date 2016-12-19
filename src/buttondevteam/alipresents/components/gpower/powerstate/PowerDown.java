@@ -14,7 +14,7 @@ public class PowerDown extends PlayerCommand {
 	@Override
 	public String[] GetHelpText(String alias){
 		return new String[]{
-			"Usage: Type /PowerDown to disable your g-power"
+			"Usage: Type /"+this.GetCommandPath()+" to disable your g-power"
 		};
 	}
 

@@ -66,6 +66,14 @@ public class PortalListener implements Listener{
 		}else{
 			return;
 		}
+		if (essentials.getUser(player) == null){
+			player.sendMessage("Error! essentials.getUser() returns null!");
+			throw new NullPointerException();
+		}
+		if (woolColour == null){
+			player.sendMessage("Error! Wool colour returns null!");
+			throw new NullPointerException();
+		}
 		
 		FlairColourAPI.recolourPlayer(essentials.getUser(player), woolColour);
 		component.playersToBeFlaired.remove(player.getName());

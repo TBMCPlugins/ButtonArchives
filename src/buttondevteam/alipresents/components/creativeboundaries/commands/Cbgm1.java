@@ -8,7 +8,7 @@ import buttondevteam.alipresents.components.creativeboundaries.CreativeBoundarie
 public class Cbgm1 extends PlayerCommand {
 	@Override
 	public String GetCommandPath() {
-		return "cb gm0";
+		return "cb gm1";
 	}
 	@Override
 	public boolean OnCommand(Player player, String arg2, String[] arg3) {
@@ -17,7 +17,7 @@ public class Cbgm1 extends PlayerCommand {
 	@Override
 	public String[] GetHelpText(String alias){
 		return new String[] {
-			"Usage: When in a town that you either own or are a resident of, type /cbgm1 to gain creative"
+			"Usage: When in a town that you either own or are a resident of, type /"+this.GetCommandPath()+" to gain creative"
 		};
 	}
 }
