@@ -1,23 +1,17 @@
 package buttondevteam.alipresents.components.alilinks.commands;
 
-import org.bukkit.entity.Player;
+import org.bukkit.command.CommandSender;
 
-import buttondevteam.alipresents.architecture.commands.PlayerCommand;
+import buttondevteam.alipresents.architecture.commands.CommandBlockCommand;
 import buttondevteam.alipresents.components.alilinks.AliLinkAPI;
 import buttondevteam.alipresents.components.alilinks.AliLinkComponent;
 
-public class Press extends PlayerCommand {
+public class Press extends CommandBlockCommand {
 	@Override
 	public String GetCommandPath() {
 		return "alilink press";
 	}
 
-	@Override
-	public boolean OnCommand(Player player, String alias, String[] args) {
-		if (args.length < 1)
-			return false;
-		return AliLinkAPI.sendPressEvent(player, args, AliLinkComponent.getPlugin());
-	}
 	@Override
 	public String[] GetHelpText(String alias){
 		return new String[] {
@@ -25,4 +19,13 @@ public class Press extends PlayerCommand {
 			"to your frequency of choice"
 		};
 	}
+
+	@Override
+	public boolean OnCommand(CommandSender sender, String alias, String[] args) {
+		if (args.length < 1)
+			return false;
+		return AliLinkAPI.sendPressEvent(sender, args, AliLinkComponent.getPlugin());
+	}
+
+	
 }
