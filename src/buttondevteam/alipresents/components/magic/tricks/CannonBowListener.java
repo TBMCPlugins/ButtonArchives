@@ -1,9 +1,13 @@
 package buttondevteam.alipresents.components.magic.tricks;
 
+import java.lang.reflect.Field;
+
 import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.Particle;
 import org.bukkit.Sound;
+import org.bukkit.craftbukkit.v1_11_R1.entity.CraftLivingEntity;
+import org.bukkit.craftbukkit.v1_11_R1.entity.CraftTNTPrimed;
 import org.bukkit.enchantments.Enchantment;
 import org.bukkit.entity.Arrow;
 import org.bukkit.entity.EntityType;
@@ -17,13 +21,16 @@ import org.bukkit.inventory.ItemStack;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.bukkit.util.Vector;
 
+import net.minecraft.server.v1_11_R1.EntityLiving;
+import net.minecraft.server.v1_11_R1.EntityTNTPrimed;
+
 public class CannonBowListener implements Listener {
 	public static double SpeedMultiplier = 1.5;
 	public static double minforce = 0.2;
 	public final static String launchedTNTName = "CANNON BOW TNT:42170";
-	JavaPlugin plugin;
 	public CannonBowListener(JavaPlugin plugin){
-		this.plugin = plugin;
+		SpeedMultiplier = plugin.getConfig().getDouble("magic.cannonbow.speedmultiplier");
+		minforce = plugin.getConfig().getDouble("magic.cannonbow.minforce");
 	}
 	
 	@EventHandler
@@ -55,6 +62,18 @@ public class CannonBowListener implements Listener {
 			
 		}else{
 			TNTPrimed tnt = (TNTPrimed) arrow.getWorld().spawnEntity(arrow.getLocation(), EntityType.PRIMED_TNT);
+
+			// Change via NMS the source of the TNT by the player
+			EntityLiving nmsPlayer = (EntityLiving) (((CraftLivingEntity) player).getHandle());
+			EntityTNTPrimed nmsTNT = (EntityTNTPrimed) (((CraftTNTPrimed) tnt).getHandle());
+			try {
+			    Field sourceField = EntityTNTPrimed.class.getDeclaredField("source");
+			    sourceField.setAccessible(true);
+			    sourceField.set(nmsTNT, nmsPlayer);
+			} catch (Exception ex) {
+			    ex.printStackTrace();
+			}
+			
 			
 			tnt.setVelocity(playerVector.multiply(SpeedMultiplier).multiply(event.getForce()));
 			tnt.setCustomName(launchedTNTName);
@@ -62,7 +81,7 @@ public class CannonBowListener implements Listener {
 			
 			//Player Recoil
 			player.setVelocity(player.getEyeLocation().getDirection().normalize().multiply(-1));
-			player.getWorld().playSound(player.getLocation(), Sound.ENTITY_GENERIC_EXPLODE, 2.0F, 0);
+			player.getWorld().playSound(player.getLocation(), Sound.ENTITY_GENERIC_EXPLODE, 1.0F, 0);
 			player.getWorld().spawnParticle(Particle.EXPLOSION_NORMAL, player.getLocation(), 2);
 			
 		}
