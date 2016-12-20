@@ -8,6 +8,7 @@ public class AliArrowTask extends BukkitRunnable {
 	static String[] permittedUsers = {"alisolarflare", "Zanthr", "NorbiPeti"};
 	String name;
 	Arrow arrow;
+	int count = 0;
 
 	public AliArrowTask(Arrow arrow, String name) {
 		this.name = name;
@@ -16,7 +17,8 @@ public class AliArrowTask extends BukkitRunnable {
 
 	@Override
 	public void run() {
-		if (arrow.isOnGround() || arrow.isDead()) {
+		count++;
+		if (count > 400 ||arrow.isOnGround() || arrow.isDead()) {
 			this.cancel();
 		}
 		

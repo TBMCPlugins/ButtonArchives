@@ -5,16 +5,12 @@ version: 2.0.2
 commands:
   alilink:
     description: creates wireless redstone
-  cashmob:
-    description: creates mobs
   cb:
     description: creates creative boundaries
   debug:
     description: debug commands
   flaircolour:
     description: flaaairs
-  fruit:
-    description: fruits
   gpower:
     description: powerssss
   insurance:
