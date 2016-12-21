@@ -58,7 +58,8 @@ public class CannonBowListener implements Listener {
 		Vector playerVector = player.getEyeLocation().getDirection().normalize();
 		if (event.getForce() < minforce){
 			
-			
+			arrow.getWorld().spawnParticle(Particle.SMOKE_NORMAL, player.getLocation(), 30);
+			arrow.getWorld().playSound(player.getLocation(), Sound.BLOCK_LADDER_BREAK, 1.0F, -14);
 			
 		}else{
 			TNTPrimed tnt = (TNTPrimed) arrow.getWorld().spawnEntity(arrow.getLocation(), EntityType.PRIMED_TNT);
