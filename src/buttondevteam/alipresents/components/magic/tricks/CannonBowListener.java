@@ -1,14 +1,10 @@
 package buttondevteam.alipresents.components.magic.tricks;
 
-import java.lang.reflect.Field;
-
 import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.Particle;
 import org.bukkit.Sound;
 import org.bukkit.configuration.file.FileConfiguration;
-import org.bukkit.craftbukkit.v1_11_R1.entity.CraftLivingEntity;
-import org.bukkit.craftbukkit.v1_11_R1.entity.CraftTNTPrimed;
 import org.bukkit.enchantments.Enchantment;
 import org.bukkit.entity.Arrow;
 import org.bukkit.entity.EntityType;
@@ -21,9 +17,6 @@ import org.bukkit.event.entity.EntityShootBowEvent;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.bukkit.util.Vector;
-
-import net.minecraft.server.v1_11_R1.EntityLiving;
-import net.minecraft.server.v1_11_R1.EntityTNTPrimed;
 
 public class CannonBowListener implements Listener {
 	private static double SpeedMultiplier = 1.5;
@@ -78,7 +71,7 @@ public class CannonBowListener implements Listener {
 		}else{
 			//Spawn TNT
 			TNTPrimed tnt = (TNTPrimed) arrow.getWorld().spawnEntity(arrow.getLocation(), EntityType.PRIMED_TNT);
-
+			/*
 			// Change via NMS the source of the TNT by the player
 			EntityLiving nmsPlayer = (EntityLiving) (((CraftLivingEntity) player).getHandle());
 			EntityTNTPrimed nmsTNT = (EntityTNTPrimed) (((CraftTNTPrimed) tnt).getHandle());
@@ -88,7 +81,7 @@ public class CannonBowListener implements Listener {
 			    sourceField.set(nmsTNT, nmsPlayer);
 			} catch (Exception ex) {
 			    ex.printStackTrace();
-			}
+			}*/
 			
 			//
 			tnt.setVelocity(playerVector.multiply(getSpeedMultiplier()).multiply(event.getForce()));
