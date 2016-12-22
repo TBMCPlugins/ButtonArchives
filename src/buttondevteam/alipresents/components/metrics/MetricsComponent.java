@@ -11,15 +11,20 @@ import buttondevteam.alipresents.components.metrics.files.MetricsFile;
 import buttondevteam.alipresents.components.metrics.output.GetLoginMetrics;
 
 public class MetricsComponent extends Component{
-	String defaultPath = "src/alisolarflare/resources";
-	String defaultFilePath = (defaultPath + "/metrics.txt");
-	String playerLoginsFilePath  = (defaultPath + "/playerLogins.txt");
+	String defaultPath;
+	String defaultFilePath;
+	String playerLoginsFilePath;
 	
 	public MetricsFile playerLoginsFile; // DATA - STRING
 	public List<String> metricsList;
 
 	@Override
 	public void register(JavaPlugin plugin){
+		
+		defaultPath = plugin.getDataFolder().getAbsolutePath();
+		defaultFilePath = defaultPath + "/metrics.txt";
+		playerLoginsFilePath = defaultPath + "/playerLogins.txt";
+		
 		playerLoginsFile = new MetricsFile(playerLoginsFilePath);
 		registerCommand(plugin, new GetLoginMetrics(this));
 		registerListener(plugin, new PlayerJoinListener(this, playerLoginsFile));
