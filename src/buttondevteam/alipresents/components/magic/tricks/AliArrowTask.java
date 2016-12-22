@@ -35,6 +35,10 @@ public class AliArrowTask extends BukkitRunnable {
 		case "norbipeti":
 			arrow.getWorld().spawnParticle(Particle.LAVA, arrow.getLocation(), 1);
 			break;
+			
+		case "mayskam1995":
+			arrow.getWorld().spawnParticle(Particle.DRIP_WATER, arrow.getLocation(), 2);
+			break;
 		}
 
 	}

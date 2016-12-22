@@ -12,26 +12,22 @@ public class CannonBowSettings extends ModCommand {
 		if (args.length > 1){
 			switch(args[0].toLowerCase()){
 			case "speedmultiplier":
-				double speedMultiplier = NumberUtils.toDouble(args[1], CannonBowListener.SpeedMultiplier);
-				CannonBowListener.SpeedMultiplier = speedMultiplier;
-				this.getPlugin().getConfig().set("magic.cannonbow.speedmultiplier", speedMultiplier);
-				this.getPlugin().saveConfig();
+				CannonBowListener.setSpeedMultiplier(NumberUtils.toDouble(args[1], CannonBowListener.getSpeedMultiplier()));
 				break;
 			case "minforce":
-				double minforce = NumberUtils.toDouble(args[1], CannonBowListener.minforce);
-				CannonBowListener.minforce = minforce;
-				this.getPlugin().getConfig().set("magic.cannonbow.minforce", minforce);
-				this.getPlugin().saveConfig();
+				CannonBowListener.setMinforce(NumberUtils.toDouble(args[1], CannonBowListener.getMinforce()));
 				break;
 			case "fuseticks":
-				int fuseticks = NumberUtils.toInt(args[1], CannonBowListener.fuseticks);
-				CannonBowListener.fuseticks = fuseticks;
-				this.getPlugin().getConfig().set("magic.cannonbow.fuseticks", fuseticks);
-				this.getPlugin().saveConfig();
+				CannonBowListener.setFuseticks(NumberUtils.toInt(args[1], CannonBowListener.getFuseticks()));
+				break;
+			case "recoil":
+				CannonBowListener.setRecoil(NumberUtils.toDouble((args[1]), CannonBowListener.getRecoil()));
 				break;
 			case "display":
-				player.sendMessage("Speed Multiplier: "+CannonBowListener.SpeedMultiplier);
-				player.sendMessage("Minimum Force : "+CannonBowListener.minforce);
+				player.sendMessage("Speed Multiplier: "+CannonBowListener.getSpeedMultiplier());
+				player.sendMessage("Minimum Force: "+CannonBowListener.getMinforce());
+				player.sendMessage("Fuseticks: " + CannonBowListener.getFuseticks());
+				player.sendMessage("Recoil: " + CannonBowListener.getRecoil());
 				break;
 			default:
 				player.sendMessage("That isn't a valid setting!");
@@ -44,7 +40,7 @@ public class CannonBowSettings extends ModCommand {
 
 	@Override
 	public String GetCommandPath(){
-		return "magic cannonbow";
+		return "magic cannonbow settings";
 	}
 
 }
