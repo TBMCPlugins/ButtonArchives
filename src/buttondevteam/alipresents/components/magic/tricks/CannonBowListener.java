@@ -6,6 +6,7 @@ import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.Particle;
 import org.bukkit.Sound;
+import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.craftbukkit.v1_11_R1.entity.CraftLivingEntity;
 import org.bukkit.craftbukkit.v1_11_R1.entity.CraftTNTPrimed;
 import org.bukkit.enchantments.Enchantment;
@@ -27,10 +28,19 @@ import net.minecraft.server.v1_11_R1.EntityTNTPrimed;
 public class CannonBowListener implements Listener {
 	public static double SpeedMultiplier = 1.5;
 	public static double minforce = 0.2;
+	public static int fuseticks = 40;
 	public final static String launchedTNTName = "CANNON BOW TNT:42170";
 	public CannonBowListener(JavaPlugin plugin){
-		SpeedMultiplier = plugin.getConfig().getDouble("magic.cannonbow.speedmultiplier");
-		minforce = plugin.getConfig().getDouble("magic.cannonbow.minforce");
+		FileConfiguration config = plugin.getConfig();
+		
+		if (config.isDouble("magic.cannonbow.speedmultiplier"))
+			SpeedMultiplier = config.getDouble("magic.cannonbow.speedmultiplier");
+		
+		if (config.isDouble("magic.cannonbow.minforce"))
+			minforce = config.getDouble("magic.cannonbow.minforce");
+		
+		if (config.isInt("magic.cannonbow.fuseticks"))
+			fuseticks = config.getInt("magic.cannonbow.fuseticks");
 	}
 	
 	@EventHandler
@@ -78,7 +88,7 @@ public class CannonBowListener implements Listener {
 			
 			tnt.setVelocity(playerVector.multiply(SpeedMultiplier).multiply(event.getForce()));
 			tnt.setCustomName(launchedTNTName);
-			tnt.setFuseTicks(40);
+			tnt.setFuseTicks(fuseticks);
 			
 			//Player Recoil
 			player.setVelocity(player.getEyeLocation().getDirection().normalize().multiply(-1));
