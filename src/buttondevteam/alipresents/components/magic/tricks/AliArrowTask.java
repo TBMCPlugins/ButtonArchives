@@ -8,6 +8,7 @@ public class AliArrowTask extends BukkitRunnable {
 	static String[] permittedUsers = {"alisolarflare", "Zanthr", "NorbiPeti"};
 	String name;
 	Arrow arrow;
+	int count = 0;
 
 	public AliArrowTask(Arrow arrow, String name) {
 		this.name = name;
@@ -16,7 +17,8 @@ public class AliArrowTask extends BukkitRunnable {
 
 	@Override
 	public void run() {
-		if (arrow.isOnGround() || arrow.isDead()) {
+		count++;
+		if (count > 400 ||arrow.isOnGround() || arrow.isDead()) {
 			this.cancel();
 		}
 		
@@ -32,6 +34,10 @@ public class AliArrowTask extends BukkitRunnable {
 			
 		case "norbipeti":
 			arrow.getWorld().spawnParticle(Particle.LAVA, arrow.getLocation(), 1);
+			break;
+			
+		case "mayskam1995":
+			arrow.getWorld().spawnParticle(Particle.DRIP_WATER, arrow.getLocation(), 2);
 			break;
 		}
 
