@@ -31,7 +31,8 @@ public class CannonBowSettings extends ModCommand {
 				break;
 			default:
 				player.sendMessage("That isn't a valid setting!");
-				player.sendMessage("Valid Settings are: ");
+				player.sendMessage("Valid Settings are: speedmultiplier, minforce, fuseticks, recoil");
+				player.sendMessage("Use argument 'display' to disply current settings");
 				return false;
 			}
 		}
