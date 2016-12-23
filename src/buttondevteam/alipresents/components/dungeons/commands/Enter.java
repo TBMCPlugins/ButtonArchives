@@ -13,11 +13,11 @@ public class Enter extends ModCommand{
 	@Override
 	public boolean OnCommand(Player player, String alias, String[] args) {
 		component.dungeonA1.enterDungeon(player);
-		return false;
+		return true;
 	}
 	@Override
 	public String GetCommandPath(){
-		return "dungeon enter";
+		return "dungeons enter";
 	}
 	
 }

@@ -4,13 +4,15 @@ import org.bukkit.Location;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public class GenericDungeonA1 extends Dungeon{
-	private Location dungeonEntrance;
-	private Location dungeonExit;
+	private Location entrance;
+	private Location exit;
+	private JavaPlugin plugin;
 	
 	public GenericDungeonA1(JavaPlugin plugin){
 		if(!initDungeon(plugin)){
 			plugin.getServer().broadcastMessage("DungeonA1 cant be initialized!");
 		}
+		this.plugin = plugin;
 	}
 	private boolean initDungeon(JavaPlugin plugin){
 		if (plugin.getServer().getWorld("Dungeons") == null || plugin.getServer().getWorld("world") == null){
@@ -19,27 +21,32 @@ public class GenericDungeonA1 extends Dungeon{
 			return false;
 		}
 		
-		dungeonEntrance = new Location(plugin.getServer().getWorld("Dungeons"), -7.5, 138.0, -91.5);
-		dungeonExit = plugin.getServer().getWorld("world").getSpawnLocation().clone();
+		entrance = new Location(plugin.getServer().getWorld("Dungeons"), -7.5, 138.0, -91.5);
+		exit = plugin.getServer().getWorld("world").getSpawnLocation().clone();
 		
-		if (dungeonEntrance == null || dungeonExit == null){
+		if (entrance == null || exit == null){
 			plugin.getServer().broadcastMessage("DungeonA1Error! Dungeon Entrance or Exit is null!");
-			plugin.getServer().broadcastMessage("DungeonEnterance: " + dungeonEntrance.toString());
-			plugin.getServer().broadcastMessage("Dungeon Exit: " + dungeonExit.toString());
+			plugin.getServer().broadcastMessage("Dungeon Entrance: " + entrance.toString());
+			plugin.getServer().broadcastMessage("Dungeon Exit: " + exit.toString());
 			return false;
 		}
 		return true;
 	}
-	public void setDungeonEnterance(Location location){
-		dungeonEntrance = location;
+	public void setEntrance(Location location){
+		plugin.getConfig().set("dungeons.dungeona1.entrance", entrance);
+		plugin.saveConfig();
+		entrance = location;
+	}
+	public void setExit(Location location){
+		exit = location;
 	}
 	@Override
 	public Location getDungeonEntrance() {
-		return dungeonEntrance;
+		return entrance;
 	}
 	@Override
 	public Location getDungeonExit() {
-		return dungeonExit;
+		return exit;
 	}
 	
 }

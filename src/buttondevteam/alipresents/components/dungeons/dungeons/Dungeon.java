@@ -8,6 +8,8 @@ import org.bukkit.entity.Player;
 public abstract class Dungeon {
 	public abstract Location getDungeonEntrance();
 	public abstract Location getDungeonExit();
+	public abstract void setEntrance(Location location);
+	public abstract void setExit(Location location);
 	public boolean enterDungeon(Player player){
 		
 		if (getDungeonEntrance() == null){

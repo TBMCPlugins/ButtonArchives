@@ -2,23 +2,24 @@ package buttondevteam.alipresents.components.dungeons.commands;
 
 import org.bukkit.entity.Player;
 
-import buttondevteam.alipresents.architecture.commands.PlayerCommand;
+import buttondevteam.alipresents.architecture.commands.ModCommand;
 import buttondevteam.alipresents.components.dungeons.DungeonComponent;
 
-public class Exit extends PlayerCommand {
+public class SetEntrance extends ModCommand {
 
 	private DungeonComponent component;
-	public Exit(DungeonComponent component) {
+	public SetEntrance(DungeonComponent component) {
 		this.component = component;
 	}
 	@Override
 	public boolean OnCommand(Player player, String alias, String[] args) {
-		component.dungeonA1.exitDungeon(player);
+		player.sendMessage("Setting DungeonA1's Entrance!");
+		component.dungeonA1.setEntrance(player.getLocation());
+		player.sendMessage("Entrance Set!");
 		return true;
 	}
-	@Override
 	public String GetCommandPath(){
-		return "dungeons exit";
+		return "dungeons set entrance";
 	}
 
 }

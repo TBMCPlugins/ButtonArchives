@@ -7,6 +7,8 @@ commands:
     description: creates wireless redstone
   cb:
     description: creates creative boundaries
+  dungeons:
+    description: handles the resource dungeons scattered around the map
   debug:
     description: debug commands
   flaircolour:
