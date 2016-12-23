@@ -8,6 +8,7 @@ import org.bukkit.plugin.java.JavaPlugin;
 
 import buttondevteam.alipresents.components.alilinks.AliLinkComponent;
 import buttondevteam.alipresents.components.creativeboundaries.CreativeBoundariesComponent;
+import buttondevteam.alipresents.components.dungeons.DungeonComponent;
 import buttondevteam.alipresents.components.flaircolour.FlairColourComponent;
 import buttondevteam.alipresents.components.gpower.GPowerComponent;
 import buttondevteam.alipresents.components.hotfix.HotfixComponent;
@@ -24,6 +25,7 @@ public class AliPresents extends JavaPlugin{
 		
 		new AliLinkComponent().register(this);
 		new CreativeBoundariesComponent().register(this);
+		new DungeonComponent().register(this);
 		new FlairColourComponent().register(this);
 		new GPowerComponent().register(this);
 		new HotfixComponent().register(this);
