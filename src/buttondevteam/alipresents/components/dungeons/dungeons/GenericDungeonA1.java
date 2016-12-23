@@ -9,7 +9,7 @@ public class GenericDungeonA1 extends Dungeon{
 	
 	public GenericDungeonA1(JavaPlugin plugin){
 		if(!initDungeon(plugin)){
-			plugin.getServer().broadcastMessage("DungeonA1 can't be initialized!");
+			plugin.getServer().broadcastMessage("DungeonA1 cant be initialized!");
 		}
 	}
 	private boolean initDungeon(JavaPlugin plugin){
