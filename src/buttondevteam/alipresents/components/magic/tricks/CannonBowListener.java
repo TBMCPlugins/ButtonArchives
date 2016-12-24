@@ -20,29 +20,30 @@ import org.bukkit.plugin.java.JavaPlugin;
 import org.bukkit.util.Vector;
 
 public class CannonBowListener implements Listener {
-
+	private static String savePath = "magic.cannonbow";
+	
 	private static double maxSpeedMultiplier = 4;
 	private static double minSpeedMultiplier = 0;
 	private static double defaultSpeedMultiplier = 1;
-	private static String speedMultiplierPath = "magic.cannonbow.speedmultiplier";
+	private static String speedMultiplierPath = savePath + ".speedmultiplier";
 
 	private static int maxFuseTicks = 400;
 	private static int minFuseTicks = 0;
 	private static int defaultFuseTicks = 30;
-	private static String fuseTicksPath = "magic.cannonbow.fuseticks";
+	private static String fuseTicksPath = savePath + ".fuseticks";
 
 	private static double maxMinForce = 1;
 	private static double minMinForce = 0;
 	private static double defaultMinForce = 0.2;
-	private static String minForcePath = "magic.cannonbow.minforce";
+	private static String minForcePath = savePath + ".minforce";
 
 	private static double maxRecoil = 20;
 	private static double minRecoil = -5;
 	private static double defaultRecoil = 1;
-	private static String recoilPath = "magic.cannonbow.recoil";
+	private static String recoilPath = savePath + ".recoil";
 
 	private static boolean defaultIsDestructive = false;
-	private static String isDestructivePath = "magic.cannonbow.isdestructive";
+	private static String isDestructivePath = savePath + ".isdestructive";
 
 	private static double speedMultiplier = defaultSpeedMultiplier;
 	private static double minForce = defaultMinForce;
