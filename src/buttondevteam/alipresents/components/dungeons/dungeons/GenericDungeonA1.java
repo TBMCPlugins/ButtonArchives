@@ -22,15 +22,24 @@ public class GenericDungeonA1 extends Dungeon{
 			plugin.getServer().broadcastMessage("Available Worlds... " + plugin.getServer().getWorlds().toString());
 			return false;
 		}*/
-		if ((entrance = loadLocation(plugin, "dungeons.dungeona1.enter")) == null){
-			if(plugin.getServer().getWorld("Dungeons") != null){
-				entrance = new Location(plugin.getServer().getWorld("Dungeons"), -7.5, 138.0, -91.5);
-			}
+		Location temp;
+		if ((temp = loadLocation(plugin, "dungeons.dungeona1.enter")) != null){
+			entrance = temp;
+		}else if(plugin.getServer().getWorld("Dungeons") != null){
+			entrance = new Location(plugin.getServer().getWorld("Dungeons"), -7.5, 138.0, -91.5);
+		}else{
+			plugin.getServer().broadcastMessage("There is no working default dungeon entrance for A1, setting to null");
+			entrance = null;
 		}
-		if ((exit = loadLocation(plugin, "dungeons.dungeona1.exit")) == null){
-			if (plugin.getServer().getWorld("world") != null){
-				exit = plugin.getServer().getWorld("world").getSpawnLocation().clone();
-			}
+		
+		temp = null;
+		if ((temp  = loadLocation(plugin, "dungeons.dungeona1.exit")) != null){
+			exit = temp;
+		}else if (plugin.getServer().getWorld("world") != null){
+			exit = plugin.getServer().getWorld("world").getSpawnLocation().clone();
+		}else{
+			plugin.getServer().broadcastMessage("There is no working default dungeon exit for A1, setting to null");
+			exit = null;
 		}
 		
 		if (entrance == null || exit == null){
@@ -72,6 +81,7 @@ public class GenericDungeonA1 extends Dungeon{
 			double x = plugin.getConfig().getDouble(path+".x");
 			double y = plugin.getConfig().getDouble(path+".y");
 			double z = plugin.getConfig().getDouble(path+".z");
+			
 			return new Location(world, x, y, z);
 		}catch(Exception e){
 			e.printStackTrace();
