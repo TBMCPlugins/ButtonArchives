@@ -20,12 +20,12 @@ public class CreativeKillLoop extends BukkitRunnable implements Listener {
 		Location location;
 		for (Player player : plugin.getServer().getOnlinePlayers()){
 			if (player.getGameMode() == GameMode.SURVIVAL) continue;
-			if (player.getWorld().getName().equalsIgnoreCase("world")) continue;
+			if (!player.getWorld().getName().equalsIgnoreCase("world")) continue;
 			if (player.isOp()) continue;
 			
 			location = player.getLocation();
-			if (250 > location.getBlockX() && location.getBlockX() > -250) continue;
-			if (250 > location.getBlockZ() && location.getBlockZ() > -250) continue;
+			if (location.getBlockX() < 250 && location.getBlockX() > -250) continue;
+			if (location.getBlockZ() < 250 && location.getBlockZ() > -250) continue;
 			
 			player.sendMessage("[Hotfix] Every Gamemode other than survival is disabled in the new world!");
 			player.setGameMode(GameMode.SURVIVAL);
