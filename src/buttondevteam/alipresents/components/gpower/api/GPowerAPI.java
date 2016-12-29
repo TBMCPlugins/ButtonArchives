@@ -18,6 +18,9 @@ public class GPowerAPI{
 	public static void addPlayer(Player player, String colour, boolean powerIsActive){
 		poweredPlayerList.put(player.getUniqueId(), new PoweredPlayer(player.getUniqueId(), colour, true));
 	}
+	public static void PowerUpPlayer(Player player, String colour){
+		PowerUpPlayer(player);
+	}
 	public static void PowerUpPlayer(Player player){
 		player.sendMessage("Powering up!");
 		if(poweredPlayerList.containsKey(player.getUniqueId())){
@@ -33,14 +36,15 @@ public class GPowerAPI{
 		}
 	}
 	
-	public static void PowerDownPlayer(Player player){
+	public static boolean PowerDownPlayer(Player player){
 		player.sendMessage("Powering down!");
 		if (poweredPlayerList.containsKey(player.getUniqueId())){
 			player.sendMessage("Powered down!");
 			poweredPlayerList.get(player.getUniqueId()).isPowersActive = false;
+			return true;
 		}else{
 			player.sendMessage("P down!");
-			return;
+			return false;
 		}
 		
 	}
