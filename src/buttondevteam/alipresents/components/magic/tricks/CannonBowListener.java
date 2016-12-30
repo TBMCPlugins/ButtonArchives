@@ -56,8 +56,23 @@ public class CannonBowListener implements Listener {
 	static FileConfiguration config;
 	public CannonBowListener(JavaPlugin plugin){
 		config = plugin.getConfig();
+
+		if (config.isDouble(speedMultiplierPath))
+			setSpeedMultiplier(config.getDouble(speedMultiplierPath));
+
+		if (config.isDouble(minForcePath))
+			setMinforce(config.getDouble(minForcePath));
+
+		if (config.isInt(fuseTicksPath))
+			setFuseticks(config.getInt(fuseTicksPath));
+
+		if (config.isDouble(recoilPath))
+			setRecoil(config.getDouble(recoilPath));
+
+		if (config.isBoolean(isDestructivePath))
+			setIsDestructive(config.getBoolean(isDestructivePath));
 	}
-	
+
 	@EventHandler
 	public void onProjectileLaunch(EntityShootBowEvent event){
 		//Entity Sanitation
@@ -231,22 +246,5 @@ public class CannonBowListener implements Listener {
 	public static void setIsDestructive(boolean isDestructive){
 		CannonBowListener.isDestructive = isDestructive;
 		config.set(speedMultiplierPath, isDestructive);
-	}
-	
-	public void loadSettings(FileConfiguration config){
-		if (config.isDouble(speedMultiplierPath))
-			setSpeedMultiplier(config.getDouble(speedMultiplierPath));
-
-		if (config.isDouble(minForcePath))
-			setMinforce(config.getDouble(minForcePath));
-
-		if (config.isInt(fuseTicksPath))
-			setFuseticks(config.getInt(fuseTicksPath));
-
-		if (config.isDouble(recoilPath))
-			setRecoil(config.getDouble(recoilPath));
-
-		if (config.isBoolean(isDestructivePath))
-			setIsDestructive(config.getBoolean(isDestructivePath));
 	}
 }

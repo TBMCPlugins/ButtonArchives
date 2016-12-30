@@ -15,9 +15,7 @@ public class GPowerComponent extends Component {
 		registerCommand(plugin, new Test());
 		registerCommand(plugin, new PowerUp());
 		registerCommand(plugin, new PowerDown());
-		
-		registerCommand(plugin, new ApplyPowerUp());
-		registerCommand(plugin, new ApplyPowerDown());
+
 		registerListener(plugin, new EnchantingLoop(plugin));
 
 	}
