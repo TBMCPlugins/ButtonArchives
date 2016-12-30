@@ -77,10 +77,14 @@ public class GenericDungeonA1 extends Dungeon{
 	}
 	private Location loadLocation(JavaPlugin plugin, String path){
 		try{
-			World world = plugin.getServer().getWorld(plugin.getConfig().getString(path+".world"));
+			String worldname = plugin.getConfig().getString(path+".world");
+			if(worldname == null) return null;
+			
+			World world = plugin.getServer().getWorld(worldname);
 			double x = plugin.getConfig().getDouble(path+".x");
 			double y = plugin.getConfig().getDouble(path+".y");
 			double z = plugin.getConfig().getDouble(path+".z");
+			if (world == null) return null;
 			
 			return new Location(world, x, y, z);
 		}catch(Exception e){
