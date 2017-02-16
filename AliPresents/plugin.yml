@@ -1,0 +1,23 @@
+main: buttondevteam.alipresents.AliPresents
+name: AliPresents
+version: 2.0.2
+
+commands:
+  alilink:
+    description: creates wireless redstone
+  cb:
+    description: creates creative boundaries
+  dungeons:
+    description: handles the resource dungeons scattered around the map
+  debug:
+    description: debug commands
+  flaircolour:
+    description: flaaairs
+  gpower:
+    description: powerssss
+  insurance:
+    description: item block insurance
+  magic:
+    description: magic
+  metrics:
+    description: metrics system
